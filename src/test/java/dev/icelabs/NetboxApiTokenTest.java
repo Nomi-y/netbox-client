@@ -57,7 +57,6 @@ class NetboxApiTokenTest {
     }
 
     @Nested
-    @DisplayName("Token Lifecycle Tests")
     class TokenLifecycleTests {
 
         @Test
@@ -73,9 +72,12 @@ class NetboxApiTokenTest {
         }
 
         @Test
+        @SuppressWarnings("resource")
         void should_auto_close_via_try_with_resources() {
             NetboxApiToken token;
             try (var t = NetboxApiToken.createV1("test")) {
+                // INFO: token is implicitly closed after the
+                // try-with-resources block finishes
                 token = t;
                 assertFalse(token.isClosed());
             }
