@@ -4,6 +4,7 @@ import org.springframework.web.client.RestClient;
 
 import dev.icelabs.netbox.endpoints.ApiStrings;
 import dev.icelabs.netbox.endpoints.Endpoint;
+import dev.icelabs.netbox.endpoints.dcim.device_roles.DcimDeviceRoles;
 import dev.icelabs.netbox.endpoints.dcim.devices.DcimDevices;
 import dev.icelabs.netbox.endpoints.dcim.manufacturers.DcimManufacturers;
 
@@ -15,6 +16,10 @@ public class DcimEndpoint extends Endpoint {
 
     public DcimDevices devices() {
         return new DcimDevices(client, this);
+    }
+
+    public DcimDeviceRoles device_roles() {
+        return new DcimDeviceRoles(client, this);
     }
 
     public DcimManufacturers manufacturers() {

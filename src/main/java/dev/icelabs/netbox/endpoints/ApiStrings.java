@@ -7,6 +7,7 @@ public final class ApiStrings {
     // DCIM
     public static final String DCIM = "dcim";
     public static final String DCIM_DEVICES = "devices";
+    public static final String DCIM_DEVICE_ROLES = "device-roles";
     public static final String DCIM_MANUFACTURERS = "manufacturers";
 
     // STATUS

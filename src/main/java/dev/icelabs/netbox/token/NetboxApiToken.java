@@ -79,7 +79,7 @@ public abstract class NetboxApiToken implements AutoCloseable {
     }
 
     @Override
-    protected final Object clone() throws CloneNotSupportedException {
+    public final Object clone() throws CloneNotSupportedException {
         throw new CloneNotSupportedException("NetboxApiToken cannot be cloned");
     }
 

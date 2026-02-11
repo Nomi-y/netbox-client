@@ -29,20 +29,27 @@ class NetboxClientTest {
     }
 
     @Test
-    void assert_api_reachable() {
+    void api_should_be_reachable() {
         assertTrue(client.status().isApiReachable());
     }
 
     @Test
-    void fetch_device_with_id_1() {
+    void device_id_1_should_have_name_camera_1() {
         var camera1 = client.dcim().devices().get(1);
-        assertEquals("camera 1", camera1.name());
+        System.out.println(camera1);
+        assertEquals("camera 1", camera1.name().orElseThrow());
     }
 
     @Test
-    void fetch_manufacturer_with_id_1() {
+    void manufacturer_id_1_should_be_sony() {
         var manufacturer = client.dcim().manufacturers().get(1);
         assertEquals("sony", manufacturer.name());
+    }
+
+    @Test
+    void device_role_id_2_should_have_parent_role_named_kamera() {
+        var role = client.dcim().device_roles().get(2);
+        assertEquals("kamera", role.parent().orElseThrow().name());
     }
 
 }
