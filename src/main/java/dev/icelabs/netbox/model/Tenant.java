@@ -30,10 +30,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -66,7 +62,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   Tenant.JSON_PROPERTY_VRF_COUNT,
   Tenant.JSON_PROPERTY_CLUSTER_COUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class Tenant {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -94,7 +90,7 @@ public class Tenant {
 
   public static final String JSON_PROPERTY_GROUP = "group";
   @javax.annotation.Nullable
-  private JsonNullable<BriefTenantGroup> group = JsonNullable.<BriefTenantGroup>undefined();
+  private BriefTenantGroup group;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -102,7 +98,7 @@ public class Tenant {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -314,8 +310,8 @@ public class Tenant {
   }
 
   public Tenant group(@javax.annotation.Nullable BriefTenantGroup group) {
-    this.group = JsonNullable.<BriefTenantGroup>of(group);
     
+    this.group = group;
     return this;
   }
 
@@ -324,26 +320,18 @@ public class Tenant {
    * @return group
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefTenantGroup getGroup() {
-        return group.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_GROUP, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefTenantGroup> getGroup_JsonNullable() {
+  public BriefTenantGroup getGroup() {
     return group;
   }
-  
-  @JsonProperty(JSON_PROPERTY_GROUP)
-  public void setGroup_JsonNullable(JsonNullable<BriefTenantGroup> group) {
-    this.group = group;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_GROUP, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable BriefTenantGroup group) {
-    this.group = JsonNullable.<BriefTenantGroup>of(group);
+    this.group = group;
   }
 
   public Tenant description(@javax.annotation.Nullable String description) {
@@ -372,8 +360,8 @@ public class Tenant {
   }
 
   public Tenant owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -382,26 +370,18 @@ public class Tenant {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public Tenant comments(@javax.annotation.Nullable String comments) {
@@ -679,9 +659,9 @@ public class Tenant {
         Objects.equals(this.display, tenant.display) &&
         Objects.equals(this.name, tenant.name) &&
         Objects.equals(this.slug, tenant.slug) &&
-        equalsNullable(this.group, tenant.group) &&
+        Objects.equals(this.group, tenant.group) &&
         Objects.equals(this.description, tenant.description) &&
-        equalsNullable(this.owner, tenant.owner) &&
+        Objects.equals(this.owner, tenant.owner) &&
         Objects.equals(this.comments, tenant.comments) &&
         Objects.equals(this.tags, tenant.tags) &&
         Objects.equals(this.customFields, tenant.customFields) &&
@@ -699,20 +679,9 @@ public class Tenant {
         Objects.equals(this.clusterCount, tenant.clusterCount);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, name, slug, hashCodeNullable(group), description, hashCodeNullable(owner), comments, tags, customFields, created, lastUpdated, circuitCount, deviceCount, ipaddressCount, prefixCount, rackCount, siteCount, virtualmachineCount, vlanCount, vrfCount, clusterCount);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, name, slug, group, description, owner, comments, tags, customFields, created, lastUpdated, circuitCount, deviceCount, ipaddressCount, prefixCount, rackCount, siteCount, virtualmachineCount, vlanCount, vrfCount, clusterCount);
   }
 
   @Override

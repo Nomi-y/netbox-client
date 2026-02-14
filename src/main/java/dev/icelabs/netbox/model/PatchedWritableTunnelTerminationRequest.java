@@ -28,10 +28,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -47,7 +43,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   PatchedWritableTunnelTerminationRequest.JSON_PROPERTY_TAGS,
   PatchedWritableTunnelTerminationRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class PatchedWritableTunnelTerminationRequest {
   public static final String JSON_PROPERTY_TUNNEL = "tunnel";
   @javax.annotation.Nullable
@@ -100,11 +96,11 @@ public class PatchedWritableTunnelTerminationRequest {
 
   public static final String JSON_PROPERTY_TERMINATION_ID = "termination_id";
   @javax.annotation.Nullable
-  private JsonNullable<Long> terminationId = JsonNullable.<Long>undefined();
+  private Long terminationId;
 
   public static final String JSON_PROPERTY_OUTSIDE_IP = "outside_ip";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceWithConfigContextRequestPrimaryIp4> outsideIp = JsonNullable.<DeviceWithConfigContextRequestPrimaryIp4>undefined();
+  private DeviceWithConfigContextRequestPrimaryIp4 outsideIp;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -193,8 +189,8 @@ public class PatchedWritableTunnelTerminationRequest {
   }
 
   public PatchedWritableTunnelTerminationRequest terminationId(@javax.annotation.Nullable Long terminationId) {
-    this.terminationId = JsonNullable.<Long>of(terminationId);
     
+    this.terminationId = terminationId;
     return this;
   }
 
@@ -205,31 +201,23 @@ public class PatchedWritableTunnelTerminationRequest {
    * @return terminationId
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Long getTerminationId() {
-        return terminationId.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TERMINATION_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Long> getTerminationId_JsonNullable() {
+  public Long getTerminationId() {
     return terminationId;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TERMINATION_ID)
-  public void setTerminationId_JsonNullable(JsonNullable<Long> terminationId) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TERMINATION_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTerminationId(@javax.annotation.Nullable Long terminationId) {
     this.terminationId = terminationId;
   }
 
-  public void setTerminationId(@javax.annotation.Nullable Long terminationId) {
-    this.terminationId = JsonNullable.<Long>of(terminationId);
-  }
-
   public PatchedWritableTunnelTerminationRequest outsideIp(@javax.annotation.Nullable DeviceWithConfigContextRequestPrimaryIp4 outsideIp) {
-    this.outsideIp = JsonNullable.<DeviceWithConfigContextRequestPrimaryIp4>of(outsideIp);
     
+    this.outsideIp = outsideIp;
     return this;
   }
 
@@ -238,26 +226,18 @@ public class PatchedWritableTunnelTerminationRequest {
    * @return outsideIp
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceWithConfigContextRequestPrimaryIp4 getOutsideIp() {
-        return outsideIp.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OUTSIDE_IP, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceWithConfigContextRequestPrimaryIp4> getOutsideIp_JsonNullable() {
+  public DeviceWithConfigContextRequestPrimaryIp4 getOutsideIp() {
     return outsideIp;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OUTSIDE_IP)
-  public void setOutsideIp_JsonNullable(JsonNullable<DeviceWithConfigContextRequestPrimaryIp4> outsideIp) {
-    this.outsideIp = outsideIp;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OUTSIDE_IP, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOutsideIp(@javax.annotation.Nullable DeviceWithConfigContextRequestPrimaryIp4 outsideIp) {
-    this.outsideIp = JsonNullable.<DeviceWithConfigContextRequestPrimaryIp4>of(outsideIp);
+    this.outsideIp = outsideIp;
   }
 
   public PatchedWritableTunnelTerminationRequest tags(@javax.annotation.Nullable List<NestedTagRequest> tags) {
@@ -339,26 +319,15 @@ public class PatchedWritableTunnelTerminationRequest {
     return Objects.equals(this.tunnel, patchedWritableTunnelTerminationRequest.tunnel) &&
         Objects.equals(this.role, patchedWritableTunnelTerminationRequest.role) &&
         Objects.equals(this.terminationType, patchedWritableTunnelTerminationRequest.terminationType) &&
-        equalsNullable(this.terminationId, patchedWritableTunnelTerminationRequest.terminationId) &&
-        equalsNullable(this.outsideIp, patchedWritableTunnelTerminationRequest.outsideIp) &&
+        Objects.equals(this.terminationId, patchedWritableTunnelTerminationRequest.terminationId) &&
+        Objects.equals(this.outsideIp, patchedWritableTunnelTerminationRequest.outsideIp) &&
         Objects.equals(this.tags, patchedWritableTunnelTerminationRequest.tags) &&
         Objects.equals(this.customFields, patchedWritableTunnelTerminationRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(tunnel, role, terminationType, hashCodeNullable(terminationId), hashCodeNullable(outsideIp), tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(tunnel, role, terminationType, terminationId, outsideIp, tags, customFields);
   }
 
   @Override

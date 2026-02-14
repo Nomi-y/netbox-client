@@ -33,10 +33,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -62,7 +58,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   Module.JSON_PROPERTY_CREATED,
   Module.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class Module {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -102,7 +98,7 @@ public class Module {
 
   public static final String JSON_PROPERTY_ASSET_TAG = "asset_tag";
   @javax.annotation.Nullable
-  private JsonNullable<String> assetTag = JsonNullable.<String>undefined();
+  private String assetTag;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -110,7 +106,7 @@ public class Module {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -337,8 +333,8 @@ public class Module {
   }
 
   public Module assetTag(@javax.annotation.Nullable String assetTag) {
-    this.assetTag = JsonNullable.<String>of(assetTag);
     
+    this.assetTag = assetTag;
     return this;
   }
 
@@ -347,26 +343,18 @@ public class Module {
    * @return assetTag
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getAssetTag() {
-        return assetTag.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ASSET_TAG, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getAssetTag_JsonNullable() {
+  public String getAssetTag() {
     return assetTag;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ASSET_TAG)
-  public void setAssetTag_JsonNullable(JsonNullable<String> assetTag) {
-    this.assetTag = assetTag;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_ASSET_TAG, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssetTag(@javax.annotation.Nullable String assetTag) {
-    this.assetTag = JsonNullable.<String>of(assetTag);
+    this.assetTag = assetTag;
   }
 
   public Module description(@javax.annotation.Nullable String description) {
@@ -395,8 +383,8 @@ public class Module {
   }
 
   public Module owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -405,26 +393,18 @@ public class Module {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public Module comments(@javax.annotation.Nullable String comments) {
@@ -565,9 +545,9 @@ public class Module {
         Objects.equals(this.moduleType, module.moduleType) &&
         Objects.equals(this.status, module.status) &&
         Objects.equals(this.serial, module.serial) &&
-        equalsNullable(this.assetTag, module.assetTag) &&
+        Objects.equals(this.assetTag, module.assetTag) &&
         Objects.equals(this.description, module.description) &&
-        equalsNullable(this.owner, module.owner) &&
+        Objects.equals(this.owner, module.owner) &&
         Objects.equals(this.comments, module.comments) &&
         Objects.equals(this.tags, module.tags) &&
         Objects.equals(this.customFields, module.customFields) &&
@@ -575,20 +555,9 @@ public class Module {
         Objects.equals(this.lastUpdated, module.lastUpdated);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, device, moduleBay, moduleType, status, serial, hashCodeNullable(assetTag), description, hashCodeNullable(owner), comments, tags, customFields, created, lastUpdated);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, device, moduleBay, moduleType, status, serial, assetTag, description, owner, comments, tags, customFields, created, lastUpdated);
   }
 
   @Override

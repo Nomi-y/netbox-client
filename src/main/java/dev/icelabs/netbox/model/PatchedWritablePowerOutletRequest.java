@@ -30,10 +30,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -56,7 +52,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   PatchedWritablePowerOutletRequest.JSON_PROPERTY_TAGS,
   PatchedWritablePowerOutletRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class PatchedWritablePowerOutletRequest {
   public static final String JSON_PROPERTY_DEVICE = "device";
   @javax.annotation.Nullable
@@ -64,7 +60,7 @@ public class PatchedWritablePowerOutletRequest {
 
   public static final String JSON_PROPERTY_MODULE = "module";
   @javax.annotation.Nullable
-  private JsonNullable<ConsolePortRequestModule> module = JsonNullable.<ConsolePortRequestModule>undefined();
+  private ConsolePortRequestModule module;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable
@@ -309,7 +305,7 @@ public class PatchedWritablePowerOutletRequest {
 
   public static final String JSON_PROPERTY_TYPE = "type";
   @javax.annotation.Nullable
-  private JsonNullable<TypeEnum> type = JsonNullable.<TypeEnum>undefined();
+  private TypeEnum type;
 
   /**
    * * &#x60;enabled&#x60; - Enabled * &#x60;disabled&#x60; - Disabled * &#x60;faulty&#x60; - Faulty
@@ -358,7 +354,7 @@ public class PatchedWritablePowerOutletRequest {
 
   public static final String JSON_PROPERTY_POWER_PORT = "power_port";
   @javax.annotation.Nullable
-  private JsonNullable<PatchedWritablePowerOutletRequestPowerPort> powerPort = JsonNullable.<PatchedWritablePowerOutletRequestPowerPort>undefined();
+  private PatchedWritablePowerOutletRequestPowerPort powerPort;
 
   /**
    * Phase (for three-phase feeds)  * &#x60;A&#x60; - A * &#x60;B&#x60; - B * &#x60;C&#x60; - C
@@ -401,7 +397,7 @@ public class PatchedWritablePowerOutletRequest {
 
   public static final String JSON_PROPERTY_FEED_LEG = "feed_leg";
   @javax.annotation.Nullable
-  private JsonNullable<FeedLegEnum> feedLeg = JsonNullable.<FeedLegEnum>undefined();
+  private FeedLegEnum feedLeg;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -413,7 +409,7 @@ public class PatchedWritablePowerOutletRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -452,8 +448,8 @@ public class PatchedWritablePowerOutletRequest {
   }
 
   public PatchedWritablePowerOutletRequest module(@javax.annotation.Nullable ConsolePortRequestModule module) {
-    this.module = JsonNullable.<ConsolePortRequestModule>of(module);
     
+    this.module = module;
     return this;
   }
 
@@ -462,26 +458,18 @@ public class PatchedWritablePowerOutletRequest {
    * @return module
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ConsolePortRequestModule getModule() {
-        return module.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MODULE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ConsolePortRequestModule> getModule_JsonNullable() {
+  public ConsolePortRequestModule getModule() {
     return module;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MODULE)
-  public void setModule_JsonNullable(JsonNullable<ConsolePortRequestModule> module) {
-    this.module = module;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_MODULE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setModule(@javax.annotation.Nullable ConsolePortRequestModule module) {
-    this.module = JsonNullable.<ConsolePortRequestModule>of(module);
+    this.module = module;
   }
 
   public PatchedWritablePowerOutletRequest name(@javax.annotation.Nullable String name) {
@@ -535,8 +523,8 @@ public class PatchedWritablePowerOutletRequest {
   }
 
   public PatchedWritablePowerOutletRequest type(@javax.annotation.Nullable TypeEnum type) {
-    this.type = JsonNullable.<TypeEnum>of(type);
     
+    this.type = type;
     return this;
   }
 
@@ -545,26 +533,18 @@ public class PatchedWritablePowerOutletRequest {
    * @return type
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public TypeEnum getType() {
-        return type.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<TypeEnum> getType_JsonNullable() {
+  public TypeEnum getType() {
     return type;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TYPE)
-  public void setType_JsonNullable(JsonNullable<TypeEnum> type) {
-    this.type = type;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setType(@javax.annotation.Nullable TypeEnum type) {
-    this.type = JsonNullable.<TypeEnum>of(type);
+    this.type = type;
   }
 
   public PatchedWritablePowerOutletRequest status(@javax.annotation.Nullable StatusEnum status) {
@@ -618,8 +598,8 @@ public class PatchedWritablePowerOutletRequest {
   }
 
   public PatchedWritablePowerOutletRequest powerPort(@javax.annotation.Nullable PatchedWritablePowerOutletRequestPowerPort powerPort) {
-    this.powerPort = JsonNullable.<PatchedWritablePowerOutletRequestPowerPort>of(powerPort);
     
+    this.powerPort = powerPort;
     return this;
   }
 
@@ -628,31 +608,23 @@ public class PatchedWritablePowerOutletRequest {
    * @return powerPort
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public PatchedWritablePowerOutletRequestPowerPort getPowerPort() {
-        return powerPort.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_POWER_PORT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<PatchedWritablePowerOutletRequestPowerPort> getPowerPort_JsonNullable() {
+  public PatchedWritablePowerOutletRequestPowerPort getPowerPort() {
     return powerPort;
   }
-  
-  @JsonProperty(JSON_PROPERTY_POWER_PORT)
-  public void setPowerPort_JsonNullable(JsonNullable<PatchedWritablePowerOutletRequestPowerPort> powerPort) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_POWER_PORT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPowerPort(@javax.annotation.Nullable PatchedWritablePowerOutletRequestPowerPort powerPort) {
     this.powerPort = powerPort;
   }
 
-  public void setPowerPort(@javax.annotation.Nullable PatchedWritablePowerOutletRequestPowerPort powerPort) {
-    this.powerPort = JsonNullable.<PatchedWritablePowerOutletRequestPowerPort>of(powerPort);
-  }
-
   public PatchedWritablePowerOutletRequest feedLeg(@javax.annotation.Nullable FeedLegEnum feedLeg) {
-    this.feedLeg = JsonNullable.<FeedLegEnum>of(feedLeg);
     
+    this.feedLeg = feedLeg;
     return this;
   }
 
@@ -661,26 +633,18 @@ public class PatchedWritablePowerOutletRequest {
    * @return feedLeg
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public FeedLegEnum getFeedLeg() {
-        return feedLeg.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_FEED_LEG, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<FeedLegEnum> getFeedLeg_JsonNullable() {
+  public FeedLegEnum getFeedLeg() {
     return feedLeg;
   }
-  
-  @JsonProperty(JSON_PROPERTY_FEED_LEG)
-  public void setFeedLeg_JsonNullable(JsonNullable<FeedLegEnum> feedLeg) {
-    this.feedLeg = feedLeg;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_FEED_LEG, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFeedLeg(@javax.annotation.Nullable FeedLegEnum feedLeg) {
-    this.feedLeg = JsonNullable.<FeedLegEnum>of(feedLeg);
+    this.feedLeg = feedLeg;
   }
 
   public PatchedWritablePowerOutletRequest description(@javax.annotation.Nullable String description) {
@@ -734,8 +698,8 @@ public class PatchedWritablePowerOutletRequest {
   }
 
   public PatchedWritablePowerOutletRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -744,26 +708,18 @@ public class PatchedWritablePowerOutletRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public PatchedWritablePowerOutletRequest tags(@javax.annotation.Nullable List<NestedTagRequest> tags) {
@@ -843,35 +799,24 @@ public class PatchedWritablePowerOutletRequest {
     }
     PatchedWritablePowerOutletRequest patchedWritablePowerOutletRequest = (PatchedWritablePowerOutletRequest) o;
     return Objects.equals(this.device, patchedWritablePowerOutletRequest.device) &&
-        equalsNullable(this.module, patchedWritablePowerOutletRequest.module) &&
+        Objects.equals(this.module, patchedWritablePowerOutletRequest.module) &&
         Objects.equals(this.name, patchedWritablePowerOutletRequest.name) &&
         Objects.equals(this.label, patchedWritablePowerOutletRequest.label) &&
-        equalsNullable(this.type, patchedWritablePowerOutletRequest.type) &&
+        Objects.equals(this.type, patchedWritablePowerOutletRequest.type) &&
         Objects.equals(this.status, patchedWritablePowerOutletRequest.status) &&
         Objects.equals(this.color, patchedWritablePowerOutletRequest.color) &&
-        equalsNullable(this.powerPort, patchedWritablePowerOutletRequest.powerPort) &&
-        equalsNullable(this.feedLeg, patchedWritablePowerOutletRequest.feedLeg) &&
+        Objects.equals(this.powerPort, patchedWritablePowerOutletRequest.powerPort) &&
+        Objects.equals(this.feedLeg, patchedWritablePowerOutletRequest.feedLeg) &&
         Objects.equals(this.description, patchedWritablePowerOutletRequest.description) &&
         Objects.equals(this.markConnected, patchedWritablePowerOutletRequest.markConnected) &&
-        equalsNullable(this.owner, patchedWritablePowerOutletRequest.owner) &&
+        Objects.equals(this.owner, patchedWritablePowerOutletRequest.owner) &&
         Objects.equals(this.tags, patchedWritablePowerOutletRequest.tags) &&
         Objects.equals(this.customFields, patchedWritablePowerOutletRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(device, hashCodeNullable(module), name, label, hashCodeNullable(type), status, color, hashCodeNullable(powerPort), hashCodeNullable(feedLeg), description, markConnected, hashCodeNullable(owner), tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(device, module, name, label, type, status, color, powerPort, feedLeg, description, markConnected, owner, tags, customFields);
   }
 
   @Override

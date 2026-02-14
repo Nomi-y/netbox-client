@@ -24,10 +24,6 @@ import dev.icelabs.netbox.model.BookmarkRequestUser;
 import dev.icelabs.netbox.model.NotificationRequest;
 import java.time.OffsetDateTime;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -42,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ExtrasNotificationsCreateRequest.JSON_PROPERTY_EVENT_TYPE
 })
 @JsonTypeName("extras_notifications_create_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class ExtrasNotificationsCreateRequest {
   public static final String JSON_PROPERTY_OBJECT_TYPE = "object_type";
   @javax.annotation.Nonnull
@@ -58,7 +54,7 @@ public class ExtrasNotificationsCreateRequest {
 
   public static final String JSON_PROPERTY_READ = "read";
   @javax.annotation.Nullable
-  private JsonNullable<OffsetDateTime> read = JsonNullable.<OffsetDateTime>undefined();
+  private OffsetDateTime read;
 
   /**
    * * &#x60;object_created&#x60; - Object created * &#x60;object_updated&#x60; - Object updated * &#x60;object_deleted&#x60; - Object deleted * &#x60;job_started&#x60; - Job started * &#x60;job_completed&#x60; - Job completed * &#x60;job_failed&#x60; - Job failed * &#x60;job_errored&#x60; - Job errored
@@ -190,8 +186,8 @@ public class ExtrasNotificationsCreateRequest {
   }
 
   public ExtrasNotificationsCreateRequest read(@javax.annotation.Nullable OffsetDateTime read) {
-    this.read = JsonNullable.<OffsetDateTime>of(read);
     
+    this.read = read;
     return this;
   }
 
@@ -200,26 +196,18 @@ public class ExtrasNotificationsCreateRequest {
    * @return read
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public OffsetDateTime getRead() {
-        return read.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_READ, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<OffsetDateTime> getRead_JsonNullable() {
+  public OffsetDateTime getRead() {
     return read;
   }
-  
-  @JsonProperty(JSON_PROPERTY_READ)
-  public void setRead_JsonNullable(JsonNullable<OffsetDateTime> read) {
-    this.read = read;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_READ, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRead(@javax.annotation.Nullable OffsetDateTime read) {
-    this.read = JsonNullable.<OffsetDateTime>of(read);
+    this.read = read;
   }
 
   public ExtrasNotificationsCreateRequest eventType(@javax.annotation.Nonnull EventTypeEnum eventType) {
@@ -260,24 +248,13 @@ public class ExtrasNotificationsCreateRequest {
     return Objects.equals(this.objectType, extrasNotificationsCreateRequest.objectType) &&
         Objects.equals(this.objectId, extrasNotificationsCreateRequest.objectId) &&
         Objects.equals(this.user, extrasNotificationsCreateRequest.user) &&
-        equalsNullable(this.read, extrasNotificationsCreateRequest.read) &&
+        Objects.equals(this.read, extrasNotificationsCreateRequest.read) &&
         Objects.equals(this.eventType, extrasNotificationsCreateRequest.eventType);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(objectType, objectId, user, hashCodeNullable(read), eventType);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(objectType, objectId, user, read, eventType);
   }
 
   @Override

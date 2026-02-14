@@ -21,10 +21,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.net.URI;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -40,7 +36,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   BriefVRF.JSON_PROPERTY_DESCRIPTION,
   BriefVRF.JSON_PROPERTY_PREFIX_COUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class BriefVRF {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -60,7 +56,7 @@ public class BriefVRF {
 
   public static final String JSON_PROPERTY_RD = "rd";
   @javax.annotation.Nullable
-  private JsonNullable<String> rd = JsonNullable.<String>undefined();
+  private String rd;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -157,8 +153,8 @@ public class BriefVRF {
   }
 
   public BriefVRF rd(@javax.annotation.Nullable String rd) {
-    this.rd = JsonNullable.<String>of(rd);
     
+    this.rd = rd;
     return this;
   }
 
@@ -167,26 +163,18 @@ public class BriefVRF {
    * @return rd
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getRd() {
-        return rd.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_RD, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getRd_JsonNullable() {
+  public String getRd() {
     return rd;
   }
-  
-  @JsonProperty(JSON_PROPERTY_RD)
-  public void setRd_JsonNullable(JsonNullable<String> rd) {
-    this.rd = rd;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_RD, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRd(@javax.annotation.Nullable String rd) {
-    this.rd = JsonNullable.<String>of(rd);
+    this.rd = rd;
   }
 
   public BriefVRF description(@javax.annotation.Nullable String description) {
@@ -242,25 +230,14 @@ public class BriefVRF {
         Objects.equals(this.url, briefVRF.url) &&
         Objects.equals(this.display, briefVRF.display) &&
         Objects.equals(this.name, briefVRF.name) &&
-        equalsNullable(this.rd, briefVRF.rd) &&
+        Objects.equals(this.rd, briefVRF.rd) &&
         Objects.equals(this.description, briefVRF.description) &&
         Objects.equals(this.prefixCount, briefVRF.prefixCount);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, display, name, hashCodeNullable(rd), description, prefixCount);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, display, name, rd, description, prefixCount);
   }
 
   @Override

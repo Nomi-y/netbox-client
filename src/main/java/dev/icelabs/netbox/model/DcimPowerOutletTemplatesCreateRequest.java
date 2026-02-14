@@ -25,10 +25,6 @@ import dev.icelabs.netbox.model.ConsolePortTemplateRequestModuleType;
 import dev.icelabs.netbox.model.PatchedWritablePowerOutletTemplateRequestPowerPort;
 import dev.icelabs.netbox.model.WritablePowerOutletTemplateRequest;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -47,15 +43,15 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   DcimPowerOutletTemplatesCreateRequest.JSON_PROPERTY_DESCRIPTION
 })
 @JsonTypeName("dcim_power_outlet_templates_create_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class DcimPowerOutletTemplatesCreateRequest {
   public static final String JSON_PROPERTY_DEVICE_TYPE = "device_type";
   @javax.annotation.Nullable
-  private JsonNullable<ConsolePortTemplateRequestDeviceType> deviceType = JsonNullable.<ConsolePortTemplateRequestDeviceType>undefined();
+  private ConsolePortTemplateRequestDeviceType deviceType;
 
   public static final String JSON_PROPERTY_MODULE_TYPE = "module_type";
   @javax.annotation.Nullable
-  private JsonNullable<ConsolePortTemplateRequestModuleType> moduleType = JsonNullable.<ConsolePortTemplateRequestModuleType>undefined();
+  private ConsolePortTemplateRequestModuleType moduleType;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -300,7 +296,7 @@ public class DcimPowerOutletTemplatesCreateRequest {
 
   public static final String JSON_PROPERTY_TYPE = "type";
   @javax.annotation.Nullable
-  private JsonNullable<TypeEnum> type = JsonNullable.<TypeEnum>undefined();
+  private TypeEnum type;
 
   public static final String JSON_PROPERTY_COLOR = "color";
   @javax.annotation.Nullable
@@ -308,7 +304,7 @@ public class DcimPowerOutletTemplatesCreateRequest {
 
   public static final String JSON_PROPERTY_POWER_PORT = "power_port";
   @javax.annotation.Nullable
-  private JsonNullable<PatchedWritablePowerOutletTemplateRequestPowerPort> powerPort = JsonNullable.<PatchedWritablePowerOutletTemplateRequestPowerPort>undefined();
+  private PatchedWritablePowerOutletTemplateRequestPowerPort powerPort;
 
   /**
    * Phase (for three-phase feeds)  * &#x60;A&#x60; - A * &#x60;B&#x60; - B * &#x60;C&#x60; - C
@@ -351,7 +347,7 @@ public class DcimPowerOutletTemplatesCreateRequest {
 
   public static final String JSON_PROPERTY_FEED_LEG = "feed_leg";
   @javax.annotation.Nullable
-  private JsonNullable<FeedLegEnum> feedLeg = JsonNullable.<FeedLegEnum>undefined();
+  private FeedLegEnum feedLeg;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -361,8 +357,8 @@ public class DcimPowerOutletTemplatesCreateRequest {
   }
 
   public DcimPowerOutletTemplatesCreateRequest deviceType(@javax.annotation.Nullable ConsolePortTemplateRequestDeviceType deviceType) {
-    this.deviceType = JsonNullable.<ConsolePortTemplateRequestDeviceType>of(deviceType);
     
+    this.deviceType = deviceType;
     return this;
   }
 
@@ -371,31 +367,23 @@ public class DcimPowerOutletTemplatesCreateRequest {
    * @return deviceType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ConsolePortTemplateRequestDeviceType getDeviceType() {
-        return deviceType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_DEVICE_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ConsolePortTemplateRequestDeviceType> getDeviceType_JsonNullable() {
+  public ConsolePortTemplateRequestDeviceType getDeviceType() {
     return deviceType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_DEVICE_TYPE)
-  public void setDeviceType_JsonNullable(JsonNullable<ConsolePortTemplateRequestDeviceType> deviceType) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_DEVICE_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDeviceType(@javax.annotation.Nullable ConsolePortTemplateRequestDeviceType deviceType) {
     this.deviceType = deviceType;
   }
 
-  public void setDeviceType(@javax.annotation.Nullable ConsolePortTemplateRequestDeviceType deviceType) {
-    this.deviceType = JsonNullable.<ConsolePortTemplateRequestDeviceType>of(deviceType);
-  }
-
   public DcimPowerOutletTemplatesCreateRequest moduleType(@javax.annotation.Nullable ConsolePortTemplateRequestModuleType moduleType) {
-    this.moduleType = JsonNullable.<ConsolePortTemplateRequestModuleType>of(moduleType);
     
+    this.moduleType = moduleType;
     return this;
   }
 
@@ -404,26 +392,18 @@ public class DcimPowerOutletTemplatesCreateRequest {
    * @return moduleType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ConsolePortTemplateRequestModuleType getModuleType() {
-        return moduleType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MODULE_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ConsolePortTemplateRequestModuleType> getModuleType_JsonNullable() {
+  public ConsolePortTemplateRequestModuleType getModuleType() {
     return moduleType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MODULE_TYPE)
-  public void setModuleType_JsonNullable(JsonNullable<ConsolePortTemplateRequestModuleType> moduleType) {
-    this.moduleType = moduleType;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_MODULE_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setModuleType(@javax.annotation.Nullable ConsolePortTemplateRequestModuleType moduleType) {
-    this.moduleType = JsonNullable.<ConsolePortTemplateRequestModuleType>of(moduleType);
+    this.moduleType = moduleType;
   }
 
   public DcimPowerOutletTemplatesCreateRequest name(@javax.annotation.Nonnull String name) {
@@ -477,8 +457,8 @@ public class DcimPowerOutletTemplatesCreateRequest {
   }
 
   public DcimPowerOutletTemplatesCreateRequest type(@javax.annotation.Nullable TypeEnum type) {
-    this.type = JsonNullable.<TypeEnum>of(type);
     
+    this.type = type;
     return this;
   }
 
@@ -487,26 +467,18 @@ public class DcimPowerOutletTemplatesCreateRequest {
    * @return type
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public TypeEnum getType() {
-        return type.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<TypeEnum> getType_JsonNullable() {
+  public TypeEnum getType() {
     return type;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TYPE)
-  public void setType_JsonNullable(JsonNullable<TypeEnum> type) {
-    this.type = type;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setType(@javax.annotation.Nullable TypeEnum type) {
-    this.type = JsonNullable.<TypeEnum>of(type);
+    this.type = type;
   }
 
   public DcimPowerOutletTemplatesCreateRequest color(@javax.annotation.Nullable String color) {
@@ -535,8 +507,8 @@ public class DcimPowerOutletTemplatesCreateRequest {
   }
 
   public DcimPowerOutletTemplatesCreateRequest powerPort(@javax.annotation.Nullable PatchedWritablePowerOutletTemplateRequestPowerPort powerPort) {
-    this.powerPort = JsonNullable.<PatchedWritablePowerOutletTemplateRequestPowerPort>of(powerPort);
     
+    this.powerPort = powerPort;
     return this;
   }
 
@@ -545,31 +517,23 @@ public class DcimPowerOutletTemplatesCreateRequest {
    * @return powerPort
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public PatchedWritablePowerOutletTemplateRequestPowerPort getPowerPort() {
-        return powerPort.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_POWER_PORT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<PatchedWritablePowerOutletTemplateRequestPowerPort> getPowerPort_JsonNullable() {
+  public PatchedWritablePowerOutletTemplateRequestPowerPort getPowerPort() {
     return powerPort;
   }
-  
-  @JsonProperty(JSON_PROPERTY_POWER_PORT)
-  public void setPowerPort_JsonNullable(JsonNullable<PatchedWritablePowerOutletTemplateRequestPowerPort> powerPort) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_POWER_PORT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPowerPort(@javax.annotation.Nullable PatchedWritablePowerOutletTemplateRequestPowerPort powerPort) {
     this.powerPort = powerPort;
   }
 
-  public void setPowerPort(@javax.annotation.Nullable PatchedWritablePowerOutletTemplateRequestPowerPort powerPort) {
-    this.powerPort = JsonNullable.<PatchedWritablePowerOutletTemplateRequestPowerPort>of(powerPort);
-  }
-
   public DcimPowerOutletTemplatesCreateRequest feedLeg(@javax.annotation.Nullable FeedLegEnum feedLeg) {
-    this.feedLeg = JsonNullable.<FeedLegEnum>of(feedLeg);
     
+    this.feedLeg = feedLeg;
     return this;
   }
 
@@ -578,26 +542,18 @@ public class DcimPowerOutletTemplatesCreateRequest {
    * @return feedLeg
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public FeedLegEnum getFeedLeg() {
-        return feedLeg.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_FEED_LEG, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<FeedLegEnum> getFeedLeg_JsonNullable() {
+  public FeedLegEnum getFeedLeg() {
     return feedLeg;
   }
-  
-  @JsonProperty(JSON_PROPERTY_FEED_LEG)
-  public void setFeedLeg_JsonNullable(JsonNullable<FeedLegEnum> feedLeg) {
-    this.feedLeg = feedLeg;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_FEED_LEG, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFeedLeg(@javax.annotation.Nullable FeedLegEnum feedLeg) {
-    this.feedLeg = JsonNullable.<FeedLegEnum>of(feedLeg);
+    this.feedLeg = feedLeg;
   }
 
   public DcimPowerOutletTemplatesCreateRequest description(@javax.annotation.Nullable String description) {
@@ -635,31 +591,20 @@ public class DcimPowerOutletTemplatesCreateRequest {
       return false;
     }
     DcimPowerOutletTemplatesCreateRequest dcimPowerOutletTemplatesCreateRequest = (DcimPowerOutletTemplatesCreateRequest) o;
-    return equalsNullable(this.deviceType, dcimPowerOutletTemplatesCreateRequest.deviceType) &&
-        equalsNullable(this.moduleType, dcimPowerOutletTemplatesCreateRequest.moduleType) &&
+    return Objects.equals(this.deviceType, dcimPowerOutletTemplatesCreateRequest.deviceType) &&
+        Objects.equals(this.moduleType, dcimPowerOutletTemplatesCreateRequest.moduleType) &&
         Objects.equals(this.name, dcimPowerOutletTemplatesCreateRequest.name) &&
         Objects.equals(this.label, dcimPowerOutletTemplatesCreateRequest.label) &&
-        equalsNullable(this.type, dcimPowerOutletTemplatesCreateRequest.type) &&
+        Objects.equals(this.type, dcimPowerOutletTemplatesCreateRequest.type) &&
         Objects.equals(this.color, dcimPowerOutletTemplatesCreateRequest.color) &&
-        equalsNullable(this.powerPort, dcimPowerOutletTemplatesCreateRequest.powerPort) &&
-        equalsNullable(this.feedLeg, dcimPowerOutletTemplatesCreateRequest.feedLeg) &&
+        Objects.equals(this.powerPort, dcimPowerOutletTemplatesCreateRequest.powerPort) &&
+        Objects.equals(this.feedLeg, dcimPowerOutletTemplatesCreateRequest.feedLeg) &&
         Objects.equals(this.description, dcimPowerOutletTemplatesCreateRequest.description);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(deviceType), hashCodeNullable(moduleType), name, label, hashCodeNullable(type), color, hashCodeNullable(powerPort), hashCodeNullable(feedLeg), description);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(deviceType, moduleType, name, label, type, color, powerPort, feedLeg, description);
   }
 
   @Override

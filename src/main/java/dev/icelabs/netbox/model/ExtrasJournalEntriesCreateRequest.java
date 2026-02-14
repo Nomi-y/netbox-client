@@ -27,10 +27,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -47,7 +43,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ExtrasJournalEntriesCreateRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
 @JsonTypeName("extras_journal_entries_create_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class ExtrasJournalEntriesCreateRequest {
   public static final String JSON_PROPERTY_ASSIGNED_OBJECT_TYPE = "assigned_object_type";
   @javax.annotation.Nonnull
@@ -59,7 +55,7 @@ public class ExtrasJournalEntriesCreateRequest {
 
   public static final String JSON_PROPERTY_CREATED_BY = "created_by";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> createdBy = JsonNullable.<Integer>undefined();
+  private Integer createdBy;
 
   /**
    * * &#x60;info&#x60; - Info * &#x60;success&#x60; - Success * &#x60;warning&#x60; - Warning * &#x60;danger&#x60; - Danger
@@ -172,8 +168,8 @@ public class ExtrasJournalEntriesCreateRequest {
   }
 
   public ExtrasJournalEntriesCreateRequest createdBy(@javax.annotation.Nullable Integer createdBy) {
-    this.createdBy = JsonNullable.<Integer>of(createdBy);
     
+    this.createdBy = createdBy;
     return this;
   }
 
@@ -182,26 +178,18 @@ public class ExtrasJournalEntriesCreateRequest {
    * @return createdBy
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getCreatedBy() {
-        return createdBy.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_CREATED_BY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getCreatedBy_JsonNullable() {
+  public Integer getCreatedBy() {
     return createdBy;
   }
-  
-  @JsonProperty(JSON_PROPERTY_CREATED_BY)
-  public void setCreatedBy_JsonNullable(JsonNullable<Integer> createdBy) {
-    this.createdBy = createdBy;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_CREATED_BY, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreatedBy(@javax.annotation.Nullable Integer createdBy) {
-    this.createdBy = JsonNullable.<Integer>of(createdBy);
+    this.createdBy = createdBy;
   }
 
   public ExtrasJournalEntriesCreateRequest kind(@javax.annotation.Nullable KindEnum kind) {
@@ -332,27 +320,16 @@ public class ExtrasJournalEntriesCreateRequest {
     ExtrasJournalEntriesCreateRequest extrasJournalEntriesCreateRequest = (ExtrasJournalEntriesCreateRequest) o;
     return Objects.equals(this.assignedObjectType, extrasJournalEntriesCreateRequest.assignedObjectType) &&
         Objects.equals(this.assignedObjectId, extrasJournalEntriesCreateRequest.assignedObjectId) &&
-        equalsNullable(this.createdBy, extrasJournalEntriesCreateRequest.createdBy) &&
+        Objects.equals(this.createdBy, extrasJournalEntriesCreateRequest.createdBy) &&
         Objects.equals(this.kind, extrasJournalEntriesCreateRequest.kind) &&
         Objects.equals(this.comments, extrasJournalEntriesCreateRequest.comments) &&
         Objects.equals(this.tags, extrasJournalEntriesCreateRequest.tags) &&
         Objects.equals(this.customFields, extrasJournalEntriesCreateRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(assignedObjectType, assignedObjectId, hashCodeNullable(createdBy), kind, comments, tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(assignedObjectType, assignedObjectId, createdBy, kind, comments, tags, customFields);
   }
 
   @Override

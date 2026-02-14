@@ -20,10 +20,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -37,11 +33,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   BriefL2VPNRequest.JSON_PROPERTY_TYPE,
   BriefL2VPNRequest.JSON_PROPERTY_DESCRIPTION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class BriefL2VPNRequest {
   public static final String JSON_PROPERTY_IDENTIFIER = "identifier";
   @javax.annotation.Nullable
-  private JsonNullable<Long> identifier = JsonNullable.<Long>undefined();
+  private Long identifier;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -122,8 +118,8 @@ public class BriefL2VPNRequest {
   }
 
   public BriefL2VPNRequest identifier(@javax.annotation.Nullable Long identifier) {
-    this.identifier = JsonNullable.<Long>of(identifier);
     
+    this.identifier = identifier;
     return this;
   }
 
@@ -134,26 +130,18 @@ public class BriefL2VPNRequest {
    * @return identifier
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Long getIdentifier() {
-        return identifier.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_IDENTIFIER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Long> getIdentifier_JsonNullable() {
+  public Long getIdentifier() {
     return identifier;
   }
-  
-  @JsonProperty(JSON_PROPERTY_IDENTIFIER)
-  public void setIdentifier_JsonNullable(JsonNullable<Long> identifier) {
-    this.identifier = identifier;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_IDENTIFIER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIdentifier(@javax.annotation.Nullable Long identifier) {
-    this.identifier = JsonNullable.<Long>of(identifier);
+    this.identifier = identifier;
   }
 
   public BriefL2VPNRequest name(@javax.annotation.Nonnull String name) {
@@ -266,27 +254,16 @@ public class BriefL2VPNRequest {
       return false;
     }
     BriefL2VPNRequest briefL2VPNRequest = (BriefL2VPNRequest) o;
-    return equalsNullable(this.identifier, briefL2VPNRequest.identifier) &&
+    return Objects.equals(this.identifier, briefL2VPNRequest.identifier) &&
         Objects.equals(this.name, briefL2VPNRequest.name) &&
         Objects.equals(this.slug, briefL2VPNRequest.slug) &&
         Objects.equals(this.type, briefL2VPNRequest.type) &&
         Objects.equals(this.description, briefL2VPNRequest.description);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(identifier), name, slug, type, description);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(identifier, name, slug, type, description);
   }
 
   @Override

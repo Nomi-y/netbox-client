@@ -29,10 +29,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -55,11 +51,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   VpnL2vpnsCreateRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
 @JsonTypeName("vpn_l2vpns_create_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class VpnL2vpnsCreateRequest {
   public static final String JSON_PROPERTY_IDENTIFIER = "identifier";
   @javax.annotation.Nullable
-  private JsonNullable<Long> identifier = JsonNullable.<Long>undefined();
+  private Long identifier;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -187,7 +183,7 @@ public class VpnL2vpnsCreateRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -195,7 +191,7 @@ public class VpnL2vpnsCreateRequest {
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestTenant> tenant = JsonNullable.<ASNRangeRequestTenant>undefined();
+  private ASNRangeRequestTenant tenant;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -209,8 +205,8 @@ public class VpnL2vpnsCreateRequest {
   }
 
   public VpnL2vpnsCreateRequest identifier(@javax.annotation.Nullable Long identifier) {
-    this.identifier = JsonNullable.<Long>of(identifier);
     
+    this.identifier = identifier;
     return this;
   }
 
@@ -221,26 +217,18 @@ public class VpnL2vpnsCreateRequest {
    * @return identifier
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Long getIdentifier() {
-        return identifier.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_IDENTIFIER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Long> getIdentifier_JsonNullable() {
+  public Long getIdentifier() {
     return identifier;
   }
-  
-  @JsonProperty(JSON_PROPERTY_IDENTIFIER)
-  public void setIdentifier_JsonNullable(JsonNullable<Long> identifier) {
-    this.identifier = identifier;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_IDENTIFIER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIdentifier(@javax.annotation.Nullable Long identifier) {
-    this.identifier = JsonNullable.<Long>of(identifier);
+    this.identifier = identifier;
   }
 
   public VpnL2vpnsCreateRequest name(@javax.annotation.Nonnull String name) {
@@ -435,8 +423,8 @@ public class VpnL2vpnsCreateRequest {
   }
 
   public VpnL2vpnsCreateRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -445,26 +433,18 @@ public class VpnL2vpnsCreateRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public VpnL2vpnsCreateRequest comments(@javax.annotation.Nullable String comments) {
@@ -493,8 +473,8 @@ public class VpnL2vpnsCreateRequest {
   }
 
   public VpnL2vpnsCreateRequest tenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -503,26 +483,18 @@ public class VpnL2vpnsCreateRequest {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestTenant> getTenant_JsonNullable() {
+  public ASNRangeRequestTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<ASNRangeRequestTenant> tenant) {
-    this.tenant = tenant;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
+    this.tenant = tenant;
   }
 
   public VpnL2vpnsCreateRequest tags(@javax.annotation.Nullable List<NestedTagRequest> tags) {
@@ -601,7 +573,7 @@ public class VpnL2vpnsCreateRequest {
       return false;
     }
     VpnL2vpnsCreateRequest vpnL2vpnsCreateRequest = (VpnL2vpnsCreateRequest) o;
-    return equalsNullable(this.identifier, vpnL2vpnsCreateRequest.identifier) &&
+    return Objects.equals(this.identifier, vpnL2vpnsCreateRequest.identifier) &&
         Objects.equals(this.name, vpnL2vpnsCreateRequest.name) &&
         Objects.equals(this.slug, vpnL2vpnsCreateRequest.slug) &&
         Objects.equals(this.type, vpnL2vpnsCreateRequest.type) &&
@@ -609,27 +581,16 @@ public class VpnL2vpnsCreateRequest {
         Objects.equals(this.importTargets, vpnL2vpnsCreateRequest.importTargets) &&
         Objects.equals(this.exportTargets, vpnL2vpnsCreateRequest.exportTargets) &&
         Objects.equals(this.description, vpnL2vpnsCreateRequest.description) &&
-        equalsNullable(this.owner, vpnL2vpnsCreateRequest.owner) &&
+        Objects.equals(this.owner, vpnL2vpnsCreateRequest.owner) &&
         Objects.equals(this.comments, vpnL2vpnsCreateRequest.comments) &&
-        equalsNullable(this.tenant, vpnL2vpnsCreateRequest.tenant) &&
+        Objects.equals(this.tenant, vpnL2vpnsCreateRequest.tenant) &&
         Objects.equals(this.tags, vpnL2vpnsCreateRequest.tags) &&
         Objects.equals(this.customFields, vpnL2vpnsCreateRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(identifier), name, slug, type, status, importTargets, exportTargets, description, hashCodeNullable(owner), comments, hashCodeNullable(tenant), tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(identifier, name, slug, type, status, importTargets, exportTargets, description, owner, comments, tenant, tags, customFields);
   }
 
   @Override

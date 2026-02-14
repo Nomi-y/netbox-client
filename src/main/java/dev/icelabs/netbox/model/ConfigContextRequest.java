@@ -26,10 +26,6 @@ import dev.icelabs.netbox.model.ConfigContextRequestProfile;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -59,7 +55,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ConfigContextRequest.JSON_PROPERTY_DATA_SOURCE,
   ConfigContextRequest.JSON_PROPERTY_DATA
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class ConfigContextRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -71,7 +67,7 @@ public class ConfigContextRequest {
 
   public static final String JSON_PROPERTY_PROFILE = "profile";
   @javax.annotation.Nullable
-  private JsonNullable<ConfigContextRequestProfile> profile = JsonNullable.<ConfigContextRequestProfile>undefined();
+  private ConfigContextRequestProfile profile;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -131,7 +127,7 @@ public class ConfigContextRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -201,8 +197,8 @@ public class ConfigContextRequest {
   }
 
   public ConfigContextRequest profile(@javax.annotation.Nullable ConfigContextRequestProfile profile) {
-    this.profile = JsonNullable.<ConfigContextRequestProfile>of(profile);
     
+    this.profile = profile;
     return this;
   }
 
@@ -211,26 +207,18 @@ public class ConfigContextRequest {
    * @return profile
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ConfigContextRequestProfile getProfile() {
-        return profile.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PROFILE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ConfigContextRequestProfile> getProfile_JsonNullable() {
+  public ConfigContextRequestProfile getProfile() {
     return profile;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PROFILE)
-  public void setProfile_JsonNullable(JsonNullable<ConfigContextRequestProfile> profile) {
-    this.profile = profile;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PROFILE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProfile(@javax.annotation.Nullable ConfigContextRequestProfile profile) {
-    this.profile = JsonNullable.<ConfigContextRequestProfile>of(profile);
+    this.profile = profile;
   }
 
   public ConfigContextRequest description(@javax.annotation.Nullable String description) {
@@ -680,8 +668,8 @@ public class ConfigContextRequest {
   }
 
   public ConfigContextRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -690,26 +678,18 @@ public class ConfigContextRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public ConfigContextRequest tags(@javax.annotation.Nullable List<String> tags) {
@@ -807,7 +787,7 @@ public class ConfigContextRequest {
     ConfigContextRequest configContextRequest = (ConfigContextRequest) o;
     return Objects.equals(this.name, configContextRequest.name) &&
         Objects.equals(this.weight, configContextRequest.weight) &&
-        equalsNullable(this.profile, configContextRequest.profile) &&
+        Objects.equals(this.profile, configContextRequest.profile) &&
         Objects.equals(this.description, configContextRequest.description) &&
         Objects.equals(this.isActive, configContextRequest.isActive) &&
         Objects.equals(this.regions, configContextRequest.regions) &&
@@ -822,26 +802,15 @@ public class ConfigContextRequest {
         Objects.equals(this.clusters, configContextRequest.clusters) &&
         Objects.equals(this.tenantGroups, configContextRequest.tenantGroups) &&
         Objects.equals(this.tenants, configContextRequest.tenants) &&
-        equalsNullable(this.owner, configContextRequest.owner) &&
+        Objects.equals(this.owner, configContextRequest.owner) &&
         Objects.equals(this.tags, configContextRequest.tags) &&
         Objects.equals(this.dataSource, configContextRequest.dataSource) &&
         Objects.equals(this.data, configContextRequest.data);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(name, weight, hashCodeNullable(profile), description, isActive, regions, siteGroups, sites, locations, deviceTypes, roles, platforms, clusterTypes, clusterGroups, clusters, tenantGroups, tenants, hashCodeNullable(owner), tags, dataSource, data);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, weight, profile, description, isActive, regions, siteGroups, sites, locations, deviceTypes, roles, platforms, clusterTypes, clusterGroups, clusters, tenantGroups, tenants, owner, tags, dataSource, data);
   }
 
   @Override

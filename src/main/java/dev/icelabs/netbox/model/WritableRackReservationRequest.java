@@ -30,10 +30,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -52,7 +48,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   WritableRackReservationRequest.JSON_PROPERTY_TAGS,
   WritableRackReservationRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class WritableRackReservationRequest {
   public static final String JSON_PROPERTY_RACK = "rack";
   @javax.annotation.Nonnull
@@ -109,7 +105,7 @@ public class WritableRackReservationRequest {
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestTenant> tenant = JsonNullable.<ASNRangeRequestTenant>undefined();
+  private ASNRangeRequestTenant tenant;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nonnull
@@ -117,7 +113,7 @@ public class WritableRackReservationRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -243,8 +239,8 @@ public class WritableRackReservationRequest {
   }
 
   public WritableRackReservationRequest tenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -253,26 +249,18 @@ public class WritableRackReservationRequest {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestTenant> getTenant_JsonNullable() {
+  public ASNRangeRequestTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<ASNRangeRequestTenant> tenant) {
-    this.tenant = tenant;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
+    this.tenant = tenant;
   }
 
   public WritableRackReservationRequest description(@javax.annotation.Nonnull String description) {
@@ -301,8 +289,8 @@ public class WritableRackReservationRequest {
   }
 
   public WritableRackReservationRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -311,26 +299,18 @@ public class WritableRackReservationRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public WritableRackReservationRequest comments(@javax.annotation.Nullable String comments) {
@@ -438,28 +418,17 @@ public class WritableRackReservationRequest {
         Objects.equals(this.units, writableRackReservationRequest.units) &&
         Objects.equals(this.status, writableRackReservationRequest.status) &&
         Objects.equals(this.user, writableRackReservationRequest.user) &&
-        equalsNullable(this.tenant, writableRackReservationRequest.tenant) &&
+        Objects.equals(this.tenant, writableRackReservationRequest.tenant) &&
         Objects.equals(this.description, writableRackReservationRequest.description) &&
-        equalsNullable(this.owner, writableRackReservationRequest.owner) &&
+        Objects.equals(this.owner, writableRackReservationRequest.owner) &&
         Objects.equals(this.comments, writableRackReservationRequest.comments) &&
         Objects.equals(this.tags, writableRackReservationRequest.tags) &&
         Objects.equals(this.customFields, writableRackReservationRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(rack, units, status, user, hashCodeNullable(tenant), description, hashCodeNullable(owner), comments, tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(rack, units, status, user, tenant, description, owner, comments, tags, customFields);
   }
 
   @Override

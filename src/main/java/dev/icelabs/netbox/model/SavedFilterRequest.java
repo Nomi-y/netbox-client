@@ -24,10 +24,6 @@ import dev.icelabs.netbox.model.ASNRangeRequestOwner;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -46,7 +42,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   SavedFilterRequest.JSON_PROPERTY_PARAMETERS,
   SavedFilterRequest.JSON_PROPERTY_OWNER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class SavedFilterRequest {
   public static final String JSON_PROPERTY_OBJECT_TYPES = "object_types";
   @javax.annotation.Nonnull
@@ -66,7 +62,7 @@ public class SavedFilterRequest {
 
   public static final String JSON_PROPERTY_USER = "user";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> user = JsonNullable.<Integer>undefined();
+  private Integer user;
 
   public static final String JSON_PROPERTY_WEIGHT = "weight";
   @javax.annotation.Nullable
@@ -86,7 +82,7 @@ public class SavedFilterRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public SavedFilterRequest() {
   }
@@ -200,8 +196,8 @@ public class SavedFilterRequest {
   }
 
   public SavedFilterRequest user(@javax.annotation.Nullable Integer user) {
-    this.user = JsonNullable.<Integer>of(user);
     
+    this.user = user;
     return this;
   }
 
@@ -210,26 +206,18 @@ public class SavedFilterRequest {
    * @return user
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getUser() {
-        return user.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_USER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getUser_JsonNullable() {
+  public Integer getUser() {
     return user;
   }
-  
-  @JsonProperty(JSON_PROPERTY_USER)
-  public void setUser_JsonNullable(JsonNullable<Integer> user) {
-    this.user = user;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_USER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUser(@javax.annotation.Nullable Integer user) {
-    this.user = JsonNullable.<Integer>of(user);
+    this.user = user;
   }
 
   public SavedFilterRequest weight(@javax.annotation.Nullable Integer weight) {
@@ -335,8 +323,8 @@ public class SavedFilterRequest {
   }
 
   public SavedFilterRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -345,26 +333,18 @@ public class SavedFilterRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
 
@@ -381,28 +361,17 @@ public class SavedFilterRequest {
         Objects.equals(this.name, savedFilterRequest.name) &&
         Objects.equals(this.slug, savedFilterRequest.slug) &&
         Objects.equals(this.description, savedFilterRequest.description) &&
-        equalsNullable(this.user, savedFilterRequest.user) &&
+        Objects.equals(this.user, savedFilterRequest.user) &&
         Objects.equals(this.weight, savedFilterRequest.weight) &&
         Objects.equals(this.enabled, savedFilterRequest.enabled) &&
         Objects.equals(this.shared, savedFilterRequest.shared) &&
         Objects.equals(this.parameters, savedFilterRequest.parameters) &&
-        equalsNullable(this.owner, savedFilterRequest.owner);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+        Objects.equals(this.owner, savedFilterRequest.owner);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(objectTypes, name, slug, description, hashCodeNullable(user), weight, enabled, shared, parameters, hashCodeNullable(owner));
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(objectTypes, name, slug, description, user, weight, enabled, shared, parameters, owner);
   }
 
   @Override

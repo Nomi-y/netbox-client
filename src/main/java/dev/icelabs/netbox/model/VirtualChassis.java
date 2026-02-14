@@ -30,10 +30,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -58,7 +54,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   VirtualChassis.JSON_PROPERTY_MEMBER_COUNT,
   VirtualChassis.JSON_PROPERTY_MEMBERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class VirtualChassis {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -86,7 +82,7 @@ public class VirtualChassis {
 
   public static final String JSON_PROPERTY_MASTER = "master";
   @javax.annotation.Nullable
-  private JsonNullable<NestedDevice> master = JsonNullable.<NestedDevice>undefined();
+  private NestedDevice master;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -94,7 +90,7 @@ public class VirtualChassis {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -258,8 +254,8 @@ public class VirtualChassis {
   }
 
   public VirtualChassis master(@javax.annotation.Nullable NestedDevice master) {
-    this.master = JsonNullable.<NestedDevice>of(master);
     
+    this.master = master;
     return this;
   }
 
@@ -268,26 +264,18 @@ public class VirtualChassis {
    * @return master
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public NestedDevice getMaster() {
-        return master.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MASTER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<NestedDevice> getMaster_JsonNullable() {
+  public NestedDevice getMaster() {
     return master;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MASTER)
-  public void setMaster_JsonNullable(JsonNullable<NestedDevice> master) {
-    this.master = master;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_MASTER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMaster(@javax.annotation.Nullable NestedDevice master) {
-    this.master = JsonNullable.<NestedDevice>of(master);
+    this.master = master;
   }
 
   public VirtualChassis description(@javax.annotation.Nullable String description) {
@@ -316,8 +304,8 @@ public class VirtualChassis {
   }
 
   public VirtualChassis owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -326,26 +314,18 @@ public class VirtualChassis {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public VirtualChassis comments(@javax.annotation.Nullable String comments) {
@@ -511,9 +491,9 @@ public class VirtualChassis {
         Objects.equals(this.display, virtualChassis.display) &&
         Objects.equals(this.name, virtualChassis.name) &&
         Objects.equals(this.domain, virtualChassis.domain) &&
-        equalsNullable(this.master, virtualChassis.master) &&
+        Objects.equals(this.master, virtualChassis.master) &&
         Objects.equals(this.description, virtualChassis.description) &&
-        equalsNullable(this.owner, virtualChassis.owner) &&
+        Objects.equals(this.owner, virtualChassis.owner) &&
         Objects.equals(this.comments, virtualChassis.comments) &&
         Objects.equals(this.tags, virtualChassis.tags) &&
         Objects.equals(this.customFields, virtualChassis.customFields) &&
@@ -523,20 +503,9 @@ public class VirtualChassis {
         Objects.equals(this.members, virtualChassis.members);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, name, domain, hashCodeNullable(master), description, hashCodeNullable(owner), comments, tags, customFields, created, lastUpdated, memberCount, members);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, name, domain, master, description, owner, comments, tags, customFields, created, lastUpdated, memberCount, members);
   }
 
   @Override

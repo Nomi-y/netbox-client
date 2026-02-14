@@ -29,10 +29,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -55,7 +51,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   PatchedWritableIPAddressRequest.JSON_PROPERTY_TAGS,
   PatchedWritableIPAddressRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class PatchedWritableIPAddressRequest {
   public static final String JSON_PROPERTY_ADDRESS = "address";
   @javax.annotation.Nullable
@@ -63,11 +59,11 @@ public class PatchedWritableIPAddressRequest {
 
   public static final String JSON_PROPERTY_VRF = "vrf";
   @javax.annotation.Nullable
-  private JsonNullable<IPAddressRequestVrf> vrf = JsonNullable.<IPAddressRequestVrf>undefined();
+  private IPAddressRequestVrf vrf;
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestTenant> tenant = JsonNullable.<ASNRangeRequestTenant>undefined();
+  private ASNRangeRequestTenant tenant;
 
   /**
    * The operational status of this IP  * &#x60;active&#x60; - Active * &#x60;reserved&#x60; - Reserved * &#x60;deprecated&#x60; - Deprecated * &#x60;dhcp&#x60; - DHCP * &#x60;slaac&#x60; - SLAAC
@@ -165,19 +161,19 @@ public class PatchedWritableIPAddressRequest {
 
   public static final String JSON_PROPERTY_ROLE = "role";
   @javax.annotation.Nullable
-  private JsonNullable<RoleEnum> role = JsonNullable.<RoleEnum>undefined();
+  private RoleEnum role;
 
   public static final String JSON_PROPERTY_ASSIGNED_OBJECT_TYPE = "assigned_object_type";
   @javax.annotation.Nullable
-  private JsonNullable<String> assignedObjectType = JsonNullable.<String>undefined();
+  private String assignedObjectType;
 
   public static final String JSON_PROPERTY_ASSIGNED_OBJECT_ID = "assigned_object_id";
   @javax.annotation.Nullable
-  private JsonNullable<Long> assignedObjectId = JsonNullable.<Long>undefined();
+  private Long assignedObjectId;
 
   public static final String JSON_PROPERTY_NAT_INSIDE = "nat_inside";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> natInside = JsonNullable.<Integer>undefined();
+  private Integer natInside;
 
   public static final String JSON_PROPERTY_DNS_NAME = "dns_name";
   @javax.annotation.Nullable
@@ -189,7 +185,7 @@ public class PatchedWritableIPAddressRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -232,8 +228,8 @@ public class PatchedWritableIPAddressRequest {
   }
 
   public PatchedWritableIPAddressRequest vrf(@javax.annotation.Nullable IPAddressRequestVrf vrf) {
-    this.vrf = JsonNullable.<IPAddressRequestVrf>of(vrf);
     
+    this.vrf = vrf;
     return this;
   }
 
@@ -242,31 +238,23 @@ public class PatchedWritableIPAddressRequest {
    * @return vrf
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public IPAddressRequestVrf getVrf() {
-        return vrf.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VRF, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<IPAddressRequestVrf> getVrf_JsonNullable() {
+  public IPAddressRequestVrf getVrf() {
     return vrf;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VRF)
-  public void setVrf_JsonNullable(JsonNullable<IPAddressRequestVrf> vrf) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_VRF, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setVrf(@javax.annotation.Nullable IPAddressRequestVrf vrf) {
     this.vrf = vrf;
   }
 
-  public void setVrf(@javax.annotation.Nullable IPAddressRequestVrf vrf) {
-    this.vrf = JsonNullable.<IPAddressRequestVrf>of(vrf);
-  }
-
   public PatchedWritableIPAddressRequest tenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -275,26 +263,18 @@ public class PatchedWritableIPAddressRequest {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestTenant> getTenant_JsonNullable() {
+  public ASNRangeRequestTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<ASNRangeRequestTenant> tenant) {
-    this.tenant = tenant;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
+    this.tenant = tenant;
   }
 
   public PatchedWritableIPAddressRequest status(@javax.annotation.Nullable StatusEnum status) {
@@ -323,8 +303,8 @@ public class PatchedWritableIPAddressRequest {
   }
 
   public PatchedWritableIPAddressRequest role(@javax.annotation.Nullable RoleEnum role) {
-    this.role = JsonNullable.<RoleEnum>of(role);
     
+    this.role = role;
     return this;
   }
 
@@ -333,31 +313,23 @@ public class PatchedWritableIPAddressRequest {
    * @return role
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public RoleEnum getRole() {
-        return role.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<RoleEnum> getRole_JsonNullable() {
+  public RoleEnum getRole() {
     return role;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ROLE)
-  public void setRole_JsonNullable(JsonNullable<RoleEnum> role) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRole(@javax.annotation.Nullable RoleEnum role) {
     this.role = role;
   }
 
-  public void setRole(@javax.annotation.Nullable RoleEnum role) {
-    this.role = JsonNullable.<RoleEnum>of(role);
-  }
-
   public PatchedWritableIPAddressRequest assignedObjectType(@javax.annotation.Nullable String assignedObjectType) {
-    this.assignedObjectType = JsonNullable.<String>of(assignedObjectType);
     
+    this.assignedObjectType = assignedObjectType;
     return this;
   }
 
@@ -366,31 +338,23 @@ public class PatchedWritableIPAddressRequest {
    * @return assignedObjectType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getAssignedObjectType() {
-        return assignedObjectType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ASSIGNED_OBJECT_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getAssignedObjectType_JsonNullable() {
+  public String getAssignedObjectType() {
     return assignedObjectType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ASSIGNED_OBJECT_TYPE)
-  public void setAssignedObjectType_JsonNullable(JsonNullable<String> assignedObjectType) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_ASSIGNED_OBJECT_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAssignedObjectType(@javax.annotation.Nullable String assignedObjectType) {
     this.assignedObjectType = assignedObjectType;
   }
 
-  public void setAssignedObjectType(@javax.annotation.Nullable String assignedObjectType) {
-    this.assignedObjectType = JsonNullable.<String>of(assignedObjectType);
-  }
-
   public PatchedWritableIPAddressRequest assignedObjectId(@javax.annotation.Nullable Long assignedObjectId) {
-    this.assignedObjectId = JsonNullable.<Long>of(assignedObjectId);
     
+    this.assignedObjectId = assignedObjectId;
     return this;
   }
 
@@ -401,31 +365,23 @@ public class PatchedWritableIPAddressRequest {
    * @return assignedObjectId
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Long getAssignedObjectId() {
-        return assignedObjectId.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ASSIGNED_OBJECT_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Long> getAssignedObjectId_JsonNullable() {
+  public Long getAssignedObjectId() {
     return assignedObjectId;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ASSIGNED_OBJECT_ID)
-  public void setAssignedObjectId_JsonNullable(JsonNullable<Long> assignedObjectId) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_ASSIGNED_OBJECT_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAssignedObjectId(@javax.annotation.Nullable Long assignedObjectId) {
     this.assignedObjectId = assignedObjectId;
   }
 
-  public void setAssignedObjectId(@javax.annotation.Nullable Long assignedObjectId) {
-    this.assignedObjectId = JsonNullable.<Long>of(assignedObjectId);
-  }
-
   public PatchedWritableIPAddressRequest natInside(@javax.annotation.Nullable Integer natInside) {
-    this.natInside = JsonNullable.<Integer>of(natInside);
     
+    this.natInside = natInside;
     return this;
   }
 
@@ -434,26 +390,18 @@ public class PatchedWritableIPAddressRequest {
    * @return natInside
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getNatInside() {
-        return natInside.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_NAT_INSIDE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getNatInside_JsonNullable() {
+  public Integer getNatInside() {
     return natInside;
   }
-  
-  @JsonProperty(JSON_PROPERTY_NAT_INSIDE)
-  public void setNatInside_JsonNullable(JsonNullable<Integer> natInside) {
-    this.natInside = natInside;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_NAT_INSIDE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNatInside(@javax.annotation.Nullable Integer natInside) {
-    this.natInside = JsonNullable.<Integer>of(natInside);
+    this.natInside = natInside;
   }
 
   public PatchedWritableIPAddressRequest dnsName(@javax.annotation.Nullable String dnsName) {
@@ -507,8 +455,8 @@ public class PatchedWritableIPAddressRequest {
   }
 
   public PatchedWritableIPAddressRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -517,26 +465,18 @@ public class PatchedWritableIPAddressRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public PatchedWritableIPAddressRequest comments(@javax.annotation.Nullable String comments) {
@@ -641,35 +581,24 @@ public class PatchedWritableIPAddressRequest {
     }
     PatchedWritableIPAddressRequest patchedWritableIPAddressRequest = (PatchedWritableIPAddressRequest) o;
     return Objects.equals(this.address, patchedWritableIPAddressRequest.address) &&
-        equalsNullable(this.vrf, patchedWritableIPAddressRequest.vrf) &&
-        equalsNullable(this.tenant, patchedWritableIPAddressRequest.tenant) &&
+        Objects.equals(this.vrf, patchedWritableIPAddressRequest.vrf) &&
+        Objects.equals(this.tenant, patchedWritableIPAddressRequest.tenant) &&
         Objects.equals(this.status, patchedWritableIPAddressRequest.status) &&
-        equalsNullable(this.role, patchedWritableIPAddressRequest.role) &&
-        equalsNullable(this.assignedObjectType, patchedWritableIPAddressRequest.assignedObjectType) &&
-        equalsNullable(this.assignedObjectId, patchedWritableIPAddressRequest.assignedObjectId) &&
-        equalsNullable(this.natInside, patchedWritableIPAddressRequest.natInside) &&
+        Objects.equals(this.role, patchedWritableIPAddressRequest.role) &&
+        Objects.equals(this.assignedObjectType, patchedWritableIPAddressRequest.assignedObjectType) &&
+        Objects.equals(this.assignedObjectId, patchedWritableIPAddressRequest.assignedObjectId) &&
+        Objects.equals(this.natInside, patchedWritableIPAddressRequest.natInside) &&
         Objects.equals(this.dnsName, patchedWritableIPAddressRequest.dnsName) &&
         Objects.equals(this.description, patchedWritableIPAddressRequest.description) &&
-        equalsNullable(this.owner, patchedWritableIPAddressRequest.owner) &&
+        Objects.equals(this.owner, patchedWritableIPAddressRequest.owner) &&
         Objects.equals(this.comments, patchedWritableIPAddressRequest.comments) &&
         Objects.equals(this.tags, patchedWritableIPAddressRequest.tags) &&
         Objects.equals(this.customFields, patchedWritableIPAddressRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(address, hashCodeNullable(vrf), hashCodeNullable(tenant), status, hashCodeNullable(role), hashCodeNullable(assignedObjectType), hashCodeNullable(assignedObjectId), hashCodeNullable(natInside), dnsName, description, hashCodeNullable(owner), comments, tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(address, vrf, tenant, status, role, assignedObjectType, assignedObjectId, natInside, dnsName, description, owner, comments, tags, customFields);
   }
 
   @Override

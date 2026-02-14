@@ -25,10 +25,6 @@ import dev.icelabs.netbox.model.WritableCustomFieldChoiceSetRequest;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -44,7 +40,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ExtrasCustomFieldChoiceSetsCreateRequest.JSON_PROPERTY_OWNER
 })
 @JsonTypeName("extras_custom_field_choice_sets_create_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class ExtrasCustomFieldChoiceSetsCreateRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -95,7 +91,7 @@ public class ExtrasCustomFieldChoiceSetsCreateRequest {
 
   public static final String JSON_PROPERTY_BASE_CHOICES = "base_choices";
   @javax.annotation.Nullable
-  private JsonNullable<BaseChoicesEnum> baseChoices = JsonNullable.<BaseChoicesEnum>undefined();
+  private BaseChoicesEnum baseChoices;
 
   public static final String JSON_PROPERTY_EXTRA_CHOICES = "extra_choices";
   @javax.annotation.Nonnull
@@ -107,7 +103,7 @@ public class ExtrasCustomFieldChoiceSetsCreateRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public ExtrasCustomFieldChoiceSetsCreateRequest() {
   }
@@ -163,8 +159,8 @@ public class ExtrasCustomFieldChoiceSetsCreateRequest {
   }
 
   public ExtrasCustomFieldChoiceSetsCreateRequest baseChoices(@javax.annotation.Nullable BaseChoicesEnum baseChoices) {
-    this.baseChoices = JsonNullable.<BaseChoicesEnum>of(baseChoices);
     
+    this.baseChoices = baseChoices;
     return this;
   }
 
@@ -173,26 +169,18 @@ public class ExtrasCustomFieldChoiceSetsCreateRequest {
    * @return baseChoices
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BaseChoicesEnum getBaseChoices() {
-        return baseChoices.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_BASE_CHOICES, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BaseChoicesEnum> getBaseChoices_JsonNullable() {
+  public BaseChoicesEnum getBaseChoices() {
     return baseChoices;
   }
-  
-  @JsonProperty(JSON_PROPERTY_BASE_CHOICES)
-  public void setBaseChoices_JsonNullable(JsonNullable<BaseChoicesEnum> baseChoices) {
-    this.baseChoices = baseChoices;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_BASE_CHOICES, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBaseChoices(@javax.annotation.Nullable BaseChoicesEnum baseChoices) {
-    this.baseChoices = JsonNullable.<BaseChoicesEnum>of(baseChoices);
+    this.baseChoices = baseChoices;
   }
 
   public ExtrasCustomFieldChoiceSetsCreateRequest extraChoices(@javax.annotation.Nonnull List<List<Object>> extraChoices) {
@@ -254,8 +242,8 @@ public class ExtrasCustomFieldChoiceSetsCreateRequest {
   }
 
   public ExtrasCustomFieldChoiceSetsCreateRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -264,26 +252,18 @@ public class ExtrasCustomFieldChoiceSetsCreateRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
 
@@ -298,26 +278,15 @@ public class ExtrasCustomFieldChoiceSetsCreateRequest {
     ExtrasCustomFieldChoiceSetsCreateRequest extrasCustomFieldChoiceSetsCreateRequest = (ExtrasCustomFieldChoiceSetsCreateRequest) o;
     return Objects.equals(this.name, extrasCustomFieldChoiceSetsCreateRequest.name) &&
         Objects.equals(this.description, extrasCustomFieldChoiceSetsCreateRequest.description) &&
-        equalsNullable(this.baseChoices, extrasCustomFieldChoiceSetsCreateRequest.baseChoices) &&
+        Objects.equals(this.baseChoices, extrasCustomFieldChoiceSetsCreateRequest.baseChoices) &&
         Objects.equals(this.extraChoices, extrasCustomFieldChoiceSetsCreateRequest.extraChoices) &&
         Objects.equals(this.orderAlphabetically, extrasCustomFieldChoiceSetsCreateRequest.orderAlphabetically) &&
-        equalsNullable(this.owner, extrasCustomFieldChoiceSetsCreateRequest.owner);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+        Objects.equals(this.owner, extrasCustomFieldChoiceSetsCreateRequest.owner);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, hashCodeNullable(baseChoices), extraChoices, orderAlphabetically, hashCodeNullable(owner));
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, description, baseChoices, extraChoices, orderAlphabetically, owner);
   }
 
   @Override

@@ -20,10 +20,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -35,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ModuleTypeAirflow.JSON_PROPERTY_LABEL
 })
 @JsonTypeName("ModuleType_airflow")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class ModuleTypeAirflow {
   /**
    * * &#x60;front-to-rear&#x60; - Front to rear * &#x60;rear-to-front&#x60; - Rear to front * &#x60;left-to-right&#x60; - Left to right * &#x60;right-to-left&#x60; - Right to left * &#x60;side-to-rear&#x60; - Side to rear * &#x60;passive&#x60; - Passive
@@ -84,7 +80,7 @@ public class ModuleTypeAirflow {
 
   public static final String JSON_PROPERTY_VALUE = "value";
   @javax.annotation.Nullable
-  private JsonNullable<ValueEnum> value = JsonNullable.<ValueEnum>undefined();
+  private ValueEnum value;
 
   /**
    * Gets or Sets label
@@ -137,8 +133,8 @@ public class ModuleTypeAirflow {
   }
 
   public ModuleTypeAirflow value(@javax.annotation.Nullable ValueEnum value) {
-    this.value = JsonNullable.<ValueEnum>of(value);
     
+    this.value = value;
     return this;
   }
 
@@ -147,26 +143,18 @@ public class ModuleTypeAirflow {
    * @return value
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ValueEnum getValue() {
-        return value.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VALUE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ValueEnum> getValue_JsonNullable() {
+  public ValueEnum getValue() {
     return value;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VALUE)
-  public void setValue_JsonNullable(JsonNullable<ValueEnum> value) {
-    this.value = value;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_VALUE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setValue(@javax.annotation.Nullable ValueEnum value) {
-    this.value = JsonNullable.<ValueEnum>of(value);
+    this.value = value;
   }
 
   public ModuleTypeAirflow label(@javax.annotation.Nullable LabelEnum label) {
@@ -204,24 +192,13 @@ public class ModuleTypeAirflow {
       return false;
     }
     ModuleTypeAirflow moduleTypeAirflow = (ModuleTypeAirflow) o;
-    return equalsNullable(this.value, moduleTypeAirflow.value) &&
+    return Objects.equals(this.value, moduleTypeAirflow.value) &&
         Objects.equals(this.label, moduleTypeAirflow.label);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(value), label);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(value, label);
   }
 
   @Override

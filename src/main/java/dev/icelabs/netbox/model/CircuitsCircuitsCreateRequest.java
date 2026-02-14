@@ -34,10 +34,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -64,7 +60,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   CircuitsCircuitsCreateRequest.JSON_PROPERTY_ASSIGNMENTS
 })
 @JsonTypeName("circuits_circuits_create_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class CircuitsCircuitsCreateRequest {
   public static final String JSON_PROPERTY_CID = "cid";
   @javax.annotation.Nonnull
@@ -76,7 +72,7 @@ public class CircuitsCircuitsCreateRequest {
 
   public static final String JSON_PROPERTY_PROVIDER_ACCOUNT = "provider_account";
   @javax.annotation.Nullable
-  private JsonNullable<CircuitRequestProviderAccount> providerAccount = JsonNullable.<CircuitRequestProviderAccount>undefined();
+  private CircuitRequestProviderAccount providerAccount;
 
   public static final String JSON_PROPERTY_TYPE = "type";
   @javax.annotation.Nonnull
@@ -131,19 +127,19 @@ public class CircuitsCircuitsCreateRequest {
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestTenant> tenant = JsonNullable.<ASNRangeRequestTenant>undefined();
+  private ASNRangeRequestTenant tenant;
 
   public static final String JSON_PROPERTY_INSTALL_DATE = "install_date";
   @javax.annotation.Nullable
-  private JsonNullable<LocalDate> installDate = JsonNullable.<LocalDate>undefined();
+  private LocalDate installDate;
 
   public static final String JSON_PROPERTY_TERMINATION_DATE = "termination_date";
   @javax.annotation.Nullable
-  private JsonNullable<LocalDate> terminationDate = JsonNullable.<LocalDate>undefined();
+  private LocalDate terminationDate;
 
   public static final String JSON_PROPERTY_COMMIT_RATE = "commit_rate";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> commitRate = JsonNullable.<Integer>undefined();
+  private Integer commitRate;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -151,7 +147,7 @@ public class CircuitsCircuitsCreateRequest {
 
   public static final String JSON_PROPERTY_DISTANCE = "distance";
   @javax.annotation.Nullable
-  private JsonNullable<Double> distance = JsonNullable.<Double>undefined();
+  private Double distance;
 
   /**
    * * &#x60;km&#x60; - Kilometers * &#x60;m&#x60; - Meters * &#x60;mi&#x60; - Miles * &#x60;ft&#x60; - Feet
@@ -196,11 +192,11 @@ public class CircuitsCircuitsCreateRequest {
 
   public static final String JSON_PROPERTY_DISTANCE_UNIT = "distance_unit";
   @javax.annotation.Nullable
-  private JsonNullable<DistanceUnitEnum> distanceUnit = JsonNullable.<DistanceUnitEnum>undefined();
+  private DistanceUnitEnum distanceUnit;
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -272,8 +268,8 @@ public class CircuitsCircuitsCreateRequest {
   }
 
   public CircuitsCircuitsCreateRequest providerAccount(@javax.annotation.Nullable CircuitRequestProviderAccount providerAccount) {
-    this.providerAccount = JsonNullable.<CircuitRequestProviderAccount>of(providerAccount);
     
+    this.providerAccount = providerAccount;
     return this;
   }
 
@@ -282,26 +278,18 @@ public class CircuitsCircuitsCreateRequest {
    * @return providerAccount
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public CircuitRequestProviderAccount getProviderAccount() {
-        return providerAccount.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PROVIDER_ACCOUNT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<CircuitRequestProviderAccount> getProviderAccount_JsonNullable() {
+  public CircuitRequestProviderAccount getProviderAccount() {
     return providerAccount;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PROVIDER_ACCOUNT)
-  public void setProviderAccount_JsonNullable(JsonNullable<CircuitRequestProviderAccount> providerAccount) {
-    this.providerAccount = providerAccount;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PROVIDER_ACCOUNT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProviderAccount(@javax.annotation.Nullable CircuitRequestProviderAccount providerAccount) {
-    this.providerAccount = JsonNullable.<CircuitRequestProviderAccount>of(providerAccount);
+    this.providerAccount = providerAccount;
   }
 
   public CircuitsCircuitsCreateRequest type(@javax.annotation.Nonnull CircuitRequestType type) {
@@ -355,8 +343,8 @@ public class CircuitsCircuitsCreateRequest {
   }
 
   public CircuitsCircuitsCreateRequest tenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -365,31 +353,23 @@ public class CircuitsCircuitsCreateRequest {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestTenant> getTenant_JsonNullable() {
+  public ASNRangeRequestTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<ASNRangeRequestTenant> tenant) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
     this.tenant = tenant;
   }
 
-  public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
-  }
-
   public CircuitsCircuitsCreateRequest installDate(@javax.annotation.Nullable LocalDate installDate) {
-    this.installDate = JsonNullable.<LocalDate>of(installDate);
     
+    this.installDate = installDate;
     return this;
   }
 
@@ -398,31 +378,23 @@ public class CircuitsCircuitsCreateRequest {
    * @return installDate
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public LocalDate getInstallDate() {
-        return installDate.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_INSTALL_DATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<LocalDate> getInstallDate_JsonNullable() {
+  public LocalDate getInstallDate() {
     return installDate;
   }
-  
-  @JsonProperty(JSON_PROPERTY_INSTALL_DATE)
-  public void setInstallDate_JsonNullable(JsonNullable<LocalDate> installDate) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_INSTALL_DATE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setInstallDate(@javax.annotation.Nullable LocalDate installDate) {
     this.installDate = installDate;
   }
 
-  public void setInstallDate(@javax.annotation.Nullable LocalDate installDate) {
-    this.installDate = JsonNullable.<LocalDate>of(installDate);
-  }
-
   public CircuitsCircuitsCreateRequest terminationDate(@javax.annotation.Nullable LocalDate terminationDate) {
-    this.terminationDate = JsonNullable.<LocalDate>of(terminationDate);
     
+    this.terminationDate = terminationDate;
     return this;
   }
 
@@ -431,31 +403,23 @@ public class CircuitsCircuitsCreateRequest {
    * @return terminationDate
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public LocalDate getTerminationDate() {
-        return terminationDate.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TERMINATION_DATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<LocalDate> getTerminationDate_JsonNullable() {
+  public LocalDate getTerminationDate() {
     return terminationDate;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TERMINATION_DATE)
-  public void setTerminationDate_JsonNullable(JsonNullable<LocalDate> terminationDate) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TERMINATION_DATE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTerminationDate(@javax.annotation.Nullable LocalDate terminationDate) {
     this.terminationDate = terminationDate;
   }
 
-  public void setTerminationDate(@javax.annotation.Nullable LocalDate terminationDate) {
-    this.terminationDate = JsonNullable.<LocalDate>of(terminationDate);
-  }
-
   public CircuitsCircuitsCreateRequest commitRate(@javax.annotation.Nullable Integer commitRate) {
-    this.commitRate = JsonNullable.<Integer>of(commitRate);
     
+    this.commitRate = commitRate;
     return this;
   }
 
@@ -466,26 +430,18 @@ public class CircuitsCircuitsCreateRequest {
    * @return commitRate
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getCommitRate() {
-        return commitRate.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_COMMIT_RATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getCommitRate_JsonNullable() {
+  public Integer getCommitRate() {
     return commitRate;
   }
-  
-  @JsonProperty(JSON_PROPERTY_COMMIT_RATE)
-  public void setCommitRate_JsonNullable(JsonNullable<Integer> commitRate) {
-    this.commitRate = commitRate;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_COMMIT_RATE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCommitRate(@javax.annotation.Nullable Integer commitRate) {
-    this.commitRate = JsonNullable.<Integer>of(commitRate);
+    this.commitRate = commitRate;
   }
 
   public CircuitsCircuitsCreateRequest description(@javax.annotation.Nullable String description) {
@@ -514,8 +470,8 @@ public class CircuitsCircuitsCreateRequest {
   }
 
   public CircuitsCircuitsCreateRequest distance(@javax.annotation.Nullable Double distance) {
-    this.distance = JsonNullable.<Double>of(distance);
     
+    this.distance = distance;
     return this;
   }
 
@@ -526,31 +482,23 @@ public class CircuitsCircuitsCreateRequest {
    * @return distance
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getDistance() {
-        return distance.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_DISTANCE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getDistance_JsonNullable() {
+  public Double getDistance() {
     return distance;
   }
-  
-  @JsonProperty(JSON_PROPERTY_DISTANCE)
-  public void setDistance_JsonNullable(JsonNullable<Double> distance) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_DISTANCE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDistance(@javax.annotation.Nullable Double distance) {
     this.distance = distance;
   }
 
-  public void setDistance(@javax.annotation.Nullable Double distance) {
-    this.distance = JsonNullable.<Double>of(distance);
-  }
-
   public CircuitsCircuitsCreateRequest distanceUnit(@javax.annotation.Nullable DistanceUnitEnum distanceUnit) {
-    this.distanceUnit = JsonNullable.<DistanceUnitEnum>of(distanceUnit);
     
+    this.distanceUnit = distanceUnit;
     return this;
   }
 
@@ -559,31 +507,23 @@ public class CircuitsCircuitsCreateRequest {
    * @return distanceUnit
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DistanceUnitEnum getDistanceUnit() {
-        return distanceUnit.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_DISTANCE_UNIT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DistanceUnitEnum> getDistanceUnit_JsonNullable() {
+  public DistanceUnitEnum getDistanceUnit() {
     return distanceUnit;
   }
-  
-  @JsonProperty(JSON_PROPERTY_DISTANCE_UNIT)
-  public void setDistanceUnit_JsonNullable(JsonNullable<DistanceUnitEnum> distanceUnit) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_DISTANCE_UNIT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDistanceUnit(@javax.annotation.Nullable DistanceUnitEnum distanceUnit) {
     this.distanceUnit = distanceUnit;
   }
 
-  public void setDistanceUnit(@javax.annotation.Nullable DistanceUnitEnum distanceUnit) {
-    this.distanceUnit = JsonNullable.<DistanceUnitEnum>of(distanceUnit);
-  }
-
   public CircuitsCircuitsCreateRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -592,26 +532,18 @@ public class CircuitsCircuitsCreateRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public CircuitsCircuitsCreateRequest comments(@javax.annotation.Nullable String comments) {
@@ -750,37 +682,26 @@ public class CircuitsCircuitsCreateRequest {
     CircuitsCircuitsCreateRequest circuitsCircuitsCreateRequest = (CircuitsCircuitsCreateRequest) o;
     return Objects.equals(this.cid, circuitsCircuitsCreateRequest.cid) &&
         Objects.equals(this.provider, circuitsCircuitsCreateRequest.provider) &&
-        equalsNullable(this.providerAccount, circuitsCircuitsCreateRequest.providerAccount) &&
+        Objects.equals(this.providerAccount, circuitsCircuitsCreateRequest.providerAccount) &&
         Objects.equals(this.type, circuitsCircuitsCreateRequest.type) &&
         Objects.equals(this.status, circuitsCircuitsCreateRequest.status) &&
-        equalsNullable(this.tenant, circuitsCircuitsCreateRequest.tenant) &&
-        equalsNullable(this.installDate, circuitsCircuitsCreateRequest.installDate) &&
-        equalsNullable(this.terminationDate, circuitsCircuitsCreateRequest.terminationDate) &&
-        equalsNullable(this.commitRate, circuitsCircuitsCreateRequest.commitRate) &&
+        Objects.equals(this.tenant, circuitsCircuitsCreateRequest.tenant) &&
+        Objects.equals(this.installDate, circuitsCircuitsCreateRequest.installDate) &&
+        Objects.equals(this.terminationDate, circuitsCircuitsCreateRequest.terminationDate) &&
+        Objects.equals(this.commitRate, circuitsCircuitsCreateRequest.commitRate) &&
         Objects.equals(this.description, circuitsCircuitsCreateRequest.description) &&
-        equalsNullable(this.distance, circuitsCircuitsCreateRequest.distance) &&
-        equalsNullable(this.distanceUnit, circuitsCircuitsCreateRequest.distanceUnit) &&
-        equalsNullable(this.owner, circuitsCircuitsCreateRequest.owner) &&
+        Objects.equals(this.distance, circuitsCircuitsCreateRequest.distance) &&
+        Objects.equals(this.distanceUnit, circuitsCircuitsCreateRequest.distanceUnit) &&
+        Objects.equals(this.owner, circuitsCircuitsCreateRequest.owner) &&
         Objects.equals(this.comments, circuitsCircuitsCreateRequest.comments) &&
         Objects.equals(this.tags, circuitsCircuitsCreateRequest.tags) &&
         Objects.equals(this.customFields, circuitsCircuitsCreateRequest.customFields) &&
         Objects.equals(this.assignments, circuitsCircuitsCreateRequest.assignments);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(cid, provider, hashCodeNullable(providerAccount), type, status, hashCodeNullable(tenant), hashCodeNullable(installDate), hashCodeNullable(terminationDate), hashCodeNullable(commitRate), description, hashCodeNullable(distance), hashCodeNullable(distanceUnit), hashCodeNullable(owner), comments, tags, customFields, assignments);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(cid, provider, providerAccount, type, status, tenant, installDate, terminationDate, commitRate, description, distance, distanceUnit, owner, comments, tags, customFields, assignments);
   }
 
   @Override

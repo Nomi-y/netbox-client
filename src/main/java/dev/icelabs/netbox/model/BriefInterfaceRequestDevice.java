@@ -21,10 +21,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import dev.icelabs.netbox.model.BriefDeviceRequest;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -36,11 +32,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   BriefInterfaceRequestDevice.JSON_PROPERTY_DESCRIPTION
 })
 @JsonTypeName("BriefInterfaceRequest_device")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class BriefInterfaceRequestDevice {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable
-  private JsonNullable<String> name = JsonNullable.<String>undefined();
+  private String name;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -50,8 +46,8 @@ public class BriefInterfaceRequestDevice {
   }
 
   public BriefInterfaceRequestDevice name(@javax.annotation.Nullable String name) {
-    this.name = JsonNullable.<String>of(name);
     
+    this.name = name;
     return this;
   }
 
@@ -60,26 +56,18 @@ public class BriefInterfaceRequestDevice {
    * @return name
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getName() {
-        return name.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getName_JsonNullable() {
+  public String getName() {
     return name;
   }
-  
-  @JsonProperty(JSON_PROPERTY_NAME)
-  public void setName_JsonNullable(JsonNullable<String> name) {
-    this.name = name;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
-    this.name = JsonNullable.<String>of(name);
+    this.name = name;
   }
 
   public BriefInterfaceRequestDevice description(@javax.annotation.Nullable String description) {
@@ -117,24 +105,13 @@ public class BriefInterfaceRequestDevice {
       return false;
     }
     BriefInterfaceRequestDevice briefInterfaceRequestDevice = (BriefInterfaceRequestDevice) o;
-    return equalsNullable(this.name, briefInterfaceRequestDevice.name) &&
+    return Objects.equals(this.name, briefInterfaceRequestDevice.name) &&
         Objects.equals(this.description, briefInterfaceRequestDevice.description);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(name), description);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, description);
   }
 
   @Override

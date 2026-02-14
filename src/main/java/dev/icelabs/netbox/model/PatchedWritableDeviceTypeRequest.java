@@ -30,10 +30,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -61,7 +57,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   PatchedWritableDeviceTypeRequest.JSON_PROPERTY_TAGS,
   PatchedWritableDeviceTypeRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class PatchedWritableDeviceTypeRequest {
   public static final String JSON_PROPERTY_MANUFACTURER = "manufacturer";
   @javax.annotation.Nullable
@@ -69,7 +65,7 @@ public class PatchedWritableDeviceTypeRequest {
 
   public static final String JSON_PROPERTY_DEFAULT_PLATFORM = "default_platform";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceTypeRequestDefaultPlatform> defaultPlatform = JsonNullable.<DeviceTypeRequestDefaultPlatform>undefined();
+  private DeviceTypeRequestDefaultPlatform defaultPlatform;
 
   public static final String JSON_PROPERTY_MODEL = "model";
   @javax.annotation.Nullable
@@ -134,7 +130,7 @@ public class PatchedWritableDeviceTypeRequest {
 
   public static final String JSON_PROPERTY_SUBDEVICE_ROLE = "subdevice_role";
   @javax.annotation.Nullable
-  private JsonNullable<SubdeviceRoleEnum> subdeviceRole = JsonNullable.<SubdeviceRoleEnum>undefined();
+  private SubdeviceRoleEnum subdeviceRole;
 
   /**
    * * &#x60;front-to-rear&#x60; - Front to rear * &#x60;rear-to-front&#x60; - Rear to front * &#x60;left-to-right&#x60; - Left to right * &#x60;right-to-left&#x60; - Right to left * &#x60;side-to-rear&#x60; - Side to rear * &#x60;rear-to-side&#x60; - Rear to side * &#x60;bottom-to-top&#x60; - Bottom to top * &#x60;top-to-bottom&#x60; - Top to bottom * &#x60;passive&#x60; - Passive * &#x60;mixed&#x60; - Mixed
@@ -191,11 +187,11 @@ public class PatchedWritableDeviceTypeRequest {
 
   public static final String JSON_PROPERTY_AIRFLOW = "airflow";
   @javax.annotation.Nullable
-  private JsonNullable<AirflowEnum> airflow = JsonNullable.<AirflowEnum>undefined();
+  private AirflowEnum airflow;
 
   public static final String JSON_PROPERTY_WEIGHT = "weight";
   @javax.annotation.Nullable
-  private JsonNullable<Double> weight = JsonNullable.<Double>undefined();
+  private Double weight;
 
   /**
    * * &#x60;kg&#x60; - Kilograms * &#x60;g&#x60; - Grams * &#x60;lb&#x60; - Pounds * &#x60;oz&#x60; - Ounces
@@ -240,15 +236,15 @@ public class PatchedWritableDeviceTypeRequest {
 
   public static final String JSON_PROPERTY_WEIGHT_UNIT = "weight_unit";
   @javax.annotation.Nullable
-  private JsonNullable<WeightUnitEnum> weightUnit = JsonNullable.<WeightUnitEnum>undefined();
+  private WeightUnitEnum weightUnit;
 
   public static final String JSON_PROPERTY_FRONT_IMAGE = "front_image";
   @javax.annotation.Nullable
-  private JsonNullable<File> frontImage = JsonNullable.<File>undefined();
+  private File frontImage;
 
   public static final String JSON_PROPERTY_REAR_IMAGE = "rear_image";
   @javax.annotation.Nullable
-  private JsonNullable<File> rearImage = JsonNullable.<File>undefined();
+  private File rearImage;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -256,7 +252,7 @@ public class PatchedWritableDeviceTypeRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -299,8 +295,8 @@ public class PatchedWritableDeviceTypeRequest {
   }
 
   public PatchedWritableDeviceTypeRequest defaultPlatform(@javax.annotation.Nullable DeviceTypeRequestDefaultPlatform defaultPlatform) {
-    this.defaultPlatform = JsonNullable.<DeviceTypeRequestDefaultPlatform>of(defaultPlatform);
     
+    this.defaultPlatform = defaultPlatform;
     return this;
   }
 
@@ -309,26 +305,18 @@ public class PatchedWritableDeviceTypeRequest {
    * @return defaultPlatform
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceTypeRequestDefaultPlatform getDefaultPlatform() {
-        return defaultPlatform.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_DEFAULT_PLATFORM, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceTypeRequestDefaultPlatform> getDefaultPlatform_JsonNullable() {
+  public DeviceTypeRequestDefaultPlatform getDefaultPlatform() {
     return defaultPlatform;
   }
-  
-  @JsonProperty(JSON_PROPERTY_DEFAULT_PLATFORM)
-  public void setDefaultPlatform_JsonNullable(JsonNullable<DeviceTypeRequestDefaultPlatform> defaultPlatform) {
-    this.defaultPlatform = defaultPlatform;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_DEFAULT_PLATFORM, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDefaultPlatform(@javax.annotation.Nullable DeviceTypeRequestDefaultPlatform defaultPlatform) {
-    this.defaultPlatform = JsonNullable.<DeviceTypeRequestDefaultPlatform>of(defaultPlatform);
+    this.defaultPlatform = defaultPlatform;
   }
 
   public PatchedWritableDeviceTypeRequest model(@javax.annotation.Nullable String model) {
@@ -484,8 +472,8 @@ public class PatchedWritableDeviceTypeRequest {
   }
 
   public PatchedWritableDeviceTypeRequest subdeviceRole(@javax.annotation.Nullable SubdeviceRoleEnum subdeviceRole) {
-    this.subdeviceRole = JsonNullable.<SubdeviceRoleEnum>of(subdeviceRole);
     
+    this.subdeviceRole = subdeviceRole;
     return this;
   }
 
@@ -494,31 +482,23 @@ public class PatchedWritableDeviceTypeRequest {
    * @return subdeviceRole
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public SubdeviceRoleEnum getSubdeviceRole() {
-        return subdeviceRole.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SUBDEVICE_ROLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<SubdeviceRoleEnum> getSubdeviceRole_JsonNullable() {
+  public SubdeviceRoleEnum getSubdeviceRole() {
     return subdeviceRole;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SUBDEVICE_ROLE)
-  public void setSubdeviceRole_JsonNullable(JsonNullable<SubdeviceRoleEnum> subdeviceRole) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_SUBDEVICE_ROLE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSubdeviceRole(@javax.annotation.Nullable SubdeviceRoleEnum subdeviceRole) {
     this.subdeviceRole = subdeviceRole;
   }
 
-  public void setSubdeviceRole(@javax.annotation.Nullable SubdeviceRoleEnum subdeviceRole) {
-    this.subdeviceRole = JsonNullable.<SubdeviceRoleEnum>of(subdeviceRole);
-  }
-
   public PatchedWritableDeviceTypeRequest airflow(@javax.annotation.Nullable AirflowEnum airflow) {
-    this.airflow = JsonNullable.<AirflowEnum>of(airflow);
     
+    this.airflow = airflow;
     return this;
   }
 
@@ -527,31 +507,23 @@ public class PatchedWritableDeviceTypeRequest {
    * @return airflow
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public AirflowEnum getAirflow() {
-        return airflow.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_AIRFLOW, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<AirflowEnum> getAirflow_JsonNullable() {
+  public AirflowEnum getAirflow() {
     return airflow;
   }
-  
-  @JsonProperty(JSON_PROPERTY_AIRFLOW)
-  public void setAirflow_JsonNullable(JsonNullable<AirflowEnum> airflow) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_AIRFLOW, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAirflow(@javax.annotation.Nullable AirflowEnum airflow) {
     this.airflow = airflow;
   }
 
-  public void setAirflow(@javax.annotation.Nullable AirflowEnum airflow) {
-    this.airflow = JsonNullable.<AirflowEnum>of(airflow);
-  }
-
   public PatchedWritableDeviceTypeRequest weight(@javax.annotation.Nullable Double weight) {
-    this.weight = JsonNullable.<Double>of(weight);
     
+    this.weight = weight;
     return this;
   }
 
@@ -562,31 +534,23 @@ public class PatchedWritableDeviceTypeRequest {
    * @return weight
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getWeight() {
-        return weight.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_WEIGHT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getWeight_JsonNullable() {
+  public Double getWeight() {
     return weight;
   }
-  
-  @JsonProperty(JSON_PROPERTY_WEIGHT)
-  public void setWeight_JsonNullable(JsonNullable<Double> weight) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_WEIGHT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setWeight(@javax.annotation.Nullable Double weight) {
     this.weight = weight;
   }
 
-  public void setWeight(@javax.annotation.Nullable Double weight) {
-    this.weight = JsonNullable.<Double>of(weight);
-  }
-
   public PatchedWritableDeviceTypeRequest weightUnit(@javax.annotation.Nullable WeightUnitEnum weightUnit) {
-    this.weightUnit = JsonNullable.<WeightUnitEnum>of(weightUnit);
     
+    this.weightUnit = weightUnit;
     return this;
   }
 
@@ -595,31 +559,23 @@ public class PatchedWritableDeviceTypeRequest {
    * @return weightUnit
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public WeightUnitEnum getWeightUnit() {
-        return weightUnit.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_WEIGHT_UNIT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<WeightUnitEnum> getWeightUnit_JsonNullable() {
+  public WeightUnitEnum getWeightUnit() {
     return weightUnit;
   }
-  
-  @JsonProperty(JSON_PROPERTY_WEIGHT_UNIT)
-  public void setWeightUnit_JsonNullable(JsonNullable<WeightUnitEnum> weightUnit) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_WEIGHT_UNIT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setWeightUnit(@javax.annotation.Nullable WeightUnitEnum weightUnit) {
     this.weightUnit = weightUnit;
   }
 
-  public void setWeightUnit(@javax.annotation.Nullable WeightUnitEnum weightUnit) {
-    this.weightUnit = JsonNullable.<WeightUnitEnum>of(weightUnit);
-  }
-
   public PatchedWritableDeviceTypeRequest frontImage(@javax.annotation.Nullable File frontImage) {
-    this.frontImage = JsonNullable.<File>of(frontImage);
     
+    this.frontImage = frontImage;
     return this;
   }
 
@@ -628,31 +584,23 @@ public class PatchedWritableDeviceTypeRequest {
    * @return frontImage
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public File getFrontImage() {
-        return frontImage.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_FRONT_IMAGE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<File> getFrontImage_JsonNullable() {
+  public File getFrontImage() {
     return frontImage;
   }
-  
-  @JsonProperty(JSON_PROPERTY_FRONT_IMAGE)
-  public void setFrontImage_JsonNullable(JsonNullable<File> frontImage) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_FRONT_IMAGE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setFrontImage(@javax.annotation.Nullable File frontImage) {
     this.frontImage = frontImage;
   }
 
-  public void setFrontImage(@javax.annotation.Nullable File frontImage) {
-    this.frontImage = JsonNullable.<File>of(frontImage);
-  }
-
   public PatchedWritableDeviceTypeRequest rearImage(@javax.annotation.Nullable File rearImage) {
-    this.rearImage = JsonNullable.<File>of(rearImage);
     
+    this.rearImage = rearImage;
     return this;
   }
 
@@ -661,26 +609,18 @@ public class PatchedWritableDeviceTypeRequest {
    * @return rearImage
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public File getRearImage() {
-        return rearImage.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_REAR_IMAGE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<File> getRearImage_JsonNullable() {
+  public File getRearImage() {
     return rearImage;
   }
-  
-  @JsonProperty(JSON_PROPERTY_REAR_IMAGE)
-  public void setRearImage_JsonNullable(JsonNullable<File> rearImage) {
-    this.rearImage = rearImage;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_REAR_IMAGE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRearImage(@javax.annotation.Nullable File rearImage) {
-    this.rearImage = JsonNullable.<File>of(rearImage);
+    this.rearImage = rearImage;
   }
 
   public PatchedWritableDeviceTypeRequest description(@javax.annotation.Nullable String description) {
@@ -709,8 +649,8 @@ public class PatchedWritableDeviceTypeRequest {
   }
 
   public PatchedWritableDeviceTypeRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -719,26 +659,18 @@ public class PatchedWritableDeviceTypeRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public PatchedWritableDeviceTypeRequest comments(@javax.annotation.Nullable String comments) {
@@ -843,40 +775,29 @@ public class PatchedWritableDeviceTypeRequest {
     }
     PatchedWritableDeviceTypeRequest patchedWritableDeviceTypeRequest = (PatchedWritableDeviceTypeRequest) o;
     return Objects.equals(this.manufacturer, patchedWritableDeviceTypeRequest.manufacturer) &&
-        equalsNullable(this.defaultPlatform, patchedWritableDeviceTypeRequest.defaultPlatform) &&
+        Objects.equals(this.defaultPlatform, patchedWritableDeviceTypeRequest.defaultPlatform) &&
         Objects.equals(this.model, patchedWritableDeviceTypeRequest.model) &&
         Objects.equals(this.slug, patchedWritableDeviceTypeRequest.slug) &&
         Objects.equals(this.partNumber, patchedWritableDeviceTypeRequest.partNumber) &&
         Objects.equals(this.uHeight, patchedWritableDeviceTypeRequest.uHeight) &&
         Objects.equals(this.excludeFromUtilization, patchedWritableDeviceTypeRequest.excludeFromUtilization) &&
         Objects.equals(this.isFullDepth, patchedWritableDeviceTypeRequest.isFullDepth) &&
-        equalsNullable(this.subdeviceRole, patchedWritableDeviceTypeRequest.subdeviceRole) &&
-        equalsNullable(this.airflow, patchedWritableDeviceTypeRequest.airflow) &&
-        equalsNullable(this.weight, patchedWritableDeviceTypeRequest.weight) &&
-        equalsNullable(this.weightUnit, patchedWritableDeviceTypeRequest.weightUnit) &&
-        equalsNullable(this.frontImage, patchedWritableDeviceTypeRequest.frontImage) &&
-        equalsNullable(this.rearImage, patchedWritableDeviceTypeRequest.rearImage) &&
+        Objects.equals(this.subdeviceRole, patchedWritableDeviceTypeRequest.subdeviceRole) &&
+        Objects.equals(this.airflow, patchedWritableDeviceTypeRequest.airflow) &&
+        Objects.equals(this.weight, patchedWritableDeviceTypeRequest.weight) &&
+        Objects.equals(this.weightUnit, patchedWritableDeviceTypeRequest.weightUnit) &&
+        Objects.equals(this.frontImage, patchedWritableDeviceTypeRequest.frontImage) &&
+        Objects.equals(this.rearImage, patchedWritableDeviceTypeRequest.rearImage) &&
         Objects.equals(this.description, patchedWritableDeviceTypeRequest.description) &&
-        equalsNullable(this.owner, patchedWritableDeviceTypeRequest.owner) &&
+        Objects.equals(this.owner, patchedWritableDeviceTypeRequest.owner) &&
         Objects.equals(this.comments, patchedWritableDeviceTypeRequest.comments) &&
         Objects.equals(this.tags, patchedWritableDeviceTypeRequest.tags) &&
         Objects.equals(this.customFields, patchedWritableDeviceTypeRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(manufacturer, hashCodeNullable(defaultPlatform), model, slug, partNumber, uHeight, excludeFromUtilization, isFullDepth, hashCodeNullable(subdeviceRole), hashCodeNullable(airflow), hashCodeNullable(weight), hashCodeNullable(weightUnit), hashCodeNullable(frontImage), hashCodeNullable(rearImage), description, hashCodeNullable(owner), comments, tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(manufacturer, defaultPlatform, model, slug, partNumber, uHeight, excludeFromUtilization, isFullDepth, subdeviceRole, airflow, weight, weightUnit, frontImage, rearImage, description, owner, comments, tags, customFields);
   }
 
   @Override

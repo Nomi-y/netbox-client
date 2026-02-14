@@ -30,10 +30,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -56,7 +52,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   DeviceBay.JSON_PROPERTY_CREATED,
   DeviceBay.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class DeviceBay {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -92,11 +88,11 @@ public class DeviceBay {
 
   public static final String JSON_PROPERTY_INSTALLED_DEVICE = "installed_device";
   @javax.annotation.Nullable
-  private JsonNullable<BriefDevice> installedDevice = JsonNullable.<BriefDevice>undefined();
+  private BriefDevice installedDevice;
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -294,8 +290,8 @@ public class DeviceBay {
   }
 
   public DeviceBay installedDevice(@javax.annotation.Nullable BriefDevice installedDevice) {
-    this.installedDevice = JsonNullable.<BriefDevice>of(installedDevice);
     
+    this.installedDevice = installedDevice;
     return this;
   }
 
@@ -304,31 +300,23 @@ public class DeviceBay {
    * @return installedDevice
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefDevice getInstalledDevice() {
-        return installedDevice.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_INSTALLED_DEVICE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefDevice> getInstalledDevice_JsonNullable() {
+  public BriefDevice getInstalledDevice() {
     return installedDevice;
   }
-  
-  @JsonProperty(JSON_PROPERTY_INSTALLED_DEVICE)
-  public void setInstalledDevice_JsonNullable(JsonNullable<BriefDevice> installedDevice) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_INSTALLED_DEVICE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setInstalledDevice(@javax.annotation.Nullable BriefDevice installedDevice) {
     this.installedDevice = installedDevice;
   }
 
-  public void setInstalledDevice(@javax.annotation.Nullable BriefDevice installedDevice) {
-    this.installedDevice = JsonNullable.<BriefDevice>of(installedDevice);
-  }
-
   public DeviceBay owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -337,26 +325,18 @@ public class DeviceBay {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public DeviceBay tags(@javax.annotation.Nullable List<NestedTag> tags) {
@@ -471,28 +451,17 @@ public class DeviceBay {
         Objects.equals(this.name, deviceBay.name) &&
         Objects.equals(this.label, deviceBay.label) &&
         Objects.equals(this.description, deviceBay.description) &&
-        equalsNullable(this.installedDevice, deviceBay.installedDevice) &&
-        equalsNullable(this.owner, deviceBay.owner) &&
+        Objects.equals(this.installedDevice, deviceBay.installedDevice) &&
+        Objects.equals(this.owner, deviceBay.owner) &&
         Objects.equals(this.tags, deviceBay.tags) &&
         Objects.equals(this.customFields, deviceBay.customFields) &&
         Objects.equals(this.created, deviceBay.created) &&
         Objects.equals(this.lastUpdated, deviceBay.lastUpdated);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, device, name, label, description, hashCodeNullable(installedDevice), hashCodeNullable(owner), tags, customFields, created, lastUpdated);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, device, name, label, description, installedDevice, owner, tags, customFields, created, lastUpdated);
   }
 
   @Override

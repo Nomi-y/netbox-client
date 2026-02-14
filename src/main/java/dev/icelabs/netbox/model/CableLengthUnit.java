@@ -20,10 +20,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -35,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   CableLengthUnit.JSON_PROPERTY_LABEL
 })
 @JsonTypeName("Cable_length_unit")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class CableLengthUnit {
   /**
    * * &#x60;km&#x60; - Kilometers * &#x60;m&#x60; - Meters * &#x60;cm&#x60; - Centimeters * &#x60;mi&#x60; - Miles * &#x60;ft&#x60; - Feet * &#x60;in&#x60; - Inches
@@ -84,7 +80,7 @@ public class CableLengthUnit {
 
   public static final String JSON_PROPERTY_VALUE = "value";
   @javax.annotation.Nullable
-  private JsonNullable<ValueEnum> value = JsonNullable.<ValueEnum>undefined();
+  private ValueEnum value;
 
   /**
    * Gets or Sets label
@@ -137,8 +133,8 @@ public class CableLengthUnit {
   }
 
   public CableLengthUnit value(@javax.annotation.Nullable ValueEnum value) {
-    this.value = JsonNullable.<ValueEnum>of(value);
     
+    this.value = value;
     return this;
   }
 
@@ -147,26 +143,18 @@ public class CableLengthUnit {
    * @return value
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ValueEnum getValue() {
-        return value.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VALUE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ValueEnum> getValue_JsonNullable() {
+  public ValueEnum getValue() {
     return value;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VALUE)
-  public void setValue_JsonNullable(JsonNullable<ValueEnum> value) {
-    this.value = value;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_VALUE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setValue(@javax.annotation.Nullable ValueEnum value) {
-    this.value = JsonNullable.<ValueEnum>of(value);
+    this.value = value;
   }
 
   public CableLengthUnit label(@javax.annotation.Nullable LabelEnum label) {
@@ -204,24 +192,13 @@ public class CableLengthUnit {
       return false;
     }
     CableLengthUnit cableLengthUnit = (CableLengthUnit) o;
-    return equalsNullable(this.value, cableLengthUnit.value) &&
+    return Objects.equals(this.value, cableLengthUnit.value) &&
         Objects.equals(this.label, cableLengthUnit.label);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(value), label);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(value, label);
   }
 
   @Override

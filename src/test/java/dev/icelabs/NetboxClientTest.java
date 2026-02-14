@@ -34,22 +34,21 @@ class NetboxClientTest {
     }
 
     @Test
-    void device_id_1_should_have_name_camera_1() {
+    void device_id_1_should_have_specific_name() {
         var camera1 = client.dcim().devices().get(1);
-        System.out.println(camera1);
-        assertEquals("camera 1", camera1.name().orElseThrow());
+        assertEquals("dmi01-akron-rtr01", camera1.getName());
     }
 
     @Test
-    void manufacturer_id_1_should_be_sony() {
+    void manufacturer_id_1_should_be_Arista() {
         var manufacturer = client.dcim().manufacturers().get(1);
-        assertEquals("sony", manufacturer.name());
+        assertEquals("Arista", manufacturer.getName());
     }
 
     @Test
-    void device_role_id_2_should_have_parent_role_named_kamera() {
+    void device_role_id_2_name_should_be_core_switch() {
         var role = client.dcim().device_roles().get(2);
-        assertEquals("kamera", role.parent().orElseThrow().name());
+        assertEquals("Core Switch", role.getName());
     }
 
 }

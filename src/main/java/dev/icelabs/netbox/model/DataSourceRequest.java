@@ -23,10 +23,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import dev.icelabs.netbox.model.ASNRangeRequestOwner;
 import java.util.HashMap;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -46,7 +42,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   DataSourceRequest.JSON_PROPERTY_COMMENTS,
   DataSourceRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class DataSourceRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -150,11 +146,11 @@ public class DataSourceRequest {
 
   public static final String JSON_PROPERTY_SYNC_INTERVAL = "sync_interval";
   @javax.annotation.Nullable
-  private JsonNullable<SyncIntervalEnum> syncInterval = JsonNullable.<SyncIntervalEnum>undefined();
+  private SyncIntervalEnum syncInterval;
 
   public static final String JSON_PROPERTY_PARAMETERS = "parameters";
   @javax.annotation.Nullable
-  private JsonNullable<Object> parameters = JsonNullable.<Object>of(null);
+  private Object parameters = null;
 
   public static final String JSON_PROPERTY_IGNORE_RULES = "ignore_rules";
   @javax.annotation.Nullable
@@ -162,7 +158,7 @@ public class DataSourceRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -301,8 +297,8 @@ public class DataSourceRequest {
   }
 
   public DataSourceRequest syncInterval(@javax.annotation.Nullable SyncIntervalEnum syncInterval) {
-    this.syncInterval = JsonNullable.<SyncIntervalEnum>of(syncInterval);
     
+    this.syncInterval = syncInterval;
     return this;
   }
 
@@ -313,31 +309,23 @@ public class DataSourceRequest {
    * @return syncInterval
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public SyncIntervalEnum getSyncInterval() {
-        return syncInterval.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SYNC_INTERVAL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<SyncIntervalEnum> getSyncInterval_JsonNullable() {
+  public SyncIntervalEnum getSyncInterval() {
     return syncInterval;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SYNC_INTERVAL)
-  public void setSyncInterval_JsonNullable(JsonNullable<SyncIntervalEnum> syncInterval) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_SYNC_INTERVAL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSyncInterval(@javax.annotation.Nullable SyncIntervalEnum syncInterval) {
     this.syncInterval = syncInterval;
   }
 
-  public void setSyncInterval(@javax.annotation.Nullable SyncIntervalEnum syncInterval) {
-    this.syncInterval = JsonNullable.<SyncIntervalEnum>of(syncInterval);
-  }
-
   public DataSourceRequest parameters(@javax.annotation.Nullable Object parameters) {
-    this.parameters = JsonNullable.<Object>of(parameters);
     
+    this.parameters = parameters;
     return this;
   }
 
@@ -346,26 +334,18 @@ public class DataSourceRequest {
    * @return parameters
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Object getParameters() {
-        return parameters.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PARAMETERS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Object> getParameters_JsonNullable() {
+  public Object getParameters() {
     return parameters;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PARAMETERS)
-  public void setParameters_JsonNullable(JsonNullable<Object> parameters) {
-    this.parameters = parameters;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PARAMETERS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setParameters(@javax.annotation.Nullable Object parameters) {
-    this.parameters = JsonNullable.<Object>of(parameters);
+    this.parameters = parameters;
   }
 
   public DataSourceRequest ignoreRules(@javax.annotation.Nullable String ignoreRules) {
@@ -394,8 +374,8 @@ public class DataSourceRequest {
   }
 
   public DataSourceRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -404,26 +384,18 @@ public class DataSourceRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public DataSourceRequest comments(@javax.annotation.Nullable String comments) {
@@ -499,28 +471,17 @@ public class DataSourceRequest {
         Objects.equals(this.sourceUrl, dataSourceRequest.sourceUrl) &&
         Objects.equals(this.enabled, dataSourceRequest.enabled) &&
         Objects.equals(this.description, dataSourceRequest.description) &&
-        equalsNullable(this.syncInterval, dataSourceRequest.syncInterval) &&
-        equalsNullable(this.parameters, dataSourceRequest.parameters) &&
+        Objects.equals(this.syncInterval, dataSourceRequest.syncInterval) &&
+        Objects.equals(this.parameters, dataSourceRequest.parameters) &&
         Objects.equals(this.ignoreRules, dataSourceRequest.ignoreRules) &&
-        equalsNullable(this.owner, dataSourceRequest.owner) &&
+        Objects.equals(this.owner, dataSourceRequest.owner) &&
         Objects.equals(this.comments, dataSourceRequest.comments) &&
         Objects.equals(this.customFields, dataSourceRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(name, type, sourceUrl, enabled, description, hashCodeNullable(syncInterval), hashCodeNullable(parameters), ignoreRules, hashCodeNullable(owner), comments, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, type, sourceUrl, enabled, description, syncInterval, parameters, ignoreRules, owner, comments, customFields);
   }
 
   @Override

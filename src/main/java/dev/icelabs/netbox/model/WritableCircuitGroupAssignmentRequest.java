@@ -25,10 +25,6 @@ import dev.icelabs.netbox.model.NestedTagRequest;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -42,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   WritableCircuitGroupAssignmentRequest.JSON_PROPERTY_PRIORITY,
   WritableCircuitGroupAssignmentRequest.JSON_PROPERTY_TAGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class WritableCircuitGroupAssignmentRequest {
   public static final String JSON_PROPERTY_GROUP = "group";
   @javax.annotation.Nonnull
@@ -99,7 +95,7 @@ public class WritableCircuitGroupAssignmentRequest {
 
   public static final String JSON_PROPERTY_PRIORITY = "priority";
   @javax.annotation.Nullable
-  private JsonNullable<PriorityEnum> priority = JsonNullable.<PriorityEnum>undefined();
+  private PriorityEnum priority;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -186,8 +182,8 @@ public class WritableCircuitGroupAssignmentRequest {
   }
 
   public WritableCircuitGroupAssignmentRequest priority(@javax.annotation.Nullable PriorityEnum priority) {
-    this.priority = JsonNullable.<PriorityEnum>of(priority);
     
+    this.priority = priority;
     return this;
   }
 
@@ -196,26 +192,18 @@ public class WritableCircuitGroupAssignmentRequest {
    * @return priority
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public PriorityEnum getPriority() {
-        return priority.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PRIORITY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<PriorityEnum> getPriority_JsonNullable() {
+  public PriorityEnum getPriority() {
     return priority;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PRIORITY)
-  public void setPriority_JsonNullable(JsonNullable<PriorityEnum> priority) {
-    this.priority = priority;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PRIORITY, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPriority(@javax.annotation.Nullable PriorityEnum priority) {
-    this.priority = JsonNullable.<PriorityEnum>of(priority);
+    this.priority = priority;
   }
 
   public WritableCircuitGroupAssignmentRequest tags(@javax.annotation.Nullable List<NestedTagRequest> tags) {
@@ -264,24 +252,13 @@ public class WritableCircuitGroupAssignmentRequest {
     return Objects.equals(this.group, writableCircuitGroupAssignmentRequest.group) &&
         Objects.equals(this.memberType, writableCircuitGroupAssignmentRequest.memberType) &&
         Objects.equals(this.memberId, writableCircuitGroupAssignmentRequest.memberId) &&
-        equalsNullable(this.priority, writableCircuitGroupAssignmentRequest.priority) &&
+        Objects.equals(this.priority, writableCircuitGroupAssignmentRequest.priority) &&
         Objects.equals(this.tags, writableCircuitGroupAssignmentRequest.tags);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(group, memberType, memberId, hashCodeNullable(priority), tags);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(group, memberType, memberId, priority, tags);
   }
 
   @Override

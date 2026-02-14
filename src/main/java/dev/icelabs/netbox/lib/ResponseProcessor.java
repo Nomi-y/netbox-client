@@ -27,9 +27,4 @@ public class ResponseProcessor {
         return spec.toBodilessEntity();
     }
 
-    public <T> PagedResponse<T> asPaged(Class<T> type) {
-        var response = spec.toEntity(String.class);
-        return ResponseUtils.parseResponseList(response.getBody(), type);
-    }
-
 }

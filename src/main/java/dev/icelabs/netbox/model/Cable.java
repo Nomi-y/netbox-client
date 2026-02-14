@@ -34,10 +34,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -67,7 +63,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   Cable.JSON_PROPERTY_CREATED,
   Cable.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class Cable {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -186,7 +182,7 @@ public class Cable {
 
   public static final String JSON_PROPERTY_TYPE = "type";
   @javax.annotation.Nullable
-  private JsonNullable<TypeEnum> type = JsonNullable.<TypeEnum>undefined();
+  private TypeEnum type;
 
   public static final String JSON_PROPERTY_A_TERMINATIONS = "a_terminations";
   @javax.annotation.Nullable
@@ -206,7 +202,7 @@ public class Cable {
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<BriefTenant> tenant = JsonNullable.<BriefTenant>undefined();
+  private BriefTenant tenant;
 
   public static final String JSON_PROPERTY_LABEL = "label";
   @javax.annotation.Nullable
@@ -218,11 +214,11 @@ public class Cable {
 
   public static final String JSON_PROPERTY_LENGTH = "length";
   @javax.annotation.Nullable
-  private JsonNullable<Double> length = JsonNullable.<Double>undefined();
+  private Double length;
 
   public static final String JSON_PROPERTY_LENGTH_UNIT = "length_unit";
   @javax.annotation.Nullable
-  private JsonNullable<CableLengthUnit> lengthUnit = JsonNullable.<CableLengthUnit>undefined();
+  private CableLengthUnit lengthUnit;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -230,7 +226,7 @@ public class Cable {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -332,8 +328,8 @@ public class Cable {
 
 
   public Cable type(@javax.annotation.Nullable TypeEnum type) {
-    this.type = JsonNullable.<TypeEnum>of(type);
     
+    this.type = type;
     return this;
   }
 
@@ -342,26 +338,18 @@ public class Cable {
    * @return type
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public TypeEnum getType() {
-        return type.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<TypeEnum> getType_JsonNullable() {
+  public TypeEnum getType() {
     return type;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TYPE)
-  public void setType_JsonNullable(JsonNullable<TypeEnum> type) {
-    this.type = type;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setType(@javax.annotation.Nullable TypeEnum type) {
-    this.type = JsonNullable.<TypeEnum>of(type);
+    this.type = type;
   }
 
   public Cable aTerminations(@javax.annotation.Nullable List<GenericObject> aTerminations) {
@@ -481,8 +469,8 @@ public class Cable {
   }
 
   public Cable tenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -491,26 +479,18 @@ public class Cable {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefTenant> getTenant_JsonNullable() {
+  public BriefTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<BriefTenant> tenant) {
-    this.tenant = tenant;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
+    this.tenant = tenant;
   }
 
   public Cable label(@javax.annotation.Nullable String label) {
@@ -564,8 +544,8 @@ public class Cable {
   }
 
   public Cable length(@javax.annotation.Nullable Double length) {
-    this.length = JsonNullable.<Double>of(length);
     
+    this.length = length;
     return this;
   }
 
@@ -576,31 +556,23 @@ public class Cable {
    * @return length
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getLength() {
-        return length.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_LENGTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getLength_JsonNullable() {
+  public Double getLength() {
     return length;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LENGTH)
-  public void setLength_JsonNullable(JsonNullable<Double> length) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_LENGTH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setLength(@javax.annotation.Nullable Double length) {
     this.length = length;
   }
 
-  public void setLength(@javax.annotation.Nullable Double length) {
-    this.length = JsonNullable.<Double>of(length);
-  }
-
   public Cable lengthUnit(@javax.annotation.Nullable CableLengthUnit lengthUnit) {
-    this.lengthUnit = JsonNullable.<CableLengthUnit>of(lengthUnit);
     
+    this.lengthUnit = lengthUnit;
     return this;
   }
 
@@ -609,26 +581,18 @@ public class Cable {
    * @return lengthUnit
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public CableLengthUnit getLengthUnit() {
-        return lengthUnit.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_LENGTH_UNIT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<CableLengthUnit> getLengthUnit_JsonNullable() {
+  public CableLengthUnit getLengthUnit() {
     return lengthUnit;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LENGTH_UNIT)
-  public void setLengthUnit_JsonNullable(JsonNullable<CableLengthUnit> lengthUnit) {
-    this.lengthUnit = lengthUnit;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_LENGTH_UNIT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLengthUnit(@javax.annotation.Nullable CableLengthUnit lengthUnit) {
-    this.lengthUnit = JsonNullable.<CableLengthUnit>of(lengthUnit);
+    this.lengthUnit = lengthUnit;
   }
 
   public Cable description(@javax.annotation.Nullable String description) {
@@ -657,8 +621,8 @@ public class Cable {
   }
 
   public Cable owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -667,26 +631,18 @@ public class Cable {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public Cable comments(@javax.annotation.Nullable String comments) {
@@ -822,18 +778,18 @@ public class Cable {
         Objects.equals(this.url, cable.url) &&
         Objects.equals(this.displayUrl, cable.displayUrl) &&
         Objects.equals(this.display, cable.display) &&
-        equalsNullable(this.type, cable.type) &&
+        Objects.equals(this.type, cable.type) &&
         Objects.equals(this.aTerminations, cable.aTerminations) &&
         Objects.equals(this.bTerminations, cable.bTerminations) &&
         Objects.equals(this.status, cable.status) &&
         Objects.equals(this.profile, cable.profile) &&
-        equalsNullable(this.tenant, cable.tenant) &&
+        Objects.equals(this.tenant, cable.tenant) &&
         Objects.equals(this.label, cable.label) &&
         Objects.equals(this.color, cable.color) &&
-        equalsNullable(this.length, cable.length) &&
-        equalsNullable(this.lengthUnit, cable.lengthUnit) &&
+        Objects.equals(this.length, cable.length) &&
+        Objects.equals(this.lengthUnit, cable.lengthUnit) &&
         Objects.equals(this.description, cable.description) &&
-        equalsNullable(this.owner, cable.owner) &&
+        Objects.equals(this.owner, cable.owner) &&
         Objects.equals(this.comments, cable.comments) &&
         Objects.equals(this.tags, cable.tags) &&
         Objects.equals(this.customFields, cable.customFields) &&
@@ -841,20 +797,9 @@ public class Cable {
         Objects.equals(this.lastUpdated, cable.lastUpdated);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, hashCodeNullable(type), aTerminations, bTerminations, status, profile, hashCodeNullable(tenant), label, color, hashCodeNullable(length), hashCodeNullable(lengthUnit), description, hashCodeNullable(owner), comments, tags, customFields, created, lastUpdated);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, type, aTerminations, bTerminations, status, profile, tenant, label, color, length, lengthUnit, description, owner, comments, tags, customFields, created, lastUpdated);
   }
 
   @Override

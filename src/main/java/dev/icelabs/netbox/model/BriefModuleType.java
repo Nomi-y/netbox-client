@@ -23,10 +23,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import dev.icelabs.netbox.model.BriefManufacturer;
 import dev.icelabs.netbox.model.BriefModuleTypeProfile;
 import java.net.URI;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -43,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   BriefModuleType.JSON_PROPERTY_DESCRIPTION,
   BriefModuleType.JSON_PROPERTY_MODULE_COUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class BriefModuleType {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -59,7 +55,7 @@ public class BriefModuleType {
 
   public static final String JSON_PROPERTY_PROFILE = "profile";
   @javax.annotation.Nullable
-  private JsonNullable<BriefModuleTypeProfile> profile = JsonNullable.<BriefModuleTypeProfile>undefined();
+  private BriefModuleTypeProfile profile;
 
   public static final String JSON_PROPERTY_MANUFACTURER = "manufacturer";
   @javax.annotation.Nonnull
@@ -139,8 +135,8 @@ public class BriefModuleType {
 
 
   public BriefModuleType profile(@javax.annotation.Nullable BriefModuleTypeProfile profile) {
-    this.profile = JsonNullable.<BriefModuleTypeProfile>of(profile);
     
+    this.profile = profile;
     return this;
   }
 
@@ -149,26 +145,18 @@ public class BriefModuleType {
    * @return profile
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefModuleTypeProfile getProfile() {
-        return profile.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PROFILE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefModuleTypeProfile> getProfile_JsonNullable() {
+  public BriefModuleTypeProfile getProfile() {
     return profile;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PROFILE)
-  public void setProfile_JsonNullable(JsonNullable<BriefModuleTypeProfile> profile) {
-    this.profile = profile;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PROFILE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProfile(@javax.annotation.Nullable BriefModuleTypeProfile profile) {
-    this.profile = JsonNullable.<BriefModuleTypeProfile>of(profile);
+    this.profile = profile;
   }
 
   public BriefModuleType manufacturer(@javax.annotation.Nonnull BriefManufacturer manufacturer) {
@@ -273,27 +261,16 @@ public class BriefModuleType {
     return Objects.equals(this.id, briefModuleType.id) &&
         Objects.equals(this.url, briefModuleType.url) &&
         Objects.equals(this.display, briefModuleType.display) &&
-        equalsNullable(this.profile, briefModuleType.profile) &&
+        Objects.equals(this.profile, briefModuleType.profile) &&
         Objects.equals(this.manufacturer, briefModuleType.manufacturer) &&
         Objects.equals(this.model, briefModuleType.model) &&
         Objects.equals(this.description, briefModuleType.description) &&
         Objects.equals(this.moduleCount, briefModuleType.moduleCount);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, display, hashCodeNullable(profile), manufacturer, model, description, moduleCount);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, display, profile, manufacturer, model, description, moduleCount);
   }
 
   @Override

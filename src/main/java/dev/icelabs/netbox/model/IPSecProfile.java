@@ -32,10 +32,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -59,7 +55,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   IPSecProfile.JSON_PROPERTY_CREATED,
   IPSecProfile.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class IPSecProfile {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -99,7 +95,7 @@ public class IPSecProfile {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -326,8 +322,8 @@ public class IPSecProfile {
   }
 
   public IPSecProfile owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -336,26 +332,18 @@ public class IPSecProfile {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public IPSecProfile comments(@javax.annotation.Nullable String comments) {
@@ -496,7 +484,7 @@ public class IPSecProfile {
         Objects.equals(this.mode, ipSecProfile.mode) &&
         Objects.equals(this.ikePolicy, ipSecProfile.ikePolicy) &&
         Objects.equals(this.ipsecPolicy, ipSecProfile.ipsecPolicy) &&
-        equalsNullable(this.owner, ipSecProfile.owner) &&
+        Objects.equals(this.owner, ipSecProfile.owner) &&
         Objects.equals(this.comments, ipSecProfile.comments) &&
         Objects.equals(this.tags, ipSecProfile.tags) &&
         Objects.equals(this.customFields, ipSecProfile.customFields) &&
@@ -504,20 +492,9 @@ public class IPSecProfile {
         Objects.equals(this.lastUpdated, ipSecProfile.lastUpdated);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, name, description, mode, ikePolicy, ipsecPolicy, hashCodeNullable(owner), comments, tags, customFields, created, lastUpdated);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, name, description, mode, ikePolicy, ipsecPolicy, owner, comments, tags, customFields, created, lastUpdated);
   }
 
   @Override

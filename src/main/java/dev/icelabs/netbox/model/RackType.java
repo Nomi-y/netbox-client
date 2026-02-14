@@ -34,10 +34,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -74,7 +70,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   RackType.JSON_PROPERTY_LAST_UPDATED,
   RackType.JSON_PROPERTY_RACK_COUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class RackType {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -110,7 +106,7 @@ public class RackType {
 
   public static final String JSON_PROPERTY_FORM_FACTOR = "form_factor";
   @javax.annotation.Nullable
-  private JsonNullable<RackFormFactor> formFactor = JsonNullable.<RackFormFactor>undefined();
+  private RackFormFactor formFactor;
 
   public static final String JSON_PROPERTY_WIDTH = "width";
   @javax.annotation.Nullable
@@ -130,39 +126,39 @@ public class RackType {
 
   public static final String JSON_PROPERTY_OUTER_WIDTH = "outer_width";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> outerWidth = JsonNullable.<Integer>undefined();
+  private Integer outerWidth;
 
   public static final String JSON_PROPERTY_OUTER_HEIGHT = "outer_height";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> outerHeight = JsonNullable.<Integer>undefined();
+  private Integer outerHeight;
 
   public static final String JSON_PROPERTY_OUTER_DEPTH = "outer_depth";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> outerDepth = JsonNullable.<Integer>undefined();
+  private Integer outerDepth;
 
   public static final String JSON_PROPERTY_OUTER_UNIT = "outer_unit";
   @javax.annotation.Nullable
-  private JsonNullable<RackOuterUnit> outerUnit = JsonNullable.<RackOuterUnit>undefined();
+  private RackOuterUnit outerUnit;
 
   public static final String JSON_PROPERTY_WEIGHT = "weight";
   @javax.annotation.Nullable
-  private JsonNullable<Double> weight = JsonNullable.<Double>undefined();
+  private Double weight;
 
   public static final String JSON_PROPERTY_MAX_WEIGHT = "max_weight";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> maxWeight = JsonNullable.<Integer>undefined();
+  private Integer maxWeight;
 
   public static final String JSON_PROPERTY_WEIGHT_UNIT = "weight_unit";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceTypeWeightUnit> weightUnit = JsonNullable.<DeviceTypeWeightUnit>undefined();
+  private DeviceTypeWeightUnit weightUnit;
 
   public static final String JSON_PROPERTY_MOUNTING_DEPTH = "mounting_depth";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> mountingDepth = JsonNullable.<Integer>undefined();
+  private Integer mountingDepth;
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -370,8 +366,8 @@ public class RackType {
   }
 
   public RackType formFactor(@javax.annotation.Nullable RackFormFactor formFactor) {
-    this.formFactor = JsonNullable.<RackFormFactor>of(formFactor);
     
+    this.formFactor = formFactor;
     return this;
   }
 
@@ -380,26 +376,18 @@ public class RackType {
    * @return formFactor
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public RackFormFactor getFormFactor() {
-        return formFactor.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_FORM_FACTOR, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<RackFormFactor> getFormFactor_JsonNullable() {
+  public RackFormFactor getFormFactor() {
     return formFactor;
   }
-  
-  @JsonProperty(JSON_PROPERTY_FORM_FACTOR)
-  public void setFormFactor_JsonNullable(JsonNullable<RackFormFactor> formFactor) {
-    this.formFactor = formFactor;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_FORM_FACTOR, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFormFactor(@javax.annotation.Nullable RackFormFactor formFactor) {
-    this.formFactor = JsonNullable.<RackFormFactor>of(formFactor);
+    this.formFactor = formFactor;
   }
 
   public RackType width(@javax.annotation.Nullable RackWidth width) {
@@ -507,8 +495,8 @@ public class RackType {
   }
 
   public RackType outerWidth(@javax.annotation.Nullable Integer outerWidth) {
-    this.outerWidth = JsonNullable.<Integer>of(outerWidth);
     
+    this.outerWidth = outerWidth;
     return this;
   }
 
@@ -519,31 +507,23 @@ public class RackType {
    * @return outerWidth
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getOuterWidth() {
-        return outerWidth.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OUTER_WIDTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getOuterWidth_JsonNullable() {
+  public Integer getOuterWidth() {
     return outerWidth;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OUTER_WIDTH)
-  public void setOuterWidth_JsonNullable(JsonNullable<Integer> outerWidth) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_OUTER_WIDTH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setOuterWidth(@javax.annotation.Nullable Integer outerWidth) {
     this.outerWidth = outerWidth;
   }
 
-  public void setOuterWidth(@javax.annotation.Nullable Integer outerWidth) {
-    this.outerWidth = JsonNullable.<Integer>of(outerWidth);
-  }
-
   public RackType outerHeight(@javax.annotation.Nullable Integer outerHeight) {
-    this.outerHeight = JsonNullable.<Integer>of(outerHeight);
     
+    this.outerHeight = outerHeight;
     return this;
   }
 
@@ -554,31 +534,23 @@ public class RackType {
    * @return outerHeight
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getOuterHeight() {
-        return outerHeight.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OUTER_HEIGHT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getOuterHeight_JsonNullable() {
+  public Integer getOuterHeight() {
     return outerHeight;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OUTER_HEIGHT)
-  public void setOuterHeight_JsonNullable(JsonNullable<Integer> outerHeight) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_OUTER_HEIGHT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setOuterHeight(@javax.annotation.Nullable Integer outerHeight) {
     this.outerHeight = outerHeight;
   }
 
-  public void setOuterHeight(@javax.annotation.Nullable Integer outerHeight) {
-    this.outerHeight = JsonNullable.<Integer>of(outerHeight);
-  }
-
   public RackType outerDepth(@javax.annotation.Nullable Integer outerDepth) {
-    this.outerDepth = JsonNullable.<Integer>of(outerDepth);
     
+    this.outerDepth = outerDepth;
     return this;
   }
 
@@ -589,31 +561,23 @@ public class RackType {
    * @return outerDepth
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getOuterDepth() {
-        return outerDepth.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OUTER_DEPTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getOuterDepth_JsonNullable() {
+  public Integer getOuterDepth() {
     return outerDepth;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OUTER_DEPTH)
-  public void setOuterDepth_JsonNullable(JsonNullable<Integer> outerDepth) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_OUTER_DEPTH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setOuterDepth(@javax.annotation.Nullable Integer outerDepth) {
     this.outerDepth = outerDepth;
   }
 
-  public void setOuterDepth(@javax.annotation.Nullable Integer outerDepth) {
-    this.outerDepth = JsonNullable.<Integer>of(outerDepth);
-  }
-
   public RackType outerUnit(@javax.annotation.Nullable RackOuterUnit outerUnit) {
-    this.outerUnit = JsonNullable.<RackOuterUnit>of(outerUnit);
     
+    this.outerUnit = outerUnit;
     return this;
   }
 
@@ -622,31 +586,23 @@ public class RackType {
    * @return outerUnit
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public RackOuterUnit getOuterUnit() {
-        return outerUnit.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OUTER_UNIT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<RackOuterUnit> getOuterUnit_JsonNullable() {
+  public RackOuterUnit getOuterUnit() {
     return outerUnit;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OUTER_UNIT)
-  public void setOuterUnit_JsonNullable(JsonNullable<RackOuterUnit> outerUnit) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_OUTER_UNIT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setOuterUnit(@javax.annotation.Nullable RackOuterUnit outerUnit) {
     this.outerUnit = outerUnit;
   }
 
-  public void setOuterUnit(@javax.annotation.Nullable RackOuterUnit outerUnit) {
-    this.outerUnit = JsonNullable.<RackOuterUnit>of(outerUnit);
-  }
-
   public RackType weight(@javax.annotation.Nullable Double weight) {
-    this.weight = JsonNullable.<Double>of(weight);
     
+    this.weight = weight;
     return this;
   }
 
@@ -657,31 +613,23 @@ public class RackType {
    * @return weight
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getWeight() {
-        return weight.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_WEIGHT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getWeight_JsonNullable() {
+  public Double getWeight() {
     return weight;
   }
-  
-  @JsonProperty(JSON_PROPERTY_WEIGHT)
-  public void setWeight_JsonNullable(JsonNullable<Double> weight) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_WEIGHT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setWeight(@javax.annotation.Nullable Double weight) {
     this.weight = weight;
   }
 
-  public void setWeight(@javax.annotation.Nullable Double weight) {
-    this.weight = JsonNullable.<Double>of(weight);
-  }
-
   public RackType maxWeight(@javax.annotation.Nullable Integer maxWeight) {
-    this.maxWeight = JsonNullable.<Integer>of(maxWeight);
     
+    this.maxWeight = maxWeight;
     return this;
   }
 
@@ -692,31 +640,23 @@ public class RackType {
    * @return maxWeight
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getMaxWeight() {
-        return maxWeight.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MAX_WEIGHT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getMaxWeight_JsonNullable() {
+  public Integer getMaxWeight() {
     return maxWeight;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MAX_WEIGHT)
-  public void setMaxWeight_JsonNullable(JsonNullable<Integer> maxWeight) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_MAX_WEIGHT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMaxWeight(@javax.annotation.Nullable Integer maxWeight) {
     this.maxWeight = maxWeight;
   }
 
-  public void setMaxWeight(@javax.annotation.Nullable Integer maxWeight) {
-    this.maxWeight = JsonNullable.<Integer>of(maxWeight);
-  }
-
   public RackType weightUnit(@javax.annotation.Nullable DeviceTypeWeightUnit weightUnit) {
-    this.weightUnit = JsonNullable.<DeviceTypeWeightUnit>of(weightUnit);
     
+    this.weightUnit = weightUnit;
     return this;
   }
 
@@ -725,31 +665,23 @@ public class RackType {
    * @return weightUnit
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceTypeWeightUnit getWeightUnit() {
-        return weightUnit.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_WEIGHT_UNIT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceTypeWeightUnit> getWeightUnit_JsonNullable() {
+  public DeviceTypeWeightUnit getWeightUnit() {
     return weightUnit;
   }
-  
-  @JsonProperty(JSON_PROPERTY_WEIGHT_UNIT)
-  public void setWeightUnit_JsonNullable(JsonNullable<DeviceTypeWeightUnit> weightUnit) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_WEIGHT_UNIT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setWeightUnit(@javax.annotation.Nullable DeviceTypeWeightUnit weightUnit) {
     this.weightUnit = weightUnit;
   }
 
-  public void setWeightUnit(@javax.annotation.Nullable DeviceTypeWeightUnit weightUnit) {
-    this.weightUnit = JsonNullable.<DeviceTypeWeightUnit>of(weightUnit);
-  }
-
   public RackType mountingDepth(@javax.annotation.Nullable Integer mountingDepth) {
-    this.mountingDepth = JsonNullable.<Integer>of(mountingDepth);
     
+    this.mountingDepth = mountingDepth;
     return this;
   }
 
@@ -760,31 +692,23 @@ public class RackType {
    * @return mountingDepth
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getMountingDepth() {
-        return mountingDepth.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MOUNTING_DEPTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getMountingDepth_JsonNullable() {
+  public Integer getMountingDepth() {
     return mountingDepth;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MOUNTING_DEPTH)
-  public void setMountingDepth_JsonNullable(JsonNullable<Integer> mountingDepth) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_MOUNTING_DEPTH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMountingDepth(@javax.annotation.Nullable Integer mountingDepth) {
     this.mountingDepth = mountingDepth;
   }
 
-  public void setMountingDepth(@javax.annotation.Nullable Integer mountingDepth) {
-    this.mountingDepth = JsonNullable.<Integer>of(mountingDepth);
-  }
-
   public RackType owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -793,26 +717,18 @@ public class RackType {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public RackType comments(@javax.annotation.Nullable String comments) {
@@ -966,20 +882,20 @@ public class RackType {
         Objects.equals(this.model, rackType.model) &&
         Objects.equals(this.slug, rackType.slug) &&
         Objects.equals(this.description, rackType.description) &&
-        equalsNullable(this.formFactor, rackType.formFactor) &&
+        Objects.equals(this.formFactor, rackType.formFactor) &&
         Objects.equals(this.width, rackType.width) &&
         Objects.equals(this.uHeight, rackType.uHeight) &&
         Objects.equals(this.startingUnit, rackType.startingUnit) &&
         Objects.equals(this.descUnits, rackType.descUnits) &&
-        equalsNullable(this.outerWidth, rackType.outerWidth) &&
-        equalsNullable(this.outerHeight, rackType.outerHeight) &&
-        equalsNullable(this.outerDepth, rackType.outerDepth) &&
-        equalsNullable(this.outerUnit, rackType.outerUnit) &&
-        equalsNullable(this.weight, rackType.weight) &&
-        equalsNullable(this.maxWeight, rackType.maxWeight) &&
-        equalsNullable(this.weightUnit, rackType.weightUnit) &&
-        equalsNullable(this.mountingDepth, rackType.mountingDepth) &&
-        equalsNullable(this.owner, rackType.owner) &&
+        Objects.equals(this.outerWidth, rackType.outerWidth) &&
+        Objects.equals(this.outerHeight, rackType.outerHeight) &&
+        Objects.equals(this.outerDepth, rackType.outerDepth) &&
+        Objects.equals(this.outerUnit, rackType.outerUnit) &&
+        Objects.equals(this.weight, rackType.weight) &&
+        Objects.equals(this.maxWeight, rackType.maxWeight) &&
+        Objects.equals(this.weightUnit, rackType.weightUnit) &&
+        Objects.equals(this.mountingDepth, rackType.mountingDepth) &&
+        Objects.equals(this.owner, rackType.owner) &&
         Objects.equals(this.comments, rackType.comments) &&
         Objects.equals(this.tags, rackType.tags) &&
         Objects.equals(this.customFields, rackType.customFields) &&
@@ -988,20 +904,9 @@ public class RackType {
         Objects.equals(this.rackCount, rackType.rackCount);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, manufacturer, model, slug, description, hashCodeNullable(formFactor), width, uHeight, startingUnit, descUnits, hashCodeNullable(outerWidth), hashCodeNullable(outerHeight), hashCodeNullable(outerDepth), hashCodeNullable(outerUnit), hashCodeNullable(weight), hashCodeNullable(maxWeight), hashCodeNullable(weightUnit), hashCodeNullable(mountingDepth), hashCodeNullable(owner), comments, tags, customFields, created, lastUpdated, rackCount);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, manufacturer, model, slug, description, formFactor, width, uHeight, startingUnit, descUnits, outerWidth, outerHeight, outerDepth, outerUnit, weight, maxWeight, weightUnit, mountingDepth, owner, comments, tags, customFields, created, lastUpdated, rackCount);
   }
 
   @Override

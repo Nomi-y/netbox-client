@@ -20,10 +20,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -35,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ConsolePortSpeed.JSON_PROPERTY_LABEL
 })
 @JsonTypeName("ConsolePort_speed")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class ConsolePortSpeed {
   /**
    * * &#x60;1200&#x60; - 1200 bps * &#x60;2400&#x60; - 2400 bps * &#x60;4800&#x60; - 4800 bps * &#x60;9600&#x60; - 9600 bps * &#x60;19200&#x60; - 19.2 kbps * &#x60;38400&#x60; - 38.4 kbps * &#x60;57600&#x60; - 57.6 kbps * &#x60;115200&#x60; - 115.2 kbps
@@ -86,7 +82,7 @@ public class ConsolePortSpeed {
 
   public static final String JSON_PROPERTY_VALUE = "value";
   @javax.annotation.Nullable
-  private JsonNullable<ValueEnum> value = JsonNullable.<ValueEnum>undefined();
+  private ValueEnum value;
 
   /**
    * Gets or Sets label
@@ -143,8 +139,8 @@ public class ConsolePortSpeed {
   }
 
   public ConsolePortSpeed value(@javax.annotation.Nullable ValueEnum value) {
-    this.value = JsonNullable.<ValueEnum>of(value);
     
+    this.value = value;
     return this;
   }
 
@@ -153,26 +149,18 @@ public class ConsolePortSpeed {
    * @return value
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ValueEnum getValue() {
-        return value.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VALUE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ValueEnum> getValue_JsonNullable() {
+  public ValueEnum getValue() {
     return value;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VALUE)
-  public void setValue_JsonNullable(JsonNullable<ValueEnum> value) {
-    this.value = value;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_VALUE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setValue(@javax.annotation.Nullable ValueEnum value) {
-    this.value = JsonNullable.<ValueEnum>of(value);
+    this.value = value;
   }
 
   public ConsolePortSpeed label(@javax.annotation.Nullable LabelEnum label) {
@@ -210,24 +198,13 @@ public class ConsolePortSpeed {
       return false;
     }
     ConsolePortSpeed consolePortSpeed = (ConsolePortSpeed) o;
-    return equalsNullable(this.value, consolePortSpeed.value) &&
+    return Objects.equals(this.value, consolePortSpeed.value) &&
         Objects.equals(this.label, consolePortSpeed.label);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(value), label);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(value, label);
   }
 
   @Override

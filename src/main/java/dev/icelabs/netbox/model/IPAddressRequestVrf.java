@@ -20,10 +20,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -36,7 +32,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   IPAddressRequestVrf.JSON_PROPERTY_DESCRIPTION
 })
 @JsonTypeName("IPAddressRequest_vrf")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class IPAddressRequestVrf {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -44,7 +40,7 @@ public class IPAddressRequestVrf {
 
   public static final String JSON_PROPERTY_RD = "rd";
   @javax.annotation.Nullable
-  private JsonNullable<String> rd = JsonNullable.<String>undefined();
+  private String rd;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -79,8 +75,8 @@ public class IPAddressRequestVrf {
   }
 
   public IPAddressRequestVrf rd(@javax.annotation.Nullable String rd) {
-    this.rd = JsonNullable.<String>of(rd);
     
+    this.rd = rd;
     return this;
   }
 
@@ -89,26 +85,18 @@ public class IPAddressRequestVrf {
    * @return rd
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getRd() {
-        return rd.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_RD, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getRd_JsonNullable() {
+  public String getRd() {
     return rd;
   }
-  
-  @JsonProperty(JSON_PROPERTY_RD)
-  public void setRd_JsonNullable(JsonNullable<String> rd) {
-    this.rd = rd;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_RD, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRd(@javax.annotation.Nullable String rd) {
-    this.rd = JsonNullable.<String>of(rd);
+    this.rd = rd;
   }
 
   public IPAddressRequestVrf description(@javax.annotation.Nullable String description) {
@@ -147,24 +135,13 @@ public class IPAddressRequestVrf {
     }
     IPAddressRequestVrf ipAddressRequestVrf = (IPAddressRequestVrf) o;
     return Objects.equals(this.name, ipAddressRequestVrf.name) &&
-        equalsNullable(this.rd, ipAddressRequestVrf.rd) &&
+        Objects.equals(this.rd, ipAddressRequestVrf.rd) &&
         Objects.equals(this.description, ipAddressRequestVrf.description);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, hashCodeNullable(rd), description);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, rd, description);
   }
 
   @Override

@@ -31,10 +31,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -59,7 +55,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   IPSecProposal.JSON_PROPERTY_CREATED,
   IPSecProposal.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class IPSecProposal {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -95,15 +91,15 @@ public class IPSecProposal {
 
   public static final String JSON_PROPERTY_SA_LIFETIME_SECONDS = "sa_lifetime_seconds";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> saLifetimeSeconds = JsonNullable.<Integer>undefined();
+  private Integer saLifetimeSeconds;
 
   public static final String JSON_PROPERTY_SA_LIFETIME_DATA = "sa_lifetime_data";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> saLifetimeData = JsonNullable.<Integer>undefined();
+  private Integer saLifetimeData;
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -305,8 +301,8 @@ public class IPSecProposal {
   }
 
   public IPSecProposal saLifetimeSeconds(@javax.annotation.Nullable Integer saLifetimeSeconds) {
-    this.saLifetimeSeconds = JsonNullable.<Integer>of(saLifetimeSeconds);
     
+    this.saLifetimeSeconds = saLifetimeSeconds;
     return this;
   }
 
@@ -317,31 +313,23 @@ public class IPSecProposal {
    * @return saLifetimeSeconds
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getSaLifetimeSeconds() {
-        return saLifetimeSeconds.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SA_LIFETIME_SECONDS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getSaLifetimeSeconds_JsonNullable() {
+  public Integer getSaLifetimeSeconds() {
     return saLifetimeSeconds;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SA_LIFETIME_SECONDS)
-  public void setSaLifetimeSeconds_JsonNullable(JsonNullable<Integer> saLifetimeSeconds) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_SA_LIFETIME_SECONDS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSaLifetimeSeconds(@javax.annotation.Nullable Integer saLifetimeSeconds) {
     this.saLifetimeSeconds = saLifetimeSeconds;
   }
 
-  public void setSaLifetimeSeconds(@javax.annotation.Nullable Integer saLifetimeSeconds) {
-    this.saLifetimeSeconds = JsonNullable.<Integer>of(saLifetimeSeconds);
-  }
-
   public IPSecProposal saLifetimeData(@javax.annotation.Nullable Integer saLifetimeData) {
-    this.saLifetimeData = JsonNullable.<Integer>of(saLifetimeData);
     
+    this.saLifetimeData = saLifetimeData;
     return this;
   }
 
@@ -352,31 +340,23 @@ public class IPSecProposal {
    * @return saLifetimeData
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getSaLifetimeData() {
-        return saLifetimeData.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SA_LIFETIME_DATA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getSaLifetimeData_JsonNullable() {
+  public Integer getSaLifetimeData() {
     return saLifetimeData;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SA_LIFETIME_DATA)
-  public void setSaLifetimeData_JsonNullable(JsonNullable<Integer> saLifetimeData) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_SA_LIFETIME_DATA, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSaLifetimeData(@javax.annotation.Nullable Integer saLifetimeData) {
     this.saLifetimeData = saLifetimeData;
   }
 
-  public void setSaLifetimeData(@javax.annotation.Nullable Integer saLifetimeData) {
-    this.saLifetimeData = JsonNullable.<Integer>of(saLifetimeData);
-  }
-
   public IPSecProposal owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -385,26 +365,18 @@ public class IPSecProposal {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public IPSecProposal comments(@javax.annotation.Nullable String comments) {
@@ -544,9 +516,9 @@ public class IPSecProposal {
         Objects.equals(this.description, ipSecProposal.description) &&
         Objects.equals(this.encryptionAlgorithm, ipSecProposal.encryptionAlgorithm) &&
         Objects.equals(this.authenticationAlgorithm, ipSecProposal.authenticationAlgorithm) &&
-        equalsNullable(this.saLifetimeSeconds, ipSecProposal.saLifetimeSeconds) &&
-        equalsNullable(this.saLifetimeData, ipSecProposal.saLifetimeData) &&
-        equalsNullable(this.owner, ipSecProposal.owner) &&
+        Objects.equals(this.saLifetimeSeconds, ipSecProposal.saLifetimeSeconds) &&
+        Objects.equals(this.saLifetimeData, ipSecProposal.saLifetimeData) &&
+        Objects.equals(this.owner, ipSecProposal.owner) &&
         Objects.equals(this.comments, ipSecProposal.comments) &&
         Objects.equals(this.tags, ipSecProposal.tags) &&
         Objects.equals(this.customFields, ipSecProposal.customFields) &&
@@ -554,20 +526,9 @@ public class IPSecProposal {
         Objects.equals(this.lastUpdated, ipSecProposal.lastUpdated);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, name, description, encryptionAlgorithm, authenticationAlgorithm, hashCodeNullable(saLifetimeSeconds), hashCodeNullable(saLifetimeData), hashCodeNullable(owner), comments, tags, customFields, created, lastUpdated);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, name, description, encryptionAlgorithm, authenticationAlgorithm, saLifetimeSeconds, saLifetimeData, owner, comments, tags, customFields, created, lastUpdated);
   }
 
   @Override

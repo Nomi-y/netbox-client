@@ -34,10 +34,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -65,7 +61,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   Tunnel.JSON_PROPERTY_LAST_UPDATED,
   Tunnel.JSON_PROPERTY_TERMINATIONS_COUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class Tunnel {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -93,7 +89,7 @@ public class Tunnel {
 
   public static final String JSON_PROPERTY_GROUP = "group";
   @javax.annotation.Nullable
-  private JsonNullable<BriefTunnelGroup> group = JsonNullable.<BriefTunnelGroup>undefined();
+  private BriefTunnelGroup group;
 
   public static final String JSON_PROPERTY_ENCAPSULATION = "encapsulation";
   @javax.annotation.Nonnull
@@ -101,15 +97,15 @@ public class Tunnel {
 
   public static final String JSON_PROPERTY_IPSEC_PROFILE = "ipsec_profile";
   @javax.annotation.Nullable
-  private JsonNullable<BriefIPSecProfile> ipsecProfile = JsonNullable.<BriefIPSecProfile>undefined();
+  private BriefIPSecProfile ipsecProfile;
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<BriefTenant> tenant = JsonNullable.<BriefTenant>undefined();
+  private BriefTenant tenant;
 
   public static final String JSON_PROPERTY_TUNNEL_ID = "tunnel_id";
   @javax.annotation.Nullable
-  private JsonNullable<Long> tunnelId = JsonNullable.<Long>undefined();
+  private Long tunnelId;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -117,7 +113,7 @@ public class Tunnel {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -275,8 +271,8 @@ public class Tunnel {
   }
 
   public Tunnel group(@javax.annotation.Nullable BriefTunnelGroup group) {
-    this.group = JsonNullable.<BriefTunnelGroup>of(group);
     
+    this.group = group;
     return this;
   }
 
@@ -285,26 +281,18 @@ public class Tunnel {
    * @return group
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefTunnelGroup getGroup() {
-        return group.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_GROUP, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefTunnelGroup> getGroup_JsonNullable() {
+  public BriefTunnelGroup getGroup() {
     return group;
   }
-  
-  @JsonProperty(JSON_PROPERTY_GROUP)
-  public void setGroup_JsonNullable(JsonNullable<BriefTunnelGroup> group) {
-    this.group = group;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_GROUP, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable BriefTunnelGroup group) {
-    this.group = JsonNullable.<BriefTunnelGroup>of(group);
+    this.group = group;
   }
 
   public Tunnel encapsulation(@javax.annotation.Nonnull TunnelEncapsulation encapsulation) {
@@ -333,8 +321,8 @@ public class Tunnel {
   }
 
   public Tunnel ipsecProfile(@javax.annotation.Nullable BriefIPSecProfile ipsecProfile) {
-    this.ipsecProfile = JsonNullable.<BriefIPSecProfile>of(ipsecProfile);
     
+    this.ipsecProfile = ipsecProfile;
     return this;
   }
 
@@ -343,31 +331,23 @@ public class Tunnel {
    * @return ipsecProfile
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefIPSecProfile getIpsecProfile() {
-        return ipsecProfile.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_IPSEC_PROFILE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefIPSecProfile> getIpsecProfile_JsonNullable() {
+  public BriefIPSecProfile getIpsecProfile() {
     return ipsecProfile;
   }
-  
-  @JsonProperty(JSON_PROPERTY_IPSEC_PROFILE)
-  public void setIpsecProfile_JsonNullable(JsonNullable<BriefIPSecProfile> ipsecProfile) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_IPSEC_PROFILE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setIpsecProfile(@javax.annotation.Nullable BriefIPSecProfile ipsecProfile) {
     this.ipsecProfile = ipsecProfile;
   }
 
-  public void setIpsecProfile(@javax.annotation.Nullable BriefIPSecProfile ipsecProfile) {
-    this.ipsecProfile = JsonNullable.<BriefIPSecProfile>of(ipsecProfile);
-  }
-
   public Tunnel tenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -376,31 +356,23 @@ public class Tunnel {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefTenant> getTenant_JsonNullable() {
+  public BriefTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<BriefTenant> tenant) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTenant(@javax.annotation.Nullable BriefTenant tenant) {
     this.tenant = tenant;
   }
 
-  public void setTenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
-  }
-
   public Tunnel tunnelId(@javax.annotation.Nullable Long tunnelId) {
-    this.tunnelId = JsonNullable.<Long>of(tunnelId);
     
+    this.tunnelId = tunnelId;
     return this;
   }
 
@@ -411,26 +383,18 @@ public class Tunnel {
    * @return tunnelId
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Long getTunnelId() {
-        return tunnelId.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TUNNEL_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Long> getTunnelId_JsonNullable() {
+  public Long getTunnelId() {
     return tunnelId;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TUNNEL_ID)
-  public void setTunnelId_JsonNullable(JsonNullable<Long> tunnelId) {
-    this.tunnelId = tunnelId;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TUNNEL_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTunnelId(@javax.annotation.Nullable Long tunnelId) {
-    this.tunnelId = JsonNullable.<Long>of(tunnelId);
+    this.tunnelId = tunnelId;
   }
 
   public Tunnel description(@javax.annotation.Nullable String description) {
@@ -459,8 +423,8 @@ public class Tunnel {
   }
 
   public Tunnel owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -469,26 +433,18 @@ public class Tunnel {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public Tunnel comments(@javax.annotation.Nullable String comments) {
@@ -640,13 +596,13 @@ public class Tunnel {
         Objects.equals(this.display, tunnel.display) &&
         Objects.equals(this.name, tunnel.name) &&
         Objects.equals(this.status, tunnel.status) &&
-        equalsNullable(this.group, tunnel.group) &&
+        Objects.equals(this.group, tunnel.group) &&
         Objects.equals(this.encapsulation, tunnel.encapsulation) &&
-        equalsNullable(this.ipsecProfile, tunnel.ipsecProfile) &&
-        equalsNullable(this.tenant, tunnel.tenant) &&
-        equalsNullable(this.tunnelId, tunnel.tunnelId) &&
+        Objects.equals(this.ipsecProfile, tunnel.ipsecProfile) &&
+        Objects.equals(this.tenant, tunnel.tenant) &&
+        Objects.equals(this.tunnelId, tunnel.tunnelId) &&
         Objects.equals(this.description, tunnel.description) &&
-        equalsNullable(this.owner, tunnel.owner) &&
+        Objects.equals(this.owner, tunnel.owner) &&
         Objects.equals(this.comments, tunnel.comments) &&
         Objects.equals(this.tags, tunnel.tags) &&
         Objects.equals(this.customFields, tunnel.customFields) &&
@@ -655,20 +611,9 @@ public class Tunnel {
         Objects.equals(this.terminationsCount, tunnel.terminationsCount);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, name, status, hashCodeNullable(group), encapsulation, hashCodeNullable(ipsecProfile), hashCodeNullable(tenant), hashCodeNullable(tunnelId), description, hashCodeNullable(owner), comments, tags, customFields, created, lastUpdated, terminationsCount);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, name, status, group, encapsulation, ipsecProfile, tenant, tunnelId, description, owner, comments, tags, customFields, created, lastUpdated, terminationsCount);
   }
 
   @Override

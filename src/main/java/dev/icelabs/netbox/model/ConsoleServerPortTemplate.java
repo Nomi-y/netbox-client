@@ -25,10 +25,6 @@ import dev.icelabs.netbox.model.BriefModuleType;
 import dev.icelabs.netbox.model.ConsolePortType;
 import java.net.URI;
 import java.time.OffsetDateTime;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -48,7 +44,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ConsoleServerPortTemplate.JSON_PROPERTY_CREATED,
   ConsoleServerPortTemplate.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class ConsoleServerPortTemplate {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -64,11 +60,11 @@ public class ConsoleServerPortTemplate {
 
   public static final String JSON_PROPERTY_DEVICE_TYPE = "device_type";
   @javax.annotation.Nullable
-  private JsonNullable<BriefDeviceType> deviceType = JsonNullable.<BriefDeviceType>undefined();
+  private BriefDeviceType deviceType;
 
   public static final String JSON_PROPERTY_MODULE_TYPE = "module_type";
   @javax.annotation.Nullable
-  private JsonNullable<BriefModuleType> moduleType = JsonNullable.<BriefModuleType>undefined();
+  private BriefModuleType moduleType;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -158,8 +154,8 @@ public class ConsoleServerPortTemplate {
 
 
   public ConsoleServerPortTemplate deviceType(@javax.annotation.Nullable BriefDeviceType deviceType) {
-    this.deviceType = JsonNullable.<BriefDeviceType>of(deviceType);
     
+    this.deviceType = deviceType;
     return this;
   }
 
@@ -168,31 +164,23 @@ public class ConsoleServerPortTemplate {
    * @return deviceType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefDeviceType getDeviceType() {
-        return deviceType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_DEVICE_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefDeviceType> getDeviceType_JsonNullable() {
+  public BriefDeviceType getDeviceType() {
     return deviceType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_DEVICE_TYPE)
-  public void setDeviceType_JsonNullable(JsonNullable<BriefDeviceType> deviceType) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_DEVICE_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDeviceType(@javax.annotation.Nullable BriefDeviceType deviceType) {
     this.deviceType = deviceType;
   }
 
-  public void setDeviceType(@javax.annotation.Nullable BriefDeviceType deviceType) {
-    this.deviceType = JsonNullable.<BriefDeviceType>of(deviceType);
-  }
-
   public ConsoleServerPortTemplate moduleType(@javax.annotation.Nullable BriefModuleType moduleType) {
-    this.moduleType = JsonNullable.<BriefModuleType>of(moduleType);
     
+    this.moduleType = moduleType;
     return this;
   }
 
@@ -201,26 +189,18 @@ public class ConsoleServerPortTemplate {
    * @return moduleType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefModuleType getModuleType() {
-        return moduleType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MODULE_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefModuleType> getModuleType_JsonNullable() {
+  public BriefModuleType getModuleType() {
     return moduleType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MODULE_TYPE)
-  public void setModuleType_JsonNullable(JsonNullable<BriefModuleType> moduleType) {
-    this.moduleType = moduleType;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_MODULE_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setModuleType(@javax.annotation.Nullable BriefModuleType moduleType) {
-    this.moduleType = JsonNullable.<BriefModuleType>of(moduleType);
+    this.moduleType = moduleType;
   }
 
   public ConsoleServerPortTemplate name(@javax.annotation.Nonnull String name) {
@@ -364,8 +344,8 @@ public class ConsoleServerPortTemplate {
     return Objects.equals(this.id, consoleServerPortTemplate.id) &&
         Objects.equals(this.url, consoleServerPortTemplate.url) &&
         Objects.equals(this.display, consoleServerPortTemplate.display) &&
-        equalsNullable(this.deviceType, consoleServerPortTemplate.deviceType) &&
-        equalsNullable(this.moduleType, consoleServerPortTemplate.moduleType) &&
+        Objects.equals(this.deviceType, consoleServerPortTemplate.deviceType) &&
+        Objects.equals(this.moduleType, consoleServerPortTemplate.moduleType) &&
         Objects.equals(this.name, consoleServerPortTemplate.name) &&
         Objects.equals(this.label, consoleServerPortTemplate.label) &&
         Objects.equals(this.type, consoleServerPortTemplate.type) &&
@@ -374,20 +354,9 @@ public class ConsoleServerPortTemplate {
         Objects.equals(this.lastUpdated, consoleServerPortTemplate.lastUpdated);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, display, hashCodeNullable(deviceType), hashCodeNullable(moduleType), name, label, type, description, created, lastUpdated);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, display, deviceType, moduleType, name, label, type, description, created, lastUpdated);
   }
 
   @Override

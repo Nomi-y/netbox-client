@@ -29,10 +29,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -52,7 +48,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   DeviceRoleRequest.JSON_PROPERTY_OWNER,
   DeviceRoleRequest.JSON_PROPERTY_COMMENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class DeviceRoleRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -72,11 +68,11 @@ public class DeviceRoleRequest {
 
   public static final String JSON_PROPERTY_CONFIG_TEMPLATE = "config_template";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceRoleRequestConfigTemplate> configTemplate = JsonNullable.<DeviceRoleRequestConfigTemplate>undefined();
+  private DeviceRoleRequestConfigTemplate configTemplate;
 
   public static final String JSON_PROPERTY_PARENT = "parent";
   @javax.annotation.Nullable
-  private JsonNullable<NestedDeviceRoleRequest> parent = JsonNullable.<NestedDeviceRoleRequest>undefined();
+  private NestedDeviceRoleRequest parent;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -92,7 +88,7 @@ public class DeviceRoleRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -202,8 +198,8 @@ public class DeviceRoleRequest {
   }
 
   public DeviceRoleRequest configTemplate(@javax.annotation.Nullable DeviceRoleRequestConfigTemplate configTemplate) {
-    this.configTemplate = JsonNullable.<DeviceRoleRequestConfigTemplate>of(configTemplate);
     
+    this.configTemplate = configTemplate;
     return this;
   }
 
@@ -212,31 +208,23 @@ public class DeviceRoleRequest {
    * @return configTemplate
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceRoleRequestConfigTemplate getConfigTemplate() {
-        return configTemplate.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_CONFIG_TEMPLATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceRoleRequestConfigTemplate> getConfigTemplate_JsonNullable() {
+  public DeviceRoleRequestConfigTemplate getConfigTemplate() {
     return configTemplate;
   }
-  
-  @JsonProperty(JSON_PROPERTY_CONFIG_TEMPLATE)
-  public void setConfigTemplate_JsonNullable(JsonNullable<DeviceRoleRequestConfigTemplate> configTemplate) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_CONFIG_TEMPLATE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setConfigTemplate(@javax.annotation.Nullable DeviceRoleRequestConfigTemplate configTemplate) {
     this.configTemplate = configTemplate;
   }
 
-  public void setConfigTemplate(@javax.annotation.Nullable DeviceRoleRequestConfigTemplate configTemplate) {
-    this.configTemplate = JsonNullable.<DeviceRoleRequestConfigTemplate>of(configTemplate);
-  }
-
   public DeviceRoleRequest parent(@javax.annotation.Nullable NestedDeviceRoleRequest parent) {
-    this.parent = JsonNullable.<NestedDeviceRoleRequest>of(parent);
     
+    this.parent = parent;
     return this;
   }
 
@@ -245,26 +233,18 @@ public class DeviceRoleRequest {
    * @return parent
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public NestedDeviceRoleRequest getParent() {
-        return parent.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<NestedDeviceRoleRequest> getParent_JsonNullable() {
+  public NestedDeviceRoleRequest getParent() {
     return parent;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PARENT)
-  public void setParent_JsonNullable(JsonNullable<NestedDeviceRoleRequest> parent) {
-    this.parent = parent;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setParent(@javax.annotation.Nullable NestedDeviceRoleRequest parent) {
-    this.parent = JsonNullable.<NestedDeviceRoleRequest>of(parent);
+    this.parent = parent;
   }
 
   public DeviceRoleRequest description(@javax.annotation.Nullable String description) {
@@ -359,8 +339,8 @@ public class DeviceRoleRequest {
   }
 
   public DeviceRoleRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -369,26 +349,18 @@ public class DeviceRoleRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public DeviceRoleRequest comments(@javax.annotation.Nullable String comments) {
@@ -430,29 +402,18 @@ public class DeviceRoleRequest {
         Objects.equals(this.slug, deviceRoleRequest.slug) &&
         Objects.equals(this.color, deviceRoleRequest.color) &&
         Objects.equals(this.vmRole, deviceRoleRequest.vmRole) &&
-        equalsNullable(this.configTemplate, deviceRoleRequest.configTemplate) &&
-        equalsNullable(this.parent, deviceRoleRequest.parent) &&
+        Objects.equals(this.configTemplate, deviceRoleRequest.configTemplate) &&
+        Objects.equals(this.parent, deviceRoleRequest.parent) &&
         Objects.equals(this.description, deviceRoleRequest.description) &&
         Objects.equals(this.tags, deviceRoleRequest.tags) &&
         Objects.equals(this.customFields, deviceRoleRequest.customFields) &&
-        equalsNullable(this.owner, deviceRoleRequest.owner) &&
+        Objects.equals(this.owner, deviceRoleRequest.owner) &&
         Objects.equals(this.comments, deviceRoleRequest.comments);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, slug, color, vmRole, hashCodeNullable(configTemplate), hashCodeNullable(parent), description, tags, customFields, hashCodeNullable(owner), comments);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, slug, color, vmRole, configTemplate, parent, description, tags, customFields, owner, comments);
   }
 
   @Override

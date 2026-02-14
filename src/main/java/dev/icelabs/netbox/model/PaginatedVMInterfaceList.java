@@ -25,10 +25,6 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -41,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   PaginatedVMInterfaceList.JSON_PROPERTY_PREVIOUS,
   PaginatedVMInterfaceList.JSON_PROPERTY_RESULTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class PaginatedVMInterfaceList {
   public static final String JSON_PROPERTY_COUNT = "count";
   @javax.annotation.Nonnull
@@ -49,11 +45,11 @@ public class PaginatedVMInterfaceList {
 
   public static final String JSON_PROPERTY_NEXT = "next";
   @javax.annotation.Nullable
-  private JsonNullable<URI> next = JsonNullable.<URI>undefined();
+  private URI next;
 
   public static final String JSON_PROPERTY_PREVIOUS = "previous";
   @javax.annotation.Nullable
-  private JsonNullable<URI> previous = JsonNullable.<URI>undefined();
+  private URI previous;
 
   public static final String JSON_PROPERTY_RESULTS = "results";
   @javax.annotation.Nonnull
@@ -88,8 +84,8 @@ public class PaginatedVMInterfaceList {
   }
 
   public PaginatedVMInterfaceList next(@javax.annotation.Nullable URI next) {
-    this.next = JsonNullable.<URI>of(next);
     
+    this.next = next;
     return this;
   }
 
@@ -98,31 +94,23 @@ public class PaginatedVMInterfaceList {
    * @return next
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public URI getNext() {
-        return next.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_NEXT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<URI> getNext_JsonNullable() {
+  public URI getNext() {
     return next;
   }
-  
-  @JsonProperty(JSON_PROPERTY_NEXT)
-  public void setNext_JsonNullable(JsonNullable<URI> next) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_NEXT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setNext(@javax.annotation.Nullable URI next) {
     this.next = next;
   }
 
-  public void setNext(@javax.annotation.Nullable URI next) {
-    this.next = JsonNullable.<URI>of(next);
-  }
-
   public PaginatedVMInterfaceList previous(@javax.annotation.Nullable URI previous) {
-    this.previous = JsonNullable.<URI>of(previous);
     
+    this.previous = previous;
     return this;
   }
 
@@ -131,26 +119,18 @@ public class PaginatedVMInterfaceList {
    * @return previous
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public URI getPrevious() {
-        return previous.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PREVIOUS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<URI> getPrevious_JsonNullable() {
+  public URI getPrevious() {
     return previous;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PREVIOUS)
-  public void setPrevious_JsonNullable(JsonNullable<URI> previous) {
-    this.previous = previous;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PREVIOUS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrevious(@javax.annotation.Nullable URI previous) {
-    this.previous = JsonNullable.<URI>of(previous);
+    this.previous = previous;
   }
 
   public PaginatedVMInterfaceList results(@javax.annotation.Nonnull List<VMInterface> results) {
@@ -197,25 +177,14 @@ public class PaginatedVMInterfaceList {
     }
     PaginatedVMInterfaceList paginatedVMInterfaceList = (PaginatedVMInterfaceList) o;
     return Objects.equals(this.count, paginatedVMInterfaceList.count) &&
-        equalsNullable(this.next, paginatedVMInterfaceList.next) &&
-        equalsNullable(this.previous, paginatedVMInterfaceList.previous) &&
+        Objects.equals(this.next, paginatedVMInterfaceList.next) &&
+        Objects.equals(this.previous, paginatedVMInterfaceList.previous) &&
         Objects.equals(this.results, paginatedVMInterfaceList.results);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(count, hashCodeNullable(next), hashCodeNullable(previous), results);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(count, next, previous, results);
   }
 
   @Override

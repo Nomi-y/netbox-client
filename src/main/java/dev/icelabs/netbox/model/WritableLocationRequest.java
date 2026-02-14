@@ -29,10 +29,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -53,7 +49,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   WritableLocationRequest.JSON_PROPERTY_OWNER,
   WritableLocationRequest.JSON_PROPERTY_COMMENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class WritableLocationRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -69,7 +65,7 @@ public class WritableLocationRequest {
 
   public static final String JSON_PROPERTY_PARENT = "parent";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> parent = JsonNullable.<Integer>undefined();
+  private Integer parent;
 
   /**
    * * &#x60;planned&#x60; - Planned * &#x60;staging&#x60; - Staging * &#x60;active&#x60; - Active * &#x60;decommissioning&#x60; - Decommissioning * &#x60;retired&#x60; - Retired
@@ -118,7 +114,7 @@ public class WritableLocationRequest {
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestTenant> tenant = JsonNullable.<ASNRangeRequestTenant>undefined();
+  private ASNRangeRequestTenant tenant;
 
   public static final String JSON_PROPERTY_FACILITY = "facility";
   @javax.annotation.Nullable
@@ -138,7 +134,7 @@ public class WritableLocationRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -223,8 +219,8 @@ public class WritableLocationRequest {
   }
 
   public WritableLocationRequest parent(@javax.annotation.Nullable Integer parent) {
-    this.parent = JsonNullable.<Integer>of(parent);
     
+    this.parent = parent;
     return this;
   }
 
@@ -233,26 +229,18 @@ public class WritableLocationRequest {
    * @return parent
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getParent() {
-        return parent.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getParent_JsonNullable() {
+  public Integer getParent() {
     return parent;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PARENT)
-  public void setParent_JsonNullable(JsonNullable<Integer> parent) {
-    this.parent = parent;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setParent(@javax.annotation.Nullable Integer parent) {
-    this.parent = JsonNullable.<Integer>of(parent);
+    this.parent = parent;
   }
 
   public WritableLocationRequest status(@javax.annotation.Nullable StatusEnum status) {
@@ -281,8 +269,8 @@ public class WritableLocationRequest {
   }
 
   public WritableLocationRequest tenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -291,26 +279,18 @@ public class WritableLocationRequest {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestTenant> getTenant_JsonNullable() {
+  public ASNRangeRequestTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<ASNRangeRequestTenant> tenant) {
-    this.tenant = tenant;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
+    this.tenant = tenant;
   }
 
   public WritableLocationRequest facility(@javax.annotation.Nullable String facility) {
@@ -430,8 +410,8 @@ public class WritableLocationRequest {
   }
 
   public WritableLocationRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -440,26 +420,18 @@ public class WritableLocationRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public WritableLocationRequest comments(@javax.annotation.Nullable String comments) {
@@ -500,31 +472,20 @@ public class WritableLocationRequest {
     return Objects.equals(this.name, writableLocationRequest.name) &&
         Objects.equals(this.slug, writableLocationRequest.slug) &&
         Objects.equals(this.site, writableLocationRequest.site) &&
-        equalsNullable(this.parent, writableLocationRequest.parent) &&
+        Objects.equals(this.parent, writableLocationRequest.parent) &&
         Objects.equals(this.status, writableLocationRequest.status) &&
-        equalsNullable(this.tenant, writableLocationRequest.tenant) &&
+        Objects.equals(this.tenant, writableLocationRequest.tenant) &&
         Objects.equals(this.facility, writableLocationRequest.facility) &&
         Objects.equals(this.description, writableLocationRequest.description) &&
         Objects.equals(this.tags, writableLocationRequest.tags) &&
         Objects.equals(this.customFields, writableLocationRequest.customFields) &&
-        equalsNullable(this.owner, writableLocationRequest.owner) &&
+        Objects.equals(this.owner, writableLocationRequest.owner) &&
         Objects.equals(this.comments, writableLocationRequest.comments);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, slug, site, hashCodeNullable(parent), status, hashCodeNullable(tenant), facility, description, tags, customFields, hashCodeNullable(owner), comments);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, slug, site, parent, status, tenant, facility, description, tags, customFields, owner, comments);
   }
 
   @Override

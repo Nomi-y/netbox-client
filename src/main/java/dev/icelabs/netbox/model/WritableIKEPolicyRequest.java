@@ -27,10 +27,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -49,7 +45,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   WritableIKEPolicyRequest.JSON_PROPERTY_TAGS,
   WritableIKEPolicyRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class WritableIKEPolicyRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -137,7 +133,7 @@ public class WritableIKEPolicyRequest {
 
   public static final String JSON_PROPERTY_MODE = "mode";
   @javax.annotation.Nullable
-  private JsonNullable<ModeEnum> mode = JsonNullable.<ModeEnum>undefined();
+  private ModeEnum mode;
 
   public static final String JSON_PROPERTY_PROPOSALS = "proposals";
   @javax.annotation.Nullable
@@ -149,7 +145,7 @@ public class WritableIKEPolicyRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -244,8 +240,8 @@ public class WritableIKEPolicyRequest {
   }
 
   public WritableIKEPolicyRequest mode(@javax.annotation.Nullable ModeEnum mode) {
-    this.mode = JsonNullable.<ModeEnum>of(mode);
     
+    this.mode = mode;
     return this;
   }
 
@@ -254,26 +250,18 @@ public class WritableIKEPolicyRequest {
    * @return mode
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ModeEnum getMode() {
-        return mode.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ModeEnum> getMode_JsonNullable() {
+  public ModeEnum getMode() {
     return mode;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MODE)
-  public void setMode_JsonNullable(JsonNullable<ModeEnum> mode) {
-    this.mode = mode;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_MODE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMode(@javax.annotation.Nullable ModeEnum mode) {
-    this.mode = JsonNullable.<ModeEnum>of(mode);
+    this.mode = mode;
   }
 
   public WritableIKEPolicyRequest proposals(@javax.annotation.Nullable List<Integer> proposals) {
@@ -335,8 +323,8 @@ public class WritableIKEPolicyRequest {
   }
 
   public WritableIKEPolicyRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -345,26 +333,18 @@ public class WritableIKEPolicyRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public WritableIKEPolicyRequest comments(@javax.annotation.Nullable String comments) {
@@ -471,29 +451,18 @@ public class WritableIKEPolicyRequest {
     return Objects.equals(this.name, writableIKEPolicyRequest.name) &&
         Objects.equals(this.description, writableIKEPolicyRequest.description) &&
         Objects.equals(this.version, writableIKEPolicyRequest.version) &&
-        equalsNullable(this.mode, writableIKEPolicyRequest.mode) &&
+        Objects.equals(this.mode, writableIKEPolicyRequest.mode) &&
         Objects.equals(this.proposals, writableIKEPolicyRequest.proposals) &&
         Objects.equals(this.presharedKey, writableIKEPolicyRequest.presharedKey) &&
-        equalsNullable(this.owner, writableIKEPolicyRequest.owner) &&
+        Objects.equals(this.owner, writableIKEPolicyRequest.owner) &&
         Objects.equals(this.comments, writableIKEPolicyRequest.comments) &&
         Objects.equals(this.tags, writableIKEPolicyRequest.tags) &&
         Objects.equals(this.customFields, writableIKEPolicyRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, version, hashCodeNullable(mode), proposals, presharedKey, hashCodeNullable(owner), comments, tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, description, version, mode, proposals, presharedKey, owner, comments, tags, customFields);
   }
 
   @Override

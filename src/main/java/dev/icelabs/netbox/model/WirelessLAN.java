@@ -35,10 +35,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -69,7 +65,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   WirelessLAN.JSON_PROPERTY_CREATED,
   WirelessLAN.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class WirelessLAN {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -97,7 +93,7 @@ public class WirelessLAN {
 
   public static final String JSON_PROPERTY_GROUP = "group";
   @javax.annotation.Nullable
-  private JsonNullable<BriefWirelessLANGroup> group = JsonNullable.<BriefWirelessLANGroup>undefined();
+  private BriefWirelessLANGroup group;
 
   public static final String JSON_PROPERTY_STATUS = "status";
   @javax.annotation.Nullable
@@ -105,15 +101,15 @@ public class WirelessLAN {
 
   public static final String JSON_PROPERTY_VLAN = "vlan";
   @javax.annotation.Nullable
-  private JsonNullable<BriefVLAN> vlan = JsonNullable.<BriefVLAN>undefined();
+  private BriefVLAN vlan;
 
   public static final String JSON_PROPERTY_SCOPE_TYPE = "scope_type";
   @javax.annotation.Nullable
-  private JsonNullable<String> scopeType = JsonNullable.<String>undefined();
+  private String scopeType;
 
   public static final String JSON_PROPERTY_SCOPE_ID = "scope_id";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> scopeId = JsonNullable.<Integer>undefined();
+  private Integer scopeId;
 
   public static final String JSON_PROPERTY_SCOPE = "scope";
   @javax.annotation.Nullable
@@ -121,7 +117,7 @@ public class WirelessLAN {
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<BriefTenant> tenant = JsonNullable.<BriefTenant>undefined();
+  private BriefTenant tenant;
 
   public static final String JSON_PROPERTY_AUTH_TYPE = "auth_type";
   @javax.annotation.Nullable
@@ -137,7 +133,7 @@ public class WirelessLAN {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -291,8 +287,8 @@ public class WirelessLAN {
   }
 
   public WirelessLAN group(@javax.annotation.Nullable BriefWirelessLANGroup group) {
-    this.group = JsonNullable.<BriefWirelessLANGroup>of(group);
     
+    this.group = group;
     return this;
   }
 
@@ -301,26 +297,18 @@ public class WirelessLAN {
    * @return group
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefWirelessLANGroup getGroup() {
-        return group.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_GROUP, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefWirelessLANGroup> getGroup_JsonNullable() {
+  public BriefWirelessLANGroup getGroup() {
     return group;
   }
-  
-  @JsonProperty(JSON_PROPERTY_GROUP)
-  public void setGroup_JsonNullable(JsonNullable<BriefWirelessLANGroup> group) {
-    this.group = group;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_GROUP, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable BriefWirelessLANGroup group) {
-    this.group = JsonNullable.<BriefWirelessLANGroup>of(group);
+    this.group = group;
   }
 
   public WirelessLAN status(@javax.annotation.Nullable WirelessLANStatus status) {
@@ -349,8 +337,8 @@ public class WirelessLAN {
   }
 
   public WirelessLAN vlan(@javax.annotation.Nullable BriefVLAN vlan) {
-    this.vlan = JsonNullable.<BriefVLAN>of(vlan);
     
+    this.vlan = vlan;
     return this;
   }
 
@@ -359,31 +347,23 @@ public class WirelessLAN {
    * @return vlan
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefVLAN getVlan() {
-        return vlan.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VLAN, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefVLAN> getVlan_JsonNullable() {
+  public BriefVLAN getVlan() {
     return vlan;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VLAN)
-  public void setVlan_JsonNullable(JsonNullable<BriefVLAN> vlan) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_VLAN, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setVlan(@javax.annotation.Nullable BriefVLAN vlan) {
     this.vlan = vlan;
   }
 
-  public void setVlan(@javax.annotation.Nullable BriefVLAN vlan) {
-    this.vlan = JsonNullable.<BriefVLAN>of(vlan);
-  }
-
   public WirelessLAN scopeType(@javax.annotation.Nullable String scopeType) {
-    this.scopeType = JsonNullable.<String>of(scopeType);
     
+    this.scopeType = scopeType;
     return this;
   }
 
@@ -392,31 +372,23 @@ public class WirelessLAN {
    * @return scopeType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getScopeType() {
-        return scopeType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SCOPE_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getScopeType_JsonNullable() {
+  public String getScopeType() {
     return scopeType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SCOPE_TYPE)
-  public void setScopeType_JsonNullable(JsonNullable<String> scopeType) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_SCOPE_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setScopeType(@javax.annotation.Nullable String scopeType) {
     this.scopeType = scopeType;
   }
 
-  public void setScopeType(@javax.annotation.Nullable String scopeType) {
-    this.scopeType = JsonNullable.<String>of(scopeType);
-  }
-
   public WirelessLAN scopeId(@javax.annotation.Nullable Integer scopeId) {
-    this.scopeId = JsonNullable.<Integer>of(scopeId);
     
+    this.scopeId = scopeId;
     return this;
   }
 
@@ -425,26 +397,18 @@ public class WirelessLAN {
    * @return scopeId
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getScopeId() {
-        return scopeId.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SCOPE_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getScopeId_JsonNullable() {
+  public Integer getScopeId() {
     return scopeId;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SCOPE_ID)
-  public void setScopeId_JsonNullable(JsonNullable<Integer> scopeId) {
-    this.scopeId = scopeId;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_SCOPE_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setScopeId(@javax.annotation.Nullable Integer scopeId) {
-    this.scopeId = JsonNullable.<Integer>of(scopeId);
+    this.scopeId = scopeId;
   }
 
   /**
@@ -462,8 +426,8 @@ public class WirelessLAN {
 
 
   public WirelessLAN tenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -472,26 +436,18 @@ public class WirelessLAN {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefTenant> getTenant_JsonNullable() {
+  public BriefTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<BriefTenant> tenant) {
-    this.tenant = tenant;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
+    this.tenant = tenant;
   }
 
   public WirelessLAN authType(@javax.annotation.Nullable WirelessLANAuthType authType) {
@@ -570,8 +526,8 @@ public class WirelessLAN {
   }
 
   public WirelessLAN owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -580,26 +536,18 @@ public class WirelessLAN {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public WirelessLAN comments(@javax.annotation.Nullable String comments) {
@@ -737,17 +685,17 @@ public class WirelessLAN {
         Objects.equals(this.display, wirelessLAN.display) &&
         Objects.equals(this.ssid, wirelessLAN.ssid) &&
         Objects.equals(this.description, wirelessLAN.description) &&
-        equalsNullable(this.group, wirelessLAN.group) &&
+        Objects.equals(this.group, wirelessLAN.group) &&
         Objects.equals(this.status, wirelessLAN.status) &&
-        equalsNullable(this.vlan, wirelessLAN.vlan) &&
-        equalsNullable(this.scopeType, wirelessLAN.scopeType) &&
-        equalsNullable(this.scopeId, wirelessLAN.scopeId) &&
+        Objects.equals(this.vlan, wirelessLAN.vlan) &&
+        Objects.equals(this.scopeType, wirelessLAN.scopeType) &&
+        Objects.equals(this.scopeId, wirelessLAN.scopeId) &&
         Objects.equals(this.scope, wirelessLAN.scope) &&
-        equalsNullable(this.tenant, wirelessLAN.tenant) &&
+        Objects.equals(this.tenant, wirelessLAN.tenant) &&
         Objects.equals(this.authType, wirelessLAN.authType) &&
         Objects.equals(this.authCipher, wirelessLAN.authCipher) &&
         Objects.equals(this.authPsk, wirelessLAN.authPsk) &&
-        equalsNullable(this.owner, wirelessLAN.owner) &&
+        Objects.equals(this.owner, wirelessLAN.owner) &&
         Objects.equals(this.comments, wirelessLAN.comments) &&
         Objects.equals(this.tags, wirelessLAN.tags) &&
         Objects.equals(this.customFields, wirelessLAN.customFields) &&
@@ -755,20 +703,9 @@ public class WirelessLAN {
         Objects.equals(this.lastUpdated, wirelessLAN.lastUpdated);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, ssid, description, hashCodeNullable(group), status, hashCodeNullable(vlan), hashCodeNullable(scopeType), hashCodeNullable(scopeId), scope, hashCodeNullable(tenant), authType, authCipher, authPsk, hashCodeNullable(owner), comments, tags, customFields, created, lastUpdated);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, ssid, description, group, status, vlan, scopeType, scopeId, scope, tenant, authType, authCipher, authPsk, owner, comments, tags, customFields, created, lastUpdated);
   }
 
   @Override

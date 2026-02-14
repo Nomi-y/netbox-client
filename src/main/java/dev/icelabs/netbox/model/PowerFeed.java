@@ -37,10 +37,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -80,7 +76,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   PowerFeed.JSON_PROPERTY_LAST_UPDATED,
   PowerFeed.JSON_PROPERTY_OCCUPIED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class PowerFeed {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -104,7 +100,7 @@ public class PowerFeed {
 
   public static final String JSON_PROPERTY_RACK = "rack";
   @javax.annotation.Nullable
-  private JsonNullable<BriefRack> rack = JsonNullable.<BriefRack>undefined();
+  private BriefRack rack;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -176,11 +172,11 @@ public class PowerFeed {
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<BriefTenant> tenant = JsonNullable.<BriefTenant>undefined();
+  private BriefTenant tenant;
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -327,8 +323,8 @@ public class PowerFeed {
   }
 
   public PowerFeed rack(@javax.annotation.Nullable BriefRack rack) {
-    this.rack = JsonNullable.<BriefRack>of(rack);
     
+    this.rack = rack;
     return this;
   }
 
@@ -337,26 +333,18 @@ public class PowerFeed {
    * @return rack
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefRack getRack() {
-        return rack.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_RACK, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefRack> getRack_JsonNullable() {
+  public BriefRack getRack() {
     return rack;
   }
-  
-  @JsonProperty(JSON_PROPERTY_RACK)
-  public void setRack_JsonNullable(JsonNullable<BriefRack> rack) {
-    this.rack = rack;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_RACK, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRack(@javax.annotation.Nullable BriefRack rack) {
-    this.rack = JsonNullable.<BriefRack>of(rack);
+    this.rack = rack;
   }
 
   public PowerFeed name(@javax.annotation.Nonnull String name) {
@@ -714,8 +702,8 @@ public class PowerFeed {
   }
 
   public PowerFeed tenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -724,31 +712,23 @@ public class PowerFeed {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefTenant> getTenant_JsonNullable() {
+  public BriefTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<BriefTenant> tenant) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTenant(@javax.annotation.Nullable BriefTenant tenant) {
     this.tenant = tenant;
   }
 
-  public void setTenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
-  }
-
   public PowerFeed owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -757,26 +737,18 @@ public class PowerFeed {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public PowerFeed comments(@javax.annotation.Nullable String comments) {
@@ -927,7 +899,7 @@ public class PowerFeed {
         Objects.equals(this.displayUrl, powerFeed.displayUrl) &&
         Objects.equals(this.display, powerFeed.display) &&
         Objects.equals(this.powerPanel, powerFeed.powerPanel) &&
-        equalsNullable(this.rack, powerFeed.rack) &&
+        Objects.equals(this.rack, powerFeed.rack) &&
         Objects.equals(this.name, powerFeed.name) &&
         Objects.equals(this.status, powerFeed.status) &&
         Objects.equals(this.type, powerFeed.type) &&
@@ -945,8 +917,8 @@ public class PowerFeed {
         Objects.equals(this.connectedEndpointsType, powerFeed.connectedEndpointsType) &&
         Objects.equals(this.connectedEndpointsReachable, powerFeed.connectedEndpointsReachable) &&
         Objects.equals(this.description, powerFeed.description) &&
-        equalsNullable(this.tenant, powerFeed.tenant) &&
-        equalsNullable(this.owner, powerFeed.owner) &&
+        Objects.equals(this.tenant, powerFeed.tenant) &&
+        Objects.equals(this.owner, powerFeed.owner) &&
         Objects.equals(this.comments, powerFeed.comments) &&
         Objects.equals(this.tags, powerFeed.tags) &&
         Objects.equals(this.customFields, powerFeed.customFields) &&
@@ -955,20 +927,9 @@ public class PowerFeed {
         Objects.equals(this.occupied, powerFeed.occupied);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, powerPanel, hashCodeNullable(rack), name, status, type, supply, phase, voltage, amperage, maxUtilization, markConnected, cable, cableEnd, linkPeers, linkPeersType, connectedEndpoints, connectedEndpointsType, connectedEndpointsReachable, description, hashCodeNullable(tenant), hashCodeNullable(owner), comments, tags, customFields, created, lastUpdated, occupied);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, powerPanel, rack, name, status, type, supply, phase, voltage, amperage, maxUtilization, markConnected, cable, cableEnd, linkPeers, linkPeersType, connectedEndpoints, connectedEndpointsType, connectedEndpointsReachable, description, tenant, owner, comments, tags, customFields, created, lastUpdated, occupied);
   }
 
   @Override

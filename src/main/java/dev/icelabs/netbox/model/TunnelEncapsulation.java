@@ -31,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   TunnelEncapsulation.JSON_PROPERTY_LABEL
 })
 @JsonTypeName("Tunnel_encapsulation")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class TunnelEncapsulation {
   /**
    * * &#x60;ipsec-transport&#x60; - IPsec - Transport * &#x60;ipsec-tunnel&#x60; - IPsec - Tunnel * &#x60;ip-ip&#x60; - IP-in-IP * &#x60;gre&#x60; - GRE * &#x60;wireguard&#x60; - WireGuard * &#x60;openvpn&#x60; - OpenVPN * &#x60;l2tp&#x60; - L2TP * &#x60;pptp&#x60; - PPTP

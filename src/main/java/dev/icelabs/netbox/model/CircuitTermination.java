@@ -30,10 +30,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -66,7 +62,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   CircuitTermination.JSON_PROPERTY_LAST_UPDATED,
   CircuitTermination.JSON_PROPERTY_OCCUPIED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class CircuitTermination {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -129,11 +125,11 @@ public class CircuitTermination {
 
   public static final String JSON_PROPERTY_TERMINATION_TYPE = "termination_type";
   @javax.annotation.Nullable
-  private JsonNullable<String> terminationType = JsonNullable.<String>undefined();
+  private String terminationType;
 
   public static final String JSON_PROPERTY_TERMINATION_ID = "termination_id";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> terminationId = JsonNullable.<Integer>undefined();
+  private Integer terminationId;
 
   public static final String JSON_PROPERTY_TERMINATION = "termination";
   @javax.annotation.Nullable
@@ -141,11 +137,11 @@ public class CircuitTermination {
 
   public static final String JSON_PROPERTY_PORT_SPEED = "port_speed";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> portSpeed = JsonNullable.<Integer>undefined();
+  private Integer portSpeed;
 
   public static final String JSON_PROPERTY_UPSTREAM_SPEED = "upstream_speed";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> upstreamSpeed = JsonNullable.<Integer>undefined();
+  private Integer upstreamSpeed;
 
   public static final String JSON_PROPERTY_XCONNECT_ID = "xconnect_id";
   @javax.annotation.Nullable
@@ -341,8 +337,8 @@ public class CircuitTermination {
   }
 
   public CircuitTermination terminationType(@javax.annotation.Nullable String terminationType) {
-    this.terminationType = JsonNullable.<String>of(terminationType);
     
+    this.terminationType = terminationType;
     return this;
   }
 
@@ -351,31 +347,23 @@ public class CircuitTermination {
    * @return terminationType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getTerminationType() {
-        return terminationType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TERMINATION_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getTerminationType_JsonNullable() {
+  public String getTerminationType() {
     return terminationType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TERMINATION_TYPE)
-  public void setTerminationType_JsonNullable(JsonNullable<String> terminationType) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TERMINATION_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTerminationType(@javax.annotation.Nullable String terminationType) {
     this.terminationType = terminationType;
   }
 
-  public void setTerminationType(@javax.annotation.Nullable String terminationType) {
-    this.terminationType = JsonNullable.<String>of(terminationType);
-  }
-
   public CircuitTermination terminationId(@javax.annotation.Nullable Integer terminationId) {
-    this.terminationId = JsonNullable.<Integer>of(terminationId);
     
+    this.terminationId = terminationId;
     return this;
   }
 
@@ -384,26 +372,18 @@ public class CircuitTermination {
    * @return terminationId
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getTerminationId() {
-        return terminationId.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TERMINATION_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getTerminationId_JsonNullable() {
+  public Integer getTerminationId() {
     return terminationId;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TERMINATION_ID)
-  public void setTerminationId_JsonNullable(JsonNullable<Integer> terminationId) {
-    this.terminationId = terminationId;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TERMINATION_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTerminationId(@javax.annotation.Nullable Integer terminationId) {
-    this.terminationId = JsonNullable.<Integer>of(terminationId);
+    this.terminationId = terminationId;
   }
 
   /**
@@ -421,8 +401,8 @@ public class CircuitTermination {
 
 
   public CircuitTermination portSpeed(@javax.annotation.Nullable Integer portSpeed) {
-    this.portSpeed = JsonNullable.<Integer>of(portSpeed);
     
+    this.portSpeed = portSpeed;
     return this;
   }
 
@@ -433,31 +413,23 @@ public class CircuitTermination {
    * @return portSpeed
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getPortSpeed() {
-        return portSpeed.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PORT_SPEED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getPortSpeed_JsonNullable() {
+  public Integer getPortSpeed() {
     return portSpeed;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PORT_SPEED)
-  public void setPortSpeed_JsonNullable(JsonNullable<Integer> portSpeed) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_PORT_SPEED, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPortSpeed(@javax.annotation.Nullable Integer portSpeed) {
     this.portSpeed = portSpeed;
   }
 
-  public void setPortSpeed(@javax.annotation.Nullable Integer portSpeed) {
-    this.portSpeed = JsonNullable.<Integer>of(portSpeed);
-  }
-
   public CircuitTermination upstreamSpeed(@javax.annotation.Nullable Integer upstreamSpeed) {
-    this.upstreamSpeed = JsonNullable.<Integer>of(upstreamSpeed);
     
+    this.upstreamSpeed = upstreamSpeed;
     return this;
   }
 
@@ -468,26 +440,18 @@ public class CircuitTermination {
    * @return upstreamSpeed
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getUpstreamSpeed() {
-        return upstreamSpeed.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_UPSTREAM_SPEED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getUpstreamSpeed_JsonNullable() {
+  public Integer getUpstreamSpeed() {
     return upstreamSpeed;
   }
-  
-  @JsonProperty(JSON_PROPERTY_UPSTREAM_SPEED)
-  public void setUpstreamSpeed_JsonNullable(JsonNullable<Integer> upstreamSpeed) {
-    this.upstreamSpeed = upstreamSpeed;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_UPSTREAM_SPEED, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUpstreamSpeed(@javax.annotation.Nullable Integer upstreamSpeed) {
-    this.upstreamSpeed = JsonNullable.<Integer>of(upstreamSpeed);
+    this.upstreamSpeed = upstreamSpeed;
   }
 
   public CircuitTermination xconnectId(@javax.annotation.Nullable String xconnectId) {
@@ -770,11 +734,11 @@ public class CircuitTermination {
         Objects.equals(this.display, circuitTermination.display) &&
         Objects.equals(this.circuit, circuitTermination.circuit) &&
         Objects.equals(this.termSide, circuitTermination.termSide) &&
-        equalsNullable(this.terminationType, circuitTermination.terminationType) &&
-        equalsNullable(this.terminationId, circuitTermination.terminationId) &&
+        Objects.equals(this.terminationType, circuitTermination.terminationType) &&
+        Objects.equals(this.terminationId, circuitTermination.terminationId) &&
         Objects.equals(this.termination, circuitTermination.termination) &&
-        equalsNullable(this.portSpeed, circuitTermination.portSpeed) &&
-        equalsNullable(this.upstreamSpeed, circuitTermination.upstreamSpeed) &&
+        Objects.equals(this.portSpeed, circuitTermination.portSpeed) &&
+        Objects.equals(this.upstreamSpeed, circuitTermination.upstreamSpeed) &&
         Objects.equals(this.xconnectId, circuitTermination.xconnectId) &&
         Objects.equals(this.ppInfo, circuitTermination.ppInfo) &&
         Objects.equals(this.description, circuitTermination.description) &&
@@ -790,20 +754,9 @@ public class CircuitTermination {
         Objects.equals(this.occupied, circuitTermination.occupied);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, circuit, termSide, hashCodeNullable(terminationType), hashCodeNullable(terminationId), termination, hashCodeNullable(portSpeed), hashCodeNullable(upstreamSpeed), xconnectId, ppInfo, description, markConnected, cable, cableEnd, linkPeers, linkPeersType, tags, customFields, created, lastUpdated, occupied);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, circuit, termSide, terminationType, terminationId, termination, portSpeed, upstreamSpeed, xconnectId, ppInfo, description, markConnected, cable, cableEnd, linkPeers, linkPeersType, tags, customFields, created, lastUpdated, occupied);
   }
 
   @Override

@@ -32,10 +32,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -61,7 +57,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ASN.JSON_PROPERTY_PROVIDER_COUNT,
   ASN.JSON_PROPERTY_SITES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class ASN {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -85,11 +81,11 @@ public class ASN {
 
   public static final String JSON_PROPERTY_RIR = "rir";
   @javax.annotation.Nullable
-  private JsonNullable<BriefRIR> rir = JsonNullable.<BriefRIR>undefined();
+  private BriefRIR rir;
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<BriefTenant> tenant = JsonNullable.<BriefTenant>undefined();
+  private BriefTenant tenant;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -97,7 +93,7 @@ public class ASN {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -242,8 +238,8 @@ public class ASN {
   }
 
   public ASN rir(@javax.annotation.Nullable BriefRIR rir) {
-    this.rir = JsonNullable.<BriefRIR>of(rir);
     
+    this.rir = rir;
     return this;
   }
 
@@ -252,31 +248,23 @@ public class ASN {
    * @return rir
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefRIR getRir() {
-        return rir.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_RIR, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefRIR> getRir_JsonNullable() {
+  public BriefRIR getRir() {
     return rir;
   }
-  
-  @JsonProperty(JSON_PROPERTY_RIR)
-  public void setRir_JsonNullable(JsonNullable<BriefRIR> rir) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_RIR, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRir(@javax.annotation.Nullable BriefRIR rir) {
     this.rir = rir;
   }
 
-  public void setRir(@javax.annotation.Nullable BriefRIR rir) {
-    this.rir = JsonNullable.<BriefRIR>of(rir);
-  }
-
   public ASN tenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -285,26 +273,18 @@ public class ASN {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefTenant> getTenant_JsonNullable() {
+  public BriefTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<BriefTenant> tenant) {
-    this.tenant = tenant;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
+    this.tenant = tenant;
   }
 
   public ASN description(@javax.annotation.Nullable String description) {
@@ -333,8 +313,8 @@ public class ASN {
   }
 
   public ASN owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -343,26 +323,18 @@ public class ASN {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public ASN comments(@javax.annotation.Nullable String comments) {
@@ -560,10 +532,10 @@ public class ASN {
         Objects.equals(this.displayUrl, ASN.displayUrl) &&
         Objects.equals(this.display, ASN.display) &&
         Objects.equals(this.asn, ASN.asn) &&
-        equalsNullable(this.rir, ASN.rir) &&
-        equalsNullable(this.tenant, ASN.tenant) &&
+        Objects.equals(this.rir, ASN.rir) &&
+        Objects.equals(this.tenant, ASN.tenant) &&
         Objects.equals(this.description, ASN.description) &&
-        equalsNullable(this.owner, ASN.owner) &&
+        Objects.equals(this.owner, ASN.owner) &&
         Objects.equals(this.comments, ASN.comments) &&
         Objects.equals(this.tags, ASN.tags) &&
         Objects.equals(this.customFields, ASN.customFields) &&
@@ -574,20 +546,9 @@ public class ASN {
         Objects.equals(this.sites, ASN.sites);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, asn, hashCodeNullable(rir), hashCodeNullable(tenant), description, hashCodeNullable(owner), comments, tags, customFields, created, lastUpdated, siteCount, providerCount, sites);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, asn, rir, tenant, description, owner, comments, tags, customFields, created, lastUpdated, siteCount, providerCount, sites);
   }
 
   @Override

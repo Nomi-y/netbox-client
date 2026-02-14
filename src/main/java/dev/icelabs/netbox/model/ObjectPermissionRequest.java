@@ -23,10 +23,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -43,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ObjectPermissionRequest.JSON_PROPERTY_GROUPS,
   ObjectPermissionRequest.JSON_PROPERTY_USERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class ObjectPermissionRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -67,7 +63,7 @@ public class ObjectPermissionRequest {
 
   public static final String JSON_PROPERTY_CONSTRAINTS = "constraints";
   @javax.annotation.Nullable
-  private JsonNullable<Object> constraints = JsonNullable.<Object>of(null);
+  private Object constraints = null;
 
   public static final String JSON_PROPERTY_GROUPS = "groups";
   @javax.annotation.Nullable
@@ -222,8 +218,8 @@ public class ObjectPermissionRequest {
   }
 
   public ObjectPermissionRequest constraints(@javax.annotation.Nullable Object constraints) {
-    this.constraints = JsonNullable.<Object>of(constraints);
     
+    this.constraints = constraints;
     return this;
   }
 
@@ -232,26 +228,18 @@ public class ObjectPermissionRequest {
    * @return constraints
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Object getConstraints() {
-        return constraints.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_CONSTRAINTS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Object> getConstraints_JsonNullable() {
+  public Object getConstraints() {
     return constraints;
   }
-  
-  @JsonProperty(JSON_PROPERTY_CONSTRAINTS)
-  public void setConstraints_JsonNullable(JsonNullable<Object> constraints) {
-    this.constraints = constraints;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_CONSTRAINTS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setConstraints(@javax.annotation.Nullable Object constraints) {
-    this.constraints = JsonNullable.<Object>of(constraints);
+    this.constraints = constraints;
   }
 
   public ObjectPermissionRequest groups(@javax.annotation.Nullable List<Integer> groups) {
@@ -335,25 +323,14 @@ public class ObjectPermissionRequest {
         Objects.equals(this.enabled, objectPermissionRequest.enabled) &&
         Objects.equals(this.objectTypes, objectPermissionRequest.objectTypes) &&
         Objects.equals(this.actions, objectPermissionRequest.actions) &&
-        equalsNullable(this.constraints, objectPermissionRequest.constraints) &&
+        Objects.equals(this.constraints, objectPermissionRequest.constraints) &&
         Objects.equals(this.groups, objectPermissionRequest.groups) &&
         Objects.equals(this.users, objectPermissionRequest.users);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, enabled, objectTypes, actions, hashCodeNullable(constraints), groups, users);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, description, enabled, objectTypes, actions, constraints, groups, users);
   }
 
   @Override

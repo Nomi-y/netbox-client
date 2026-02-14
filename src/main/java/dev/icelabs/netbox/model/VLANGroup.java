@@ -30,10 +30,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -62,7 +58,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   VLANGroup.JSON_PROPERTY_VLAN_COUNT,
   VLANGroup.JSON_PROPERTY_UTILIZATION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class VLANGroup {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -90,11 +86,11 @@ public class VLANGroup {
 
   public static final String JSON_PROPERTY_SCOPE_TYPE = "scope_type";
   @javax.annotation.Nullable
-  private JsonNullable<String> scopeType = JsonNullable.<String>undefined();
+  private String scopeType;
 
   public static final String JSON_PROPERTY_SCOPE_ID = "scope_id";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> scopeId = JsonNullable.<Integer>undefined();
+  private Integer scopeId;
 
   public static final String JSON_PROPERTY_SCOPE = "scope";
   @javax.annotation.Nullable
@@ -106,7 +102,7 @@ public class VLANGroup {
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<BriefTenant> tenant = JsonNullable.<BriefTenant>undefined();
+  private BriefTenant tenant;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -114,7 +110,7 @@ public class VLANGroup {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -280,8 +276,8 @@ public class VLANGroup {
   }
 
   public VLANGroup scopeType(@javax.annotation.Nullable String scopeType) {
-    this.scopeType = JsonNullable.<String>of(scopeType);
     
+    this.scopeType = scopeType;
     return this;
   }
 
@@ -290,31 +286,23 @@ public class VLANGroup {
    * @return scopeType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getScopeType() {
-        return scopeType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SCOPE_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getScopeType_JsonNullable() {
+  public String getScopeType() {
     return scopeType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SCOPE_TYPE)
-  public void setScopeType_JsonNullable(JsonNullable<String> scopeType) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_SCOPE_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setScopeType(@javax.annotation.Nullable String scopeType) {
     this.scopeType = scopeType;
   }
 
-  public void setScopeType(@javax.annotation.Nullable String scopeType) {
-    this.scopeType = JsonNullable.<String>of(scopeType);
-  }
-
   public VLANGroup scopeId(@javax.annotation.Nullable Integer scopeId) {
-    this.scopeId = JsonNullable.<Integer>of(scopeId);
     
+    this.scopeId = scopeId;
     return this;
   }
 
@@ -323,26 +311,18 @@ public class VLANGroup {
    * @return scopeId
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getScopeId() {
-        return scopeId.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SCOPE_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getScopeId_JsonNullable() {
+  public Integer getScopeId() {
     return scopeId;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SCOPE_ID)
-  public void setScopeId_JsonNullable(JsonNullable<Integer> scopeId) {
-    this.scopeId = scopeId;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_SCOPE_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setScopeId(@javax.annotation.Nullable Integer scopeId) {
-    this.scopeId = JsonNullable.<Integer>of(scopeId);
+    this.scopeId = scopeId;
   }
 
   /**
@@ -393,8 +373,8 @@ public class VLANGroup {
   }
 
   public VLANGroup tenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -403,26 +383,18 @@ public class VLANGroup {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefTenant> getTenant_JsonNullable() {
+  public BriefTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<BriefTenant> tenant) {
-    this.tenant = tenant;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
+    this.tenant = tenant;
   }
 
   public VLANGroup description(@javax.annotation.Nullable String description) {
@@ -451,8 +423,8 @@ public class VLANGroup {
   }
 
   public VLANGroup owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -461,26 +433,18 @@ public class VLANGroup {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public VLANGroup comments(@javax.annotation.Nullable String comments) {
@@ -646,13 +610,13 @@ public class VLANGroup {
         Objects.equals(this.display, vlANGroup.display) &&
         Objects.equals(this.name, vlANGroup.name) &&
         Objects.equals(this.slug, vlANGroup.slug) &&
-        equalsNullable(this.scopeType, vlANGroup.scopeType) &&
-        equalsNullable(this.scopeId, vlANGroup.scopeId) &&
+        Objects.equals(this.scopeType, vlANGroup.scopeType) &&
+        Objects.equals(this.scopeId, vlANGroup.scopeId) &&
         Objects.equals(this.scope, vlANGroup.scope) &&
         Objects.equals(this.vidRanges, vlANGroup.vidRanges) &&
-        equalsNullable(this.tenant, vlANGroup.tenant) &&
+        Objects.equals(this.tenant, vlANGroup.tenant) &&
         Objects.equals(this.description, vlANGroup.description) &&
-        equalsNullable(this.owner, vlANGroup.owner) &&
+        Objects.equals(this.owner, vlANGroup.owner) &&
         Objects.equals(this.comments, vlANGroup.comments) &&
         Objects.equals(this.tags, vlANGroup.tags) &&
         Objects.equals(this.customFields, vlANGroup.customFields) &&
@@ -662,20 +626,9 @@ public class VLANGroup {
         Objects.equals(this.utilization, vlANGroup.utilization);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, name, slug, hashCodeNullable(scopeType), hashCodeNullable(scopeId), scope, vidRanges, hashCodeNullable(tenant), description, hashCodeNullable(owner), comments, tags, customFields, created, lastUpdated, vlanCount, utilization);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, name, slug, scopeType, scopeId, scope, vidRanges, tenant, description, owner, comments, tags, customFields, created, lastUpdated, vlanCount, utilization);
   }
 
   @Override

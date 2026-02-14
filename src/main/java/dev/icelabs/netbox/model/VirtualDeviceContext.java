@@ -33,10 +33,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -65,7 +61,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   VirtualDeviceContext.JSON_PROPERTY_LAST_UPDATED,
   VirtualDeviceContext.JSON_PROPERTY_INTERFACE_COUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class VirtualDeviceContext {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -93,11 +89,11 @@ public class VirtualDeviceContext {
 
   public static final String JSON_PROPERTY_IDENTIFIER = "identifier";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> identifier = JsonNullable.<Integer>undefined();
+  private Integer identifier;
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<BriefTenant> tenant = JsonNullable.<BriefTenant>undefined();
+  private BriefTenant tenant;
 
   public static final String JSON_PROPERTY_PRIMARY_IP = "primary_ip";
   @javax.annotation.Nullable
@@ -105,11 +101,11 @@ public class VirtualDeviceContext {
 
   public static final String JSON_PROPERTY_PRIMARY_IP4 = "primary_ip4";
   @javax.annotation.Nullable
-  private JsonNullable<BriefIPAddress> primaryIp4 = JsonNullable.<BriefIPAddress>undefined();
+  private BriefIPAddress primaryIp4;
 
   public static final String JSON_PROPERTY_PRIMARY_IP6 = "primary_ip6";
   @javax.annotation.Nullable
-  private JsonNullable<BriefIPAddress> primaryIp6 = JsonNullable.<BriefIPAddress>undefined();
+  private BriefIPAddress primaryIp6;
 
   public static final String JSON_PROPERTY_STATUS = "status";
   @javax.annotation.Nonnull
@@ -121,7 +117,7 @@ public class VirtualDeviceContext {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -281,8 +277,8 @@ public class VirtualDeviceContext {
   }
 
   public VirtualDeviceContext identifier(@javax.annotation.Nullable Integer identifier) {
-    this.identifier = JsonNullable.<Integer>of(identifier);
     
+    this.identifier = identifier;
     return this;
   }
 
@@ -293,31 +289,23 @@ public class VirtualDeviceContext {
    * @return identifier
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getIdentifier() {
-        return identifier.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_IDENTIFIER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getIdentifier_JsonNullable() {
+  public Integer getIdentifier() {
     return identifier;
   }
-  
-  @JsonProperty(JSON_PROPERTY_IDENTIFIER)
-  public void setIdentifier_JsonNullable(JsonNullable<Integer> identifier) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_IDENTIFIER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setIdentifier(@javax.annotation.Nullable Integer identifier) {
     this.identifier = identifier;
   }
 
-  public void setIdentifier(@javax.annotation.Nullable Integer identifier) {
-    this.identifier = JsonNullable.<Integer>of(identifier);
-  }
-
   public VirtualDeviceContext tenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -326,26 +314,18 @@ public class VirtualDeviceContext {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefTenant> getTenant_JsonNullable() {
+  public BriefTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<BriefTenant> tenant) {
-    this.tenant = tenant;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
+    this.tenant = tenant;
   }
 
   /**
@@ -363,8 +343,8 @@ public class VirtualDeviceContext {
 
 
   public VirtualDeviceContext primaryIp4(@javax.annotation.Nullable BriefIPAddress primaryIp4) {
-    this.primaryIp4 = JsonNullable.<BriefIPAddress>of(primaryIp4);
     
+    this.primaryIp4 = primaryIp4;
     return this;
   }
 
@@ -373,31 +353,23 @@ public class VirtualDeviceContext {
    * @return primaryIp4
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefIPAddress getPrimaryIp4() {
-        return primaryIp4.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PRIMARY_IP4, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefIPAddress> getPrimaryIp4_JsonNullable() {
+  public BriefIPAddress getPrimaryIp4() {
     return primaryIp4;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PRIMARY_IP4)
-  public void setPrimaryIp4_JsonNullable(JsonNullable<BriefIPAddress> primaryIp4) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_PRIMARY_IP4, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPrimaryIp4(@javax.annotation.Nullable BriefIPAddress primaryIp4) {
     this.primaryIp4 = primaryIp4;
   }
 
-  public void setPrimaryIp4(@javax.annotation.Nullable BriefIPAddress primaryIp4) {
-    this.primaryIp4 = JsonNullable.<BriefIPAddress>of(primaryIp4);
-  }
-
   public VirtualDeviceContext primaryIp6(@javax.annotation.Nullable BriefIPAddress primaryIp6) {
-    this.primaryIp6 = JsonNullable.<BriefIPAddress>of(primaryIp6);
     
+    this.primaryIp6 = primaryIp6;
     return this;
   }
 
@@ -406,26 +378,18 @@ public class VirtualDeviceContext {
    * @return primaryIp6
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefIPAddress getPrimaryIp6() {
-        return primaryIp6.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PRIMARY_IP6, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefIPAddress> getPrimaryIp6_JsonNullable() {
+  public BriefIPAddress getPrimaryIp6() {
     return primaryIp6;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PRIMARY_IP6)
-  public void setPrimaryIp6_JsonNullable(JsonNullable<BriefIPAddress> primaryIp6) {
-    this.primaryIp6 = primaryIp6;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PRIMARY_IP6, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrimaryIp6(@javax.annotation.Nullable BriefIPAddress primaryIp6) {
-    this.primaryIp6 = JsonNullable.<BriefIPAddress>of(primaryIp6);
+    this.primaryIp6 = primaryIp6;
   }
 
   public VirtualDeviceContext status(@javax.annotation.Nonnull VirtualDeviceContextStatus status) {
@@ -479,8 +443,8 @@ public class VirtualDeviceContext {
   }
 
   public VirtualDeviceContext owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -489,26 +453,18 @@ public class VirtualDeviceContext {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public VirtualDeviceContext comments(@javax.annotation.Nullable String comments) {
@@ -660,14 +616,14 @@ public class VirtualDeviceContext {
         Objects.equals(this.display, virtualDeviceContext.display) &&
         Objects.equals(this.name, virtualDeviceContext.name) &&
         Objects.equals(this.device, virtualDeviceContext.device) &&
-        equalsNullable(this.identifier, virtualDeviceContext.identifier) &&
-        equalsNullable(this.tenant, virtualDeviceContext.tenant) &&
+        Objects.equals(this.identifier, virtualDeviceContext.identifier) &&
+        Objects.equals(this.tenant, virtualDeviceContext.tenant) &&
         Objects.equals(this.primaryIp, virtualDeviceContext.primaryIp) &&
-        equalsNullable(this.primaryIp4, virtualDeviceContext.primaryIp4) &&
-        equalsNullable(this.primaryIp6, virtualDeviceContext.primaryIp6) &&
+        Objects.equals(this.primaryIp4, virtualDeviceContext.primaryIp4) &&
+        Objects.equals(this.primaryIp6, virtualDeviceContext.primaryIp6) &&
         Objects.equals(this.status, virtualDeviceContext.status) &&
         Objects.equals(this.description, virtualDeviceContext.description) &&
-        equalsNullable(this.owner, virtualDeviceContext.owner) &&
+        Objects.equals(this.owner, virtualDeviceContext.owner) &&
         Objects.equals(this.comments, virtualDeviceContext.comments) &&
         Objects.equals(this.tags, virtualDeviceContext.tags) &&
         Objects.equals(this.customFields, virtualDeviceContext.customFields) &&
@@ -676,20 +632,9 @@ public class VirtualDeviceContext {
         Objects.equals(this.interfaceCount, virtualDeviceContext.interfaceCount);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, name, device, hashCodeNullable(identifier), hashCodeNullable(tenant), primaryIp, hashCodeNullable(primaryIp4), hashCodeNullable(primaryIp6), status, description, hashCodeNullable(owner), comments, tags, customFields, created, lastUpdated, interfaceCount);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, name, device, identifier, tenant, primaryIp, primaryIp4, primaryIp6, status, description, owner, comments, tags, customFields, created, lastUpdated, interfaceCount);
   }
 
   @Override

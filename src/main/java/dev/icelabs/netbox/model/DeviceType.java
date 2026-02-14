@@ -34,10 +34,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -82,7 +78,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   DeviceType.JSON_PROPERTY_MODULE_BAY_TEMPLATE_COUNT,
   DeviceType.JSON_PROPERTY_INVENTORY_ITEM_TEMPLATE_COUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class DeviceType {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -106,7 +102,7 @@ public class DeviceType {
 
   public static final String JSON_PROPERTY_DEFAULT_PLATFORM = "default_platform";
   @javax.annotation.Nullable
-  private JsonNullable<BriefPlatform> defaultPlatform = JsonNullable.<BriefPlatform>undefined();
+  private BriefPlatform defaultPlatform;
 
   public static final String JSON_PROPERTY_MODEL = "model";
   @javax.annotation.Nonnull
@@ -134,27 +130,27 @@ public class DeviceType {
 
   public static final String JSON_PROPERTY_SUBDEVICE_ROLE = "subdevice_role";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceTypeSubdeviceRole> subdeviceRole = JsonNullable.<DeviceTypeSubdeviceRole>undefined();
+  private DeviceTypeSubdeviceRole subdeviceRole;
 
   public static final String JSON_PROPERTY_AIRFLOW = "airflow";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceTypeAirflow> airflow = JsonNullable.<DeviceTypeAirflow>undefined();
+  private DeviceTypeAirflow airflow;
 
   public static final String JSON_PROPERTY_WEIGHT = "weight";
   @javax.annotation.Nullable
-  private JsonNullable<Double> weight = JsonNullable.<Double>undefined();
+  private Double weight;
 
   public static final String JSON_PROPERTY_WEIGHT_UNIT = "weight_unit";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceTypeWeightUnit> weightUnit = JsonNullable.<DeviceTypeWeightUnit>undefined();
+  private DeviceTypeWeightUnit weightUnit;
 
   public static final String JSON_PROPERTY_FRONT_IMAGE = "front_image";
   @javax.annotation.Nullable
-  private JsonNullable<URI> frontImage = JsonNullable.<URI>undefined();
+  private URI frontImage;
 
   public static final String JSON_PROPERTY_REAR_IMAGE = "rear_image";
   @javax.annotation.Nullable
-  private JsonNullable<URI> rearImage = JsonNullable.<URI>undefined();
+  private URI rearImage;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -162,7 +158,7 @@ public class DeviceType {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -355,8 +351,8 @@ public class DeviceType {
   }
 
   public DeviceType defaultPlatform(@javax.annotation.Nullable BriefPlatform defaultPlatform) {
-    this.defaultPlatform = JsonNullable.<BriefPlatform>of(defaultPlatform);
     
+    this.defaultPlatform = defaultPlatform;
     return this;
   }
 
@@ -365,26 +361,18 @@ public class DeviceType {
    * @return defaultPlatform
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefPlatform getDefaultPlatform() {
-        return defaultPlatform.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_DEFAULT_PLATFORM, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefPlatform> getDefaultPlatform_JsonNullable() {
+  public BriefPlatform getDefaultPlatform() {
     return defaultPlatform;
   }
-  
-  @JsonProperty(JSON_PROPERTY_DEFAULT_PLATFORM)
-  public void setDefaultPlatform_JsonNullable(JsonNullable<BriefPlatform> defaultPlatform) {
-    this.defaultPlatform = defaultPlatform;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_DEFAULT_PLATFORM, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDefaultPlatform(@javax.annotation.Nullable BriefPlatform defaultPlatform) {
-    this.defaultPlatform = JsonNullable.<BriefPlatform>of(defaultPlatform);
+    this.defaultPlatform = defaultPlatform;
   }
 
   public DeviceType model(@javax.annotation.Nonnull String model) {
@@ -540,8 +528,8 @@ public class DeviceType {
   }
 
   public DeviceType subdeviceRole(@javax.annotation.Nullable DeviceTypeSubdeviceRole subdeviceRole) {
-    this.subdeviceRole = JsonNullable.<DeviceTypeSubdeviceRole>of(subdeviceRole);
     
+    this.subdeviceRole = subdeviceRole;
     return this;
   }
 
@@ -550,31 +538,23 @@ public class DeviceType {
    * @return subdeviceRole
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceTypeSubdeviceRole getSubdeviceRole() {
-        return subdeviceRole.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SUBDEVICE_ROLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceTypeSubdeviceRole> getSubdeviceRole_JsonNullable() {
+  public DeviceTypeSubdeviceRole getSubdeviceRole() {
     return subdeviceRole;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SUBDEVICE_ROLE)
-  public void setSubdeviceRole_JsonNullable(JsonNullable<DeviceTypeSubdeviceRole> subdeviceRole) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_SUBDEVICE_ROLE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSubdeviceRole(@javax.annotation.Nullable DeviceTypeSubdeviceRole subdeviceRole) {
     this.subdeviceRole = subdeviceRole;
   }
 
-  public void setSubdeviceRole(@javax.annotation.Nullable DeviceTypeSubdeviceRole subdeviceRole) {
-    this.subdeviceRole = JsonNullable.<DeviceTypeSubdeviceRole>of(subdeviceRole);
-  }
-
   public DeviceType airflow(@javax.annotation.Nullable DeviceTypeAirflow airflow) {
-    this.airflow = JsonNullable.<DeviceTypeAirflow>of(airflow);
     
+    this.airflow = airflow;
     return this;
   }
 
@@ -583,31 +563,23 @@ public class DeviceType {
    * @return airflow
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceTypeAirflow getAirflow() {
-        return airflow.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_AIRFLOW, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceTypeAirflow> getAirflow_JsonNullable() {
+  public DeviceTypeAirflow getAirflow() {
     return airflow;
   }
-  
-  @JsonProperty(JSON_PROPERTY_AIRFLOW)
-  public void setAirflow_JsonNullable(JsonNullable<DeviceTypeAirflow> airflow) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_AIRFLOW, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAirflow(@javax.annotation.Nullable DeviceTypeAirflow airflow) {
     this.airflow = airflow;
   }
 
-  public void setAirflow(@javax.annotation.Nullable DeviceTypeAirflow airflow) {
-    this.airflow = JsonNullable.<DeviceTypeAirflow>of(airflow);
-  }
-
   public DeviceType weight(@javax.annotation.Nullable Double weight) {
-    this.weight = JsonNullable.<Double>of(weight);
     
+    this.weight = weight;
     return this;
   }
 
@@ -618,31 +590,23 @@ public class DeviceType {
    * @return weight
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getWeight() {
-        return weight.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_WEIGHT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getWeight_JsonNullable() {
+  public Double getWeight() {
     return weight;
   }
-  
-  @JsonProperty(JSON_PROPERTY_WEIGHT)
-  public void setWeight_JsonNullable(JsonNullable<Double> weight) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_WEIGHT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setWeight(@javax.annotation.Nullable Double weight) {
     this.weight = weight;
   }
 
-  public void setWeight(@javax.annotation.Nullable Double weight) {
-    this.weight = JsonNullable.<Double>of(weight);
-  }
-
   public DeviceType weightUnit(@javax.annotation.Nullable DeviceTypeWeightUnit weightUnit) {
-    this.weightUnit = JsonNullable.<DeviceTypeWeightUnit>of(weightUnit);
     
+    this.weightUnit = weightUnit;
     return this;
   }
 
@@ -651,31 +615,23 @@ public class DeviceType {
    * @return weightUnit
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceTypeWeightUnit getWeightUnit() {
-        return weightUnit.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_WEIGHT_UNIT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceTypeWeightUnit> getWeightUnit_JsonNullable() {
+  public DeviceTypeWeightUnit getWeightUnit() {
     return weightUnit;
   }
-  
-  @JsonProperty(JSON_PROPERTY_WEIGHT_UNIT)
-  public void setWeightUnit_JsonNullable(JsonNullable<DeviceTypeWeightUnit> weightUnit) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_WEIGHT_UNIT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setWeightUnit(@javax.annotation.Nullable DeviceTypeWeightUnit weightUnit) {
     this.weightUnit = weightUnit;
   }
 
-  public void setWeightUnit(@javax.annotation.Nullable DeviceTypeWeightUnit weightUnit) {
-    this.weightUnit = JsonNullable.<DeviceTypeWeightUnit>of(weightUnit);
-  }
-
   public DeviceType frontImage(@javax.annotation.Nullable URI frontImage) {
-    this.frontImage = JsonNullable.<URI>of(frontImage);
     
+    this.frontImage = frontImage;
     return this;
   }
 
@@ -684,31 +640,23 @@ public class DeviceType {
    * @return frontImage
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public URI getFrontImage() {
-        return frontImage.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_FRONT_IMAGE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<URI> getFrontImage_JsonNullable() {
+  public URI getFrontImage() {
     return frontImage;
   }
-  
-  @JsonProperty(JSON_PROPERTY_FRONT_IMAGE)
-  public void setFrontImage_JsonNullable(JsonNullable<URI> frontImage) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_FRONT_IMAGE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setFrontImage(@javax.annotation.Nullable URI frontImage) {
     this.frontImage = frontImage;
   }
 
-  public void setFrontImage(@javax.annotation.Nullable URI frontImage) {
-    this.frontImage = JsonNullable.<URI>of(frontImage);
-  }
-
   public DeviceType rearImage(@javax.annotation.Nullable URI rearImage) {
-    this.rearImage = JsonNullable.<URI>of(rearImage);
     
+    this.rearImage = rearImage;
     return this;
   }
 
@@ -717,26 +665,18 @@ public class DeviceType {
    * @return rearImage
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public URI getRearImage() {
-        return rearImage.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_REAR_IMAGE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<URI> getRearImage_JsonNullable() {
+  public URI getRearImage() {
     return rearImage;
   }
-  
-  @JsonProperty(JSON_PROPERTY_REAR_IMAGE)
-  public void setRearImage_JsonNullable(JsonNullable<URI> rearImage) {
-    this.rearImage = rearImage;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_REAR_IMAGE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRearImage(@javax.annotation.Nullable URI rearImage) {
-    this.rearImage = JsonNullable.<URI>of(rearImage);
+    this.rearImage = rearImage;
   }
 
   public DeviceType description(@javax.annotation.Nullable String description) {
@@ -765,8 +705,8 @@ public class DeviceType {
   }
 
   public DeviceType owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -775,26 +715,18 @@ public class DeviceType {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public DeviceType comments(@javax.annotation.Nullable String comments) {
@@ -1085,21 +1017,21 @@ public class DeviceType {
         Objects.equals(this.displayUrl, deviceType.displayUrl) &&
         Objects.equals(this.display, deviceType.display) &&
         Objects.equals(this.manufacturer, deviceType.manufacturer) &&
-        equalsNullable(this.defaultPlatform, deviceType.defaultPlatform) &&
+        Objects.equals(this.defaultPlatform, deviceType.defaultPlatform) &&
         Objects.equals(this.model, deviceType.model) &&
         Objects.equals(this.slug, deviceType.slug) &&
         Objects.equals(this.partNumber, deviceType.partNumber) &&
         Objects.equals(this.uHeight, deviceType.uHeight) &&
         Objects.equals(this.excludeFromUtilization, deviceType.excludeFromUtilization) &&
         Objects.equals(this.isFullDepth, deviceType.isFullDepth) &&
-        equalsNullable(this.subdeviceRole, deviceType.subdeviceRole) &&
-        equalsNullable(this.airflow, deviceType.airflow) &&
-        equalsNullable(this.weight, deviceType.weight) &&
-        equalsNullable(this.weightUnit, deviceType.weightUnit) &&
-        equalsNullable(this.frontImage, deviceType.frontImage) &&
-        equalsNullable(this.rearImage, deviceType.rearImage) &&
+        Objects.equals(this.subdeviceRole, deviceType.subdeviceRole) &&
+        Objects.equals(this.airflow, deviceType.airflow) &&
+        Objects.equals(this.weight, deviceType.weight) &&
+        Objects.equals(this.weightUnit, deviceType.weightUnit) &&
+        Objects.equals(this.frontImage, deviceType.frontImage) &&
+        Objects.equals(this.rearImage, deviceType.rearImage) &&
         Objects.equals(this.description, deviceType.description) &&
-        equalsNullable(this.owner, deviceType.owner) &&
+        Objects.equals(this.owner, deviceType.owner) &&
         Objects.equals(this.comments, deviceType.comments) &&
         Objects.equals(this.tags, deviceType.tags) &&
         Objects.equals(this.customFields, deviceType.customFields) &&
@@ -1118,20 +1050,9 @@ public class DeviceType {
         Objects.equals(this.inventoryItemTemplateCount, deviceType.inventoryItemTemplateCount);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, manufacturer, hashCodeNullable(defaultPlatform), model, slug, partNumber, uHeight, excludeFromUtilization, isFullDepth, hashCodeNullable(subdeviceRole), hashCodeNullable(airflow), hashCodeNullable(weight), hashCodeNullable(weightUnit), hashCodeNullable(frontImage), hashCodeNullable(rearImage), description, hashCodeNullable(owner), comments, tags, customFields, created, lastUpdated, deviceCount, consolePortTemplateCount, consoleServerPortTemplateCount, powerPortTemplateCount, powerOutletTemplateCount, interfaceTemplateCount, frontPortTemplateCount, rearPortTemplateCount, deviceBayTemplateCount, moduleBayTemplateCount, inventoryItemTemplateCount);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, manufacturer, defaultPlatform, model, slug, partNumber, uHeight, excludeFromUtilization, isFullDepth, subdeviceRole, airflow, weight, weightUnit, frontImage, rearImage, description, owner, comments, tags, customFields, created, lastUpdated, deviceCount, consolePortTemplateCount, consoleServerPortTemplateCount, powerPortTemplateCount, powerOutletTemplateCount, interfaceTemplateCount, frontPortTemplateCount, rearPortTemplateCount, deviceBayTemplateCount, moduleBayTemplateCount, inventoryItemTemplateCount);
   }
 
   @Override

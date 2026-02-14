@@ -35,10 +35,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -72,7 +68,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   Prefix.JSON_PROPERTY_CHILDREN,
   Prefix.JSON_PROPERTY_DEPTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class Prefix {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -100,15 +96,15 @@ public class Prefix {
 
   public static final String JSON_PROPERTY_VRF = "vrf";
   @javax.annotation.Nullable
-  private JsonNullable<BriefVRF> vrf = JsonNullable.<BriefVRF>undefined();
+  private BriefVRF vrf;
 
   public static final String JSON_PROPERTY_SCOPE_TYPE = "scope_type";
   @javax.annotation.Nullable
-  private JsonNullable<String> scopeType = JsonNullable.<String>undefined();
+  private String scopeType;
 
   public static final String JSON_PROPERTY_SCOPE_ID = "scope_id";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> scopeId = JsonNullable.<Integer>undefined();
+  private Integer scopeId;
 
   public static final String JSON_PROPERTY_SCOPE = "scope";
   @javax.annotation.Nullable
@@ -116,11 +112,11 @@ public class Prefix {
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<BriefTenant> tenant = JsonNullable.<BriefTenant>undefined();
+  private BriefTenant tenant;
 
   public static final String JSON_PROPERTY_VLAN = "vlan";
   @javax.annotation.Nullable
-  private JsonNullable<BriefVLAN> vlan = JsonNullable.<BriefVLAN>undefined();
+  private BriefVLAN vlan;
 
   public static final String JSON_PROPERTY_STATUS = "status";
   @javax.annotation.Nullable
@@ -128,7 +124,7 @@ public class Prefix {
 
   public static final String JSON_PROPERTY_ROLE = "role";
   @javax.annotation.Nullable
-  private JsonNullable<BriefRole> role = JsonNullable.<BriefRole>undefined();
+  private BriefRole role;
 
   public static final String JSON_PROPERTY_IS_POOL = "is_pool";
   @javax.annotation.Nullable
@@ -144,7 +140,7 @@ public class Prefix {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -310,8 +306,8 @@ public class Prefix {
   }
 
   public Prefix vrf(@javax.annotation.Nullable BriefVRF vrf) {
-    this.vrf = JsonNullable.<BriefVRF>of(vrf);
     
+    this.vrf = vrf;
     return this;
   }
 
@@ -320,31 +316,23 @@ public class Prefix {
    * @return vrf
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefVRF getVrf() {
-        return vrf.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VRF, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefVRF> getVrf_JsonNullable() {
+  public BriefVRF getVrf() {
     return vrf;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VRF)
-  public void setVrf_JsonNullable(JsonNullable<BriefVRF> vrf) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_VRF, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setVrf(@javax.annotation.Nullable BriefVRF vrf) {
     this.vrf = vrf;
   }
 
-  public void setVrf(@javax.annotation.Nullable BriefVRF vrf) {
-    this.vrf = JsonNullable.<BriefVRF>of(vrf);
-  }
-
   public Prefix scopeType(@javax.annotation.Nullable String scopeType) {
-    this.scopeType = JsonNullable.<String>of(scopeType);
     
+    this.scopeType = scopeType;
     return this;
   }
 
@@ -353,31 +341,23 @@ public class Prefix {
    * @return scopeType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getScopeType() {
-        return scopeType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SCOPE_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getScopeType_JsonNullable() {
+  public String getScopeType() {
     return scopeType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SCOPE_TYPE)
-  public void setScopeType_JsonNullable(JsonNullable<String> scopeType) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_SCOPE_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setScopeType(@javax.annotation.Nullable String scopeType) {
     this.scopeType = scopeType;
   }
 
-  public void setScopeType(@javax.annotation.Nullable String scopeType) {
-    this.scopeType = JsonNullable.<String>of(scopeType);
-  }
-
   public Prefix scopeId(@javax.annotation.Nullable Integer scopeId) {
-    this.scopeId = JsonNullable.<Integer>of(scopeId);
     
+    this.scopeId = scopeId;
     return this;
   }
 
@@ -386,26 +366,18 @@ public class Prefix {
    * @return scopeId
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getScopeId() {
-        return scopeId.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SCOPE_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getScopeId_JsonNullable() {
+  public Integer getScopeId() {
     return scopeId;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SCOPE_ID)
-  public void setScopeId_JsonNullable(JsonNullable<Integer> scopeId) {
-    this.scopeId = scopeId;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_SCOPE_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setScopeId(@javax.annotation.Nullable Integer scopeId) {
-    this.scopeId = JsonNullable.<Integer>of(scopeId);
+    this.scopeId = scopeId;
   }
 
   /**
@@ -423,8 +395,8 @@ public class Prefix {
 
 
   public Prefix tenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -433,31 +405,23 @@ public class Prefix {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefTenant> getTenant_JsonNullable() {
+  public BriefTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<BriefTenant> tenant) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTenant(@javax.annotation.Nullable BriefTenant tenant) {
     this.tenant = tenant;
   }
 
-  public void setTenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
-  }
-
   public Prefix vlan(@javax.annotation.Nullable BriefVLAN vlan) {
-    this.vlan = JsonNullable.<BriefVLAN>of(vlan);
     
+    this.vlan = vlan;
     return this;
   }
 
@@ -466,26 +430,18 @@ public class Prefix {
    * @return vlan
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefVLAN getVlan() {
-        return vlan.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VLAN, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefVLAN> getVlan_JsonNullable() {
+  public BriefVLAN getVlan() {
     return vlan;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VLAN)
-  public void setVlan_JsonNullable(JsonNullable<BriefVLAN> vlan) {
-    this.vlan = vlan;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_VLAN, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVlan(@javax.annotation.Nullable BriefVLAN vlan) {
-    this.vlan = JsonNullable.<BriefVLAN>of(vlan);
+    this.vlan = vlan;
   }
 
   public Prefix status(@javax.annotation.Nullable PrefixStatus status) {
@@ -514,8 +470,8 @@ public class Prefix {
   }
 
   public Prefix role(@javax.annotation.Nullable BriefRole role) {
-    this.role = JsonNullable.<BriefRole>of(role);
     
+    this.role = role;
     return this;
   }
 
@@ -524,26 +480,18 @@ public class Prefix {
    * @return role
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefRole getRole() {
-        return role.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefRole> getRole_JsonNullable() {
+  public BriefRole getRole() {
     return role;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ROLE)
-  public void setRole_JsonNullable(JsonNullable<BriefRole> role) {
-    this.role = role;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRole(@javax.annotation.Nullable BriefRole role) {
-    this.role = JsonNullable.<BriefRole>of(role);
+    this.role = role;
   }
 
   public Prefix isPool(@javax.annotation.Nullable Boolean isPool) {
@@ -622,8 +570,8 @@ public class Prefix {
   }
 
   public Prefix owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -632,26 +580,18 @@ public class Prefix {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public Prefix comments(@javax.annotation.Nullable String comments) {
@@ -817,18 +757,18 @@ public class Prefix {
         Objects.equals(this.display, prefix.display) &&
         Objects.equals(this.family, prefix.family) &&
         Objects.equals(this.prefix, prefix.prefix) &&
-        equalsNullable(this.vrf, prefix.vrf) &&
-        equalsNullable(this.scopeType, prefix.scopeType) &&
-        equalsNullable(this.scopeId, prefix.scopeId) &&
+        Objects.equals(this.vrf, prefix.vrf) &&
+        Objects.equals(this.scopeType, prefix.scopeType) &&
+        Objects.equals(this.scopeId, prefix.scopeId) &&
         Objects.equals(this.scope, prefix.scope) &&
-        equalsNullable(this.tenant, prefix.tenant) &&
-        equalsNullable(this.vlan, prefix.vlan) &&
+        Objects.equals(this.tenant, prefix.tenant) &&
+        Objects.equals(this.vlan, prefix.vlan) &&
         Objects.equals(this.status, prefix.status) &&
-        equalsNullable(this.role, prefix.role) &&
+        Objects.equals(this.role, prefix.role) &&
         Objects.equals(this.isPool, prefix.isPool) &&
         Objects.equals(this.markUtilized, prefix.markUtilized) &&
         Objects.equals(this.description, prefix.description) &&
-        equalsNullable(this.owner, prefix.owner) &&
+        Objects.equals(this.owner, prefix.owner) &&
         Objects.equals(this.comments, prefix.comments) &&
         Objects.equals(this.tags, prefix.tags) &&
         Objects.equals(this.customFields, prefix.customFields) &&
@@ -838,20 +778,9 @@ public class Prefix {
         Objects.equals(this.depth, prefix.depth);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, family, prefix, hashCodeNullable(vrf), hashCodeNullable(scopeType), hashCodeNullable(scopeId), scope, hashCodeNullable(tenant), hashCodeNullable(vlan), status, hashCodeNullable(role), isPool, markUtilized, description, hashCodeNullable(owner), comments, tags, customFields, created, lastUpdated, children, depth);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, family, prefix, vrf, scopeType, scopeId, scope, tenant, vlan, status, role, isPool, markUtilized, description, owner, comments, tags, customFields, created, lastUpdated, children, depth);
   }
 
   @Override

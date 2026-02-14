@@ -29,10 +29,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -49,7 +45,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   VirtualizationVirtualDisksCreateRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
 @JsonTypeName("virtualization_virtual_disks_create_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class VirtualizationVirtualDisksCreateRequest {
   public static final String JSON_PROPERTY_VIRTUAL_MACHINE = "virtual_machine";
   @javax.annotation.Nonnull
@@ -69,7 +65,7 @@ public class VirtualizationVirtualDisksCreateRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -185,8 +181,8 @@ public class VirtualizationVirtualDisksCreateRequest {
   }
 
   public VirtualizationVirtualDisksCreateRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -195,26 +191,18 @@ public class VirtualizationVirtualDisksCreateRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public VirtualizationVirtualDisksCreateRequest tags(@javax.annotation.Nullable List<NestedTagRequest> tags) {
@@ -297,25 +285,14 @@ public class VirtualizationVirtualDisksCreateRequest {
         Objects.equals(this.name, virtualizationVirtualDisksCreateRequest.name) &&
         Objects.equals(this.description, virtualizationVirtualDisksCreateRequest.description) &&
         Objects.equals(this.size, virtualizationVirtualDisksCreateRequest.size) &&
-        equalsNullable(this.owner, virtualizationVirtualDisksCreateRequest.owner) &&
+        Objects.equals(this.owner, virtualizationVirtualDisksCreateRequest.owner) &&
         Objects.equals(this.tags, virtualizationVirtualDisksCreateRequest.tags) &&
         Objects.equals(this.customFields, virtualizationVirtualDisksCreateRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(virtualMachine, name, description, size, hashCodeNullable(owner), tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(virtualMachine, name, description, size, owner, tags, customFields);
   }
 
   @Override

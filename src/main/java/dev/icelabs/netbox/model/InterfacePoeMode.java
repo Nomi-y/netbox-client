@@ -31,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   InterfacePoeMode.JSON_PROPERTY_LABEL
 })
 @JsonTypeName("Interface_poe_mode")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class InterfacePoeMode {
   /**
    * * &#x60;pd&#x60; - PD * &#x60;pse&#x60; - PSE

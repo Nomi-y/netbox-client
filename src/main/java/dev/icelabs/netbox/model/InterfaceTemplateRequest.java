@@ -23,10 +23,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import dev.icelabs.netbox.model.ConsolePortTemplateRequestDeviceType;
 import dev.icelabs.netbox.model.ConsolePortTemplateRequestModuleType;
 import dev.icelabs.netbox.model.NestedInterfaceTemplateRequest;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -47,15 +43,15 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   InterfaceTemplateRequest.JSON_PROPERTY_POE_TYPE,
   InterfaceTemplateRequest.JSON_PROPERTY_RF_ROLE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class InterfaceTemplateRequest {
   public static final String JSON_PROPERTY_DEVICE_TYPE = "device_type";
   @javax.annotation.Nullable
-  private JsonNullable<ConsolePortTemplateRequestDeviceType> deviceType = JsonNullable.<ConsolePortTemplateRequestDeviceType>undefined();
+  private ConsolePortTemplateRequestDeviceType deviceType;
 
   public static final String JSON_PROPERTY_MODULE_TYPE = "module_type";
   @javax.annotation.Nullable
-  private JsonNullable<ConsolePortTemplateRequestModuleType> moduleType = JsonNullable.<ConsolePortTemplateRequestModuleType>undefined();
+  private ConsolePortTemplateRequestModuleType moduleType;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -526,7 +522,7 @@ public class InterfaceTemplateRequest {
 
   public static final String JSON_PROPERTY_BRIDGE = "bridge";
   @javax.annotation.Nullable
-  private JsonNullable<NestedInterfaceTemplateRequest> bridge = JsonNullable.<NestedInterfaceTemplateRequest>undefined();
+  private NestedInterfaceTemplateRequest bridge;
 
   /**
    * * &#x60;pd&#x60; - PD * &#x60;pse&#x60; - PSE
@@ -567,7 +563,7 @@ public class InterfaceTemplateRequest {
 
   public static final String JSON_PROPERTY_POE_MODE = "poe_mode";
   @javax.annotation.Nullable
-  private JsonNullable<PoeModeEnum> poeMode = JsonNullable.<PoeModeEnum>undefined();
+  private PoeModeEnum poeMode;
 
   /**
    * * &#x60;type1-ieee802.3af&#x60; - 802.3af (Type 1) * &#x60;type2-ieee802.3at&#x60; - 802.3at (Type 2) * &#x60;type3-ieee802.3bt&#x60; - 802.3bt (Type 3) * &#x60;type4-ieee802.3bt&#x60; - 802.3bt (Type 4) * &#x60;passive-24v-2pair&#x60; - Passive 24V (2-pair) * &#x60;passive-24v-4pair&#x60; - Passive 24V (4-pair) * &#x60;passive-48v-2pair&#x60; - Passive 48V (2-pair) * &#x60;passive-48v-4pair&#x60; - Passive 48V (4-pair)
@@ -620,7 +616,7 @@ public class InterfaceTemplateRequest {
 
   public static final String JSON_PROPERTY_POE_TYPE = "poe_type";
   @javax.annotation.Nullable
-  private JsonNullable<PoeTypeEnum> poeType = JsonNullable.<PoeTypeEnum>undefined();
+  private PoeTypeEnum poeType;
 
   /**
    * * &#x60;ap&#x60; - Access point * &#x60;station&#x60; - Station
@@ -661,14 +657,14 @@ public class InterfaceTemplateRequest {
 
   public static final String JSON_PROPERTY_RF_ROLE = "rf_role";
   @javax.annotation.Nullable
-  private JsonNullable<RfRoleEnum> rfRole = JsonNullable.<RfRoleEnum>undefined();
+  private RfRoleEnum rfRole;
 
   public InterfaceTemplateRequest() {
   }
 
   public InterfaceTemplateRequest deviceType(@javax.annotation.Nullable ConsolePortTemplateRequestDeviceType deviceType) {
-    this.deviceType = JsonNullable.<ConsolePortTemplateRequestDeviceType>of(deviceType);
     
+    this.deviceType = deviceType;
     return this;
   }
 
@@ -677,31 +673,23 @@ public class InterfaceTemplateRequest {
    * @return deviceType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ConsolePortTemplateRequestDeviceType getDeviceType() {
-        return deviceType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_DEVICE_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ConsolePortTemplateRequestDeviceType> getDeviceType_JsonNullable() {
+  public ConsolePortTemplateRequestDeviceType getDeviceType() {
     return deviceType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_DEVICE_TYPE)
-  public void setDeviceType_JsonNullable(JsonNullable<ConsolePortTemplateRequestDeviceType> deviceType) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_DEVICE_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDeviceType(@javax.annotation.Nullable ConsolePortTemplateRequestDeviceType deviceType) {
     this.deviceType = deviceType;
   }
 
-  public void setDeviceType(@javax.annotation.Nullable ConsolePortTemplateRequestDeviceType deviceType) {
-    this.deviceType = JsonNullable.<ConsolePortTemplateRequestDeviceType>of(deviceType);
-  }
-
   public InterfaceTemplateRequest moduleType(@javax.annotation.Nullable ConsolePortTemplateRequestModuleType moduleType) {
-    this.moduleType = JsonNullable.<ConsolePortTemplateRequestModuleType>of(moduleType);
     
+    this.moduleType = moduleType;
     return this;
   }
 
@@ -710,26 +698,18 @@ public class InterfaceTemplateRequest {
    * @return moduleType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ConsolePortTemplateRequestModuleType getModuleType() {
-        return moduleType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MODULE_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ConsolePortTemplateRequestModuleType> getModuleType_JsonNullable() {
+  public ConsolePortTemplateRequestModuleType getModuleType() {
     return moduleType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MODULE_TYPE)
-  public void setModuleType_JsonNullable(JsonNullable<ConsolePortTemplateRequestModuleType> moduleType) {
-    this.moduleType = moduleType;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_MODULE_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setModuleType(@javax.annotation.Nullable ConsolePortTemplateRequestModuleType moduleType) {
-    this.moduleType = JsonNullable.<ConsolePortTemplateRequestModuleType>of(moduleType);
+    this.moduleType = moduleType;
   }
 
   public InterfaceTemplateRequest name(@javax.annotation.Nonnull String name) {
@@ -883,8 +863,8 @@ public class InterfaceTemplateRequest {
   }
 
   public InterfaceTemplateRequest bridge(@javax.annotation.Nullable NestedInterfaceTemplateRequest bridge) {
-    this.bridge = JsonNullable.<NestedInterfaceTemplateRequest>of(bridge);
     
+    this.bridge = bridge;
     return this;
   }
 
@@ -893,31 +873,23 @@ public class InterfaceTemplateRequest {
    * @return bridge
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public NestedInterfaceTemplateRequest getBridge() {
-        return bridge.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_BRIDGE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<NestedInterfaceTemplateRequest> getBridge_JsonNullable() {
+  public NestedInterfaceTemplateRequest getBridge() {
     return bridge;
   }
-  
-  @JsonProperty(JSON_PROPERTY_BRIDGE)
-  public void setBridge_JsonNullable(JsonNullable<NestedInterfaceTemplateRequest> bridge) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_BRIDGE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setBridge(@javax.annotation.Nullable NestedInterfaceTemplateRequest bridge) {
     this.bridge = bridge;
   }
 
-  public void setBridge(@javax.annotation.Nullable NestedInterfaceTemplateRequest bridge) {
-    this.bridge = JsonNullable.<NestedInterfaceTemplateRequest>of(bridge);
-  }
-
   public InterfaceTemplateRequest poeMode(@javax.annotation.Nullable PoeModeEnum poeMode) {
-    this.poeMode = JsonNullable.<PoeModeEnum>of(poeMode);
     
+    this.poeMode = poeMode;
     return this;
   }
 
@@ -926,31 +898,23 @@ public class InterfaceTemplateRequest {
    * @return poeMode
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public PoeModeEnum getPoeMode() {
-        return poeMode.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_POE_MODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<PoeModeEnum> getPoeMode_JsonNullable() {
+  public PoeModeEnum getPoeMode() {
     return poeMode;
   }
-  
-  @JsonProperty(JSON_PROPERTY_POE_MODE)
-  public void setPoeMode_JsonNullable(JsonNullable<PoeModeEnum> poeMode) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_POE_MODE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPoeMode(@javax.annotation.Nullable PoeModeEnum poeMode) {
     this.poeMode = poeMode;
   }
 
-  public void setPoeMode(@javax.annotation.Nullable PoeModeEnum poeMode) {
-    this.poeMode = JsonNullable.<PoeModeEnum>of(poeMode);
-  }
-
   public InterfaceTemplateRequest poeType(@javax.annotation.Nullable PoeTypeEnum poeType) {
-    this.poeType = JsonNullable.<PoeTypeEnum>of(poeType);
     
+    this.poeType = poeType;
     return this;
   }
 
@@ -959,31 +923,23 @@ public class InterfaceTemplateRequest {
    * @return poeType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public PoeTypeEnum getPoeType() {
-        return poeType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_POE_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<PoeTypeEnum> getPoeType_JsonNullable() {
+  public PoeTypeEnum getPoeType() {
     return poeType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_POE_TYPE)
-  public void setPoeType_JsonNullable(JsonNullable<PoeTypeEnum> poeType) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_POE_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPoeType(@javax.annotation.Nullable PoeTypeEnum poeType) {
     this.poeType = poeType;
   }
 
-  public void setPoeType(@javax.annotation.Nullable PoeTypeEnum poeType) {
-    this.poeType = JsonNullable.<PoeTypeEnum>of(poeType);
-  }
-
   public InterfaceTemplateRequest rfRole(@javax.annotation.Nullable RfRoleEnum rfRole) {
-    this.rfRole = JsonNullable.<RfRoleEnum>of(rfRole);
     
+    this.rfRole = rfRole;
     return this;
   }
 
@@ -992,26 +948,18 @@ public class InterfaceTemplateRequest {
    * @return rfRole
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public RfRoleEnum getRfRole() {
-        return rfRole.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_RF_ROLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<RfRoleEnum> getRfRole_JsonNullable() {
+  public RfRoleEnum getRfRole() {
     return rfRole;
   }
-  
-  @JsonProperty(JSON_PROPERTY_RF_ROLE)
-  public void setRfRole_JsonNullable(JsonNullable<RfRoleEnum> rfRole) {
-    this.rfRole = rfRole;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_RF_ROLE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRfRole(@javax.annotation.Nullable RfRoleEnum rfRole) {
-    this.rfRole = JsonNullable.<RfRoleEnum>of(rfRole);
+    this.rfRole = rfRole;
   }
 
 
@@ -1024,34 +972,23 @@ public class InterfaceTemplateRequest {
       return false;
     }
     InterfaceTemplateRequest interfaceTemplateRequest = (InterfaceTemplateRequest) o;
-    return equalsNullable(this.deviceType, interfaceTemplateRequest.deviceType) &&
-        equalsNullable(this.moduleType, interfaceTemplateRequest.moduleType) &&
+    return Objects.equals(this.deviceType, interfaceTemplateRequest.deviceType) &&
+        Objects.equals(this.moduleType, interfaceTemplateRequest.moduleType) &&
         Objects.equals(this.name, interfaceTemplateRequest.name) &&
         Objects.equals(this.label, interfaceTemplateRequest.label) &&
         Objects.equals(this.type, interfaceTemplateRequest.type) &&
         Objects.equals(this.enabled, interfaceTemplateRequest.enabled) &&
         Objects.equals(this.mgmtOnly, interfaceTemplateRequest.mgmtOnly) &&
         Objects.equals(this.description, interfaceTemplateRequest.description) &&
-        equalsNullable(this.bridge, interfaceTemplateRequest.bridge) &&
-        equalsNullable(this.poeMode, interfaceTemplateRequest.poeMode) &&
-        equalsNullable(this.poeType, interfaceTemplateRequest.poeType) &&
-        equalsNullable(this.rfRole, interfaceTemplateRequest.rfRole);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+        Objects.equals(this.bridge, interfaceTemplateRequest.bridge) &&
+        Objects.equals(this.poeMode, interfaceTemplateRequest.poeMode) &&
+        Objects.equals(this.poeType, interfaceTemplateRequest.poeType) &&
+        Objects.equals(this.rfRole, interfaceTemplateRequest.rfRole);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(deviceType), hashCodeNullable(moduleType), name, label, type, enabled, mgmtOnly, description, hashCodeNullable(bridge), hashCodeNullable(poeMode), hashCodeNullable(poeType), hashCodeNullable(rfRole));
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(deviceType, moduleType, name, label, type, enabled, mgmtOnly, description, bridge, poeMode, poeType, rfRole);
   }
 
   @Override

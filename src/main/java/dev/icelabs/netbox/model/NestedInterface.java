@@ -22,10 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import dev.icelabs.netbox.model.NestedDevice;
 import java.net.URI;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -42,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   NestedInterface.JSON_PROPERTY_CABLE,
   NestedInterface.JSON_PROPERTY_OCCUPIED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class NestedInterface {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -70,7 +66,7 @@ public class NestedInterface {
 
   public static final String JSON_PROPERTY_CABLE = "cable";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> cable = JsonNullable.<Integer>undefined();
+  private Integer cable;
 
   public static final String JSON_PROPERTY_OCCUPIED = "_occupied";
   @javax.annotation.Nonnull
@@ -195,8 +191,8 @@ public class NestedInterface {
   }
 
   public NestedInterface cable(@javax.annotation.Nullable Integer cable) {
-    this.cable = JsonNullable.<Integer>of(cable);
     
+    this.cable = cable;
     return this;
   }
 
@@ -205,26 +201,18 @@ public class NestedInterface {
    * @return cable
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getCable() {
-        return cable.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_CABLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getCable_JsonNullable() {
+  public Integer getCable() {
     return cable;
   }
-  
-  @JsonProperty(JSON_PROPERTY_CABLE)
-  public void setCable_JsonNullable(JsonNullable<Integer> cable) {
-    this.cable = cable;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_CABLE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCable(@javax.annotation.Nullable Integer cable) {
-    this.cable = JsonNullable.<Integer>of(cable);
+    this.cable = cable;
   }
 
   /**
@@ -257,24 +245,13 @@ public class NestedInterface {
         Objects.equals(this.display, nestedInterface.display) &&
         Objects.equals(this.device, nestedInterface.device) &&
         Objects.equals(this.name, nestedInterface.name) &&
-        equalsNullable(this.cable, nestedInterface.cable) &&
+        Objects.equals(this.cable, nestedInterface.cable) &&
         Objects.equals(this.occupied, nestedInterface.occupied);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, device, name, hashCodeNullable(cable), occupied);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, device, name, cable, occupied);
   }
 
   @Override

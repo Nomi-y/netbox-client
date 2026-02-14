@@ -39,10 +39,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -83,7 +79,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   VirtualMachineWithConfigContext.JSON_PROPERTY_INTERFACE_COUNT,
   VirtualMachineWithConfigContext.JSON_PROPERTY_VIRTUAL_DISK_COUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class VirtualMachineWithConfigContext {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -115,15 +111,15 @@ public class VirtualMachineWithConfigContext {
 
   public static final String JSON_PROPERTY_SITE = "site";
   @javax.annotation.Nullable
-  private JsonNullable<BriefSite> site = JsonNullable.<BriefSite>undefined();
+  private BriefSite site;
 
   public static final String JSON_PROPERTY_CLUSTER = "cluster";
   @javax.annotation.Nullable
-  private JsonNullable<BriefCluster> cluster = JsonNullable.<BriefCluster>undefined();
+  private BriefCluster cluster;
 
   public static final String JSON_PROPERTY_DEVICE = "device";
   @javax.annotation.Nullable
-  private JsonNullable<BriefDevice> device = JsonNullable.<BriefDevice>undefined();
+  private BriefDevice device;
 
   public static final String JSON_PROPERTY_SERIAL = "serial";
   @javax.annotation.Nullable
@@ -131,15 +127,15 @@ public class VirtualMachineWithConfigContext {
 
   public static final String JSON_PROPERTY_ROLE = "role";
   @javax.annotation.Nullable
-  private JsonNullable<BriefDeviceRole> role = JsonNullable.<BriefDeviceRole>undefined();
+  private BriefDeviceRole role;
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<BriefTenant> tenant = JsonNullable.<BriefTenant>undefined();
+  private BriefTenant tenant;
 
   public static final String JSON_PROPERTY_PLATFORM = "platform";
   @javax.annotation.Nullable
-  private JsonNullable<BriefPlatform> platform = JsonNullable.<BriefPlatform>undefined();
+  private BriefPlatform platform;
 
   public static final String JSON_PROPERTY_PRIMARY_IP = "primary_ip";
   @javax.annotation.Nullable
@@ -147,23 +143,23 @@ public class VirtualMachineWithConfigContext {
 
   public static final String JSON_PROPERTY_PRIMARY_IP4 = "primary_ip4";
   @javax.annotation.Nullable
-  private JsonNullable<BriefIPAddress> primaryIp4 = JsonNullable.<BriefIPAddress>undefined();
+  private BriefIPAddress primaryIp4;
 
   public static final String JSON_PROPERTY_PRIMARY_IP6 = "primary_ip6";
   @javax.annotation.Nullable
-  private JsonNullable<BriefIPAddress> primaryIp6 = JsonNullable.<BriefIPAddress>undefined();
+  private BriefIPAddress primaryIp6;
 
   public static final String JSON_PROPERTY_VCPUS = "vcpus";
   @javax.annotation.Nullable
-  private JsonNullable<Double> vcpus = JsonNullable.<Double>undefined();
+  private Double vcpus;
 
   public static final String JSON_PROPERTY_MEMORY = "memory";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> memory = JsonNullable.<Integer>undefined();
+  private Integer memory;
 
   public static final String JSON_PROPERTY_DISK = "disk";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> disk = JsonNullable.<Integer>undefined();
+  private Integer disk;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -171,7 +167,7 @@ public class VirtualMachineWithConfigContext {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -179,11 +175,11 @@ public class VirtualMachineWithConfigContext {
 
   public static final String JSON_PROPERTY_CONFIG_TEMPLATE = "config_template";
   @javax.annotation.Nullable
-  private JsonNullable<BriefConfigTemplate> configTemplate = JsonNullable.<BriefConfigTemplate>undefined();
+  private BriefConfigTemplate configTemplate;
 
   public static final String JSON_PROPERTY_LOCAL_CONTEXT_DATA = "local_context_data";
   @javax.annotation.Nullable
-  private JsonNullable<Object> localContextData = JsonNullable.<Object>of(null);
+  private Object localContextData = null;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -376,8 +372,8 @@ public class VirtualMachineWithConfigContext {
   }
 
   public VirtualMachineWithConfigContext site(@javax.annotation.Nullable BriefSite site) {
-    this.site = JsonNullable.<BriefSite>of(site);
     
+    this.site = site;
     return this;
   }
 
@@ -386,31 +382,23 @@ public class VirtualMachineWithConfigContext {
    * @return site
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefSite getSite() {
-        return site.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SITE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefSite> getSite_JsonNullable() {
+  public BriefSite getSite() {
     return site;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SITE)
-  public void setSite_JsonNullable(JsonNullable<BriefSite> site) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_SITE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSite(@javax.annotation.Nullable BriefSite site) {
     this.site = site;
   }
 
-  public void setSite(@javax.annotation.Nullable BriefSite site) {
-    this.site = JsonNullable.<BriefSite>of(site);
-  }
-
   public VirtualMachineWithConfigContext cluster(@javax.annotation.Nullable BriefCluster cluster) {
-    this.cluster = JsonNullable.<BriefCluster>of(cluster);
     
+    this.cluster = cluster;
     return this;
   }
 
@@ -419,31 +407,23 @@ public class VirtualMachineWithConfigContext {
    * @return cluster
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefCluster getCluster() {
-        return cluster.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_CLUSTER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefCluster> getCluster_JsonNullable() {
+  public BriefCluster getCluster() {
     return cluster;
   }
-  
-  @JsonProperty(JSON_PROPERTY_CLUSTER)
-  public void setCluster_JsonNullable(JsonNullable<BriefCluster> cluster) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_CLUSTER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCluster(@javax.annotation.Nullable BriefCluster cluster) {
     this.cluster = cluster;
   }
 
-  public void setCluster(@javax.annotation.Nullable BriefCluster cluster) {
-    this.cluster = JsonNullable.<BriefCluster>of(cluster);
-  }
-
   public VirtualMachineWithConfigContext device(@javax.annotation.Nullable BriefDevice device) {
-    this.device = JsonNullable.<BriefDevice>of(device);
     
+    this.device = device;
     return this;
   }
 
@@ -452,26 +432,18 @@ public class VirtualMachineWithConfigContext {
    * @return device
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefDevice getDevice() {
-        return device.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_DEVICE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefDevice> getDevice_JsonNullable() {
+  public BriefDevice getDevice() {
     return device;
   }
-  
-  @JsonProperty(JSON_PROPERTY_DEVICE)
-  public void setDevice_JsonNullable(JsonNullable<BriefDevice> device) {
-    this.device = device;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_DEVICE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDevice(@javax.annotation.Nullable BriefDevice device) {
-    this.device = JsonNullable.<BriefDevice>of(device);
+    this.device = device;
   }
 
   public VirtualMachineWithConfigContext serial(@javax.annotation.Nullable String serial) {
@@ -500,8 +472,8 @@ public class VirtualMachineWithConfigContext {
   }
 
   public VirtualMachineWithConfigContext role(@javax.annotation.Nullable BriefDeviceRole role) {
-    this.role = JsonNullable.<BriefDeviceRole>of(role);
     
+    this.role = role;
     return this;
   }
 
@@ -510,31 +482,23 @@ public class VirtualMachineWithConfigContext {
    * @return role
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefDeviceRole getRole() {
-        return role.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefDeviceRole> getRole_JsonNullable() {
+  public BriefDeviceRole getRole() {
     return role;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ROLE)
-  public void setRole_JsonNullable(JsonNullable<BriefDeviceRole> role) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRole(@javax.annotation.Nullable BriefDeviceRole role) {
     this.role = role;
   }
 
-  public void setRole(@javax.annotation.Nullable BriefDeviceRole role) {
-    this.role = JsonNullable.<BriefDeviceRole>of(role);
-  }
-
   public VirtualMachineWithConfigContext tenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -543,31 +507,23 @@ public class VirtualMachineWithConfigContext {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefTenant> getTenant_JsonNullable() {
+  public BriefTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<BriefTenant> tenant) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTenant(@javax.annotation.Nullable BriefTenant tenant) {
     this.tenant = tenant;
   }
 
-  public void setTenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
-  }
-
   public VirtualMachineWithConfigContext platform(@javax.annotation.Nullable BriefPlatform platform) {
-    this.platform = JsonNullable.<BriefPlatform>of(platform);
     
+    this.platform = platform;
     return this;
   }
 
@@ -576,26 +532,18 @@ public class VirtualMachineWithConfigContext {
    * @return platform
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefPlatform getPlatform() {
-        return platform.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PLATFORM, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefPlatform> getPlatform_JsonNullable() {
+  public BriefPlatform getPlatform() {
     return platform;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PLATFORM)
-  public void setPlatform_JsonNullable(JsonNullable<BriefPlatform> platform) {
-    this.platform = platform;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PLATFORM, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPlatform(@javax.annotation.Nullable BriefPlatform platform) {
-    this.platform = JsonNullable.<BriefPlatform>of(platform);
+    this.platform = platform;
   }
 
   /**
@@ -613,8 +561,8 @@ public class VirtualMachineWithConfigContext {
 
 
   public VirtualMachineWithConfigContext primaryIp4(@javax.annotation.Nullable BriefIPAddress primaryIp4) {
-    this.primaryIp4 = JsonNullable.<BriefIPAddress>of(primaryIp4);
     
+    this.primaryIp4 = primaryIp4;
     return this;
   }
 
@@ -623,31 +571,23 @@ public class VirtualMachineWithConfigContext {
    * @return primaryIp4
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefIPAddress getPrimaryIp4() {
-        return primaryIp4.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PRIMARY_IP4, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefIPAddress> getPrimaryIp4_JsonNullable() {
+  public BriefIPAddress getPrimaryIp4() {
     return primaryIp4;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PRIMARY_IP4)
-  public void setPrimaryIp4_JsonNullable(JsonNullable<BriefIPAddress> primaryIp4) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_PRIMARY_IP4, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPrimaryIp4(@javax.annotation.Nullable BriefIPAddress primaryIp4) {
     this.primaryIp4 = primaryIp4;
   }
 
-  public void setPrimaryIp4(@javax.annotation.Nullable BriefIPAddress primaryIp4) {
-    this.primaryIp4 = JsonNullable.<BriefIPAddress>of(primaryIp4);
-  }
-
   public VirtualMachineWithConfigContext primaryIp6(@javax.annotation.Nullable BriefIPAddress primaryIp6) {
-    this.primaryIp6 = JsonNullable.<BriefIPAddress>of(primaryIp6);
     
+    this.primaryIp6 = primaryIp6;
     return this;
   }
 
@@ -656,31 +596,23 @@ public class VirtualMachineWithConfigContext {
    * @return primaryIp6
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefIPAddress getPrimaryIp6() {
-        return primaryIp6.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PRIMARY_IP6, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefIPAddress> getPrimaryIp6_JsonNullable() {
+  public BriefIPAddress getPrimaryIp6() {
     return primaryIp6;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PRIMARY_IP6)
-  public void setPrimaryIp6_JsonNullable(JsonNullable<BriefIPAddress> primaryIp6) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_PRIMARY_IP6, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPrimaryIp6(@javax.annotation.Nullable BriefIPAddress primaryIp6) {
     this.primaryIp6 = primaryIp6;
   }
 
-  public void setPrimaryIp6(@javax.annotation.Nullable BriefIPAddress primaryIp6) {
-    this.primaryIp6 = JsonNullable.<BriefIPAddress>of(primaryIp6);
-  }
-
   public VirtualMachineWithConfigContext vcpus(@javax.annotation.Nullable Double vcpus) {
-    this.vcpus = JsonNullable.<Double>of(vcpus);
     
+    this.vcpus = vcpus;
     return this;
   }
 
@@ -691,31 +623,23 @@ public class VirtualMachineWithConfigContext {
    * @return vcpus
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getVcpus() {
-        return vcpus.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VCPUS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getVcpus_JsonNullable() {
+  public Double getVcpus() {
     return vcpus;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VCPUS)
-  public void setVcpus_JsonNullable(JsonNullable<Double> vcpus) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_VCPUS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setVcpus(@javax.annotation.Nullable Double vcpus) {
     this.vcpus = vcpus;
   }
 
-  public void setVcpus(@javax.annotation.Nullable Double vcpus) {
-    this.vcpus = JsonNullable.<Double>of(vcpus);
-  }
-
   public VirtualMachineWithConfigContext memory(@javax.annotation.Nullable Integer memory) {
-    this.memory = JsonNullable.<Integer>of(memory);
     
+    this.memory = memory;
     return this;
   }
 
@@ -726,31 +650,23 @@ public class VirtualMachineWithConfigContext {
    * @return memory
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getMemory() {
-        return memory.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MEMORY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getMemory_JsonNullable() {
+  public Integer getMemory() {
     return memory;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MEMORY)
-  public void setMemory_JsonNullable(JsonNullable<Integer> memory) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_MEMORY, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMemory(@javax.annotation.Nullable Integer memory) {
     this.memory = memory;
   }
 
-  public void setMemory(@javax.annotation.Nullable Integer memory) {
-    this.memory = JsonNullable.<Integer>of(memory);
-  }
-
   public VirtualMachineWithConfigContext disk(@javax.annotation.Nullable Integer disk) {
-    this.disk = JsonNullable.<Integer>of(disk);
     
+    this.disk = disk;
     return this;
   }
 
@@ -761,26 +677,18 @@ public class VirtualMachineWithConfigContext {
    * @return disk
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getDisk() {
-        return disk.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_DISK, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getDisk_JsonNullable() {
+  public Integer getDisk() {
     return disk;
   }
-  
-  @JsonProperty(JSON_PROPERTY_DISK)
-  public void setDisk_JsonNullable(JsonNullable<Integer> disk) {
-    this.disk = disk;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_DISK, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDisk(@javax.annotation.Nullable Integer disk) {
-    this.disk = JsonNullable.<Integer>of(disk);
+    this.disk = disk;
   }
 
   public VirtualMachineWithConfigContext description(@javax.annotation.Nullable String description) {
@@ -809,8 +717,8 @@ public class VirtualMachineWithConfigContext {
   }
 
   public VirtualMachineWithConfigContext owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -819,26 +727,18 @@ public class VirtualMachineWithConfigContext {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public VirtualMachineWithConfigContext comments(@javax.annotation.Nullable String comments) {
@@ -867,8 +767,8 @@ public class VirtualMachineWithConfigContext {
   }
 
   public VirtualMachineWithConfigContext configTemplate(@javax.annotation.Nullable BriefConfigTemplate configTemplate) {
-    this.configTemplate = JsonNullable.<BriefConfigTemplate>of(configTemplate);
     
+    this.configTemplate = configTemplate;
     return this;
   }
 
@@ -877,31 +777,23 @@ public class VirtualMachineWithConfigContext {
    * @return configTemplate
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefConfigTemplate getConfigTemplate() {
-        return configTemplate.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_CONFIG_TEMPLATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefConfigTemplate> getConfigTemplate_JsonNullable() {
+  public BriefConfigTemplate getConfigTemplate() {
     return configTemplate;
   }
-  
-  @JsonProperty(JSON_PROPERTY_CONFIG_TEMPLATE)
-  public void setConfigTemplate_JsonNullable(JsonNullable<BriefConfigTemplate> configTemplate) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_CONFIG_TEMPLATE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setConfigTemplate(@javax.annotation.Nullable BriefConfigTemplate configTemplate) {
     this.configTemplate = configTemplate;
   }
 
-  public void setConfigTemplate(@javax.annotation.Nullable BriefConfigTemplate configTemplate) {
-    this.configTemplate = JsonNullable.<BriefConfigTemplate>of(configTemplate);
-  }
-
   public VirtualMachineWithConfigContext localContextData(@javax.annotation.Nullable Object localContextData) {
-    this.localContextData = JsonNullable.<Object>of(localContextData);
     
+    this.localContextData = localContextData;
     return this;
   }
 
@@ -910,26 +802,18 @@ public class VirtualMachineWithConfigContext {
    * @return localContextData
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Object getLocalContextData() {
-        return localContextData.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_LOCAL_CONTEXT_DATA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Object> getLocalContextData_JsonNullable() {
+  public Object getLocalContextData() {
     return localContextData;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LOCAL_CONTEXT_DATA)
-  public void setLocalContextData_JsonNullable(JsonNullable<Object> localContextData) {
-    this.localContextData = localContextData;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_LOCAL_CONTEXT_DATA, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLocalContextData(@javax.annotation.Nullable Object localContextData) {
-    this.localContextData = JsonNullable.<Object>of(localContextData);
+    this.localContextData = localContextData;
   }
 
   public VirtualMachineWithConfigContext tags(@javax.annotation.Nullable List<NestedTag> tags) {
@@ -1085,24 +969,24 @@ public class VirtualMachineWithConfigContext {
         Objects.equals(this.name, virtualMachineWithConfigContext.name) &&
         Objects.equals(this.status, virtualMachineWithConfigContext.status) &&
         Objects.equals(this.startOnBoot, virtualMachineWithConfigContext.startOnBoot) &&
-        equalsNullable(this.site, virtualMachineWithConfigContext.site) &&
-        equalsNullable(this.cluster, virtualMachineWithConfigContext.cluster) &&
-        equalsNullable(this.device, virtualMachineWithConfigContext.device) &&
+        Objects.equals(this.site, virtualMachineWithConfigContext.site) &&
+        Objects.equals(this.cluster, virtualMachineWithConfigContext.cluster) &&
+        Objects.equals(this.device, virtualMachineWithConfigContext.device) &&
         Objects.equals(this.serial, virtualMachineWithConfigContext.serial) &&
-        equalsNullable(this.role, virtualMachineWithConfigContext.role) &&
-        equalsNullable(this.tenant, virtualMachineWithConfigContext.tenant) &&
-        equalsNullable(this.platform, virtualMachineWithConfigContext.platform) &&
+        Objects.equals(this.role, virtualMachineWithConfigContext.role) &&
+        Objects.equals(this.tenant, virtualMachineWithConfigContext.tenant) &&
+        Objects.equals(this.platform, virtualMachineWithConfigContext.platform) &&
         Objects.equals(this.primaryIp, virtualMachineWithConfigContext.primaryIp) &&
-        equalsNullable(this.primaryIp4, virtualMachineWithConfigContext.primaryIp4) &&
-        equalsNullable(this.primaryIp6, virtualMachineWithConfigContext.primaryIp6) &&
-        equalsNullable(this.vcpus, virtualMachineWithConfigContext.vcpus) &&
-        equalsNullable(this.memory, virtualMachineWithConfigContext.memory) &&
-        equalsNullable(this.disk, virtualMachineWithConfigContext.disk) &&
+        Objects.equals(this.primaryIp4, virtualMachineWithConfigContext.primaryIp4) &&
+        Objects.equals(this.primaryIp6, virtualMachineWithConfigContext.primaryIp6) &&
+        Objects.equals(this.vcpus, virtualMachineWithConfigContext.vcpus) &&
+        Objects.equals(this.memory, virtualMachineWithConfigContext.memory) &&
+        Objects.equals(this.disk, virtualMachineWithConfigContext.disk) &&
         Objects.equals(this.description, virtualMachineWithConfigContext.description) &&
-        equalsNullable(this.owner, virtualMachineWithConfigContext.owner) &&
+        Objects.equals(this.owner, virtualMachineWithConfigContext.owner) &&
         Objects.equals(this.comments, virtualMachineWithConfigContext.comments) &&
-        equalsNullable(this.configTemplate, virtualMachineWithConfigContext.configTemplate) &&
-        equalsNullable(this.localContextData, virtualMachineWithConfigContext.localContextData) &&
+        Objects.equals(this.configTemplate, virtualMachineWithConfigContext.configTemplate) &&
+        Objects.equals(this.localContextData, virtualMachineWithConfigContext.localContextData) &&
         Objects.equals(this.tags, virtualMachineWithConfigContext.tags) &&
         Objects.equals(this.customFields, virtualMachineWithConfigContext.customFields) &&
         Objects.equals(this.configContext, virtualMachineWithConfigContext.configContext) &&
@@ -1112,20 +996,9 @@ public class VirtualMachineWithConfigContext {
         Objects.equals(this.virtualDiskCount, virtualMachineWithConfigContext.virtualDiskCount);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, name, status, startOnBoot, hashCodeNullable(site), hashCodeNullable(cluster), hashCodeNullable(device), serial, hashCodeNullable(role), hashCodeNullable(tenant), hashCodeNullable(platform), primaryIp, hashCodeNullable(primaryIp4), hashCodeNullable(primaryIp6), hashCodeNullable(vcpus), hashCodeNullable(memory), hashCodeNullable(disk), description, hashCodeNullable(owner), comments, hashCodeNullable(configTemplate), hashCodeNullable(localContextData), tags, customFields, configContext, created, lastUpdated, interfaceCount, virtualDiskCount);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, name, status, startOnBoot, site, cluster, device, serial, role, tenant, platform, primaryIp, primaryIp4, primaryIp6, vcpus, memory, disk, description, owner, comments, configTemplate, localContextData, tags, customFields, configContext, created, lastUpdated, interfaceCount, virtualDiskCount);
   }
 
   @Override

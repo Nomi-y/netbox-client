@@ -29,10 +29,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -52,7 +48,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   PatchedWritableConsoleServerPortRequest.JSON_PROPERTY_TAGS,
   PatchedWritableConsoleServerPortRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class PatchedWritableConsoleServerPortRequest {
   public static final String JSON_PROPERTY_DEVICE = "device";
   @javax.annotation.Nullable
@@ -60,7 +56,7 @@ public class PatchedWritableConsoleServerPortRequest {
 
   public static final String JSON_PROPERTY_MODULE = "module";
   @javax.annotation.Nullable
-  private JsonNullable<ConsolePortRequestModule> module = JsonNullable.<ConsolePortRequestModule>undefined();
+  private ConsolePortRequestModule module;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable
@@ -135,7 +131,7 @@ public class PatchedWritableConsoleServerPortRequest {
 
   public static final String JSON_PROPERTY_TYPE = "type";
   @javax.annotation.Nullable
-  private JsonNullable<TypeEnum> type = JsonNullable.<TypeEnum>undefined();
+  private TypeEnum type;
 
   /**
    * Port speed in bits per second  * &#x60;1200&#x60; - 1200 bps * &#x60;2400&#x60; - 2400 bps * &#x60;4800&#x60; - 4800 bps * &#x60;9600&#x60; - 9600 bps * &#x60;19200&#x60; - 19.2 kbps * &#x60;38400&#x60; - 38.4 kbps * &#x60;57600&#x60; - 57.6 kbps * &#x60;115200&#x60; - 115.2 kbps
@@ -186,7 +182,7 @@ public class PatchedWritableConsoleServerPortRequest {
 
   public static final String JSON_PROPERTY_SPEED = "speed";
   @javax.annotation.Nullable
-  private JsonNullable<SpeedEnum> speed = JsonNullable.<SpeedEnum>undefined();
+  private SpeedEnum speed;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -198,7 +194,7 @@ public class PatchedWritableConsoleServerPortRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -237,8 +233,8 @@ public class PatchedWritableConsoleServerPortRequest {
   }
 
   public PatchedWritableConsoleServerPortRequest module(@javax.annotation.Nullable ConsolePortRequestModule module) {
-    this.module = JsonNullable.<ConsolePortRequestModule>of(module);
     
+    this.module = module;
     return this;
   }
 
@@ -247,26 +243,18 @@ public class PatchedWritableConsoleServerPortRequest {
    * @return module
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ConsolePortRequestModule getModule() {
-        return module.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MODULE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ConsolePortRequestModule> getModule_JsonNullable() {
+  public ConsolePortRequestModule getModule() {
     return module;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MODULE)
-  public void setModule_JsonNullable(JsonNullable<ConsolePortRequestModule> module) {
-    this.module = module;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_MODULE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setModule(@javax.annotation.Nullable ConsolePortRequestModule module) {
-    this.module = JsonNullable.<ConsolePortRequestModule>of(module);
+    this.module = module;
   }
 
   public PatchedWritableConsoleServerPortRequest name(@javax.annotation.Nullable String name) {
@@ -320,8 +308,8 @@ public class PatchedWritableConsoleServerPortRequest {
   }
 
   public PatchedWritableConsoleServerPortRequest type(@javax.annotation.Nullable TypeEnum type) {
-    this.type = JsonNullable.<TypeEnum>of(type);
     
+    this.type = type;
     return this;
   }
 
@@ -330,31 +318,23 @@ public class PatchedWritableConsoleServerPortRequest {
    * @return type
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public TypeEnum getType() {
-        return type.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<TypeEnum> getType_JsonNullable() {
+  public TypeEnum getType() {
     return type;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TYPE)
-  public void setType_JsonNullable(JsonNullable<TypeEnum> type) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
-  public void setType(@javax.annotation.Nullable TypeEnum type) {
-    this.type = JsonNullable.<TypeEnum>of(type);
-  }
-
   public PatchedWritableConsoleServerPortRequest speed(@javax.annotation.Nullable SpeedEnum speed) {
-    this.speed = JsonNullable.<SpeedEnum>of(speed);
     
+    this.speed = speed;
     return this;
   }
 
@@ -365,26 +345,18 @@ public class PatchedWritableConsoleServerPortRequest {
    * @return speed
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public SpeedEnum getSpeed() {
-        return speed.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SPEED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<SpeedEnum> getSpeed_JsonNullable() {
+  public SpeedEnum getSpeed() {
     return speed;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SPEED)
-  public void setSpeed_JsonNullable(JsonNullable<SpeedEnum> speed) {
-    this.speed = speed;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_SPEED, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSpeed(@javax.annotation.Nullable SpeedEnum speed) {
-    this.speed = JsonNullable.<SpeedEnum>of(speed);
+    this.speed = speed;
   }
 
   public PatchedWritableConsoleServerPortRequest description(@javax.annotation.Nullable String description) {
@@ -438,8 +410,8 @@ public class PatchedWritableConsoleServerPortRequest {
   }
 
   public PatchedWritableConsoleServerPortRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -448,26 +420,18 @@ public class PatchedWritableConsoleServerPortRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public PatchedWritableConsoleServerPortRequest tags(@javax.annotation.Nullable List<NestedTagRequest> tags) {
@@ -547,32 +511,21 @@ public class PatchedWritableConsoleServerPortRequest {
     }
     PatchedWritableConsoleServerPortRequest patchedWritableConsoleServerPortRequest = (PatchedWritableConsoleServerPortRequest) o;
     return Objects.equals(this.device, patchedWritableConsoleServerPortRequest.device) &&
-        equalsNullable(this.module, patchedWritableConsoleServerPortRequest.module) &&
+        Objects.equals(this.module, patchedWritableConsoleServerPortRequest.module) &&
         Objects.equals(this.name, patchedWritableConsoleServerPortRequest.name) &&
         Objects.equals(this.label, patchedWritableConsoleServerPortRequest.label) &&
-        equalsNullable(this.type, patchedWritableConsoleServerPortRequest.type) &&
-        equalsNullable(this.speed, patchedWritableConsoleServerPortRequest.speed) &&
+        Objects.equals(this.type, patchedWritableConsoleServerPortRequest.type) &&
+        Objects.equals(this.speed, patchedWritableConsoleServerPortRequest.speed) &&
         Objects.equals(this.description, patchedWritableConsoleServerPortRequest.description) &&
         Objects.equals(this.markConnected, patchedWritableConsoleServerPortRequest.markConnected) &&
-        equalsNullable(this.owner, patchedWritableConsoleServerPortRequest.owner) &&
+        Objects.equals(this.owner, patchedWritableConsoleServerPortRequest.owner) &&
         Objects.equals(this.tags, patchedWritableConsoleServerPortRequest.tags) &&
         Objects.equals(this.customFields, patchedWritableConsoleServerPortRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(device, hashCodeNullable(module), name, label, hashCodeNullable(type), hashCodeNullable(speed), description, markConnected, hashCodeNullable(owner), tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(device, module, name, label, type, speed, description, markConnected, owner, tags, customFields);
   }
 
   @Override

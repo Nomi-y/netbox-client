@@ -27,10 +27,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -49,7 +45,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   WritableIPSecProposalRequest.JSON_PROPERTY_TAGS,
   WritableIPSecProposalRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class WritableIPSecProposalRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -110,7 +106,7 @@ public class WritableIPSecProposalRequest {
 
   public static final String JSON_PROPERTY_ENCRYPTION_ALGORITHM = "encryption_algorithm";
   @javax.annotation.Nullable
-  private JsonNullable<EncryptionAlgorithmEnum> encryptionAlgorithm = JsonNullable.<EncryptionAlgorithmEnum>undefined();
+  private EncryptionAlgorithmEnum encryptionAlgorithm;
 
   /**
    * * &#x60;hmac-sha1&#x60; - SHA-1 HMAC * &#x60;hmac-sha256&#x60; - SHA-256 HMAC * &#x60;hmac-sha384&#x60; - SHA-384 HMAC * &#x60;hmac-sha512&#x60; - SHA-512 HMAC * &#x60;hmac-md5&#x60; - MD5 HMAC
@@ -157,19 +153,19 @@ public class WritableIPSecProposalRequest {
 
   public static final String JSON_PROPERTY_AUTHENTICATION_ALGORITHM = "authentication_algorithm";
   @javax.annotation.Nullable
-  private JsonNullable<AuthenticationAlgorithmEnum> authenticationAlgorithm = JsonNullable.<AuthenticationAlgorithmEnum>undefined();
+  private AuthenticationAlgorithmEnum authenticationAlgorithm;
 
   public static final String JSON_PROPERTY_SA_LIFETIME_SECONDS = "sa_lifetime_seconds";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> saLifetimeSeconds = JsonNullable.<Integer>undefined();
+  private Integer saLifetimeSeconds;
 
   public static final String JSON_PROPERTY_SA_LIFETIME_DATA = "sa_lifetime_data";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> saLifetimeData = JsonNullable.<Integer>undefined();
+  private Integer saLifetimeData;
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -237,8 +233,8 @@ public class WritableIPSecProposalRequest {
   }
 
   public WritableIPSecProposalRequest encryptionAlgorithm(@javax.annotation.Nullable EncryptionAlgorithmEnum encryptionAlgorithm) {
-    this.encryptionAlgorithm = JsonNullable.<EncryptionAlgorithmEnum>of(encryptionAlgorithm);
     
+    this.encryptionAlgorithm = encryptionAlgorithm;
     return this;
   }
 
@@ -247,31 +243,23 @@ public class WritableIPSecProposalRequest {
    * @return encryptionAlgorithm
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public EncryptionAlgorithmEnum getEncryptionAlgorithm() {
-        return encryptionAlgorithm.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ENCRYPTION_ALGORITHM, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<EncryptionAlgorithmEnum> getEncryptionAlgorithm_JsonNullable() {
+  public EncryptionAlgorithmEnum getEncryptionAlgorithm() {
     return encryptionAlgorithm;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ENCRYPTION_ALGORITHM)
-  public void setEncryptionAlgorithm_JsonNullable(JsonNullable<EncryptionAlgorithmEnum> encryptionAlgorithm) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_ENCRYPTION_ALGORITHM, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setEncryptionAlgorithm(@javax.annotation.Nullable EncryptionAlgorithmEnum encryptionAlgorithm) {
     this.encryptionAlgorithm = encryptionAlgorithm;
   }
 
-  public void setEncryptionAlgorithm(@javax.annotation.Nullable EncryptionAlgorithmEnum encryptionAlgorithm) {
-    this.encryptionAlgorithm = JsonNullable.<EncryptionAlgorithmEnum>of(encryptionAlgorithm);
-  }
-
   public WritableIPSecProposalRequest authenticationAlgorithm(@javax.annotation.Nullable AuthenticationAlgorithmEnum authenticationAlgorithm) {
-    this.authenticationAlgorithm = JsonNullable.<AuthenticationAlgorithmEnum>of(authenticationAlgorithm);
     
+    this.authenticationAlgorithm = authenticationAlgorithm;
     return this;
   }
 
@@ -280,31 +268,23 @@ public class WritableIPSecProposalRequest {
    * @return authenticationAlgorithm
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public AuthenticationAlgorithmEnum getAuthenticationAlgorithm() {
-        return authenticationAlgorithm.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_AUTHENTICATION_ALGORITHM, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<AuthenticationAlgorithmEnum> getAuthenticationAlgorithm_JsonNullable() {
+  public AuthenticationAlgorithmEnum getAuthenticationAlgorithm() {
     return authenticationAlgorithm;
   }
-  
-  @JsonProperty(JSON_PROPERTY_AUTHENTICATION_ALGORITHM)
-  public void setAuthenticationAlgorithm_JsonNullable(JsonNullable<AuthenticationAlgorithmEnum> authenticationAlgorithm) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_AUTHENTICATION_ALGORITHM, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAuthenticationAlgorithm(@javax.annotation.Nullable AuthenticationAlgorithmEnum authenticationAlgorithm) {
     this.authenticationAlgorithm = authenticationAlgorithm;
   }
 
-  public void setAuthenticationAlgorithm(@javax.annotation.Nullable AuthenticationAlgorithmEnum authenticationAlgorithm) {
-    this.authenticationAlgorithm = JsonNullable.<AuthenticationAlgorithmEnum>of(authenticationAlgorithm);
-  }
-
   public WritableIPSecProposalRequest saLifetimeSeconds(@javax.annotation.Nullable Integer saLifetimeSeconds) {
-    this.saLifetimeSeconds = JsonNullable.<Integer>of(saLifetimeSeconds);
     
+    this.saLifetimeSeconds = saLifetimeSeconds;
     return this;
   }
 
@@ -315,31 +295,23 @@ public class WritableIPSecProposalRequest {
    * @return saLifetimeSeconds
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getSaLifetimeSeconds() {
-        return saLifetimeSeconds.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SA_LIFETIME_SECONDS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getSaLifetimeSeconds_JsonNullable() {
+  public Integer getSaLifetimeSeconds() {
     return saLifetimeSeconds;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SA_LIFETIME_SECONDS)
-  public void setSaLifetimeSeconds_JsonNullable(JsonNullable<Integer> saLifetimeSeconds) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_SA_LIFETIME_SECONDS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSaLifetimeSeconds(@javax.annotation.Nullable Integer saLifetimeSeconds) {
     this.saLifetimeSeconds = saLifetimeSeconds;
   }
 
-  public void setSaLifetimeSeconds(@javax.annotation.Nullable Integer saLifetimeSeconds) {
-    this.saLifetimeSeconds = JsonNullable.<Integer>of(saLifetimeSeconds);
-  }
-
   public WritableIPSecProposalRequest saLifetimeData(@javax.annotation.Nullable Integer saLifetimeData) {
-    this.saLifetimeData = JsonNullable.<Integer>of(saLifetimeData);
     
+    this.saLifetimeData = saLifetimeData;
     return this;
   }
 
@@ -350,31 +322,23 @@ public class WritableIPSecProposalRequest {
    * @return saLifetimeData
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getSaLifetimeData() {
-        return saLifetimeData.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SA_LIFETIME_DATA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getSaLifetimeData_JsonNullable() {
+  public Integer getSaLifetimeData() {
     return saLifetimeData;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SA_LIFETIME_DATA)
-  public void setSaLifetimeData_JsonNullable(JsonNullable<Integer> saLifetimeData) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_SA_LIFETIME_DATA, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSaLifetimeData(@javax.annotation.Nullable Integer saLifetimeData) {
     this.saLifetimeData = saLifetimeData;
   }
 
-  public void setSaLifetimeData(@javax.annotation.Nullable Integer saLifetimeData) {
-    this.saLifetimeData = JsonNullable.<Integer>of(saLifetimeData);
-  }
-
   public WritableIPSecProposalRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -383,26 +347,18 @@ public class WritableIPSecProposalRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public WritableIPSecProposalRequest comments(@javax.annotation.Nullable String comments) {
@@ -508,30 +464,19 @@ public class WritableIPSecProposalRequest {
     WritableIPSecProposalRequest writableIPSecProposalRequest = (WritableIPSecProposalRequest) o;
     return Objects.equals(this.name, writableIPSecProposalRequest.name) &&
         Objects.equals(this.description, writableIPSecProposalRequest.description) &&
-        equalsNullable(this.encryptionAlgorithm, writableIPSecProposalRequest.encryptionAlgorithm) &&
-        equalsNullable(this.authenticationAlgorithm, writableIPSecProposalRequest.authenticationAlgorithm) &&
-        equalsNullable(this.saLifetimeSeconds, writableIPSecProposalRequest.saLifetimeSeconds) &&
-        equalsNullable(this.saLifetimeData, writableIPSecProposalRequest.saLifetimeData) &&
-        equalsNullable(this.owner, writableIPSecProposalRequest.owner) &&
+        Objects.equals(this.encryptionAlgorithm, writableIPSecProposalRequest.encryptionAlgorithm) &&
+        Objects.equals(this.authenticationAlgorithm, writableIPSecProposalRequest.authenticationAlgorithm) &&
+        Objects.equals(this.saLifetimeSeconds, writableIPSecProposalRequest.saLifetimeSeconds) &&
+        Objects.equals(this.saLifetimeData, writableIPSecProposalRequest.saLifetimeData) &&
+        Objects.equals(this.owner, writableIPSecProposalRequest.owner) &&
         Objects.equals(this.comments, writableIPSecProposalRequest.comments) &&
         Objects.equals(this.tags, writableIPSecProposalRequest.tags) &&
         Objects.equals(this.customFields, writableIPSecProposalRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, hashCodeNullable(encryptionAlgorithm), hashCodeNullable(authenticationAlgorithm), hashCodeNullable(saLifetimeSeconds), hashCodeNullable(saLifetimeData), hashCodeNullable(owner), comments, tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, description, encryptionAlgorithm, authenticationAlgorithm, saLifetimeSeconds, saLifetimeData, owner, comments, tags, customFields);
   }
 
   @Override

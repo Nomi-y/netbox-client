@@ -31,10 +31,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -57,7 +53,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   TunnelTermination.JSON_PROPERTY_CREATED,
   TunnelTermination.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class TunnelTermination {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -89,7 +85,7 @@ public class TunnelTermination {
 
   public static final String JSON_PROPERTY_TERMINATION_ID = "termination_id";
   @javax.annotation.Nullable
-  private JsonNullable<Long> terminationId = JsonNullable.<Long>undefined();
+  private Long terminationId;
 
   public static final String JSON_PROPERTY_TERMINATION = "termination";
   @javax.annotation.Nullable
@@ -97,7 +93,7 @@ public class TunnelTermination {
 
   public static final String JSON_PROPERTY_OUTSIDE_IP = "outside_ip";
   @javax.annotation.Nullable
-  private JsonNullable<BriefIPAddress> outsideIp = JsonNullable.<BriefIPAddress>undefined();
+  private BriefIPAddress outsideIp;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -272,8 +268,8 @@ public class TunnelTermination {
   }
 
   public TunnelTermination terminationId(@javax.annotation.Nullable Long terminationId) {
-    this.terminationId = JsonNullable.<Long>of(terminationId);
     
+    this.terminationId = terminationId;
     return this;
   }
 
@@ -284,26 +280,18 @@ public class TunnelTermination {
    * @return terminationId
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Long getTerminationId() {
-        return terminationId.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TERMINATION_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Long> getTerminationId_JsonNullable() {
+  public Long getTerminationId() {
     return terminationId;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TERMINATION_ID)
-  public void setTerminationId_JsonNullable(JsonNullable<Long> terminationId) {
-    this.terminationId = terminationId;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TERMINATION_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTerminationId(@javax.annotation.Nullable Long terminationId) {
-    this.terminationId = JsonNullable.<Long>of(terminationId);
+    this.terminationId = terminationId;
   }
 
   /**
@@ -321,8 +309,8 @@ public class TunnelTermination {
 
 
   public TunnelTermination outsideIp(@javax.annotation.Nullable BriefIPAddress outsideIp) {
-    this.outsideIp = JsonNullable.<BriefIPAddress>of(outsideIp);
     
+    this.outsideIp = outsideIp;
     return this;
   }
 
@@ -331,26 +319,18 @@ public class TunnelTermination {
    * @return outsideIp
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefIPAddress getOutsideIp() {
-        return outsideIp.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OUTSIDE_IP, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefIPAddress> getOutsideIp_JsonNullable() {
+  public BriefIPAddress getOutsideIp() {
     return outsideIp;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OUTSIDE_IP)
-  public void setOutsideIp_JsonNullable(JsonNullable<BriefIPAddress> outsideIp) {
-    this.outsideIp = outsideIp;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OUTSIDE_IP, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOutsideIp(@javax.annotation.Nullable BriefIPAddress outsideIp) {
-    this.outsideIp = JsonNullable.<BriefIPAddress>of(outsideIp);
+    this.outsideIp = outsideIp;
   }
 
   public TunnelTermination tags(@javax.annotation.Nullable List<NestedTag> tags) {
@@ -464,29 +444,18 @@ public class TunnelTermination {
         Objects.equals(this.tunnel, tunnelTermination.tunnel) &&
         Objects.equals(this.role, tunnelTermination.role) &&
         Objects.equals(this.terminationType, tunnelTermination.terminationType) &&
-        equalsNullable(this.terminationId, tunnelTermination.terminationId) &&
+        Objects.equals(this.terminationId, tunnelTermination.terminationId) &&
         Objects.equals(this.termination, tunnelTermination.termination) &&
-        equalsNullable(this.outsideIp, tunnelTermination.outsideIp) &&
+        Objects.equals(this.outsideIp, tunnelTermination.outsideIp) &&
         Objects.equals(this.tags, tunnelTermination.tags) &&
         Objects.equals(this.customFields, tunnelTermination.customFields) &&
         Objects.equals(this.created, tunnelTermination.created) &&
         Objects.equals(this.lastUpdated, tunnelTermination.lastUpdated);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, tunnel, role, terminationType, hashCodeNullable(terminationId), termination, hashCodeNullable(outsideIp), tags, customFields, created, lastUpdated);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, tunnel, role, terminationType, terminationId, termination, outsideIp, tags, customFields, created, lastUpdated);
   }
 
   @Override

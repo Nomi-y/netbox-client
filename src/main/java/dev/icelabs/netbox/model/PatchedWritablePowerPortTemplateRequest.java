@@ -22,10 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import dev.icelabs.netbox.model.ConsolePortTemplateRequestDeviceType;
 import dev.icelabs.netbox.model.ConsolePortTemplateRequestModuleType;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -42,15 +38,15 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   PatchedWritablePowerPortTemplateRequest.JSON_PROPERTY_ALLOCATED_DRAW,
   PatchedWritablePowerPortTemplateRequest.JSON_PROPERTY_DESCRIPTION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class PatchedWritablePowerPortTemplateRequest {
   public static final String JSON_PROPERTY_DEVICE_TYPE = "device_type";
   @javax.annotation.Nullable
-  private JsonNullable<ConsolePortTemplateRequestDeviceType> deviceType = JsonNullable.<ConsolePortTemplateRequestDeviceType>undefined();
+  private ConsolePortTemplateRequestDeviceType deviceType;
 
   public static final String JSON_PROPERTY_MODULE_TYPE = "module_type";
   @javax.annotation.Nullable
-  private JsonNullable<ConsolePortTemplateRequestModuleType> moduleType = JsonNullable.<ConsolePortTemplateRequestModuleType>undefined();
+  private ConsolePortTemplateRequestModuleType moduleType;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable
@@ -307,15 +303,15 @@ public class PatchedWritablePowerPortTemplateRequest {
 
   public static final String JSON_PROPERTY_TYPE = "type";
   @javax.annotation.Nullable
-  private JsonNullable<TypeEnum> type = JsonNullable.<TypeEnum>undefined();
+  private TypeEnum type;
 
   public static final String JSON_PROPERTY_MAXIMUM_DRAW = "maximum_draw";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> maximumDraw = JsonNullable.<Integer>undefined();
+  private Integer maximumDraw;
 
   public static final String JSON_PROPERTY_ALLOCATED_DRAW = "allocated_draw";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> allocatedDraw = JsonNullable.<Integer>undefined();
+  private Integer allocatedDraw;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -325,8 +321,8 @@ public class PatchedWritablePowerPortTemplateRequest {
   }
 
   public PatchedWritablePowerPortTemplateRequest deviceType(@javax.annotation.Nullable ConsolePortTemplateRequestDeviceType deviceType) {
-    this.deviceType = JsonNullable.<ConsolePortTemplateRequestDeviceType>of(deviceType);
     
+    this.deviceType = deviceType;
     return this;
   }
 
@@ -335,31 +331,23 @@ public class PatchedWritablePowerPortTemplateRequest {
    * @return deviceType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ConsolePortTemplateRequestDeviceType getDeviceType() {
-        return deviceType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_DEVICE_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ConsolePortTemplateRequestDeviceType> getDeviceType_JsonNullable() {
+  public ConsolePortTemplateRequestDeviceType getDeviceType() {
     return deviceType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_DEVICE_TYPE)
-  public void setDeviceType_JsonNullable(JsonNullable<ConsolePortTemplateRequestDeviceType> deviceType) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_DEVICE_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDeviceType(@javax.annotation.Nullable ConsolePortTemplateRequestDeviceType deviceType) {
     this.deviceType = deviceType;
   }
 
-  public void setDeviceType(@javax.annotation.Nullable ConsolePortTemplateRequestDeviceType deviceType) {
-    this.deviceType = JsonNullable.<ConsolePortTemplateRequestDeviceType>of(deviceType);
-  }
-
   public PatchedWritablePowerPortTemplateRequest moduleType(@javax.annotation.Nullable ConsolePortTemplateRequestModuleType moduleType) {
-    this.moduleType = JsonNullable.<ConsolePortTemplateRequestModuleType>of(moduleType);
     
+    this.moduleType = moduleType;
     return this;
   }
 
@@ -368,26 +356,18 @@ public class PatchedWritablePowerPortTemplateRequest {
    * @return moduleType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ConsolePortTemplateRequestModuleType getModuleType() {
-        return moduleType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MODULE_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ConsolePortTemplateRequestModuleType> getModuleType_JsonNullable() {
+  public ConsolePortTemplateRequestModuleType getModuleType() {
     return moduleType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MODULE_TYPE)
-  public void setModuleType_JsonNullable(JsonNullable<ConsolePortTemplateRequestModuleType> moduleType) {
-    this.moduleType = moduleType;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_MODULE_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setModuleType(@javax.annotation.Nullable ConsolePortTemplateRequestModuleType moduleType) {
-    this.moduleType = JsonNullable.<ConsolePortTemplateRequestModuleType>of(moduleType);
+    this.moduleType = moduleType;
   }
 
   public PatchedWritablePowerPortTemplateRequest name(@javax.annotation.Nullable String name) {
@@ -441,8 +421,8 @@ public class PatchedWritablePowerPortTemplateRequest {
   }
 
   public PatchedWritablePowerPortTemplateRequest type(@javax.annotation.Nullable TypeEnum type) {
-    this.type = JsonNullable.<TypeEnum>of(type);
     
+    this.type = type;
     return this;
   }
 
@@ -451,31 +431,23 @@ public class PatchedWritablePowerPortTemplateRequest {
    * @return type
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public TypeEnum getType() {
-        return type.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<TypeEnum> getType_JsonNullable() {
+  public TypeEnum getType() {
     return type;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TYPE)
-  public void setType_JsonNullable(JsonNullable<TypeEnum> type) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
-  public void setType(@javax.annotation.Nullable TypeEnum type) {
-    this.type = JsonNullable.<TypeEnum>of(type);
-  }
-
   public PatchedWritablePowerPortTemplateRequest maximumDraw(@javax.annotation.Nullable Integer maximumDraw) {
-    this.maximumDraw = JsonNullable.<Integer>of(maximumDraw);
     
+    this.maximumDraw = maximumDraw;
     return this;
   }
 
@@ -486,31 +458,23 @@ public class PatchedWritablePowerPortTemplateRequest {
    * @return maximumDraw
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getMaximumDraw() {
-        return maximumDraw.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MAXIMUM_DRAW, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getMaximumDraw_JsonNullable() {
+  public Integer getMaximumDraw() {
     return maximumDraw;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MAXIMUM_DRAW)
-  public void setMaximumDraw_JsonNullable(JsonNullable<Integer> maximumDraw) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_MAXIMUM_DRAW, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMaximumDraw(@javax.annotation.Nullable Integer maximumDraw) {
     this.maximumDraw = maximumDraw;
   }
 
-  public void setMaximumDraw(@javax.annotation.Nullable Integer maximumDraw) {
-    this.maximumDraw = JsonNullable.<Integer>of(maximumDraw);
-  }
-
   public PatchedWritablePowerPortTemplateRequest allocatedDraw(@javax.annotation.Nullable Integer allocatedDraw) {
-    this.allocatedDraw = JsonNullable.<Integer>of(allocatedDraw);
     
+    this.allocatedDraw = allocatedDraw;
     return this;
   }
 
@@ -521,26 +485,18 @@ public class PatchedWritablePowerPortTemplateRequest {
    * @return allocatedDraw
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getAllocatedDraw() {
-        return allocatedDraw.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ALLOCATED_DRAW, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getAllocatedDraw_JsonNullable() {
+  public Integer getAllocatedDraw() {
     return allocatedDraw;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ALLOCATED_DRAW)
-  public void setAllocatedDraw_JsonNullable(JsonNullable<Integer> allocatedDraw) {
-    this.allocatedDraw = allocatedDraw;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_ALLOCATED_DRAW, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAllocatedDraw(@javax.annotation.Nullable Integer allocatedDraw) {
-    this.allocatedDraw = JsonNullable.<Integer>of(allocatedDraw);
+    this.allocatedDraw = allocatedDraw;
   }
 
   public PatchedWritablePowerPortTemplateRequest description(@javax.annotation.Nullable String description) {
@@ -578,30 +534,19 @@ public class PatchedWritablePowerPortTemplateRequest {
       return false;
     }
     PatchedWritablePowerPortTemplateRequest patchedWritablePowerPortTemplateRequest = (PatchedWritablePowerPortTemplateRequest) o;
-    return equalsNullable(this.deviceType, patchedWritablePowerPortTemplateRequest.deviceType) &&
-        equalsNullable(this.moduleType, patchedWritablePowerPortTemplateRequest.moduleType) &&
+    return Objects.equals(this.deviceType, patchedWritablePowerPortTemplateRequest.deviceType) &&
+        Objects.equals(this.moduleType, patchedWritablePowerPortTemplateRequest.moduleType) &&
         Objects.equals(this.name, patchedWritablePowerPortTemplateRequest.name) &&
         Objects.equals(this.label, patchedWritablePowerPortTemplateRequest.label) &&
-        equalsNullable(this.type, patchedWritablePowerPortTemplateRequest.type) &&
-        equalsNullable(this.maximumDraw, patchedWritablePowerPortTemplateRequest.maximumDraw) &&
-        equalsNullable(this.allocatedDraw, patchedWritablePowerPortTemplateRequest.allocatedDraw) &&
+        Objects.equals(this.type, patchedWritablePowerPortTemplateRequest.type) &&
+        Objects.equals(this.maximumDraw, patchedWritablePowerPortTemplateRequest.maximumDraw) &&
+        Objects.equals(this.allocatedDraw, patchedWritablePowerPortTemplateRequest.allocatedDraw) &&
         Objects.equals(this.description, patchedWritablePowerPortTemplateRequest.description);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(deviceType), hashCodeNullable(moduleType), name, label, hashCodeNullable(type), hashCodeNullable(maximumDraw), hashCodeNullable(allocatedDraw), description);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(deviceType, moduleType, name, label, type, maximumDraw, allocatedDraw, description);
   }
 
   @Override

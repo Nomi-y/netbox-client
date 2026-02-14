@@ -26,10 +26,6 @@ import dev.icelabs.netbox.model.FrontPortTemplateMappingRequest;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -47,15 +43,15 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   PatchedWritableFrontPortTemplateRequest.JSON_PROPERTY_REAR_PORTS,
   PatchedWritableFrontPortTemplateRequest.JSON_PROPERTY_DESCRIPTION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class PatchedWritableFrontPortTemplateRequest {
   public static final String JSON_PROPERTY_DEVICE_TYPE = "device_type";
   @javax.annotation.Nullable
-  private JsonNullable<ConsolePortTemplateRequestDeviceType> deviceType = JsonNullable.<ConsolePortTemplateRequestDeviceType>undefined();
+  private ConsolePortTemplateRequestDeviceType deviceType;
 
   public static final String JSON_PROPERTY_MODULE_TYPE = "module_type";
   @javax.annotation.Nullable
-  private JsonNullable<ConsolePortTemplateRequestModuleType> moduleType = JsonNullable.<ConsolePortTemplateRequestModuleType>undefined();
+  private ConsolePortTemplateRequestModuleType moduleType;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable
@@ -236,8 +232,8 @@ public class PatchedWritableFrontPortTemplateRequest {
   }
 
   public PatchedWritableFrontPortTemplateRequest deviceType(@javax.annotation.Nullable ConsolePortTemplateRequestDeviceType deviceType) {
-    this.deviceType = JsonNullable.<ConsolePortTemplateRequestDeviceType>of(deviceType);
     
+    this.deviceType = deviceType;
     return this;
   }
 
@@ -246,31 +242,23 @@ public class PatchedWritableFrontPortTemplateRequest {
    * @return deviceType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ConsolePortTemplateRequestDeviceType getDeviceType() {
-        return deviceType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_DEVICE_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ConsolePortTemplateRequestDeviceType> getDeviceType_JsonNullable() {
+  public ConsolePortTemplateRequestDeviceType getDeviceType() {
     return deviceType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_DEVICE_TYPE)
-  public void setDeviceType_JsonNullable(JsonNullable<ConsolePortTemplateRequestDeviceType> deviceType) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_DEVICE_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDeviceType(@javax.annotation.Nullable ConsolePortTemplateRequestDeviceType deviceType) {
     this.deviceType = deviceType;
   }
 
-  public void setDeviceType(@javax.annotation.Nullable ConsolePortTemplateRequestDeviceType deviceType) {
-    this.deviceType = JsonNullable.<ConsolePortTemplateRequestDeviceType>of(deviceType);
-  }
-
   public PatchedWritableFrontPortTemplateRequest moduleType(@javax.annotation.Nullable ConsolePortTemplateRequestModuleType moduleType) {
-    this.moduleType = JsonNullable.<ConsolePortTemplateRequestModuleType>of(moduleType);
     
+    this.moduleType = moduleType;
     return this;
   }
 
@@ -279,26 +267,18 @@ public class PatchedWritableFrontPortTemplateRequest {
    * @return moduleType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ConsolePortTemplateRequestModuleType getModuleType() {
-        return moduleType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MODULE_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ConsolePortTemplateRequestModuleType> getModuleType_JsonNullable() {
+  public ConsolePortTemplateRequestModuleType getModuleType() {
     return moduleType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MODULE_TYPE)
-  public void setModuleType_JsonNullable(JsonNullable<ConsolePortTemplateRequestModuleType> moduleType) {
-    this.moduleType = moduleType;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_MODULE_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setModuleType(@javax.annotation.Nullable ConsolePortTemplateRequestModuleType moduleType) {
-    this.moduleType = JsonNullable.<ConsolePortTemplateRequestModuleType>of(moduleType);
+    this.moduleType = moduleType;
   }
 
   public PatchedWritableFrontPortTemplateRequest name(@javax.annotation.Nullable String name) {
@@ -496,8 +476,8 @@ public class PatchedWritableFrontPortTemplateRequest {
       return false;
     }
     PatchedWritableFrontPortTemplateRequest patchedWritableFrontPortTemplateRequest = (PatchedWritableFrontPortTemplateRequest) o;
-    return equalsNullable(this.deviceType, patchedWritableFrontPortTemplateRequest.deviceType) &&
-        equalsNullable(this.moduleType, patchedWritableFrontPortTemplateRequest.moduleType) &&
+    return Objects.equals(this.deviceType, patchedWritableFrontPortTemplateRequest.deviceType) &&
+        Objects.equals(this.moduleType, patchedWritableFrontPortTemplateRequest.moduleType) &&
         Objects.equals(this.name, patchedWritableFrontPortTemplateRequest.name) &&
         Objects.equals(this.label, patchedWritableFrontPortTemplateRequest.label) &&
         Objects.equals(this.type, patchedWritableFrontPortTemplateRequest.type) &&
@@ -507,20 +487,9 @@ public class PatchedWritableFrontPortTemplateRequest {
         Objects.equals(this.description, patchedWritableFrontPortTemplateRequest.description);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(deviceType), hashCodeNullable(moduleType), name, label, type, color, positions, rearPorts, description);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(deviceType, moduleType, name, label, type, color, positions, rearPorts, description);
   }
 
   @Override

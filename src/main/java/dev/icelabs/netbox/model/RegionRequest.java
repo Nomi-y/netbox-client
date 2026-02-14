@@ -28,10 +28,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -48,7 +44,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   RegionRequest.JSON_PROPERTY_OWNER,
   RegionRequest.JSON_PROPERTY_COMMENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class RegionRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -60,7 +56,7 @@ public class RegionRequest {
 
   public static final String JSON_PROPERTY_PARENT = "parent";
   @javax.annotation.Nullable
-  private JsonNullable<NestedRegionRequest> parent = JsonNullable.<NestedRegionRequest>undefined();
+  private NestedRegionRequest parent;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -76,7 +72,7 @@ public class RegionRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -136,8 +132,8 @@ public class RegionRequest {
   }
 
   public RegionRequest parent(@javax.annotation.Nullable NestedRegionRequest parent) {
-    this.parent = JsonNullable.<NestedRegionRequest>of(parent);
     
+    this.parent = parent;
     return this;
   }
 
@@ -146,26 +142,18 @@ public class RegionRequest {
    * @return parent
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public NestedRegionRequest getParent() {
-        return parent.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<NestedRegionRequest> getParent_JsonNullable() {
+  public NestedRegionRequest getParent() {
     return parent;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PARENT)
-  public void setParent_JsonNullable(JsonNullable<NestedRegionRequest> parent) {
-    this.parent = parent;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setParent(@javax.annotation.Nullable NestedRegionRequest parent) {
-    this.parent = JsonNullable.<NestedRegionRequest>of(parent);
+    this.parent = parent;
   }
 
   public RegionRequest description(@javax.annotation.Nullable String description) {
@@ -260,8 +248,8 @@ public class RegionRequest {
   }
 
   public RegionRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -270,26 +258,18 @@ public class RegionRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public RegionRequest comments(@javax.annotation.Nullable String comments) {
@@ -329,28 +309,17 @@ public class RegionRequest {
     RegionRequest regionRequest = (RegionRequest) o;
     return Objects.equals(this.name, regionRequest.name) &&
         Objects.equals(this.slug, regionRequest.slug) &&
-        equalsNullable(this.parent, regionRequest.parent) &&
+        Objects.equals(this.parent, regionRequest.parent) &&
         Objects.equals(this.description, regionRequest.description) &&
         Objects.equals(this.tags, regionRequest.tags) &&
         Objects.equals(this.customFields, regionRequest.customFields) &&
-        equalsNullable(this.owner, regionRequest.owner) &&
+        Objects.equals(this.owner, regionRequest.owner) &&
         Objects.equals(this.comments, regionRequest.comments);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, slug, hashCodeNullable(parent), description, tags, customFields, hashCodeNullable(owner), comments);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, slug, parent, description, tags, customFields, owner, comments);
   }
 
   @Override

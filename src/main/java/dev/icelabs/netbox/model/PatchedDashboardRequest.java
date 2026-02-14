@@ -20,10 +20,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -34,22 +30,22 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   PatchedDashboardRequest.JSON_PROPERTY_LAYOUT,
   PatchedDashboardRequest.JSON_PROPERTY_CONFIG
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class PatchedDashboardRequest {
   public static final String JSON_PROPERTY_LAYOUT = "layout";
   @javax.annotation.Nullable
-  private JsonNullable<Object> layout = JsonNullable.<Object>of(null);
+  private Object layout = null;
 
   public static final String JSON_PROPERTY_CONFIG = "config";
   @javax.annotation.Nullable
-  private JsonNullable<Object> config = JsonNullable.<Object>of(null);
+  private Object config = null;
 
   public PatchedDashboardRequest() {
   }
 
   public PatchedDashboardRequest layout(@javax.annotation.Nullable Object layout) {
-    this.layout = JsonNullable.<Object>of(layout);
     
+    this.layout = layout;
     return this;
   }
 
@@ -58,31 +54,23 @@ public class PatchedDashboardRequest {
    * @return layout
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Object getLayout() {
-        return layout.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_LAYOUT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Object> getLayout_JsonNullable() {
+  public Object getLayout() {
     return layout;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LAYOUT)
-  public void setLayout_JsonNullable(JsonNullable<Object> layout) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_LAYOUT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setLayout(@javax.annotation.Nullable Object layout) {
     this.layout = layout;
   }
 
-  public void setLayout(@javax.annotation.Nullable Object layout) {
-    this.layout = JsonNullable.<Object>of(layout);
-  }
-
   public PatchedDashboardRequest config(@javax.annotation.Nullable Object config) {
-    this.config = JsonNullable.<Object>of(config);
     
+    this.config = config;
     return this;
   }
 
@@ -91,26 +79,18 @@ public class PatchedDashboardRequest {
    * @return config
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Object getConfig() {
-        return config.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_CONFIG, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Object> getConfig_JsonNullable() {
+  public Object getConfig() {
     return config;
   }
-  
-  @JsonProperty(JSON_PROPERTY_CONFIG)
-  public void setConfig_JsonNullable(JsonNullable<Object> config) {
-    this.config = config;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_CONFIG, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setConfig(@javax.annotation.Nullable Object config) {
-    this.config = JsonNullable.<Object>of(config);
+    this.config = config;
   }
 
 
@@ -123,24 +103,13 @@ public class PatchedDashboardRequest {
       return false;
     }
     PatchedDashboardRequest patchedDashboardRequest = (PatchedDashboardRequest) o;
-    return equalsNullable(this.layout, patchedDashboardRequest.layout) &&
-        equalsNullable(this.config, patchedDashboardRequest.config);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+    return Objects.equals(this.layout, patchedDashboardRequest.layout) &&
+        Objects.equals(this.config, patchedDashboardRequest.config);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(layout), hashCodeNullable(config));
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(layout, config);
   }
 
   @Override

@@ -26,10 +26,6 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -50,7 +46,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ObjectPermission.JSON_PROPERTY_GROUPS,
   ObjectPermission.JSON_PROPERTY_USERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class ObjectPermission {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -90,7 +86,7 @@ public class ObjectPermission {
 
   public static final String JSON_PROPERTY_CONSTRAINTS = "constraints";
   @javax.annotation.Nullable
-  private JsonNullable<Object> constraints = JsonNullable.<Object>of(null);
+  private Object constraints = null;
 
   public static final String JSON_PROPERTY_GROUPS = "groups";
   @javax.annotation.Nullable
@@ -317,8 +313,8 @@ public class ObjectPermission {
   }
 
   public ObjectPermission constraints(@javax.annotation.Nullable Object constraints) {
-    this.constraints = JsonNullable.<Object>of(constraints);
     
+    this.constraints = constraints;
     return this;
   }
 
@@ -327,26 +323,18 @@ public class ObjectPermission {
    * @return constraints
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Object getConstraints() {
-        return constraints.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_CONSTRAINTS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Object> getConstraints_JsonNullable() {
+  public Object getConstraints() {
     return constraints;
   }
-  
-  @JsonProperty(JSON_PROPERTY_CONSTRAINTS)
-  public void setConstraints_JsonNullable(JsonNullable<Object> constraints) {
-    this.constraints = constraints;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_CONSTRAINTS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setConstraints(@javax.annotation.Nullable Object constraints) {
-    this.constraints = JsonNullable.<Object>of(constraints);
+    this.constraints = constraints;
   }
 
   public ObjectPermission groups(@javax.annotation.Nullable List<NestedGroup> groups) {
@@ -434,25 +422,14 @@ public class ObjectPermission {
         Objects.equals(this.enabled, objectPermission.enabled) &&
         Objects.equals(this.objectTypes, objectPermission.objectTypes) &&
         Objects.equals(this.actions, objectPermission.actions) &&
-        equalsNullable(this.constraints, objectPermission.constraints) &&
+        Objects.equals(this.constraints, objectPermission.constraints) &&
         Objects.equals(this.groups, objectPermission.groups) &&
         Objects.equals(this.users, objectPermission.users);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, name, description, enabled, objectTypes, actions, hashCodeNullable(constraints), groups, users);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, name, description, enabled, objectTypes, actions, constraints, groups, users);
   }
 
   @Override

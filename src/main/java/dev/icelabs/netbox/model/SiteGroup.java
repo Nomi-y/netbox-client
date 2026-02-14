@@ -30,10 +30,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -59,7 +55,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   SiteGroup.JSON_PROPERTY_COMMENTS,
   SiteGroup.JSON_PROPERTY_DEPTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class SiteGroup {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -87,7 +83,7 @@ public class SiteGroup {
 
   public static final String JSON_PROPERTY_PARENT = "parent";
   @javax.annotation.Nullable
-  private JsonNullable<NestedSiteGroup> parent = JsonNullable.<NestedSiteGroup>undefined();
+  private NestedSiteGroup parent;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -119,7 +115,7 @@ public class SiteGroup {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -265,8 +261,8 @@ public class SiteGroup {
   }
 
   public SiteGroup parent(@javax.annotation.Nullable NestedSiteGroup parent) {
-    this.parent = JsonNullable.<NestedSiteGroup>of(parent);
     
+    this.parent = parent;
     return this;
   }
 
@@ -275,26 +271,18 @@ public class SiteGroup {
    * @return parent
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public NestedSiteGroup getParent() {
-        return parent.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<NestedSiteGroup> getParent_JsonNullable() {
+  public NestedSiteGroup getParent() {
     return parent;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PARENT)
-  public void setParent_JsonNullable(JsonNullable<NestedSiteGroup> parent) {
-    this.parent = parent;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setParent(@javax.annotation.Nullable NestedSiteGroup parent) {
-    this.parent = JsonNullable.<NestedSiteGroup>of(parent);
+    this.parent = parent;
   }
 
   public SiteGroup description(@javax.annotation.Nullable String description) {
@@ -445,8 +433,8 @@ public class SiteGroup {
 
 
   public SiteGroup owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -455,26 +443,18 @@ public class SiteGroup {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public SiteGroup comments(@javax.annotation.Nullable String comments) {
@@ -532,7 +512,7 @@ public class SiteGroup {
         Objects.equals(this.display, siteGroup.display) &&
         Objects.equals(this.name, siteGroup.name) &&
         Objects.equals(this.slug, siteGroup.slug) &&
-        equalsNullable(this.parent, siteGroup.parent) &&
+        Objects.equals(this.parent, siteGroup.parent) &&
         Objects.equals(this.description, siteGroup.description) &&
         Objects.equals(this.tags, siteGroup.tags) &&
         Objects.equals(this.customFields, siteGroup.customFields) &&
@@ -540,25 +520,14 @@ public class SiteGroup {
         Objects.equals(this.lastUpdated, siteGroup.lastUpdated) &&
         Objects.equals(this.siteCount, siteGroup.siteCount) &&
         Objects.equals(this.prefixCount, siteGroup.prefixCount) &&
-        equalsNullable(this.owner, siteGroup.owner) &&
+        Objects.equals(this.owner, siteGroup.owner) &&
         Objects.equals(this.comments, siteGroup.comments) &&
         Objects.equals(this.depth, siteGroup.depth);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, name, slug, hashCodeNullable(parent), description, tags, customFields, created, lastUpdated, siteCount, prefixCount, hashCodeNullable(owner), comments, depth);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, name, slug, parent, description, tags, customFields, created, lastUpdated, siteCount, prefixCount, owner, comments, depth);
   }
 
   @Override

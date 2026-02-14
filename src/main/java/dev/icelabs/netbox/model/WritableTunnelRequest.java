@@ -30,10 +30,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -54,7 +50,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   WritableTunnelRequest.JSON_PROPERTY_TAGS,
   WritableTunnelRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class WritableTunnelRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -103,7 +99,7 @@ public class WritableTunnelRequest {
 
   public static final String JSON_PROPERTY_GROUP = "group";
   @javax.annotation.Nullable
-  private JsonNullable<PatchedWritableTunnelRequestGroup> group = JsonNullable.<PatchedWritableTunnelRequestGroup>undefined();
+  private PatchedWritableTunnelRequestGroup group;
 
   /**
    * * &#x60;ipsec-transport&#x60; - IPsec - Transport * &#x60;ipsec-tunnel&#x60; - IPsec - Tunnel * &#x60;ip-ip&#x60; - IP-in-IP * &#x60;gre&#x60; - GRE * &#x60;wireguard&#x60; - WireGuard * &#x60;openvpn&#x60; - OpenVPN * &#x60;l2tp&#x60; - L2TP * &#x60;pptp&#x60; - PPTP
@@ -158,15 +154,15 @@ public class WritableTunnelRequest {
 
   public static final String JSON_PROPERTY_IPSEC_PROFILE = "ipsec_profile";
   @javax.annotation.Nullable
-  private JsonNullable<PatchedWritableTunnelRequestIpsecProfile> ipsecProfile = JsonNullable.<PatchedWritableTunnelRequestIpsecProfile>undefined();
+  private PatchedWritableTunnelRequestIpsecProfile ipsecProfile;
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestTenant> tenant = JsonNullable.<ASNRangeRequestTenant>undefined();
+  private ASNRangeRequestTenant tenant;
 
   public static final String JSON_PROPERTY_TUNNEL_ID = "tunnel_id";
   @javax.annotation.Nullable
-  private JsonNullable<Long> tunnelId = JsonNullable.<Long>undefined();
+  private Long tunnelId;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -174,7 +170,7 @@ public class WritableTunnelRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -242,8 +238,8 @@ public class WritableTunnelRequest {
   }
 
   public WritableTunnelRequest group(@javax.annotation.Nullable PatchedWritableTunnelRequestGroup group) {
-    this.group = JsonNullable.<PatchedWritableTunnelRequestGroup>of(group);
     
+    this.group = group;
     return this;
   }
 
@@ -252,26 +248,18 @@ public class WritableTunnelRequest {
    * @return group
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public PatchedWritableTunnelRequestGroup getGroup() {
-        return group.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_GROUP, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<PatchedWritableTunnelRequestGroup> getGroup_JsonNullable() {
+  public PatchedWritableTunnelRequestGroup getGroup() {
     return group;
   }
-  
-  @JsonProperty(JSON_PROPERTY_GROUP)
-  public void setGroup_JsonNullable(JsonNullable<PatchedWritableTunnelRequestGroup> group) {
-    this.group = group;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_GROUP, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable PatchedWritableTunnelRequestGroup group) {
-    this.group = JsonNullable.<PatchedWritableTunnelRequestGroup>of(group);
+    this.group = group;
   }
 
   public WritableTunnelRequest encapsulation(@javax.annotation.Nonnull EncapsulationEnum encapsulation) {
@@ -300,8 +288,8 @@ public class WritableTunnelRequest {
   }
 
   public WritableTunnelRequest ipsecProfile(@javax.annotation.Nullable PatchedWritableTunnelRequestIpsecProfile ipsecProfile) {
-    this.ipsecProfile = JsonNullable.<PatchedWritableTunnelRequestIpsecProfile>of(ipsecProfile);
     
+    this.ipsecProfile = ipsecProfile;
     return this;
   }
 
@@ -310,31 +298,23 @@ public class WritableTunnelRequest {
    * @return ipsecProfile
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public PatchedWritableTunnelRequestIpsecProfile getIpsecProfile() {
-        return ipsecProfile.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_IPSEC_PROFILE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<PatchedWritableTunnelRequestIpsecProfile> getIpsecProfile_JsonNullable() {
+  public PatchedWritableTunnelRequestIpsecProfile getIpsecProfile() {
     return ipsecProfile;
   }
-  
-  @JsonProperty(JSON_PROPERTY_IPSEC_PROFILE)
-  public void setIpsecProfile_JsonNullable(JsonNullable<PatchedWritableTunnelRequestIpsecProfile> ipsecProfile) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_IPSEC_PROFILE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setIpsecProfile(@javax.annotation.Nullable PatchedWritableTunnelRequestIpsecProfile ipsecProfile) {
     this.ipsecProfile = ipsecProfile;
   }
 
-  public void setIpsecProfile(@javax.annotation.Nullable PatchedWritableTunnelRequestIpsecProfile ipsecProfile) {
-    this.ipsecProfile = JsonNullable.<PatchedWritableTunnelRequestIpsecProfile>of(ipsecProfile);
-  }
-
   public WritableTunnelRequest tenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -343,31 +323,23 @@ public class WritableTunnelRequest {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestTenant> getTenant_JsonNullable() {
+  public ASNRangeRequestTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<ASNRangeRequestTenant> tenant) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
     this.tenant = tenant;
   }
 
-  public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
-  }
-
   public WritableTunnelRequest tunnelId(@javax.annotation.Nullable Long tunnelId) {
-    this.tunnelId = JsonNullable.<Long>of(tunnelId);
     
+    this.tunnelId = tunnelId;
     return this;
   }
 
@@ -378,26 +350,18 @@ public class WritableTunnelRequest {
    * @return tunnelId
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Long getTunnelId() {
-        return tunnelId.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TUNNEL_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Long> getTunnelId_JsonNullable() {
+  public Long getTunnelId() {
     return tunnelId;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TUNNEL_ID)
-  public void setTunnelId_JsonNullable(JsonNullable<Long> tunnelId) {
-    this.tunnelId = tunnelId;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TUNNEL_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTunnelId(@javax.annotation.Nullable Long tunnelId) {
-    this.tunnelId = JsonNullable.<Long>of(tunnelId);
+    this.tunnelId = tunnelId;
   }
 
   public WritableTunnelRequest description(@javax.annotation.Nullable String description) {
@@ -426,8 +390,8 @@ public class WritableTunnelRequest {
   }
 
   public WritableTunnelRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -436,26 +400,18 @@ public class WritableTunnelRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public WritableTunnelRequest comments(@javax.annotation.Nullable String comments) {
@@ -561,32 +517,21 @@ public class WritableTunnelRequest {
     WritableTunnelRequest writableTunnelRequest = (WritableTunnelRequest) o;
     return Objects.equals(this.name, writableTunnelRequest.name) &&
         Objects.equals(this.status, writableTunnelRequest.status) &&
-        equalsNullable(this.group, writableTunnelRequest.group) &&
+        Objects.equals(this.group, writableTunnelRequest.group) &&
         Objects.equals(this.encapsulation, writableTunnelRequest.encapsulation) &&
-        equalsNullable(this.ipsecProfile, writableTunnelRequest.ipsecProfile) &&
-        equalsNullable(this.tenant, writableTunnelRequest.tenant) &&
-        equalsNullable(this.tunnelId, writableTunnelRequest.tunnelId) &&
+        Objects.equals(this.ipsecProfile, writableTunnelRequest.ipsecProfile) &&
+        Objects.equals(this.tenant, writableTunnelRequest.tenant) &&
+        Objects.equals(this.tunnelId, writableTunnelRequest.tunnelId) &&
         Objects.equals(this.description, writableTunnelRequest.description) &&
-        equalsNullable(this.owner, writableTunnelRequest.owner) &&
+        Objects.equals(this.owner, writableTunnelRequest.owner) &&
         Objects.equals(this.comments, writableTunnelRequest.comments) &&
         Objects.equals(this.tags, writableTunnelRequest.tags) &&
         Objects.equals(this.customFields, writableTunnelRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(name, status, hashCodeNullable(group), encapsulation, hashCodeNullable(ipsecProfile), hashCodeNullable(tenant), hashCodeNullable(tunnelId), description, hashCodeNullable(owner), comments, tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, status, group, encapsulation, ipsecProfile, tenant, tunnelId, description, owner, comments, tags, customFields);
   }
 
   @Override

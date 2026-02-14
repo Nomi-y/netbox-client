@@ -29,10 +29,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -53,7 +49,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   WritablePowerPortRequest.JSON_PROPERTY_TAGS,
   WritablePowerPortRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class WritablePowerPortRequest {
   public static final String JSON_PROPERTY_DEVICE = "device";
   @javax.annotation.Nonnull
@@ -61,7 +57,7 @@ public class WritablePowerPortRequest {
 
   public static final String JSON_PROPERTY_MODULE = "module";
   @javax.annotation.Nullable
-  private JsonNullable<ConsolePortRequestModule> module = JsonNullable.<ConsolePortRequestModule>undefined();
+  private ConsolePortRequestModule module;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -318,15 +314,15 @@ public class WritablePowerPortRequest {
 
   public static final String JSON_PROPERTY_TYPE = "type";
   @javax.annotation.Nullable
-  private JsonNullable<TypeEnum> type = JsonNullable.<TypeEnum>undefined();
+  private TypeEnum type;
 
   public static final String JSON_PROPERTY_MAXIMUM_DRAW = "maximum_draw";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> maximumDraw = JsonNullable.<Integer>undefined();
+  private Integer maximumDraw;
 
   public static final String JSON_PROPERTY_ALLOCATED_DRAW = "allocated_draw";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> allocatedDraw = JsonNullable.<Integer>undefined();
+  private Integer allocatedDraw;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -338,7 +334,7 @@ public class WritablePowerPortRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -377,8 +373,8 @@ public class WritablePowerPortRequest {
   }
 
   public WritablePowerPortRequest module(@javax.annotation.Nullable ConsolePortRequestModule module) {
-    this.module = JsonNullable.<ConsolePortRequestModule>of(module);
     
+    this.module = module;
     return this;
   }
 
@@ -387,26 +383,18 @@ public class WritablePowerPortRequest {
    * @return module
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ConsolePortRequestModule getModule() {
-        return module.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MODULE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ConsolePortRequestModule> getModule_JsonNullable() {
+  public ConsolePortRequestModule getModule() {
     return module;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MODULE)
-  public void setModule_JsonNullable(JsonNullable<ConsolePortRequestModule> module) {
-    this.module = module;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_MODULE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setModule(@javax.annotation.Nullable ConsolePortRequestModule module) {
-    this.module = JsonNullable.<ConsolePortRequestModule>of(module);
+    this.module = module;
   }
 
   public WritablePowerPortRequest name(@javax.annotation.Nonnull String name) {
@@ -460,8 +448,8 @@ public class WritablePowerPortRequest {
   }
 
   public WritablePowerPortRequest type(@javax.annotation.Nullable TypeEnum type) {
-    this.type = JsonNullable.<TypeEnum>of(type);
     
+    this.type = type;
     return this;
   }
 
@@ -470,31 +458,23 @@ public class WritablePowerPortRequest {
    * @return type
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public TypeEnum getType() {
-        return type.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<TypeEnum> getType_JsonNullable() {
+  public TypeEnum getType() {
     return type;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TYPE)
-  public void setType_JsonNullable(JsonNullable<TypeEnum> type) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
-  public void setType(@javax.annotation.Nullable TypeEnum type) {
-    this.type = JsonNullable.<TypeEnum>of(type);
-  }
-
   public WritablePowerPortRequest maximumDraw(@javax.annotation.Nullable Integer maximumDraw) {
-    this.maximumDraw = JsonNullable.<Integer>of(maximumDraw);
     
+    this.maximumDraw = maximumDraw;
     return this;
   }
 
@@ -505,31 +485,23 @@ public class WritablePowerPortRequest {
    * @return maximumDraw
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getMaximumDraw() {
-        return maximumDraw.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MAXIMUM_DRAW, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getMaximumDraw_JsonNullable() {
+  public Integer getMaximumDraw() {
     return maximumDraw;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MAXIMUM_DRAW)
-  public void setMaximumDraw_JsonNullable(JsonNullable<Integer> maximumDraw) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_MAXIMUM_DRAW, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMaximumDraw(@javax.annotation.Nullable Integer maximumDraw) {
     this.maximumDraw = maximumDraw;
   }
 
-  public void setMaximumDraw(@javax.annotation.Nullable Integer maximumDraw) {
-    this.maximumDraw = JsonNullable.<Integer>of(maximumDraw);
-  }
-
   public WritablePowerPortRequest allocatedDraw(@javax.annotation.Nullable Integer allocatedDraw) {
-    this.allocatedDraw = JsonNullable.<Integer>of(allocatedDraw);
     
+    this.allocatedDraw = allocatedDraw;
     return this;
   }
 
@@ -540,26 +512,18 @@ public class WritablePowerPortRequest {
    * @return allocatedDraw
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getAllocatedDraw() {
-        return allocatedDraw.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ALLOCATED_DRAW, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getAllocatedDraw_JsonNullable() {
+  public Integer getAllocatedDraw() {
     return allocatedDraw;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ALLOCATED_DRAW)
-  public void setAllocatedDraw_JsonNullable(JsonNullable<Integer> allocatedDraw) {
-    this.allocatedDraw = allocatedDraw;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_ALLOCATED_DRAW, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAllocatedDraw(@javax.annotation.Nullable Integer allocatedDraw) {
-    this.allocatedDraw = JsonNullable.<Integer>of(allocatedDraw);
+    this.allocatedDraw = allocatedDraw;
   }
 
   public WritablePowerPortRequest description(@javax.annotation.Nullable String description) {
@@ -613,8 +577,8 @@ public class WritablePowerPortRequest {
   }
 
   public WritablePowerPortRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -623,26 +587,18 @@ public class WritablePowerPortRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public WritablePowerPortRequest tags(@javax.annotation.Nullable List<NestedTagRequest> tags) {
@@ -722,33 +678,22 @@ public class WritablePowerPortRequest {
     }
     WritablePowerPortRequest writablePowerPortRequest = (WritablePowerPortRequest) o;
     return Objects.equals(this.device, writablePowerPortRequest.device) &&
-        equalsNullable(this.module, writablePowerPortRequest.module) &&
+        Objects.equals(this.module, writablePowerPortRequest.module) &&
         Objects.equals(this.name, writablePowerPortRequest.name) &&
         Objects.equals(this.label, writablePowerPortRequest.label) &&
-        equalsNullable(this.type, writablePowerPortRequest.type) &&
-        equalsNullable(this.maximumDraw, writablePowerPortRequest.maximumDraw) &&
-        equalsNullable(this.allocatedDraw, writablePowerPortRequest.allocatedDraw) &&
+        Objects.equals(this.type, writablePowerPortRequest.type) &&
+        Objects.equals(this.maximumDraw, writablePowerPortRequest.maximumDraw) &&
+        Objects.equals(this.allocatedDraw, writablePowerPortRequest.allocatedDraw) &&
         Objects.equals(this.description, writablePowerPortRequest.description) &&
         Objects.equals(this.markConnected, writablePowerPortRequest.markConnected) &&
-        equalsNullable(this.owner, writablePowerPortRequest.owner) &&
+        Objects.equals(this.owner, writablePowerPortRequest.owner) &&
         Objects.equals(this.tags, writablePowerPortRequest.tags) &&
         Objects.equals(this.customFields, writablePowerPortRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(device, hashCodeNullable(module), name, label, hashCodeNullable(type), hashCodeNullable(maximumDraw), hashCodeNullable(allocatedDraw), description, markConnected, hashCodeNullable(owner), tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(device, module, name, label, type, maximumDraw, allocatedDraw, description, markConnected, owner, tags, customFields);
   }
 
   @Override

@@ -29,10 +29,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -55,7 +51,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   TunnelGroup.JSON_PROPERTY_LAST_UPDATED,
   TunnelGroup.JSON_PROPERTY_TUNNEL_COUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class TunnelGroup {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -87,7 +83,7 @@ public class TunnelGroup {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -270,8 +266,8 @@ public class TunnelGroup {
   }
 
   public TunnelGroup owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -280,26 +276,18 @@ public class TunnelGroup {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public TunnelGroup comments(@javax.annotation.Nullable String comments) {
@@ -452,7 +440,7 @@ public class TunnelGroup {
         Objects.equals(this.name, tunnelGroup.name) &&
         Objects.equals(this.slug, tunnelGroup.slug) &&
         Objects.equals(this.description, tunnelGroup.description) &&
-        equalsNullable(this.owner, tunnelGroup.owner) &&
+        Objects.equals(this.owner, tunnelGroup.owner) &&
         Objects.equals(this.comments, tunnelGroup.comments) &&
         Objects.equals(this.tags, tunnelGroup.tags) &&
         Objects.equals(this.customFields, tunnelGroup.customFields) &&
@@ -461,20 +449,9 @@ public class TunnelGroup {
         Objects.equals(this.tunnelCount, tunnelGroup.tunnelCount);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, name, slug, description, hashCodeNullable(owner), comments, tags, customFields, created, lastUpdated, tunnelCount);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, name, slug, description, owner, comments, tags, customFields, created, lastUpdated, tunnelCount);
   }
 
   @Override

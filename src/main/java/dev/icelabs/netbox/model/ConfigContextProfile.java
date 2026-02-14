@@ -29,10 +29,6 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -57,7 +53,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ConfigContextProfile.JSON_PROPERTY_CREATED,
   ConfigContextProfile.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class ConfigContextProfile {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -85,7 +81,7 @@ public class ConfigContextProfile {
 
   public static final String JSON_PROPERTY_SCHEMA = "schema";
   @javax.annotation.Nullable
-  private JsonNullable<Object> schema = JsonNullable.<Object>of(null);
+  private Object schema = null;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -93,7 +89,7 @@ public class ConfigContextProfile {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -257,8 +253,8 @@ public class ConfigContextProfile {
   }
 
   public ConfigContextProfile schema(@javax.annotation.Nullable Object schema) {
-    this.schema = JsonNullable.<Object>of(schema);
     
+    this.schema = schema;
     return this;
   }
 
@@ -267,26 +263,18 @@ public class ConfigContextProfile {
    * @return schema
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Object getSchema() {
-        return schema.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SCHEMA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Object> getSchema_JsonNullable() {
+  public Object getSchema() {
     return schema;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SCHEMA)
-  public void setSchema_JsonNullable(JsonNullable<Object> schema) {
-    this.schema = schema;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_SCHEMA, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSchema(@javax.annotation.Nullable Object schema) {
-    this.schema = JsonNullable.<Object>of(schema);
+    this.schema = schema;
   }
 
   public ConfigContextProfile tags(@javax.annotation.Nullable List<NestedTag> tags) {
@@ -323,8 +311,8 @@ public class ConfigContextProfile {
   }
 
   public ConfigContextProfile owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -333,26 +321,18 @@ public class ConfigContextProfile {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public ConfigContextProfile comments(@javax.annotation.Nullable String comments) {
@@ -502,9 +482,9 @@ public class ConfigContextProfile {
         Objects.equals(this.display, configContextProfile.display) &&
         Objects.equals(this.name, configContextProfile.name) &&
         Objects.equals(this.description, configContextProfile.description) &&
-        equalsNullable(this.schema, configContextProfile.schema) &&
+        Objects.equals(this.schema, configContextProfile.schema) &&
         Objects.equals(this.tags, configContextProfile.tags) &&
-        equalsNullable(this.owner, configContextProfile.owner) &&
+        Objects.equals(this.owner, configContextProfile.owner) &&
         Objects.equals(this.comments, configContextProfile.comments) &&
         Objects.equals(this.dataSource, configContextProfile.dataSource) &&
         Objects.equals(this.dataPath, configContextProfile.dataPath) &&
@@ -514,20 +494,9 @@ public class ConfigContextProfile {
         Objects.equals(this.lastUpdated, configContextProfile.lastUpdated);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, name, description, hashCodeNullable(schema), tags, hashCodeNullable(owner), comments, dataSource, dataPath, dataFile, dataSynced, created, lastUpdated);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, name, description, schema, tags, owner, comments, dataSource, dataPath, dataFile, dataSynced, created, lastUpdated);
   }
 
   @Override

@@ -31,10 +31,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -58,7 +54,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   PowerPanel.JSON_PROPERTY_CREATED,
   PowerPanel.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class PowerPanel {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -82,7 +78,7 @@ public class PowerPanel {
 
   public static final String JSON_PROPERTY_LOCATION = "location";
   @javax.annotation.Nullable
-  private JsonNullable<BriefLocation> location = JsonNullable.<BriefLocation>undefined();
+  private BriefLocation location;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -94,7 +90,7 @@ public class PowerPanel {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -227,8 +223,8 @@ public class PowerPanel {
   }
 
   public PowerPanel location(@javax.annotation.Nullable BriefLocation location) {
-    this.location = JsonNullable.<BriefLocation>of(location);
     
+    this.location = location;
     return this;
   }
 
@@ -237,26 +233,18 @@ public class PowerPanel {
    * @return location
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefLocation getLocation() {
-        return location.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_LOCATION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefLocation> getLocation_JsonNullable() {
+  public BriefLocation getLocation() {
     return location;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LOCATION)
-  public void setLocation_JsonNullable(JsonNullable<BriefLocation> location) {
-    this.location = location;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_LOCATION, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLocation(@javax.annotation.Nullable BriefLocation location) {
-    this.location = JsonNullable.<BriefLocation>of(location);
+    this.location = location;
   }
 
   public PowerPanel name(@javax.annotation.Nonnull String name) {
@@ -310,8 +298,8 @@ public class PowerPanel {
   }
 
   public PowerPanel owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -320,26 +308,18 @@ public class PowerPanel {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public PowerPanel comments(@javax.annotation.Nullable String comments) {
@@ -490,10 +470,10 @@ public class PowerPanel {
         Objects.equals(this.displayUrl, powerPanel.displayUrl) &&
         Objects.equals(this.display, powerPanel.display) &&
         Objects.equals(this.site, powerPanel.site) &&
-        equalsNullable(this.location, powerPanel.location) &&
+        Objects.equals(this.location, powerPanel.location) &&
         Objects.equals(this.name, powerPanel.name) &&
         Objects.equals(this.description, powerPanel.description) &&
-        equalsNullable(this.owner, powerPanel.owner) &&
+        Objects.equals(this.owner, powerPanel.owner) &&
         Objects.equals(this.comments, powerPanel.comments) &&
         Objects.equals(this.tags, powerPanel.tags) &&
         Objects.equals(this.customFields, powerPanel.customFields) &&
@@ -502,20 +482,9 @@ public class PowerPanel {
         Objects.equals(this.lastUpdated, powerPanel.lastUpdated);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, site, hashCodeNullable(location), name, description, hashCodeNullable(owner), comments, tags, customFields, powerfeedCount, created, lastUpdated);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, site, location, name, description, owner, comments, tags, customFields, powerfeedCount, created, lastUpdated);
   }
 
   @Override

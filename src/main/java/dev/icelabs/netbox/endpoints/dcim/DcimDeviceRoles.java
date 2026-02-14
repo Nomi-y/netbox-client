@@ -1,11 +1,12 @@
-package dev.icelabs.netbox.endpoints.dcim.device_roles;
+
+package dev.icelabs.netbox.endpoints.dcim;
 
 import org.springframework.web.client.RestClient;
 
 import dev.icelabs.netbox.endpoints.ApiStrings;
 import dev.icelabs.netbox.endpoints.Endpoint;
-import dev.icelabs.netbox.model.response.DeviceRole;
-import dev.icelabs.netbox.model.response.PagedResponse;
+import dev.icelabs.netbox.model.DeviceRole;
+import dev.icelabs.netbox.model.PaginatedDeviceRoleList;
 
 public class DcimDeviceRoles extends Endpoint {
 
@@ -13,9 +14,9 @@ public class DcimDeviceRoles extends Endpoint {
         super(client, ApiStrings.DCIM_DEVICE_ROLES, caller);
     }
 
-    public PagedResponse<DeviceRole> get() {
+    public PaginatedDeviceRoleList get() {
         return this._get()
-                .asPaged(DeviceRole.class);
+                .as(PaginatedDeviceRoleList.class);
     }
 
     public DeviceRole get(int id) {

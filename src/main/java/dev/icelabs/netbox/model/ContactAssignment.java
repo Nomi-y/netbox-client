@@ -31,10 +31,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -56,7 +52,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ContactAssignment.JSON_PROPERTY_CREATED,
   ContactAssignment.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class ContactAssignment {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -88,7 +84,7 @@ public class ContactAssignment {
 
   public static final String JSON_PROPERTY_ROLE = "role";
   @javax.annotation.Nullable
-  private JsonNullable<BriefContactRole> role = JsonNullable.<BriefContactRole>undefined();
+  private BriefContactRole role;
 
   public static final String JSON_PROPERTY_PRIORITY = "priority";
   @javax.annotation.Nullable
@@ -267,8 +263,8 @@ public class ContactAssignment {
   }
 
   public ContactAssignment role(@javax.annotation.Nullable BriefContactRole role) {
-    this.role = JsonNullable.<BriefContactRole>of(role);
     
+    this.role = role;
     return this;
   }
 
@@ -277,26 +273,18 @@ public class ContactAssignment {
    * @return role
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefContactRole getRole() {
-        return role.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefContactRole> getRole_JsonNullable() {
+  public BriefContactRole getRole() {
     return role;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ROLE)
-  public void setRole_JsonNullable(JsonNullable<BriefContactRole> role) {
-    this.role = role;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRole(@javax.annotation.Nullable BriefContactRole role) {
-    this.role = JsonNullable.<BriefContactRole>of(role);
+    this.role = role;
   }
 
   public ContactAssignment priority(@javax.annotation.Nullable BriefCircuitGroupAssignmentSerializerPriority priority) {
@@ -435,7 +423,7 @@ public class ContactAssignment {
         Objects.equals(this.objectId, contactAssignment.objectId) &&
         Objects.equals(this._object, contactAssignment._object) &&
         Objects.equals(this.contact, contactAssignment.contact) &&
-        equalsNullable(this.role, contactAssignment.role) &&
+        Objects.equals(this.role, contactAssignment.role) &&
         Objects.equals(this.priority, contactAssignment.priority) &&
         Objects.equals(this.tags, contactAssignment.tags) &&
         Objects.equals(this.customFields, contactAssignment.customFields) &&
@@ -443,20 +431,9 @@ public class ContactAssignment {
         Objects.equals(this.lastUpdated, contactAssignment.lastUpdated);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, display, objectType, objectId, _object, contact, hashCodeNullable(role), priority, tags, customFields, created, lastUpdated);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, display, objectType, objectId, _object, contact, role, priority, tags, customFields, created, lastUpdated);
   }
 
   @Override

@@ -21,10 +21,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.OffsetDateTime;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -37,11 +33,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   PatchedScriptInputRequest.JSON_PROPERTY_SCHEDULE_AT,
   PatchedScriptInputRequest.JSON_PROPERTY_INTERVAL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class PatchedScriptInputRequest {
   public static final String JSON_PROPERTY_DATA = "data";
   @javax.annotation.Nullable
-  private JsonNullable<Object> data = JsonNullable.<Object>of(null);
+  private Object data = null;
 
   public static final String JSON_PROPERTY_COMMIT = "commit";
   @javax.annotation.Nullable
@@ -49,18 +45,18 @@ public class PatchedScriptInputRequest {
 
   public static final String JSON_PROPERTY_SCHEDULE_AT = "schedule_at";
   @javax.annotation.Nullable
-  private JsonNullable<OffsetDateTime> scheduleAt = JsonNullable.<OffsetDateTime>undefined();
+  private OffsetDateTime scheduleAt;
 
   public static final String JSON_PROPERTY_INTERVAL = "interval";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> interval = JsonNullable.<Integer>undefined();
+  private Integer interval;
 
   public PatchedScriptInputRequest() {
   }
 
   public PatchedScriptInputRequest data(@javax.annotation.Nullable Object data) {
-    this.data = JsonNullable.<Object>of(data);
     
+    this.data = data;
     return this;
   }
 
@@ -69,26 +65,18 @@ public class PatchedScriptInputRequest {
    * @return data
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Object getData() {
-        return data.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_DATA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Object> getData_JsonNullable() {
+  public Object getData() {
     return data;
   }
-  
-  @JsonProperty(JSON_PROPERTY_DATA)
-  public void setData_JsonNullable(JsonNullable<Object> data) {
-    this.data = data;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_DATA, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setData(@javax.annotation.Nullable Object data) {
-    this.data = JsonNullable.<Object>of(data);
+    this.data = data;
   }
 
   public PatchedScriptInputRequest commit(@javax.annotation.Nullable Boolean commit) {
@@ -117,8 +105,8 @@ public class PatchedScriptInputRequest {
   }
 
   public PatchedScriptInputRequest scheduleAt(@javax.annotation.Nullable OffsetDateTime scheduleAt) {
-    this.scheduleAt = JsonNullable.<OffsetDateTime>of(scheduleAt);
     
+    this.scheduleAt = scheduleAt;
     return this;
   }
 
@@ -127,31 +115,23 @@ public class PatchedScriptInputRequest {
    * @return scheduleAt
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public OffsetDateTime getScheduleAt() {
-        return scheduleAt.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SCHEDULE_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<OffsetDateTime> getScheduleAt_JsonNullable() {
+  public OffsetDateTime getScheduleAt() {
     return scheduleAt;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SCHEDULE_AT)
-  public void setScheduleAt_JsonNullable(JsonNullable<OffsetDateTime> scheduleAt) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_SCHEDULE_AT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setScheduleAt(@javax.annotation.Nullable OffsetDateTime scheduleAt) {
     this.scheduleAt = scheduleAt;
   }
 
-  public void setScheduleAt(@javax.annotation.Nullable OffsetDateTime scheduleAt) {
-    this.scheduleAt = JsonNullable.<OffsetDateTime>of(scheduleAt);
-  }
-
   public PatchedScriptInputRequest interval(@javax.annotation.Nullable Integer interval) {
-    this.interval = JsonNullable.<Integer>of(interval);
     
+    this.interval = interval;
     return this;
   }
 
@@ -160,26 +140,18 @@ public class PatchedScriptInputRequest {
    * @return interval
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getInterval() {
-        return interval.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_INTERVAL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getInterval_JsonNullable() {
+  public Integer getInterval() {
     return interval;
   }
-  
-  @JsonProperty(JSON_PROPERTY_INTERVAL)
-  public void setInterval_JsonNullable(JsonNullable<Integer> interval) {
-    this.interval = interval;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_INTERVAL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInterval(@javax.annotation.Nullable Integer interval) {
-    this.interval = JsonNullable.<Integer>of(interval);
+    this.interval = interval;
   }
 
 
@@ -192,26 +164,15 @@ public class PatchedScriptInputRequest {
       return false;
     }
     PatchedScriptInputRequest patchedScriptInputRequest = (PatchedScriptInputRequest) o;
-    return equalsNullable(this.data, patchedScriptInputRequest.data) &&
+    return Objects.equals(this.data, patchedScriptInputRequest.data) &&
         Objects.equals(this.commit, patchedScriptInputRequest.commit) &&
-        equalsNullable(this.scheduleAt, patchedScriptInputRequest.scheduleAt) &&
-        equalsNullable(this.interval, patchedScriptInputRequest.interval);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+        Objects.equals(this.scheduleAt, patchedScriptInputRequest.scheduleAt) &&
+        Objects.equals(this.interval, patchedScriptInputRequest.interval);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(data), commit, hashCodeNullable(scheduleAt), hashCodeNullable(interval));
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(data, commit, scheduleAt, interval);
   }
 
   @Override

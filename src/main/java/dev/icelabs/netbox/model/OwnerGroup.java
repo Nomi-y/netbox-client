@@ -36,7 +36,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   OwnerGroup.JSON_PROPERTY_DESCRIPTION,
   OwnerGroup.JSON_PROPERTY_MEMBER_COUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class OwnerGroup {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull

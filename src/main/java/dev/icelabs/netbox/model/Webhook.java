@@ -29,10 +29,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -60,7 +56,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   Webhook.JSON_PROPERTY_CREATED,
   Webhook.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class Webhook {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -157,7 +153,7 @@ public class Webhook {
 
   public static final String JSON_PROPERTY_CA_FILE_PATH = "ca_file_path";
   @javax.annotation.Nullable
-  private JsonNullable<String> caFilePath = JsonNullable.<String>undefined();
+  private String caFilePath;
 
   public static final String JSON_PROPERTY_CUSTOM_FIELDS = "custom_fields";
   @javax.annotation.Nullable
@@ -165,7 +161,7 @@ public class Webhook {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -484,8 +480,8 @@ public class Webhook {
   }
 
   public Webhook caFilePath(@javax.annotation.Nullable String caFilePath) {
-    this.caFilePath = JsonNullable.<String>of(caFilePath);
     
+    this.caFilePath = caFilePath;
     return this;
   }
 
@@ -494,26 +490,18 @@ public class Webhook {
    * @return caFilePath
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getCaFilePath() {
-        return caFilePath.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_CA_FILE_PATH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getCaFilePath_JsonNullable() {
+  public String getCaFilePath() {
     return caFilePath;
   }
-  
-  @JsonProperty(JSON_PROPERTY_CA_FILE_PATH)
-  public void setCaFilePath_JsonNullable(JsonNullable<String> caFilePath) {
-    this.caFilePath = caFilePath;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_CA_FILE_PATH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCaFilePath(@javax.annotation.Nullable String caFilePath) {
-    this.caFilePath = JsonNullable.<String>of(caFilePath);
+    this.caFilePath = caFilePath;
   }
 
   public Webhook customFields(@javax.annotation.Nullable Map<String, Object> customFields) {
@@ -550,8 +538,8 @@ public class Webhook {
   }
 
   public Webhook owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -560,26 +548,18 @@ public class Webhook {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public Webhook tags(@javax.annotation.Nullable List<NestedTag> tags) {
@@ -666,28 +646,17 @@ public class Webhook {
         Objects.equals(this.bodyTemplate, webhook.bodyTemplate) &&
         Objects.equals(this.secret, webhook.secret) &&
         Objects.equals(this.sslVerification, webhook.sslVerification) &&
-        equalsNullable(this.caFilePath, webhook.caFilePath) &&
+        Objects.equals(this.caFilePath, webhook.caFilePath) &&
         Objects.equals(this.customFields, webhook.customFields) &&
-        equalsNullable(this.owner, webhook.owner) &&
+        Objects.equals(this.owner, webhook.owner) &&
         Objects.equals(this.tags, webhook.tags) &&
         Objects.equals(this.created, webhook.created) &&
         Objects.equals(this.lastUpdated, webhook.lastUpdated);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, name, description, payloadUrl, httpMethod, httpContentType, additionalHeaders, bodyTemplate, secret, sslVerification, hashCodeNullable(caFilePath), customFields, hashCodeNullable(owner), tags, created, lastUpdated);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, name, description, payloadUrl, httpMethod, httpContentType, additionalHeaders, bodyTemplate, secret, sslVerification, caFilePath, customFields, owner, tags, created, lastUpdated);
   }
 
   @Override

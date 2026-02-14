@@ -1,8 +1,7 @@
 package dev.icelabs.netbox.endpoints;
 
+import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.web.client.RestClient;
-
-import dev.icelabs.netbox.model.response.AuthenticationResponse;
 
 public class AuthenticationEndpoint extends Endpoint {
 
@@ -10,10 +9,8 @@ public class AuthenticationEndpoint extends Endpoint {
         super(client, ApiStrings.ATUH_CHECK, caller);
     }
 
-    public AuthenticationResponse get() {
-        return this._get()
-                .toEntity(AuthenticationResponse.class)
-                .getBody();
+    public User get() {
+        return this._get().as(User.class);
     }
 
 }

@@ -36,10 +36,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -71,7 +67,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   VirtualizationVirtualMachinesCreateRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
 @JsonTypeName("virtualization_virtual_machines_create_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class VirtualizationVirtualMachinesCreateRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -169,15 +165,15 @@ public class VirtualizationVirtualMachinesCreateRequest {
 
   public static final String JSON_PROPERTY_SITE = "site";
   @javax.annotation.Nullable
-  private JsonNullable<PatchedWritableVLANRequestSite> site = JsonNullable.<PatchedWritableVLANRequestSite>undefined();
+  private PatchedWritableVLANRequestSite site;
 
   public static final String JSON_PROPERTY_CLUSTER = "cluster";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceWithConfigContextRequestCluster> cluster = JsonNullable.<DeviceWithConfigContextRequestCluster>undefined();
+  private DeviceWithConfigContextRequestCluster cluster;
 
   public static final String JSON_PROPERTY_DEVICE = "device";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceBayRequestInstalledDevice> device = JsonNullable.<DeviceBayRequestInstalledDevice>undefined();
+  private DeviceBayRequestInstalledDevice device;
 
   public static final String JSON_PROPERTY_SERIAL = "serial";
   @javax.annotation.Nullable
@@ -185,35 +181,35 @@ public class VirtualizationVirtualMachinesCreateRequest {
 
   public static final String JSON_PROPERTY_ROLE = "role";
   @javax.annotation.Nullable
-  private JsonNullable<PatchedWritableVirtualMachineWithConfigContextRequestRole> role = JsonNullable.<PatchedWritableVirtualMachineWithConfigContextRequestRole>undefined();
+  private PatchedWritableVirtualMachineWithConfigContextRequestRole role;
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestTenant> tenant = JsonNullable.<ASNRangeRequestTenant>undefined();
+  private ASNRangeRequestTenant tenant;
 
   public static final String JSON_PROPERTY_PLATFORM = "platform";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceTypeRequestDefaultPlatform> platform = JsonNullable.<DeviceTypeRequestDefaultPlatform>undefined();
+  private DeviceTypeRequestDefaultPlatform platform;
 
   public static final String JSON_PROPERTY_PRIMARY_IP4 = "primary_ip4";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceWithConfigContextRequestPrimaryIp4> primaryIp4 = JsonNullable.<DeviceWithConfigContextRequestPrimaryIp4>undefined();
+  private DeviceWithConfigContextRequestPrimaryIp4 primaryIp4;
 
   public static final String JSON_PROPERTY_PRIMARY_IP6 = "primary_ip6";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceWithConfigContextRequestPrimaryIp4> primaryIp6 = JsonNullable.<DeviceWithConfigContextRequestPrimaryIp4>undefined();
+  private DeviceWithConfigContextRequestPrimaryIp4 primaryIp6;
 
   public static final String JSON_PROPERTY_VCPUS = "vcpus";
   @javax.annotation.Nullable
-  private JsonNullable<Double> vcpus = JsonNullable.<Double>undefined();
+  private Double vcpus;
 
   public static final String JSON_PROPERTY_MEMORY = "memory";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> memory = JsonNullable.<Integer>undefined();
+  private Integer memory;
 
   public static final String JSON_PROPERTY_DISK = "disk";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> disk = JsonNullable.<Integer>undefined();
+  private Integer disk;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -221,7 +217,7 @@ public class VirtualizationVirtualMachinesCreateRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -229,11 +225,11 @@ public class VirtualizationVirtualMachinesCreateRequest {
 
   public static final String JSON_PROPERTY_CONFIG_TEMPLATE = "config_template";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceRoleRequestConfigTemplate> configTemplate = JsonNullable.<DeviceRoleRequestConfigTemplate>undefined();
+  private DeviceRoleRequestConfigTemplate configTemplate;
 
   public static final String JSON_PROPERTY_LOCAL_CONTEXT_DATA = "local_context_data";
   @javax.annotation.Nullable
-  private JsonNullable<Object> localContextData = JsonNullable.<Object>undefined();
+  private Object localContextData;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -322,8 +318,8 @@ public class VirtualizationVirtualMachinesCreateRequest {
   }
 
   public VirtualizationVirtualMachinesCreateRequest site(@javax.annotation.Nullable PatchedWritableVLANRequestSite site) {
-    this.site = JsonNullable.<PatchedWritableVLANRequestSite>of(site);
     
+    this.site = site;
     return this;
   }
 
@@ -332,31 +328,23 @@ public class VirtualizationVirtualMachinesCreateRequest {
    * @return site
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public PatchedWritableVLANRequestSite getSite() {
-        return site.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SITE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<PatchedWritableVLANRequestSite> getSite_JsonNullable() {
+  public PatchedWritableVLANRequestSite getSite() {
     return site;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SITE)
-  public void setSite_JsonNullable(JsonNullable<PatchedWritableVLANRequestSite> site) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_SITE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSite(@javax.annotation.Nullable PatchedWritableVLANRequestSite site) {
     this.site = site;
   }
 
-  public void setSite(@javax.annotation.Nullable PatchedWritableVLANRequestSite site) {
-    this.site = JsonNullable.<PatchedWritableVLANRequestSite>of(site);
-  }
-
   public VirtualizationVirtualMachinesCreateRequest cluster(@javax.annotation.Nullable DeviceWithConfigContextRequestCluster cluster) {
-    this.cluster = JsonNullable.<DeviceWithConfigContextRequestCluster>of(cluster);
     
+    this.cluster = cluster;
     return this;
   }
 
@@ -365,31 +353,23 @@ public class VirtualizationVirtualMachinesCreateRequest {
    * @return cluster
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceWithConfigContextRequestCluster getCluster() {
-        return cluster.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_CLUSTER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceWithConfigContextRequestCluster> getCluster_JsonNullable() {
+  public DeviceWithConfigContextRequestCluster getCluster() {
     return cluster;
   }
-  
-  @JsonProperty(JSON_PROPERTY_CLUSTER)
-  public void setCluster_JsonNullable(JsonNullable<DeviceWithConfigContextRequestCluster> cluster) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_CLUSTER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCluster(@javax.annotation.Nullable DeviceWithConfigContextRequestCluster cluster) {
     this.cluster = cluster;
   }
 
-  public void setCluster(@javax.annotation.Nullable DeviceWithConfigContextRequestCluster cluster) {
-    this.cluster = JsonNullable.<DeviceWithConfigContextRequestCluster>of(cluster);
-  }
-
   public VirtualizationVirtualMachinesCreateRequest device(@javax.annotation.Nullable DeviceBayRequestInstalledDevice device) {
-    this.device = JsonNullable.<DeviceBayRequestInstalledDevice>of(device);
     
+    this.device = device;
     return this;
   }
 
@@ -398,26 +378,18 @@ public class VirtualizationVirtualMachinesCreateRequest {
    * @return device
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceBayRequestInstalledDevice getDevice() {
-        return device.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_DEVICE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceBayRequestInstalledDevice> getDevice_JsonNullable() {
+  public DeviceBayRequestInstalledDevice getDevice() {
     return device;
   }
-  
-  @JsonProperty(JSON_PROPERTY_DEVICE)
-  public void setDevice_JsonNullable(JsonNullable<DeviceBayRequestInstalledDevice> device) {
-    this.device = device;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_DEVICE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDevice(@javax.annotation.Nullable DeviceBayRequestInstalledDevice device) {
-    this.device = JsonNullable.<DeviceBayRequestInstalledDevice>of(device);
+    this.device = device;
   }
 
   public VirtualizationVirtualMachinesCreateRequest serial(@javax.annotation.Nullable String serial) {
@@ -446,8 +418,8 @@ public class VirtualizationVirtualMachinesCreateRequest {
   }
 
   public VirtualizationVirtualMachinesCreateRequest role(@javax.annotation.Nullable PatchedWritableVirtualMachineWithConfigContextRequestRole role) {
-    this.role = JsonNullable.<PatchedWritableVirtualMachineWithConfigContextRequestRole>of(role);
     
+    this.role = role;
     return this;
   }
 
@@ -456,31 +428,23 @@ public class VirtualizationVirtualMachinesCreateRequest {
    * @return role
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public PatchedWritableVirtualMachineWithConfigContextRequestRole getRole() {
-        return role.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<PatchedWritableVirtualMachineWithConfigContextRequestRole> getRole_JsonNullable() {
+  public PatchedWritableVirtualMachineWithConfigContextRequestRole getRole() {
     return role;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ROLE)
-  public void setRole_JsonNullable(JsonNullable<PatchedWritableVirtualMachineWithConfigContextRequestRole> role) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRole(@javax.annotation.Nullable PatchedWritableVirtualMachineWithConfigContextRequestRole role) {
     this.role = role;
   }
 
-  public void setRole(@javax.annotation.Nullable PatchedWritableVirtualMachineWithConfigContextRequestRole role) {
-    this.role = JsonNullable.<PatchedWritableVirtualMachineWithConfigContextRequestRole>of(role);
-  }
-
   public VirtualizationVirtualMachinesCreateRequest tenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -489,31 +453,23 @@ public class VirtualizationVirtualMachinesCreateRequest {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestTenant> getTenant_JsonNullable() {
+  public ASNRangeRequestTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<ASNRangeRequestTenant> tenant) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
     this.tenant = tenant;
   }
 
-  public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
-  }
-
   public VirtualizationVirtualMachinesCreateRequest platform(@javax.annotation.Nullable DeviceTypeRequestDefaultPlatform platform) {
-    this.platform = JsonNullable.<DeviceTypeRequestDefaultPlatform>of(platform);
     
+    this.platform = platform;
     return this;
   }
 
@@ -522,31 +478,23 @@ public class VirtualizationVirtualMachinesCreateRequest {
    * @return platform
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceTypeRequestDefaultPlatform getPlatform() {
-        return platform.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PLATFORM, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceTypeRequestDefaultPlatform> getPlatform_JsonNullable() {
+  public DeviceTypeRequestDefaultPlatform getPlatform() {
     return platform;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PLATFORM)
-  public void setPlatform_JsonNullable(JsonNullable<DeviceTypeRequestDefaultPlatform> platform) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_PLATFORM, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPlatform(@javax.annotation.Nullable DeviceTypeRequestDefaultPlatform platform) {
     this.platform = platform;
   }
 
-  public void setPlatform(@javax.annotation.Nullable DeviceTypeRequestDefaultPlatform platform) {
-    this.platform = JsonNullable.<DeviceTypeRequestDefaultPlatform>of(platform);
-  }
-
   public VirtualizationVirtualMachinesCreateRequest primaryIp4(@javax.annotation.Nullable DeviceWithConfigContextRequestPrimaryIp4 primaryIp4) {
-    this.primaryIp4 = JsonNullable.<DeviceWithConfigContextRequestPrimaryIp4>of(primaryIp4);
     
+    this.primaryIp4 = primaryIp4;
     return this;
   }
 
@@ -555,31 +503,23 @@ public class VirtualizationVirtualMachinesCreateRequest {
    * @return primaryIp4
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceWithConfigContextRequestPrimaryIp4 getPrimaryIp4() {
-        return primaryIp4.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PRIMARY_IP4, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceWithConfigContextRequestPrimaryIp4> getPrimaryIp4_JsonNullable() {
+  public DeviceWithConfigContextRequestPrimaryIp4 getPrimaryIp4() {
     return primaryIp4;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PRIMARY_IP4)
-  public void setPrimaryIp4_JsonNullable(JsonNullable<DeviceWithConfigContextRequestPrimaryIp4> primaryIp4) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_PRIMARY_IP4, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPrimaryIp4(@javax.annotation.Nullable DeviceWithConfigContextRequestPrimaryIp4 primaryIp4) {
     this.primaryIp4 = primaryIp4;
   }
 
-  public void setPrimaryIp4(@javax.annotation.Nullable DeviceWithConfigContextRequestPrimaryIp4 primaryIp4) {
-    this.primaryIp4 = JsonNullable.<DeviceWithConfigContextRequestPrimaryIp4>of(primaryIp4);
-  }
-
   public VirtualizationVirtualMachinesCreateRequest primaryIp6(@javax.annotation.Nullable DeviceWithConfigContextRequestPrimaryIp4 primaryIp6) {
-    this.primaryIp6 = JsonNullable.<DeviceWithConfigContextRequestPrimaryIp4>of(primaryIp6);
     
+    this.primaryIp6 = primaryIp6;
     return this;
   }
 
@@ -588,31 +528,23 @@ public class VirtualizationVirtualMachinesCreateRequest {
    * @return primaryIp6
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceWithConfigContextRequestPrimaryIp4 getPrimaryIp6() {
-        return primaryIp6.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PRIMARY_IP6, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceWithConfigContextRequestPrimaryIp4> getPrimaryIp6_JsonNullable() {
+  public DeviceWithConfigContextRequestPrimaryIp4 getPrimaryIp6() {
     return primaryIp6;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PRIMARY_IP6)
-  public void setPrimaryIp6_JsonNullable(JsonNullable<DeviceWithConfigContextRequestPrimaryIp4> primaryIp6) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_PRIMARY_IP6, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPrimaryIp6(@javax.annotation.Nullable DeviceWithConfigContextRequestPrimaryIp4 primaryIp6) {
     this.primaryIp6 = primaryIp6;
   }
 
-  public void setPrimaryIp6(@javax.annotation.Nullable DeviceWithConfigContextRequestPrimaryIp4 primaryIp6) {
-    this.primaryIp6 = JsonNullable.<DeviceWithConfigContextRequestPrimaryIp4>of(primaryIp6);
-  }
-
   public VirtualizationVirtualMachinesCreateRequest vcpus(@javax.annotation.Nullable Double vcpus) {
-    this.vcpus = JsonNullable.<Double>of(vcpus);
     
+    this.vcpus = vcpus;
     return this;
   }
 
@@ -623,31 +555,23 @@ public class VirtualizationVirtualMachinesCreateRequest {
    * @return vcpus
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getVcpus() {
-        return vcpus.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VCPUS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getVcpus_JsonNullable() {
+  public Double getVcpus() {
     return vcpus;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VCPUS)
-  public void setVcpus_JsonNullable(JsonNullable<Double> vcpus) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_VCPUS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setVcpus(@javax.annotation.Nullable Double vcpus) {
     this.vcpus = vcpus;
   }
 
-  public void setVcpus(@javax.annotation.Nullable Double vcpus) {
-    this.vcpus = JsonNullable.<Double>of(vcpus);
-  }
-
   public VirtualizationVirtualMachinesCreateRequest memory(@javax.annotation.Nullable Integer memory) {
-    this.memory = JsonNullable.<Integer>of(memory);
     
+    this.memory = memory;
     return this;
   }
 
@@ -658,31 +582,23 @@ public class VirtualizationVirtualMachinesCreateRequest {
    * @return memory
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getMemory() {
-        return memory.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MEMORY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getMemory_JsonNullable() {
+  public Integer getMemory() {
     return memory;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MEMORY)
-  public void setMemory_JsonNullable(JsonNullable<Integer> memory) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_MEMORY, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMemory(@javax.annotation.Nullable Integer memory) {
     this.memory = memory;
   }
 
-  public void setMemory(@javax.annotation.Nullable Integer memory) {
-    this.memory = JsonNullable.<Integer>of(memory);
-  }
-
   public VirtualizationVirtualMachinesCreateRequest disk(@javax.annotation.Nullable Integer disk) {
-    this.disk = JsonNullable.<Integer>of(disk);
     
+    this.disk = disk;
     return this;
   }
 
@@ -693,26 +609,18 @@ public class VirtualizationVirtualMachinesCreateRequest {
    * @return disk
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getDisk() {
-        return disk.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_DISK, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getDisk_JsonNullable() {
+  public Integer getDisk() {
     return disk;
   }
-  
-  @JsonProperty(JSON_PROPERTY_DISK)
-  public void setDisk_JsonNullable(JsonNullable<Integer> disk) {
-    this.disk = disk;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_DISK, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDisk(@javax.annotation.Nullable Integer disk) {
-    this.disk = JsonNullable.<Integer>of(disk);
+    this.disk = disk;
   }
 
   public VirtualizationVirtualMachinesCreateRequest description(@javax.annotation.Nullable String description) {
@@ -741,8 +649,8 @@ public class VirtualizationVirtualMachinesCreateRequest {
   }
 
   public VirtualizationVirtualMachinesCreateRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -751,26 +659,18 @@ public class VirtualizationVirtualMachinesCreateRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public VirtualizationVirtualMachinesCreateRequest comments(@javax.annotation.Nullable String comments) {
@@ -799,8 +699,8 @@ public class VirtualizationVirtualMachinesCreateRequest {
   }
 
   public VirtualizationVirtualMachinesCreateRequest configTemplate(@javax.annotation.Nullable DeviceRoleRequestConfigTemplate configTemplate) {
-    this.configTemplate = JsonNullable.<DeviceRoleRequestConfigTemplate>of(configTemplate);
     
+    this.configTemplate = configTemplate;
     return this;
   }
 
@@ -809,31 +709,23 @@ public class VirtualizationVirtualMachinesCreateRequest {
    * @return configTemplate
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceRoleRequestConfigTemplate getConfigTemplate() {
-        return configTemplate.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_CONFIG_TEMPLATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceRoleRequestConfigTemplate> getConfigTemplate_JsonNullable() {
+  public DeviceRoleRequestConfigTemplate getConfigTemplate() {
     return configTemplate;
   }
-  
-  @JsonProperty(JSON_PROPERTY_CONFIG_TEMPLATE)
-  public void setConfigTemplate_JsonNullable(JsonNullable<DeviceRoleRequestConfigTemplate> configTemplate) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_CONFIG_TEMPLATE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setConfigTemplate(@javax.annotation.Nullable DeviceRoleRequestConfigTemplate configTemplate) {
     this.configTemplate = configTemplate;
   }
 
-  public void setConfigTemplate(@javax.annotation.Nullable DeviceRoleRequestConfigTemplate configTemplate) {
-    this.configTemplate = JsonNullable.<DeviceRoleRequestConfigTemplate>of(configTemplate);
-  }
-
   public VirtualizationVirtualMachinesCreateRequest localContextData(@javax.annotation.Nullable Object localContextData) {
-    this.localContextData = JsonNullable.<Object>of(localContextData);
     
+    this.localContextData = localContextData;
     return this;
   }
 
@@ -842,26 +734,18 @@ public class VirtualizationVirtualMachinesCreateRequest {
    * @return localContextData
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Object getLocalContextData() {
-        return localContextData.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_LOCAL_CONTEXT_DATA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Object> getLocalContextData_JsonNullable() {
+  public Object getLocalContextData() {
     return localContextData;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LOCAL_CONTEXT_DATA)
-  public void setLocalContextData_JsonNullable(JsonNullable<Object> localContextData) {
-    this.localContextData = localContextData;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_LOCAL_CONTEXT_DATA, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLocalContextData(@javax.annotation.Nullable Object localContextData) {
-    this.localContextData = JsonNullable.<Object>of(localContextData);
+    this.localContextData = localContextData;
   }
 
   public VirtualizationVirtualMachinesCreateRequest tags(@javax.annotation.Nullable List<NestedTagRequest> tags) {
@@ -943,41 +827,30 @@ public class VirtualizationVirtualMachinesCreateRequest {
     return Objects.equals(this.name, virtualizationVirtualMachinesCreateRequest.name) &&
         Objects.equals(this.status, virtualizationVirtualMachinesCreateRequest.status) &&
         Objects.equals(this.startOnBoot, virtualizationVirtualMachinesCreateRequest.startOnBoot) &&
-        equalsNullable(this.site, virtualizationVirtualMachinesCreateRequest.site) &&
-        equalsNullable(this.cluster, virtualizationVirtualMachinesCreateRequest.cluster) &&
-        equalsNullable(this.device, virtualizationVirtualMachinesCreateRequest.device) &&
+        Objects.equals(this.site, virtualizationVirtualMachinesCreateRequest.site) &&
+        Objects.equals(this.cluster, virtualizationVirtualMachinesCreateRequest.cluster) &&
+        Objects.equals(this.device, virtualizationVirtualMachinesCreateRequest.device) &&
         Objects.equals(this.serial, virtualizationVirtualMachinesCreateRequest.serial) &&
-        equalsNullable(this.role, virtualizationVirtualMachinesCreateRequest.role) &&
-        equalsNullable(this.tenant, virtualizationVirtualMachinesCreateRequest.tenant) &&
-        equalsNullable(this.platform, virtualizationVirtualMachinesCreateRequest.platform) &&
-        equalsNullable(this.primaryIp4, virtualizationVirtualMachinesCreateRequest.primaryIp4) &&
-        equalsNullable(this.primaryIp6, virtualizationVirtualMachinesCreateRequest.primaryIp6) &&
-        equalsNullable(this.vcpus, virtualizationVirtualMachinesCreateRequest.vcpus) &&
-        equalsNullable(this.memory, virtualizationVirtualMachinesCreateRequest.memory) &&
-        equalsNullable(this.disk, virtualizationVirtualMachinesCreateRequest.disk) &&
+        Objects.equals(this.role, virtualizationVirtualMachinesCreateRequest.role) &&
+        Objects.equals(this.tenant, virtualizationVirtualMachinesCreateRequest.tenant) &&
+        Objects.equals(this.platform, virtualizationVirtualMachinesCreateRequest.platform) &&
+        Objects.equals(this.primaryIp4, virtualizationVirtualMachinesCreateRequest.primaryIp4) &&
+        Objects.equals(this.primaryIp6, virtualizationVirtualMachinesCreateRequest.primaryIp6) &&
+        Objects.equals(this.vcpus, virtualizationVirtualMachinesCreateRequest.vcpus) &&
+        Objects.equals(this.memory, virtualizationVirtualMachinesCreateRequest.memory) &&
+        Objects.equals(this.disk, virtualizationVirtualMachinesCreateRequest.disk) &&
         Objects.equals(this.description, virtualizationVirtualMachinesCreateRequest.description) &&
-        equalsNullable(this.owner, virtualizationVirtualMachinesCreateRequest.owner) &&
+        Objects.equals(this.owner, virtualizationVirtualMachinesCreateRequest.owner) &&
         Objects.equals(this.comments, virtualizationVirtualMachinesCreateRequest.comments) &&
-        equalsNullable(this.configTemplate, virtualizationVirtualMachinesCreateRequest.configTemplate) &&
-        equalsNullable(this.localContextData, virtualizationVirtualMachinesCreateRequest.localContextData) &&
+        Objects.equals(this.configTemplate, virtualizationVirtualMachinesCreateRequest.configTemplate) &&
+        Objects.equals(this.localContextData, virtualizationVirtualMachinesCreateRequest.localContextData) &&
         Objects.equals(this.tags, virtualizationVirtualMachinesCreateRequest.tags) &&
         Objects.equals(this.customFields, virtualizationVirtualMachinesCreateRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(name, status, startOnBoot, hashCodeNullable(site), hashCodeNullable(cluster), hashCodeNullable(device), serial, hashCodeNullable(role), hashCodeNullable(tenant), hashCodeNullable(platform), hashCodeNullable(primaryIp4), hashCodeNullable(primaryIp6), hashCodeNullable(vcpus), hashCodeNullable(memory), hashCodeNullable(disk), description, hashCodeNullable(owner), comments, hashCodeNullable(configTemplate), hashCodeNullable(localContextData), tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, status, startOnBoot, site, cluster, device, serial, role, tenant, platform, primaryIp4, primaryIp6, vcpus, memory, disk, description, owner, comments, configTemplate, localContextData, tags, customFields);
   }
 
   @Override

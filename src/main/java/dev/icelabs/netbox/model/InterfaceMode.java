@@ -31,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   InterfaceMode.JSON_PROPERTY_LABEL
 })
 @JsonTypeName("Interface_mode")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class InterfaceMode {
   /**
    * * &#x60;access&#x60; - Access * &#x60;tagged&#x60; - Tagged * &#x60;tagged-all&#x60; - Tagged (All) * &#x60;q-in-q&#x60; - Q-in-Q (802.1ad)

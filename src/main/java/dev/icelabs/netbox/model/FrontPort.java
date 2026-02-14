@@ -34,10 +34,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -70,7 +66,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   FrontPort.JSON_PROPERTY_LAST_UPDATED,
   FrontPort.JSON_PROPERTY_OCCUPIED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class FrontPort {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -94,7 +90,7 @@ public class FrontPort {
 
   public static final String JSON_PROPERTY_MODULE = "module";
   @javax.annotation.Nullable
-  private JsonNullable<BriefModule> module = JsonNullable.<BriefModule>undefined();
+  private BriefModule module;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -146,7 +142,7 @@ public class FrontPort {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -283,8 +279,8 @@ public class FrontPort {
   }
 
   public FrontPort module(@javax.annotation.Nullable BriefModule module) {
-    this.module = JsonNullable.<BriefModule>of(module);
     
+    this.module = module;
     return this;
   }
 
@@ -293,26 +289,18 @@ public class FrontPort {
    * @return module
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefModule getModule() {
-        return module.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MODULE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefModule> getModule_JsonNullable() {
+  public BriefModule getModule() {
     return module;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MODULE)
-  public void setModule_JsonNullable(JsonNullable<BriefModule> module) {
-    this.module = module;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_MODULE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setModule(@javax.annotation.Nullable BriefModule module) {
-    this.module = JsonNullable.<BriefModule>of(module);
+    this.module = module;
   }
 
   public FrontPort name(@javax.annotation.Nonnull String name) {
@@ -582,8 +570,8 @@ public class FrontPort {
 
 
   public FrontPort owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -592,26 +580,18 @@ public class FrontPort {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public FrontPort tags(@javax.annotation.Nullable List<NestedTag> tags) {
@@ -737,7 +717,7 @@ public class FrontPort {
         Objects.equals(this.displayUrl, frontPort.displayUrl) &&
         Objects.equals(this.display, frontPort.display) &&
         Objects.equals(this.device, frontPort.device) &&
-        equalsNullable(this.module, frontPort.module) &&
+        Objects.equals(this.module, frontPort.module) &&
         Objects.equals(this.name, frontPort.name) &&
         Objects.equals(this.label, frontPort.label) &&
         Objects.equals(this.type, frontPort.type) &&
@@ -750,7 +730,7 @@ public class FrontPort {
         Objects.equals(this.cableEnd, frontPort.cableEnd) &&
         Objects.equals(this.linkPeers, frontPort.linkPeers) &&
         Objects.equals(this.linkPeersType, frontPort.linkPeersType) &&
-        equalsNullable(this.owner, frontPort.owner) &&
+        Objects.equals(this.owner, frontPort.owner) &&
         Objects.equals(this.tags, frontPort.tags) &&
         Objects.equals(this.customFields, frontPort.customFields) &&
         Objects.equals(this.created, frontPort.created) &&
@@ -758,20 +738,9 @@ public class FrontPort {
         Objects.equals(this.occupied, frontPort.occupied);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, device, hashCodeNullable(module), name, label, type, color, positions, rearPorts, description, markConnected, cable, cableEnd, linkPeers, linkPeersType, hashCodeNullable(owner), tags, customFields, created, lastUpdated, occupied);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, device, module, name, label, type, color, positions, rearPorts, description, markConnected, cable, cableEnd, linkPeers, linkPeersType, owner, tags, customFields, created, lastUpdated, occupied);
   }
 
   @Override

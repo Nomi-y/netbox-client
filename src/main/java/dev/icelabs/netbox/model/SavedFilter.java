@@ -26,10 +26,6 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -54,7 +50,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   SavedFilter.JSON_PROPERTY_CREATED,
   SavedFilter.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class SavedFilter {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -90,7 +86,7 @@ public class SavedFilter {
 
   public static final String JSON_PROPERTY_USER = "user";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> user = JsonNullable.<Integer>undefined();
+  private Integer user;
 
   public static final String JSON_PROPERTY_WEIGHT = "weight";
   @javax.annotation.Nullable
@@ -110,7 +106,7 @@ public class SavedFilter {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_CREATED = "created";
   @javax.annotation.Nullable
@@ -308,8 +304,8 @@ public class SavedFilter {
   }
 
   public SavedFilter user(@javax.annotation.Nullable Integer user) {
-    this.user = JsonNullable.<Integer>of(user);
     
+    this.user = user;
     return this;
   }
 
@@ -318,26 +314,18 @@ public class SavedFilter {
    * @return user
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getUser() {
-        return user.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_USER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getUser_JsonNullable() {
+  public Integer getUser() {
     return user;
   }
-  
-  @JsonProperty(JSON_PROPERTY_USER)
-  public void setUser_JsonNullable(JsonNullable<Integer> user) {
-    this.user = user;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_USER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUser(@javax.annotation.Nullable Integer user) {
-    this.user = JsonNullable.<Integer>of(user);
+    this.user = user;
   }
 
   public SavedFilter weight(@javax.annotation.Nullable Integer weight) {
@@ -443,8 +431,8 @@ public class SavedFilter {
   }
 
   public SavedFilter owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -453,26 +441,18 @@ public class SavedFilter {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   /**
@@ -521,30 +501,19 @@ public class SavedFilter {
         Objects.equals(this.name, savedFilter.name) &&
         Objects.equals(this.slug, savedFilter.slug) &&
         Objects.equals(this.description, savedFilter.description) &&
-        equalsNullable(this.user, savedFilter.user) &&
+        Objects.equals(this.user, savedFilter.user) &&
         Objects.equals(this.weight, savedFilter.weight) &&
         Objects.equals(this.enabled, savedFilter.enabled) &&
         Objects.equals(this.shared, savedFilter.shared) &&
         Objects.equals(this.parameters, savedFilter.parameters) &&
-        equalsNullable(this.owner, savedFilter.owner) &&
+        Objects.equals(this.owner, savedFilter.owner) &&
         Objects.equals(this.created, savedFilter.created) &&
         Objects.equals(this.lastUpdated, savedFilter.lastUpdated);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, objectTypes, name, slug, description, hashCodeNullable(user), weight, enabled, shared, parameters, hashCodeNullable(owner), created, lastUpdated);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, objectTypes, name, slug, description, user, weight, enabled, shared, parameters, owner, created, lastUpdated);
   }
 
   @Override

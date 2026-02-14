@@ -25,10 +25,6 @@ import dev.icelabs.netbox.model.BriefModuleType;
 import dev.icelabs.netbox.model.PowerPortType;
 import java.net.URI;
 import java.time.OffsetDateTime;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -50,7 +46,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   PowerPortTemplate.JSON_PROPERTY_CREATED,
   PowerPortTemplate.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class PowerPortTemplate {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -66,11 +62,11 @@ public class PowerPortTemplate {
 
   public static final String JSON_PROPERTY_DEVICE_TYPE = "device_type";
   @javax.annotation.Nullable
-  private JsonNullable<BriefDeviceType> deviceType = JsonNullable.<BriefDeviceType>undefined();
+  private BriefDeviceType deviceType;
 
   public static final String JSON_PROPERTY_MODULE_TYPE = "module_type";
   @javax.annotation.Nullable
-  private JsonNullable<BriefModuleType> moduleType = JsonNullable.<BriefModuleType>undefined();
+  private BriefModuleType moduleType;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -82,15 +78,15 @@ public class PowerPortTemplate {
 
   public static final String JSON_PROPERTY_TYPE = "type";
   @javax.annotation.Nullable
-  private JsonNullable<PowerPortType> type = JsonNullable.<PowerPortType>undefined();
+  private PowerPortType type;
 
   public static final String JSON_PROPERTY_MAXIMUM_DRAW = "maximum_draw";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> maximumDraw = JsonNullable.<Integer>undefined();
+  private Integer maximumDraw;
 
   public static final String JSON_PROPERTY_ALLOCATED_DRAW = "allocated_draw";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> allocatedDraw = JsonNullable.<Integer>undefined();
+  private Integer allocatedDraw;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -168,8 +164,8 @@ public class PowerPortTemplate {
 
 
   public PowerPortTemplate deviceType(@javax.annotation.Nullable BriefDeviceType deviceType) {
-    this.deviceType = JsonNullable.<BriefDeviceType>of(deviceType);
     
+    this.deviceType = deviceType;
     return this;
   }
 
@@ -178,31 +174,23 @@ public class PowerPortTemplate {
    * @return deviceType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefDeviceType getDeviceType() {
-        return deviceType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_DEVICE_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefDeviceType> getDeviceType_JsonNullable() {
+  public BriefDeviceType getDeviceType() {
     return deviceType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_DEVICE_TYPE)
-  public void setDeviceType_JsonNullable(JsonNullable<BriefDeviceType> deviceType) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_DEVICE_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDeviceType(@javax.annotation.Nullable BriefDeviceType deviceType) {
     this.deviceType = deviceType;
   }
 
-  public void setDeviceType(@javax.annotation.Nullable BriefDeviceType deviceType) {
-    this.deviceType = JsonNullable.<BriefDeviceType>of(deviceType);
-  }
-
   public PowerPortTemplate moduleType(@javax.annotation.Nullable BriefModuleType moduleType) {
-    this.moduleType = JsonNullable.<BriefModuleType>of(moduleType);
     
+    this.moduleType = moduleType;
     return this;
   }
 
@@ -211,26 +199,18 @@ public class PowerPortTemplate {
    * @return moduleType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefModuleType getModuleType() {
-        return moduleType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MODULE_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefModuleType> getModuleType_JsonNullable() {
+  public BriefModuleType getModuleType() {
     return moduleType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MODULE_TYPE)
-  public void setModuleType_JsonNullable(JsonNullable<BriefModuleType> moduleType) {
-    this.moduleType = moduleType;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_MODULE_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setModuleType(@javax.annotation.Nullable BriefModuleType moduleType) {
-    this.moduleType = JsonNullable.<BriefModuleType>of(moduleType);
+    this.moduleType = moduleType;
   }
 
   public PowerPortTemplate name(@javax.annotation.Nonnull String name) {
@@ -284,8 +264,8 @@ public class PowerPortTemplate {
   }
 
   public PowerPortTemplate type(@javax.annotation.Nullable PowerPortType type) {
-    this.type = JsonNullable.<PowerPortType>of(type);
     
+    this.type = type;
     return this;
   }
 
@@ -294,31 +274,23 @@ public class PowerPortTemplate {
    * @return type
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public PowerPortType getType() {
-        return type.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<PowerPortType> getType_JsonNullable() {
+  public PowerPortType getType() {
     return type;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TYPE)
-  public void setType_JsonNullable(JsonNullable<PowerPortType> type) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setType(@javax.annotation.Nullable PowerPortType type) {
     this.type = type;
   }
 
-  public void setType(@javax.annotation.Nullable PowerPortType type) {
-    this.type = JsonNullable.<PowerPortType>of(type);
-  }
-
   public PowerPortTemplate maximumDraw(@javax.annotation.Nullable Integer maximumDraw) {
-    this.maximumDraw = JsonNullable.<Integer>of(maximumDraw);
     
+    this.maximumDraw = maximumDraw;
     return this;
   }
 
@@ -329,31 +301,23 @@ public class PowerPortTemplate {
    * @return maximumDraw
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getMaximumDraw() {
-        return maximumDraw.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MAXIMUM_DRAW, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getMaximumDraw_JsonNullable() {
+  public Integer getMaximumDraw() {
     return maximumDraw;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MAXIMUM_DRAW)
-  public void setMaximumDraw_JsonNullable(JsonNullable<Integer> maximumDraw) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_MAXIMUM_DRAW, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMaximumDraw(@javax.annotation.Nullable Integer maximumDraw) {
     this.maximumDraw = maximumDraw;
   }
 
-  public void setMaximumDraw(@javax.annotation.Nullable Integer maximumDraw) {
-    this.maximumDraw = JsonNullable.<Integer>of(maximumDraw);
-  }
-
   public PowerPortTemplate allocatedDraw(@javax.annotation.Nullable Integer allocatedDraw) {
-    this.allocatedDraw = JsonNullable.<Integer>of(allocatedDraw);
     
+    this.allocatedDraw = allocatedDraw;
     return this;
   }
 
@@ -364,26 +328,18 @@ public class PowerPortTemplate {
    * @return allocatedDraw
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getAllocatedDraw() {
-        return allocatedDraw.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ALLOCATED_DRAW, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getAllocatedDraw_JsonNullable() {
+  public Integer getAllocatedDraw() {
     return allocatedDraw;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ALLOCATED_DRAW)
-  public void setAllocatedDraw_JsonNullable(JsonNullable<Integer> allocatedDraw) {
-    this.allocatedDraw = allocatedDraw;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_ALLOCATED_DRAW, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAllocatedDraw(@javax.annotation.Nullable Integer allocatedDraw) {
-    this.allocatedDraw = JsonNullable.<Integer>of(allocatedDraw);
+    this.allocatedDraw = allocatedDraw;
   }
 
   public PowerPortTemplate description(@javax.annotation.Nullable String description) {
@@ -452,32 +408,21 @@ public class PowerPortTemplate {
     return Objects.equals(this.id, powerPortTemplate.id) &&
         Objects.equals(this.url, powerPortTemplate.url) &&
         Objects.equals(this.display, powerPortTemplate.display) &&
-        equalsNullable(this.deviceType, powerPortTemplate.deviceType) &&
-        equalsNullable(this.moduleType, powerPortTemplate.moduleType) &&
+        Objects.equals(this.deviceType, powerPortTemplate.deviceType) &&
+        Objects.equals(this.moduleType, powerPortTemplate.moduleType) &&
         Objects.equals(this.name, powerPortTemplate.name) &&
         Objects.equals(this.label, powerPortTemplate.label) &&
-        equalsNullable(this.type, powerPortTemplate.type) &&
-        equalsNullable(this.maximumDraw, powerPortTemplate.maximumDraw) &&
-        equalsNullable(this.allocatedDraw, powerPortTemplate.allocatedDraw) &&
+        Objects.equals(this.type, powerPortTemplate.type) &&
+        Objects.equals(this.maximumDraw, powerPortTemplate.maximumDraw) &&
+        Objects.equals(this.allocatedDraw, powerPortTemplate.allocatedDraw) &&
         Objects.equals(this.description, powerPortTemplate.description) &&
         Objects.equals(this.created, powerPortTemplate.created) &&
         Objects.equals(this.lastUpdated, powerPortTemplate.lastUpdated);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, display, hashCodeNullable(deviceType), hashCodeNullable(moduleType), name, label, hashCodeNullable(type), hashCodeNullable(maximumDraw), hashCodeNullable(allocatedDraw), description, created, lastUpdated);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, display, deviceType, moduleType, name, label, type, maximumDraw, allocatedDraw, description, created, lastUpdated);
   }
 
   @Override

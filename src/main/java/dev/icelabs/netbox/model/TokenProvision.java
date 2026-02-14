@@ -23,10 +23,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import dev.icelabs.netbox.model.BriefUser;
 import java.net.URI;
 import java.time.OffsetDateTime;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -49,7 +45,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   TokenProvision.JSON_PROPERTY_DESCRIPTION,
   TokenProvision.JSON_PROPERTY_TOKEN
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class TokenProvision {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -120,7 +116,7 @@ public class TokenProvision {
 
   public static final String JSON_PROPERTY_EXPIRES = "expires";
   @javax.annotation.Nullable
-  private JsonNullable<OffsetDateTime> expires = JsonNullable.<OffsetDateTime>undefined();
+  private OffsetDateTime expires;
 
   public static final String JSON_PROPERTY_LAST_USED = "last_used";
   @javax.annotation.Nonnull
@@ -295,8 +291,8 @@ public class TokenProvision {
 
 
   public TokenProvision expires(@javax.annotation.Nullable OffsetDateTime expires) {
-    this.expires = JsonNullable.<OffsetDateTime>of(expires);
     
+    this.expires = expires;
     return this;
   }
 
@@ -305,26 +301,18 @@ public class TokenProvision {
    * @return expires
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public OffsetDateTime getExpires() {
-        return expires.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_EXPIRES, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<OffsetDateTime> getExpires_JsonNullable() {
+  public OffsetDateTime getExpires() {
     return expires;
   }
-  
-  @JsonProperty(JSON_PROPERTY_EXPIRES)
-  public void setExpires_JsonNullable(JsonNullable<OffsetDateTime> expires) {
-    this.expires = expires;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_EXPIRES, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExpires(@javax.annotation.Nullable OffsetDateTime expires) {
-    this.expires = JsonNullable.<OffsetDateTime>of(expires);
+    this.expires = expires;
   }
 
   /**
@@ -459,7 +447,7 @@ public class TokenProvision {
         Objects.equals(this.user, tokenProvision.user) &&
         Objects.equals(this.key, tokenProvision.key) &&
         Objects.equals(this.created, tokenProvision.created) &&
-        equalsNullable(this.expires, tokenProvision.expires) &&
+        Objects.equals(this.expires, tokenProvision.expires) &&
         Objects.equals(this.lastUsed, tokenProvision.lastUsed) &&
         Objects.equals(this.enabled, tokenProvision.enabled) &&
         Objects.equals(this.writeEnabled, tokenProvision.writeEnabled) &&
@@ -467,20 +455,9 @@ public class TokenProvision {
         Objects.equals(this.token, tokenProvision.token);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, version, user, key, created, hashCodeNullable(expires), lastUsed, enabled, writeEnabled, description, token);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, version, user, key, created, expires, lastUsed, enabled, writeEnabled, description, token);
   }
 
   @Override

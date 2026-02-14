@@ -31,10 +31,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -56,7 +52,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   VirtualizationClustersCreateRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
 @JsonTypeName("virtualization_clusters_create_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class VirtualizationClustersCreateRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -68,7 +64,7 @@ public class VirtualizationClustersCreateRequest {
 
   public static final String JSON_PROPERTY_GROUP = "group";
   @javax.annotation.Nullable
-  private JsonNullable<ClusterRequestGroup> group = JsonNullable.<ClusterRequestGroup>undefined();
+  private ClusterRequestGroup group;
 
   /**
    * * &#x60;planned&#x60; - Planned * &#x60;staging&#x60; - Staging * &#x60;active&#x60; - Active * &#x60;decommissioning&#x60; - Decommissioning * &#x60;offline&#x60; - Offline
@@ -117,15 +113,15 @@ public class VirtualizationClustersCreateRequest {
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestTenant> tenant = JsonNullable.<ASNRangeRequestTenant>undefined();
+  private ASNRangeRequestTenant tenant;
 
   public static final String JSON_PROPERTY_SCOPE_TYPE = "scope_type";
   @javax.annotation.Nullable
-  private JsonNullable<String> scopeType = JsonNullable.<String>undefined();
+  private String scopeType;
 
   public static final String JSON_PROPERTY_SCOPE_ID = "scope_id";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> scopeId = JsonNullable.<Integer>undefined();
+  private Integer scopeId;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -133,7 +129,7 @@ public class VirtualizationClustersCreateRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -201,8 +197,8 @@ public class VirtualizationClustersCreateRequest {
   }
 
   public VirtualizationClustersCreateRequest group(@javax.annotation.Nullable ClusterRequestGroup group) {
-    this.group = JsonNullable.<ClusterRequestGroup>of(group);
     
+    this.group = group;
     return this;
   }
 
@@ -211,26 +207,18 @@ public class VirtualizationClustersCreateRequest {
    * @return group
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ClusterRequestGroup getGroup() {
-        return group.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_GROUP, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ClusterRequestGroup> getGroup_JsonNullable() {
+  public ClusterRequestGroup getGroup() {
     return group;
   }
-  
-  @JsonProperty(JSON_PROPERTY_GROUP)
-  public void setGroup_JsonNullable(JsonNullable<ClusterRequestGroup> group) {
-    this.group = group;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_GROUP, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable ClusterRequestGroup group) {
-    this.group = JsonNullable.<ClusterRequestGroup>of(group);
+    this.group = group;
   }
 
   public VirtualizationClustersCreateRequest status(@javax.annotation.Nullable StatusEnum status) {
@@ -259,8 +247,8 @@ public class VirtualizationClustersCreateRequest {
   }
 
   public VirtualizationClustersCreateRequest tenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -269,31 +257,23 @@ public class VirtualizationClustersCreateRequest {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestTenant> getTenant_JsonNullable() {
+  public ASNRangeRequestTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<ASNRangeRequestTenant> tenant) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
     this.tenant = tenant;
   }
 
-  public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
-  }
-
   public VirtualizationClustersCreateRequest scopeType(@javax.annotation.Nullable String scopeType) {
-    this.scopeType = JsonNullable.<String>of(scopeType);
     
+    this.scopeType = scopeType;
     return this;
   }
 
@@ -302,31 +282,23 @@ public class VirtualizationClustersCreateRequest {
    * @return scopeType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getScopeType() {
-        return scopeType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SCOPE_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getScopeType_JsonNullable() {
+  public String getScopeType() {
     return scopeType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SCOPE_TYPE)
-  public void setScopeType_JsonNullable(JsonNullable<String> scopeType) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_SCOPE_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setScopeType(@javax.annotation.Nullable String scopeType) {
     this.scopeType = scopeType;
   }
 
-  public void setScopeType(@javax.annotation.Nullable String scopeType) {
-    this.scopeType = JsonNullable.<String>of(scopeType);
-  }
-
   public VirtualizationClustersCreateRequest scopeId(@javax.annotation.Nullable Integer scopeId) {
-    this.scopeId = JsonNullable.<Integer>of(scopeId);
     
+    this.scopeId = scopeId;
     return this;
   }
 
@@ -335,26 +307,18 @@ public class VirtualizationClustersCreateRequest {
    * @return scopeId
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getScopeId() {
-        return scopeId.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SCOPE_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getScopeId_JsonNullable() {
+  public Integer getScopeId() {
     return scopeId;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SCOPE_ID)
-  public void setScopeId_JsonNullable(JsonNullable<Integer> scopeId) {
-    this.scopeId = scopeId;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_SCOPE_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setScopeId(@javax.annotation.Nullable Integer scopeId) {
-    this.scopeId = JsonNullable.<Integer>of(scopeId);
+    this.scopeId = scopeId;
   }
 
   public VirtualizationClustersCreateRequest description(@javax.annotation.Nullable String description) {
@@ -383,8 +347,8 @@ public class VirtualizationClustersCreateRequest {
   }
 
   public VirtualizationClustersCreateRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -393,26 +357,18 @@ public class VirtualizationClustersCreateRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public VirtualizationClustersCreateRequest comments(@javax.annotation.Nullable String comments) {
@@ -518,32 +474,21 @@ public class VirtualizationClustersCreateRequest {
     VirtualizationClustersCreateRequest virtualizationClustersCreateRequest = (VirtualizationClustersCreateRequest) o;
     return Objects.equals(this.name, virtualizationClustersCreateRequest.name) &&
         Objects.equals(this.type, virtualizationClustersCreateRequest.type) &&
-        equalsNullable(this.group, virtualizationClustersCreateRequest.group) &&
+        Objects.equals(this.group, virtualizationClustersCreateRequest.group) &&
         Objects.equals(this.status, virtualizationClustersCreateRequest.status) &&
-        equalsNullable(this.tenant, virtualizationClustersCreateRequest.tenant) &&
-        equalsNullable(this.scopeType, virtualizationClustersCreateRequest.scopeType) &&
-        equalsNullable(this.scopeId, virtualizationClustersCreateRequest.scopeId) &&
+        Objects.equals(this.tenant, virtualizationClustersCreateRequest.tenant) &&
+        Objects.equals(this.scopeType, virtualizationClustersCreateRequest.scopeType) &&
+        Objects.equals(this.scopeId, virtualizationClustersCreateRequest.scopeId) &&
         Objects.equals(this.description, virtualizationClustersCreateRequest.description) &&
-        equalsNullable(this.owner, virtualizationClustersCreateRequest.owner) &&
+        Objects.equals(this.owner, virtualizationClustersCreateRequest.owner) &&
         Objects.equals(this.comments, virtualizationClustersCreateRequest.comments) &&
         Objects.equals(this.tags, virtualizationClustersCreateRequest.tags) &&
         Objects.equals(this.customFields, virtualizationClustersCreateRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(name, type, hashCodeNullable(group), status, hashCodeNullable(tenant), hashCodeNullable(scopeType), hashCodeNullable(scopeId), description, hashCodeNullable(owner), comments, tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, type, group, status, tenant, scopeType, scopeId, description, owner, comments, tags, customFields);
   }
 
   @Override

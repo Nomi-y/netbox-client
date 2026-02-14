@@ -49,10 +49,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -118,7 +114,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ModelInterface.JSON_PROPERTY_OCCUPIED
 })
 @JsonTypeName("Interface")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class ModelInterface {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -146,7 +142,7 @@ public class ModelInterface {
 
   public static final String JSON_PROPERTY_MODULE = "module";
   @javax.annotation.Nullable
-  private JsonNullable<BriefModule> module = JsonNullable.<BriefModule>undefined();
+  private BriefModule module;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -166,11 +162,11 @@ public class ModelInterface {
 
   public static final String JSON_PROPERTY_PARENT = "parent";
   @javax.annotation.Nullable
-  private JsonNullable<NestedInterface> parent = JsonNullable.<NestedInterface>undefined();
+  private NestedInterface parent;
 
   public static final String JSON_PROPERTY_BRIDGE = "bridge";
   @javax.annotation.Nullable
-  private JsonNullable<NestedInterface> bridge = JsonNullable.<NestedInterface>undefined();
+  private NestedInterface bridge;
 
   public static final String JSON_PROPERTY_BRIDGE_INTERFACES = "bridge_interfaces";
   @javax.annotation.Nonnull
@@ -178,11 +174,11 @@ public class ModelInterface {
 
   public static final String JSON_PROPERTY_LAG = "lag";
   @javax.annotation.Nullable
-  private JsonNullable<NestedInterface> lag = JsonNullable.<NestedInterface>undefined();
+  private NestedInterface lag;
 
   public static final String JSON_PROPERTY_MTU = "mtu";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> mtu = JsonNullable.<Integer>undefined();
+  private Integer mtu;
 
   public static final String JSON_PROPERTY_MAC_ADDRESS = "mac_address";
   @javax.annotation.Nullable
@@ -190,7 +186,7 @@ public class ModelInterface {
 
   public static final String JSON_PROPERTY_PRIMARY_MAC_ADDRESS = "primary_mac_address";
   @javax.annotation.Nullable
-  private JsonNullable<BriefMACAddress> primaryMacAddress = JsonNullable.<BriefMACAddress>undefined();
+  private BriefMACAddress primaryMacAddress;
 
   public static final String JSON_PROPERTY_MAC_ADDRESSES = "mac_addresses";
   @javax.annotation.Nullable
@@ -198,15 +194,15 @@ public class ModelInterface {
 
   public static final String JSON_PROPERTY_SPEED = "speed";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> speed = JsonNullable.<Integer>undefined();
+  private Integer speed;
 
   public static final String JSON_PROPERTY_DUPLEX = "duplex";
   @javax.annotation.Nullable
-  private JsonNullable<InterfaceDuplex> duplex = JsonNullable.<InterfaceDuplex>undefined();
+  private InterfaceDuplex duplex;
 
   public static final String JSON_PROPERTY_WWN = "wwn";
   @javax.annotation.Nullable
-  private JsonNullable<String> wwn = JsonNullable.<String>undefined();
+  private String wwn;
 
   public static final String JSON_PROPERTY_MGMT_ONLY = "mgmt_only";
   @javax.annotation.Nullable
@@ -238,19 +234,19 @@ public class ModelInterface {
 
   public static final String JSON_PROPERTY_RF_CHANNEL_FREQUENCY = "rf_channel_frequency";
   @javax.annotation.Nullable
-  private JsonNullable<Double> rfChannelFrequency = JsonNullable.<Double>undefined();
+  private Double rfChannelFrequency;
 
   public static final String JSON_PROPERTY_RF_CHANNEL_WIDTH = "rf_channel_width";
   @javax.annotation.Nullable
-  private JsonNullable<Double> rfChannelWidth = JsonNullable.<Double>undefined();
+  private Double rfChannelWidth;
 
   public static final String JSON_PROPERTY_TX_POWER = "tx_power";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> txPower = JsonNullable.<Integer>undefined();
+  private Integer txPower;
 
   public static final String JSON_PROPERTY_UNTAGGED_VLAN = "untagged_vlan";
   @javax.annotation.Nullable
-  private JsonNullable<BriefVLAN> untaggedVlan = JsonNullable.<BriefVLAN>undefined();
+  private BriefVLAN untaggedVlan;
 
   public static final String JSON_PROPERTY_TAGGED_VLANS = "tagged_vlans";
   @javax.annotation.Nullable
@@ -258,11 +254,11 @@ public class ModelInterface {
 
   public static final String JSON_PROPERTY_QINQ_SVLAN = "qinq_svlan";
   @javax.annotation.Nullable
-  private JsonNullable<BriefVLAN> qinqSvlan = JsonNullable.<BriefVLAN>undefined();
+  private BriefVLAN qinqSvlan;
 
   public static final String JSON_PROPERTY_VLAN_TRANSLATION_POLICY = "vlan_translation_policy";
   @javax.annotation.Nullable
-  private JsonNullable<BriefVLANTranslationPolicy> vlanTranslationPolicy = JsonNullable.<BriefVLANTranslationPolicy>undefined();
+  private BriefVLANTranslationPolicy vlanTranslationPolicy;
 
   public static final String JSON_PROPERTY_MARK_CONNECTED = "mark_connected";
   @javax.annotation.Nullable
@@ -294,7 +290,7 @@ public class ModelInterface {
 
   public static final String JSON_PROPERTY_VRF = "vrf";
   @javax.annotation.Nullable
-  private JsonNullable<BriefVRF> vrf = JsonNullable.<BriefVRF>undefined();
+  private BriefVRF vrf;
 
   public static final String JSON_PROPERTY_L2VPN_TERMINATION = "l2vpn_termination";
   @javax.annotation.Nullable
@@ -314,7 +310,7 @@ public class ModelInterface {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -512,8 +508,8 @@ public class ModelInterface {
   }
 
   public ModelInterface module(@javax.annotation.Nullable BriefModule module) {
-    this.module = JsonNullable.<BriefModule>of(module);
     
+    this.module = module;
     return this;
   }
 
@@ -522,26 +518,18 @@ public class ModelInterface {
    * @return module
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefModule getModule() {
-        return module.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MODULE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefModule> getModule_JsonNullable() {
+  public BriefModule getModule() {
     return module;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MODULE)
-  public void setModule_JsonNullable(JsonNullable<BriefModule> module) {
-    this.module = module;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_MODULE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setModule(@javax.annotation.Nullable BriefModule module) {
-    this.module = JsonNullable.<BriefModule>of(module);
+    this.module = module;
   }
 
   public ModelInterface name(@javax.annotation.Nonnull String name) {
@@ -645,8 +633,8 @@ public class ModelInterface {
   }
 
   public ModelInterface parent(@javax.annotation.Nullable NestedInterface parent) {
-    this.parent = JsonNullable.<NestedInterface>of(parent);
     
+    this.parent = parent;
     return this;
   }
 
@@ -655,31 +643,23 @@ public class ModelInterface {
    * @return parent
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public NestedInterface getParent() {
-        return parent.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<NestedInterface> getParent_JsonNullable() {
+  public NestedInterface getParent() {
     return parent;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PARENT)
-  public void setParent_JsonNullable(JsonNullable<NestedInterface> parent) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setParent(@javax.annotation.Nullable NestedInterface parent) {
     this.parent = parent;
   }
 
-  public void setParent(@javax.annotation.Nullable NestedInterface parent) {
-    this.parent = JsonNullable.<NestedInterface>of(parent);
-  }
-
   public ModelInterface bridge(@javax.annotation.Nullable NestedInterface bridge) {
-    this.bridge = JsonNullable.<NestedInterface>of(bridge);
     
+    this.bridge = bridge;
     return this;
   }
 
@@ -688,26 +668,18 @@ public class ModelInterface {
    * @return bridge
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public NestedInterface getBridge() {
-        return bridge.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_BRIDGE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<NestedInterface> getBridge_JsonNullable() {
+  public NestedInterface getBridge() {
     return bridge;
   }
-  
-  @JsonProperty(JSON_PROPERTY_BRIDGE)
-  public void setBridge_JsonNullable(JsonNullable<NestedInterface> bridge) {
-    this.bridge = bridge;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_BRIDGE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBridge(@javax.annotation.Nullable NestedInterface bridge) {
-    this.bridge = JsonNullable.<NestedInterface>of(bridge);
+    this.bridge = bridge;
   }
 
   /**
@@ -725,8 +697,8 @@ public class ModelInterface {
 
 
   public ModelInterface lag(@javax.annotation.Nullable NestedInterface lag) {
-    this.lag = JsonNullable.<NestedInterface>of(lag);
     
+    this.lag = lag;
     return this;
   }
 
@@ -735,31 +707,23 @@ public class ModelInterface {
    * @return lag
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public NestedInterface getLag() {
-        return lag.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_LAG, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<NestedInterface> getLag_JsonNullable() {
+  public NestedInterface getLag() {
     return lag;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LAG)
-  public void setLag_JsonNullable(JsonNullable<NestedInterface> lag) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_LAG, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setLag(@javax.annotation.Nullable NestedInterface lag) {
     this.lag = lag;
   }
 
-  public void setLag(@javax.annotation.Nullable NestedInterface lag) {
-    this.lag = JsonNullable.<NestedInterface>of(lag);
-  }
-
   public ModelInterface mtu(@javax.annotation.Nullable Integer mtu) {
-    this.mtu = JsonNullable.<Integer>of(mtu);
     
+    this.mtu = mtu;
     return this;
   }
 
@@ -770,26 +734,18 @@ public class ModelInterface {
    * @return mtu
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getMtu() {
-        return mtu.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MTU, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getMtu_JsonNullable() {
+  public Integer getMtu() {
     return mtu;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MTU)
-  public void setMtu_JsonNullable(JsonNullable<Integer> mtu) {
-    this.mtu = mtu;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_MTU, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMtu(@javax.annotation.Nullable Integer mtu) {
-    this.mtu = JsonNullable.<Integer>of(mtu);
+    this.mtu = mtu;
   }
 
   /**
@@ -807,8 +763,8 @@ public class ModelInterface {
 
 
   public ModelInterface primaryMacAddress(@javax.annotation.Nullable BriefMACAddress primaryMacAddress) {
-    this.primaryMacAddress = JsonNullable.<BriefMACAddress>of(primaryMacAddress);
     
+    this.primaryMacAddress = primaryMacAddress;
     return this;
   }
 
@@ -817,26 +773,18 @@ public class ModelInterface {
    * @return primaryMacAddress
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefMACAddress getPrimaryMacAddress() {
-        return primaryMacAddress.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PRIMARY_MAC_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefMACAddress> getPrimaryMacAddress_JsonNullable() {
+  public BriefMACAddress getPrimaryMacAddress() {
     return primaryMacAddress;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PRIMARY_MAC_ADDRESS)
-  public void setPrimaryMacAddress_JsonNullable(JsonNullable<BriefMACAddress> primaryMacAddress) {
-    this.primaryMacAddress = primaryMacAddress;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PRIMARY_MAC_ADDRESS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrimaryMacAddress(@javax.annotation.Nullable BriefMACAddress primaryMacAddress) {
-    this.primaryMacAddress = JsonNullable.<BriefMACAddress>of(primaryMacAddress);
+    this.primaryMacAddress = primaryMacAddress;
   }
 
   /**
@@ -854,8 +802,8 @@ public class ModelInterface {
 
 
   public ModelInterface speed(@javax.annotation.Nullable Integer speed) {
-    this.speed = JsonNullable.<Integer>of(speed);
     
+    this.speed = speed;
     return this;
   }
 
@@ -866,31 +814,23 @@ public class ModelInterface {
    * @return speed
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getSpeed() {
-        return speed.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SPEED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getSpeed_JsonNullable() {
+  public Integer getSpeed() {
     return speed;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SPEED)
-  public void setSpeed_JsonNullable(JsonNullable<Integer> speed) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_SPEED, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSpeed(@javax.annotation.Nullable Integer speed) {
     this.speed = speed;
   }
 
-  public void setSpeed(@javax.annotation.Nullable Integer speed) {
-    this.speed = JsonNullable.<Integer>of(speed);
-  }
-
   public ModelInterface duplex(@javax.annotation.Nullable InterfaceDuplex duplex) {
-    this.duplex = JsonNullable.<InterfaceDuplex>of(duplex);
     
+    this.duplex = duplex;
     return this;
   }
 
@@ -899,31 +839,23 @@ public class ModelInterface {
    * @return duplex
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public InterfaceDuplex getDuplex() {
-        return duplex.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_DUPLEX, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<InterfaceDuplex> getDuplex_JsonNullable() {
+  public InterfaceDuplex getDuplex() {
     return duplex;
   }
-  
-  @JsonProperty(JSON_PROPERTY_DUPLEX)
-  public void setDuplex_JsonNullable(JsonNullable<InterfaceDuplex> duplex) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_DUPLEX, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDuplex(@javax.annotation.Nullable InterfaceDuplex duplex) {
     this.duplex = duplex;
   }
 
-  public void setDuplex(@javax.annotation.Nullable InterfaceDuplex duplex) {
-    this.duplex = JsonNullable.<InterfaceDuplex>of(duplex);
-  }
-
   public ModelInterface wwn(@javax.annotation.Nullable String wwn) {
-    this.wwn = JsonNullable.<String>of(wwn);
     
+    this.wwn = wwn;
     return this;
   }
 
@@ -932,26 +864,18 @@ public class ModelInterface {
    * @return wwn
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getWwn() {
-        return wwn.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_WWN, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getWwn_JsonNullable() {
+  public String getWwn() {
     return wwn;
   }
-  
-  @JsonProperty(JSON_PROPERTY_WWN)
-  public void setWwn_JsonNullable(JsonNullable<String> wwn) {
-    this.wwn = wwn;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_WWN, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setWwn(@javax.annotation.Nullable String wwn) {
-    this.wwn = JsonNullable.<String>of(wwn);
+    this.wwn = wwn;
   }
 
   public ModelInterface mgmtOnly(@javax.annotation.Nullable Boolean mgmtOnly) {
@@ -1130,8 +1054,8 @@ public class ModelInterface {
   }
 
   public ModelInterface rfChannelFrequency(@javax.annotation.Nullable Double rfChannelFrequency) {
-    this.rfChannelFrequency = JsonNullable.<Double>of(rfChannelFrequency);
     
+    this.rfChannelFrequency = rfChannelFrequency;
     return this;
   }
 
@@ -1142,31 +1066,23 @@ public class ModelInterface {
    * @return rfChannelFrequency
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getRfChannelFrequency() {
-        return rfChannelFrequency.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_RF_CHANNEL_FREQUENCY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getRfChannelFrequency_JsonNullable() {
+  public Double getRfChannelFrequency() {
     return rfChannelFrequency;
   }
-  
-  @JsonProperty(JSON_PROPERTY_RF_CHANNEL_FREQUENCY)
-  public void setRfChannelFrequency_JsonNullable(JsonNullable<Double> rfChannelFrequency) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_RF_CHANNEL_FREQUENCY, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRfChannelFrequency(@javax.annotation.Nullable Double rfChannelFrequency) {
     this.rfChannelFrequency = rfChannelFrequency;
   }
 
-  public void setRfChannelFrequency(@javax.annotation.Nullable Double rfChannelFrequency) {
-    this.rfChannelFrequency = JsonNullable.<Double>of(rfChannelFrequency);
-  }
-
   public ModelInterface rfChannelWidth(@javax.annotation.Nullable Double rfChannelWidth) {
-    this.rfChannelWidth = JsonNullable.<Double>of(rfChannelWidth);
     
+    this.rfChannelWidth = rfChannelWidth;
     return this;
   }
 
@@ -1177,31 +1093,23 @@ public class ModelInterface {
    * @return rfChannelWidth
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getRfChannelWidth() {
-        return rfChannelWidth.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_RF_CHANNEL_WIDTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getRfChannelWidth_JsonNullable() {
+  public Double getRfChannelWidth() {
     return rfChannelWidth;
   }
-  
-  @JsonProperty(JSON_PROPERTY_RF_CHANNEL_WIDTH)
-  public void setRfChannelWidth_JsonNullable(JsonNullable<Double> rfChannelWidth) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_RF_CHANNEL_WIDTH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRfChannelWidth(@javax.annotation.Nullable Double rfChannelWidth) {
     this.rfChannelWidth = rfChannelWidth;
   }
 
-  public void setRfChannelWidth(@javax.annotation.Nullable Double rfChannelWidth) {
-    this.rfChannelWidth = JsonNullable.<Double>of(rfChannelWidth);
-  }
-
   public ModelInterface txPower(@javax.annotation.Nullable Integer txPower) {
-    this.txPower = JsonNullable.<Integer>of(txPower);
     
+    this.txPower = txPower;
     return this;
   }
 
@@ -1212,31 +1120,23 @@ public class ModelInterface {
    * @return txPower
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getTxPower() {
-        return txPower.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TX_POWER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getTxPower_JsonNullable() {
+  public Integer getTxPower() {
     return txPower;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TX_POWER)
-  public void setTxPower_JsonNullable(JsonNullable<Integer> txPower) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TX_POWER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTxPower(@javax.annotation.Nullable Integer txPower) {
     this.txPower = txPower;
   }
 
-  public void setTxPower(@javax.annotation.Nullable Integer txPower) {
-    this.txPower = JsonNullable.<Integer>of(txPower);
-  }
-
   public ModelInterface untaggedVlan(@javax.annotation.Nullable BriefVLAN untaggedVlan) {
-    this.untaggedVlan = JsonNullable.<BriefVLAN>of(untaggedVlan);
     
+    this.untaggedVlan = untaggedVlan;
     return this;
   }
 
@@ -1245,26 +1145,18 @@ public class ModelInterface {
    * @return untaggedVlan
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefVLAN getUntaggedVlan() {
-        return untaggedVlan.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_UNTAGGED_VLAN, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefVLAN> getUntaggedVlan_JsonNullable() {
+  public BriefVLAN getUntaggedVlan() {
     return untaggedVlan;
   }
-  
-  @JsonProperty(JSON_PROPERTY_UNTAGGED_VLAN)
-  public void setUntaggedVlan_JsonNullable(JsonNullable<BriefVLAN> untaggedVlan) {
-    this.untaggedVlan = untaggedVlan;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_UNTAGGED_VLAN, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUntaggedVlan(@javax.annotation.Nullable BriefVLAN untaggedVlan) {
-    this.untaggedVlan = JsonNullable.<BriefVLAN>of(untaggedVlan);
+    this.untaggedVlan = untaggedVlan;
   }
 
   public ModelInterface taggedVlans(@javax.annotation.Nullable List<VLAN> taggedVlans) {
@@ -1301,8 +1193,8 @@ public class ModelInterface {
   }
 
   public ModelInterface qinqSvlan(@javax.annotation.Nullable BriefVLAN qinqSvlan) {
-    this.qinqSvlan = JsonNullable.<BriefVLAN>of(qinqSvlan);
     
+    this.qinqSvlan = qinqSvlan;
     return this;
   }
 
@@ -1311,31 +1203,23 @@ public class ModelInterface {
    * @return qinqSvlan
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefVLAN getQinqSvlan() {
-        return qinqSvlan.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_QINQ_SVLAN, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefVLAN> getQinqSvlan_JsonNullable() {
+  public BriefVLAN getQinqSvlan() {
     return qinqSvlan;
   }
-  
-  @JsonProperty(JSON_PROPERTY_QINQ_SVLAN)
-  public void setQinqSvlan_JsonNullable(JsonNullable<BriefVLAN> qinqSvlan) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_QINQ_SVLAN, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setQinqSvlan(@javax.annotation.Nullable BriefVLAN qinqSvlan) {
     this.qinqSvlan = qinqSvlan;
   }
 
-  public void setQinqSvlan(@javax.annotation.Nullable BriefVLAN qinqSvlan) {
-    this.qinqSvlan = JsonNullable.<BriefVLAN>of(qinqSvlan);
-  }
-
   public ModelInterface vlanTranslationPolicy(@javax.annotation.Nullable BriefVLANTranslationPolicy vlanTranslationPolicy) {
-    this.vlanTranslationPolicy = JsonNullable.<BriefVLANTranslationPolicy>of(vlanTranslationPolicy);
     
+    this.vlanTranslationPolicy = vlanTranslationPolicy;
     return this;
   }
 
@@ -1344,26 +1228,18 @@ public class ModelInterface {
    * @return vlanTranslationPolicy
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefVLANTranslationPolicy getVlanTranslationPolicy() {
-        return vlanTranslationPolicy.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VLAN_TRANSLATION_POLICY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefVLANTranslationPolicy> getVlanTranslationPolicy_JsonNullable() {
+  public BriefVLANTranslationPolicy getVlanTranslationPolicy() {
     return vlanTranslationPolicy;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VLAN_TRANSLATION_POLICY)
-  public void setVlanTranslationPolicy_JsonNullable(JsonNullable<BriefVLANTranslationPolicy> vlanTranslationPolicy) {
-    this.vlanTranslationPolicy = vlanTranslationPolicy;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_VLAN_TRANSLATION_POLICY, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVlanTranslationPolicy(@javax.annotation.Nullable BriefVLANTranslationPolicy vlanTranslationPolicy) {
-    this.vlanTranslationPolicy = JsonNullable.<BriefVLANTranslationPolicy>of(vlanTranslationPolicy);
+    this.vlanTranslationPolicy = vlanTranslationPolicy;
   }
 
   public ModelInterface markConnected(@javax.annotation.Nullable Boolean markConnected) {
@@ -1495,8 +1371,8 @@ public class ModelInterface {
   }
 
   public ModelInterface vrf(@javax.annotation.Nullable BriefVRF vrf) {
-    this.vrf = JsonNullable.<BriefVRF>of(vrf);
     
+    this.vrf = vrf;
     return this;
   }
 
@@ -1505,26 +1381,18 @@ public class ModelInterface {
    * @return vrf
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefVRF getVrf() {
-        return vrf.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VRF, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefVRF> getVrf_JsonNullable() {
+  public BriefVRF getVrf() {
     return vrf;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VRF)
-  public void setVrf_JsonNullable(JsonNullable<BriefVRF> vrf) {
-    this.vrf = vrf;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_VRF, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVrf(@javax.annotation.Nullable BriefVRF vrf) {
-    this.vrf = JsonNullable.<BriefVRF>of(vrf);
+    this.vrf = vrf;
   }
 
   /**
@@ -1584,8 +1452,8 @@ public class ModelInterface {
 
 
   public ModelInterface owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -1594,26 +1462,18 @@ public class ModelInterface {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public ModelInterface tags(@javax.annotation.Nullable List<NestedTag> tags) {
@@ -1768,22 +1628,22 @@ public class ModelInterface {
         Objects.equals(this.display, _interface.display) &&
         Objects.equals(this.device, _interface.device) &&
         Objects.equals(this.vdcs, _interface.vdcs) &&
-        equalsNullable(this.module, _interface.module) &&
+        Objects.equals(this.module, _interface.module) &&
         Objects.equals(this.name, _interface.name) &&
         Objects.equals(this.label, _interface.label) &&
         Objects.equals(this.type, _interface.type) &&
         Objects.equals(this.enabled, _interface.enabled) &&
-        equalsNullable(this.parent, _interface.parent) &&
-        equalsNullable(this.bridge, _interface.bridge) &&
+        Objects.equals(this.parent, _interface.parent) &&
+        Objects.equals(this.bridge, _interface.bridge) &&
         Objects.equals(this.bridgeInterfaces, _interface.bridgeInterfaces) &&
-        equalsNullable(this.lag, _interface.lag) &&
-        equalsNullable(this.mtu, _interface.mtu) &&
+        Objects.equals(this.lag, _interface.lag) &&
+        Objects.equals(this.mtu, _interface.mtu) &&
         Objects.equals(this.macAddress, _interface.macAddress) &&
-        equalsNullable(this.primaryMacAddress, _interface.primaryMacAddress) &&
+        Objects.equals(this.primaryMacAddress, _interface.primaryMacAddress) &&
         Objects.equals(this.macAddresses, _interface.macAddresses) &&
-        equalsNullable(this.speed, _interface.speed) &&
-        equalsNullable(this.duplex, _interface.duplex) &&
-        equalsNullable(this.wwn, _interface.wwn) &&
+        Objects.equals(this.speed, _interface.speed) &&
+        Objects.equals(this.duplex, _interface.duplex) &&
+        Objects.equals(this.wwn, _interface.wwn) &&
         Objects.equals(this.mgmtOnly, _interface.mgmtOnly) &&
         Objects.equals(this.description, _interface.description) &&
         Objects.equals(this.mode, _interface.mode) &&
@@ -1791,13 +1651,13 @@ public class ModelInterface {
         Objects.equals(this.rfChannel, _interface.rfChannel) &&
         Objects.equals(this.poeMode, _interface.poeMode) &&
         Objects.equals(this.poeType, _interface.poeType) &&
-        equalsNullable(this.rfChannelFrequency, _interface.rfChannelFrequency) &&
-        equalsNullable(this.rfChannelWidth, _interface.rfChannelWidth) &&
-        equalsNullable(this.txPower, _interface.txPower) &&
-        equalsNullable(this.untaggedVlan, _interface.untaggedVlan) &&
+        Objects.equals(this.rfChannelFrequency, _interface.rfChannelFrequency) &&
+        Objects.equals(this.rfChannelWidth, _interface.rfChannelWidth) &&
+        Objects.equals(this.txPower, _interface.txPower) &&
+        Objects.equals(this.untaggedVlan, _interface.untaggedVlan) &&
         Objects.equals(this.taggedVlans, _interface.taggedVlans) &&
-        equalsNullable(this.qinqSvlan, _interface.qinqSvlan) &&
-        equalsNullable(this.vlanTranslationPolicy, _interface.vlanTranslationPolicy) &&
+        Objects.equals(this.qinqSvlan, _interface.qinqSvlan) &&
+        Objects.equals(this.vlanTranslationPolicy, _interface.vlanTranslationPolicy) &&
         Objects.equals(this.markConnected, _interface.markConnected) &&
         Objects.equals(this.cable, _interface.cable) &&
         Objects.equals(this.cableEnd, _interface.cableEnd) &&
@@ -1805,12 +1665,12 @@ public class ModelInterface {
         Objects.equals(this.linkPeers, _interface.linkPeers) &&
         Objects.equals(this.linkPeersType, _interface.linkPeersType) &&
         Objects.equals(this.wirelessLans, _interface.wirelessLans) &&
-        equalsNullable(this.vrf, _interface.vrf) &&
+        Objects.equals(this.vrf, _interface.vrf) &&
         Objects.equals(this.l2vpnTermination, _interface.l2vpnTermination) &&
         Objects.equals(this.connectedEndpoints, _interface.connectedEndpoints) &&
         Objects.equals(this.connectedEndpointsType, _interface.connectedEndpointsType) &&
         Objects.equals(this.connectedEndpointsReachable, _interface.connectedEndpointsReachable) &&
-        equalsNullable(this.owner, _interface.owner) &&
+        Objects.equals(this.owner, _interface.owner) &&
         Objects.equals(this.tags, _interface.tags) &&
         Objects.equals(this.customFields, _interface.customFields) &&
         Objects.equals(this.created, _interface.created) &&
@@ -1820,20 +1680,9 @@ public class ModelInterface {
         Objects.equals(this.occupied, _interface.occupied);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, device, vdcs, hashCodeNullable(module), name, label, type, enabled, hashCodeNullable(parent), hashCodeNullable(bridge), bridgeInterfaces, hashCodeNullable(lag), hashCodeNullable(mtu), macAddress, hashCodeNullable(primaryMacAddress), macAddresses, hashCodeNullable(speed), hashCodeNullable(duplex), hashCodeNullable(wwn), mgmtOnly, description, mode, rfRole, rfChannel, poeMode, poeType, hashCodeNullable(rfChannelFrequency), hashCodeNullable(rfChannelWidth), hashCodeNullable(txPower), hashCodeNullable(untaggedVlan), taggedVlans, hashCodeNullable(qinqSvlan), hashCodeNullable(vlanTranslationPolicy), markConnected, cable, cableEnd, wirelessLink, linkPeers, linkPeersType, wirelessLans, hashCodeNullable(vrf), l2vpnTermination, connectedEndpoints, connectedEndpointsType, connectedEndpointsReachable, hashCodeNullable(owner), tags, customFields, created, lastUpdated, countIpaddresses, countFhrpGroups, occupied);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, device, vdcs, module, name, label, type, enabled, parent, bridge, bridgeInterfaces, lag, mtu, macAddress, primaryMacAddress, macAddresses, speed, duplex, wwn, mgmtOnly, description, mode, rfRole, rfChannel, poeMode, poeType, rfChannelFrequency, rfChannelWidth, txPower, untaggedVlan, taggedVlans, qinqSvlan, vlanTranslationPolicy, markConnected, cable, cableEnd, wirelessLink, linkPeers, linkPeersType, wirelessLans, vrf, l2vpnTermination, connectedEndpoints, connectedEndpointsType, connectedEndpointsReachable, owner, tags, customFields, created, lastUpdated, countIpaddresses, countFhrpGroups, occupied);
   }
 
   @Override

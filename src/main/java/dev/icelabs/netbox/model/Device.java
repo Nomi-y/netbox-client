@@ -44,10 +44,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -104,7 +100,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   Device.JSON_PROPERTY_MODULE_BAY_COUNT,
   Device.JSON_PROPERTY_INVENTORY_ITEM_COUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class Device {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -124,7 +120,7 @@ public class Device {
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable
-  private JsonNullable<String> name = JsonNullable.<String>undefined();
+  private String name;
 
   public static final String JSON_PROPERTY_DEVICE_TYPE = "device_type";
   @javax.annotation.Nonnull
@@ -136,11 +132,11 @@ public class Device {
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<BriefTenant> tenant = JsonNullable.<BriefTenant>undefined();
+  private BriefTenant tenant;
 
   public static final String JSON_PROPERTY_PLATFORM = "platform";
   @javax.annotation.Nullable
-  private JsonNullable<BriefPlatform> platform = JsonNullable.<BriefPlatform>undefined();
+  private BriefPlatform platform;
 
   public static final String JSON_PROPERTY_SERIAL = "serial";
   @javax.annotation.Nullable
@@ -148,7 +144,7 @@ public class Device {
 
   public static final String JSON_PROPERTY_ASSET_TAG = "asset_tag";
   @javax.annotation.Nullable
-  private JsonNullable<String> assetTag = JsonNullable.<String>undefined();
+  private String assetTag;
 
   public static final String JSON_PROPERTY_SITE = "site";
   @javax.annotation.Nonnull
@@ -156,15 +152,15 @@ public class Device {
 
   public static final String JSON_PROPERTY_LOCATION = "location";
   @javax.annotation.Nullable
-  private JsonNullable<BriefLocation> location = JsonNullable.<BriefLocation>undefined();
+  private BriefLocation location;
 
   public static final String JSON_PROPERTY_RACK = "rack";
   @javax.annotation.Nullable
-  private JsonNullable<BriefRack> rack = JsonNullable.<BriefRack>undefined();
+  private BriefRack rack;
 
   public static final String JSON_PROPERTY_POSITION = "position";
   @javax.annotation.Nullable
-  private JsonNullable<Double> position = JsonNullable.<Double>undefined();
+  private Double position;
 
   public static final String JSON_PROPERTY_FACE = "face";
   @javax.annotation.Nullable
@@ -172,11 +168,11 @@ public class Device {
 
   public static final String JSON_PROPERTY_LATITUDE = "latitude";
   @javax.annotation.Nullable
-  private JsonNullable<Double> latitude = JsonNullable.<Double>undefined();
+  private Double latitude;
 
   public static final String JSON_PROPERTY_LONGITUDE = "longitude";
   @javax.annotation.Nullable
-  private JsonNullable<Double> longitude = JsonNullable.<Double>undefined();
+  private Double longitude;
 
   public static final String JSON_PROPERTY_PARENT_DEVICE = "parent_device";
   @javax.annotation.Nullable
@@ -196,31 +192,31 @@ public class Device {
 
   public static final String JSON_PROPERTY_PRIMARY_IP4 = "primary_ip4";
   @javax.annotation.Nullable
-  private JsonNullable<BriefIPAddress> primaryIp4 = JsonNullable.<BriefIPAddress>undefined();
+  private BriefIPAddress primaryIp4;
 
   public static final String JSON_PROPERTY_PRIMARY_IP6 = "primary_ip6";
   @javax.annotation.Nullable
-  private JsonNullable<BriefIPAddress> primaryIp6 = JsonNullable.<BriefIPAddress>undefined();
+  private BriefIPAddress primaryIp6;
 
   public static final String JSON_PROPERTY_OOB_IP = "oob_ip";
   @javax.annotation.Nullable
-  private JsonNullable<BriefIPAddress> oobIp = JsonNullable.<BriefIPAddress>undefined();
+  private BriefIPAddress oobIp;
 
   public static final String JSON_PROPERTY_CLUSTER = "cluster";
   @javax.annotation.Nullable
-  private JsonNullable<BriefCluster> cluster = JsonNullable.<BriefCluster>undefined();
+  private BriefCluster cluster;
 
   public static final String JSON_PROPERTY_VIRTUAL_CHASSIS = "virtual_chassis";
   @javax.annotation.Nullable
-  private JsonNullable<BriefVirtualChassis> virtualChassis = JsonNullable.<BriefVirtualChassis>undefined();
+  private BriefVirtualChassis virtualChassis;
 
   public static final String JSON_PROPERTY_VC_POSITION = "vc_position";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> vcPosition = JsonNullable.<Integer>undefined();
+  private Integer vcPosition;
 
   public static final String JSON_PROPERTY_VC_PRIORITY = "vc_priority";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> vcPriority = JsonNullable.<Integer>undefined();
+  private Integer vcPriority;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -228,7 +224,7 @@ public class Device {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -236,11 +232,11 @@ public class Device {
 
   public static final String JSON_PROPERTY_CONFIG_TEMPLATE = "config_template";
   @javax.annotation.Nullable
-  private JsonNullable<BriefConfigTemplate> configTemplate = JsonNullable.<BriefConfigTemplate>undefined();
+  private BriefConfigTemplate configTemplate;
 
   public static final String JSON_PROPERTY_LOCAL_CONTEXT_DATA = "local_context_data";
   @javax.annotation.Nullable
-  private JsonNullable<Object> localContextData = JsonNullable.<Object>of(null);
+  private Object localContextData = null;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -402,8 +398,8 @@ public class Device {
 
 
   public Device name(@javax.annotation.Nullable String name) {
-    this.name = JsonNullable.<String>of(name);
     
+    this.name = name;
     return this;
   }
 
@@ -412,26 +408,18 @@ public class Device {
    * @return name
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getName() {
-        return name.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getName_JsonNullable() {
+  public String getName() {
     return name;
   }
-  
-  @JsonProperty(JSON_PROPERTY_NAME)
-  public void setName_JsonNullable(JsonNullable<String> name) {
-    this.name = name;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
-    this.name = JsonNullable.<String>of(name);
+    this.name = name;
   }
 
   public Device deviceType(@javax.annotation.Nonnull BriefDeviceType deviceType) {
@@ -485,8 +473,8 @@ public class Device {
   }
 
   public Device tenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -495,31 +483,23 @@ public class Device {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefTenant> getTenant_JsonNullable() {
+  public BriefTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<BriefTenant> tenant) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTenant(@javax.annotation.Nullable BriefTenant tenant) {
     this.tenant = tenant;
   }
 
-  public void setTenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
-  }
-
   public Device platform(@javax.annotation.Nullable BriefPlatform platform) {
-    this.platform = JsonNullable.<BriefPlatform>of(platform);
     
+    this.platform = platform;
     return this;
   }
 
@@ -528,26 +508,18 @@ public class Device {
    * @return platform
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefPlatform getPlatform() {
-        return platform.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PLATFORM, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefPlatform> getPlatform_JsonNullable() {
+  public BriefPlatform getPlatform() {
     return platform;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PLATFORM)
-  public void setPlatform_JsonNullable(JsonNullable<BriefPlatform> platform) {
-    this.platform = platform;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PLATFORM, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPlatform(@javax.annotation.Nullable BriefPlatform platform) {
-    this.platform = JsonNullable.<BriefPlatform>of(platform);
+    this.platform = platform;
   }
 
   public Device serial(@javax.annotation.Nullable String serial) {
@@ -576,8 +548,8 @@ public class Device {
   }
 
   public Device assetTag(@javax.annotation.Nullable String assetTag) {
-    this.assetTag = JsonNullable.<String>of(assetTag);
     
+    this.assetTag = assetTag;
     return this;
   }
 
@@ -586,26 +558,18 @@ public class Device {
    * @return assetTag
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getAssetTag() {
-        return assetTag.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ASSET_TAG, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getAssetTag_JsonNullable() {
+  public String getAssetTag() {
     return assetTag;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ASSET_TAG)
-  public void setAssetTag_JsonNullable(JsonNullable<String> assetTag) {
-    this.assetTag = assetTag;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_ASSET_TAG, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssetTag(@javax.annotation.Nullable String assetTag) {
-    this.assetTag = JsonNullable.<String>of(assetTag);
+    this.assetTag = assetTag;
   }
 
   public Device site(@javax.annotation.Nonnull BriefSite site) {
@@ -634,8 +598,8 @@ public class Device {
   }
 
   public Device location(@javax.annotation.Nullable BriefLocation location) {
-    this.location = JsonNullable.<BriefLocation>of(location);
     
+    this.location = location;
     return this;
   }
 
@@ -644,31 +608,23 @@ public class Device {
    * @return location
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefLocation getLocation() {
-        return location.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_LOCATION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefLocation> getLocation_JsonNullable() {
+  public BriefLocation getLocation() {
     return location;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LOCATION)
-  public void setLocation_JsonNullable(JsonNullable<BriefLocation> location) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_LOCATION, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setLocation(@javax.annotation.Nullable BriefLocation location) {
     this.location = location;
   }
 
-  public void setLocation(@javax.annotation.Nullable BriefLocation location) {
-    this.location = JsonNullable.<BriefLocation>of(location);
-  }
-
   public Device rack(@javax.annotation.Nullable BriefRack rack) {
-    this.rack = JsonNullable.<BriefRack>of(rack);
     
+    this.rack = rack;
     return this;
   }
 
@@ -677,31 +633,23 @@ public class Device {
    * @return rack
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefRack getRack() {
-        return rack.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_RACK, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefRack> getRack_JsonNullable() {
+  public BriefRack getRack() {
     return rack;
   }
-  
-  @JsonProperty(JSON_PROPERTY_RACK)
-  public void setRack_JsonNullable(JsonNullable<BriefRack> rack) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_RACK, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRack(@javax.annotation.Nullable BriefRack rack) {
     this.rack = rack;
   }
 
-  public void setRack(@javax.annotation.Nullable BriefRack rack) {
-    this.rack = JsonNullable.<BriefRack>of(rack);
-  }
-
   public Device position(@javax.annotation.Nullable Double position) {
-    this.position = JsonNullable.<Double>of(position);
     
+    this.position = position;
     return this;
   }
 
@@ -712,26 +660,18 @@ public class Device {
    * @return position
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getPosition() {
-        return position.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_POSITION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getPosition_JsonNullable() {
+  public Double getPosition() {
     return position;
   }
-  
-  @JsonProperty(JSON_PROPERTY_POSITION)
-  public void setPosition_JsonNullable(JsonNullable<Double> position) {
-    this.position = position;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_POSITION, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPosition(@javax.annotation.Nullable Double position) {
-    this.position = JsonNullable.<Double>of(position);
+    this.position = position;
   }
 
   public Device face(@javax.annotation.Nullable DeviceFace face) {
@@ -760,8 +700,8 @@ public class Device {
   }
 
   public Device latitude(@javax.annotation.Nullable Double latitude) {
-    this.latitude = JsonNullable.<Double>of(latitude);
     
+    this.latitude = latitude;
     return this;
   }
 
@@ -772,31 +712,23 @@ public class Device {
    * @return latitude
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getLatitude() {
-        return latitude.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_LATITUDE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getLatitude_JsonNullable() {
+  public Double getLatitude() {
     return latitude;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LATITUDE)
-  public void setLatitude_JsonNullable(JsonNullable<Double> latitude) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_LATITUDE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setLatitude(@javax.annotation.Nullable Double latitude) {
     this.latitude = latitude;
   }
 
-  public void setLatitude(@javax.annotation.Nullable Double latitude) {
-    this.latitude = JsonNullable.<Double>of(latitude);
-  }
-
   public Device longitude(@javax.annotation.Nullable Double longitude) {
-    this.longitude = JsonNullable.<Double>of(longitude);
     
+    this.longitude = longitude;
     return this;
   }
 
@@ -807,26 +739,18 @@ public class Device {
    * @return longitude
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getLongitude() {
-        return longitude.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_LONGITUDE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getLongitude_JsonNullable() {
+  public Double getLongitude() {
     return longitude;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LONGITUDE)
-  public void setLongitude_JsonNullable(JsonNullable<Double> longitude) {
-    this.longitude = longitude;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_LONGITUDE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLongitude(@javax.annotation.Nullable Double longitude) {
-    this.longitude = JsonNullable.<Double>of(longitude);
+    this.longitude = longitude;
   }
 
   /**
@@ -908,8 +832,8 @@ public class Device {
 
 
   public Device primaryIp4(@javax.annotation.Nullable BriefIPAddress primaryIp4) {
-    this.primaryIp4 = JsonNullable.<BriefIPAddress>of(primaryIp4);
     
+    this.primaryIp4 = primaryIp4;
     return this;
   }
 
@@ -918,31 +842,23 @@ public class Device {
    * @return primaryIp4
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefIPAddress getPrimaryIp4() {
-        return primaryIp4.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PRIMARY_IP4, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefIPAddress> getPrimaryIp4_JsonNullable() {
+  public BriefIPAddress getPrimaryIp4() {
     return primaryIp4;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PRIMARY_IP4)
-  public void setPrimaryIp4_JsonNullable(JsonNullable<BriefIPAddress> primaryIp4) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_PRIMARY_IP4, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPrimaryIp4(@javax.annotation.Nullable BriefIPAddress primaryIp4) {
     this.primaryIp4 = primaryIp4;
   }
 
-  public void setPrimaryIp4(@javax.annotation.Nullable BriefIPAddress primaryIp4) {
-    this.primaryIp4 = JsonNullable.<BriefIPAddress>of(primaryIp4);
-  }
-
   public Device primaryIp6(@javax.annotation.Nullable BriefIPAddress primaryIp6) {
-    this.primaryIp6 = JsonNullable.<BriefIPAddress>of(primaryIp6);
     
+    this.primaryIp6 = primaryIp6;
     return this;
   }
 
@@ -951,31 +867,23 @@ public class Device {
    * @return primaryIp6
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefIPAddress getPrimaryIp6() {
-        return primaryIp6.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PRIMARY_IP6, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefIPAddress> getPrimaryIp6_JsonNullable() {
+  public BriefIPAddress getPrimaryIp6() {
     return primaryIp6;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PRIMARY_IP6)
-  public void setPrimaryIp6_JsonNullable(JsonNullable<BriefIPAddress> primaryIp6) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_PRIMARY_IP6, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPrimaryIp6(@javax.annotation.Nullable BriefIPAddress primaryIp6) {
     this.primaryIp6 = primaryIp6;
   }
 
-  public void setPrimaryIp6(@javax.annotation.Nullable BriefIPAddress primaryIp6) {
-    this.primaryIp6 = JsonNullable.<BriefIPAddress>of(primaryIp6);
-  }
-
   public Device oobIp(@javax.annotation.Nullable BriefIPAddress oobIp) {
-    this.oobIp = JsonNullable.<BriefIPAddress>of(oobIp);
     
+    this.oobIp = oobIp;
     return this;
   }
 
@@ -984,31 +892,23 @@ public class Device {
    * @return oobIp
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefIPAddress getOobIp() {
-        return oobIp.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OOB_IP, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefIPAddress> getOobIp_JsonNullable() {
+  public BriefIPAddress getOobIp() {
     return oobIp;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OOB_IP)
-  public void setOobIp_JsonNullable(JsonNullable<BriefIPAddress> oobIp) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_OOB_IP, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setOobIp(@javax.annotation.Nullable BriefIPAddress oobIp) {
     this.oobIp = oobIp;
   }
 
-  public void setOobIp(@javax.annotation.Nullable BriefIPAddress oobIp) {
-    this.oobIp = JsonNullable.<BriefIPAddress>of(oobIp);
-  }
-
   public Device cluster(@javax.annotation.Nullable BriefCluster cluster) {
-    this.cluster = JsonNullable.<BriefCluster>of(cluster);
     
+    this.cluster = cluster;
     return this;
   }
 
@@ -1017,31 +917,23 @@ public class Device {
    * @return cluster
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefCluster getCluster() {
-        return cluster.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_CLUSTER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefCluster> getCluster_JsonNullable() {
+  public BriefCluster getCluster() {
     return cluster;
   }
-  
-  @JsonProperty(JSON_PROPERTY_CLUSTER)
-  public void setCluster_JsonNullable(JsonNullable<BriefCluster> cluster) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_CLUSTER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCluster(@javax.annotation.Nullable BriefCluster cluster) {
     this.cluster = cluster;
   }
 
-  public void setCluster(@javax.annotation.Nullable BriefCluster cluster) {
-    this.cluster = JsonNullable.<BriefCluster>of(cluster);
-  }
-
   public Device virtualChassis(@javax.annotation.Nullable BriefVirtualChassis virtualChassis) {
-    this.virtualChassis = JsonNullable.<BriefVirtualChassis>of(virtualChassis);
     
+    this.virtualChassis = virtualChassis;
     return this;
   }
 
@@ -1050,31 +942,23 @@ public class Device {
    * @return virtualChassis
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefVirtualChassis getVirtualChassis() {
-        return virtualChassis.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VIRTUAL_CHASSIS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefVirtualChassis> getVirtualChassis_JsonNullable() {
+  public BriefVirtualChassis getVirtualChassis() {
     return virtualChassis;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VIRTUAL_CHASSIS)
-  public void setVirtualChassis_JsonNullable(JsonNullable<BriefVirtualChassis> virtualChassis) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_VIRTUAL_CHASSIS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setVirtualChassis(@javax.annotation.Nullable BriefVirtualChassis virtualChassis) {
     this.virtualChassis = virtualChassis;
   }
 
-  public void setVirtualChassis(@javax.annotation.Nullable BriefVirtualChassis virtualChassis) {
-    this.virtualChassis = JsonNullable.<BriefVirtualChassis>of(virtualChassis);
-  }
-
   public Device vcPosition(@javax.annotation.Nullable Integer vcPosition) {
-    this.vcPosition = JsonNullable.<Integer>of(vcPosition);
     
+    this.vcPosition = vcPosition;
     return this;
   }
 
@@ -1085,31 +969,23 @@ public class Device {
    * @return vcPosition
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getVcPosition() {
-        return vcPosition.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VC_POSITION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getVcPosition_JsonNullable() {
+  public Integer getVcPosition() {
     return vcPosition;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VC_POSITION)
-  public void setVcPosition_JsonNullable(JsonNullable<Integer> vcPosition) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_VC_POSITION, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setVcPosition(@javax.annotation.Nullable Integer vcPosition) {
     this.vcPosition = vcPosition;
   }
 
-  public void setVcPosition(@javax.annotation.Nullable Integer vcPosition) {
-    this.vcPosition = JsonNullable.<Integer>of(vcPosition);
-  }
-
   public Device vcPriority(@javax.annotation.Nullable Integer vcPriority) {
-    this.vcPriority = JsonNullable.<Integer>of(vcPriority);
     
+    this.vcPriority = vcPriority;
     return this;
   }
 
@@ -1120,26 +996,18 @@ public class Device {
    * @return vcPriority
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getVcPriority() {
-        return vcPriority.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VC_PRIORITY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getVcPriority_JsonNullable() {
+  public Integer getVcPriority() {
     return vcPriority;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VC_PRIORITY)
-  public void setVcPriority_JsonNullable(JsonNullable<Integer> vcPriority) {
-    this.vcPriority = vcPriority;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_VC_PRIORITY, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVcPriority(@javax.annotation.Nullable Integer vcPriority) {
-    this.vcPriority = JsonNullable.<Integer>of(vcPriority);
+    this.vcPriority = vcPriority;
   }
 
   public Device description(@javax.annotation.Nullable String description) {
@@ -1168,8 +1036,8 @@ public class Device {
   }
 
   public Device owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -1178,26 +1046,18 @@ public class Device {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public Device comments(@javax.annotation.Nullable String comments) {
@@ -1226,8 +1086,8 @@ public class Device {
   }
 
   public Device configTemplate(@javax.annotation.Nullable BriefConfigTemplate configTemplate) {
-    this.configTemplate = JsonNullable.<BriefConfigTemplate>of(configTemplate);
     
+    this.configTemplate = configTemplate;
     return this;
   }
 
@@ -1236,31 +1096,23 @@ public class Device {
    * @return configTemplate
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefConfigTemplate getConfigTemplate() {
-        return configTemplate.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_CONFIG_TEMPLATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefConfigTemplate> getConfigTemplate_JsonNullable() {
+  public BriefConfigTemplate getConfigTemplate() {
     return configTemplate;
   }
-  
-  @JsonProperty(JSON_PROPERTY_CONFIG_TEMPLATE)
-  public void setConfigTemplate_JsonNullable(JsonNullable<BriefConfigTemplate> configTemplate) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_CONFIG_TEMPLATE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setConfigTemplate(@javax.annotation.Nullable BriefConfigTemplate configTemplate) {
     this.configTemplate = configTemplate;
   }
 
-  public void setConfigTemplate(@javax.annotation.Nullable BriefConfigTemplate configTemplate) {
-    this.configTemplate = JsonNullable.<BriefConfigTemplate>of(configTemplate);
-  }
-
   public Device localContextData(@javax.annotation.Nullable Object localContextData) {
-    this.localContextData = JsonNullable.<Object>of(localContextData);
     
+    this.localContextData = localContextData;
     return this;
   }
 
@@ -1269,26 +1121,18 @@ public class Device {
    * @return localContextData
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Object getLocalContextData() {
-        return localContextData.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_LOCAL_CONTEXT_DATA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Object> getLocalContextData_JsonNullable() {
+  public Object getLocalContextData() {
     return localContextData;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LOCAL_CONTEXT_DATA)
-  public void setLocalContextData_JsonNullable(JsonNullable<Object> localContextData) {
-    this.localContextData = localContextData;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_LOCAL_CONTEXT_DATA, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLocalContextData(@javax.annotation.Nullable Object localContextData) {
-    this.localContextData = JsonNullable.<Object>of(localContextData);
+    this.localContextData = localContextData;
   }
 
   public Device tags(@javax.annotation.Nullable List<NestedTag> tags) {
@@ -1539,36 +1383,36 @@ public class Device {
         Objects.equals(this.url, device.url) &&
         Objects.equals(this.displayUrl, device.displayUrl) &&
         Objects.equals(this.display, device.display) &&
-        equalsNullable(this.name, device.name) &&
+        Objects.equals(this.name, device.name) &&
         Objects.equals(this.deviceType, device.deviceType) &&
         Objects.equals(this.role, device.role) &&
-        equalsNullable(this.tenant, device.tenant) &&
-        equalsNullable(this.platform, device.platform) &&
+        Objects.equals(this.tenant, device.tenant) &&
+        Objects.equals(this.platform, device.platform) &&
         Objects.equals(this.serial, device.serial) &&
-        equalsNullable(this.assetTag, device.assetTag) &&
+        Objects.equals(this.assetTag, device.assetTag) &&
         Objects.equals(this.site, device.site) &&
-        equalsNullable(this.location, device.location) &&
-        equalsNullable(this.rack, device.rack) &&
-        equalsNullable(this.position, device.position) &&
+        Objects.equals(this.location, device.location) &&
+        Objects.equals(this.rack, device.rack) &&
+        Objects.equals(this.position, device.position) &&
         Objects.equals(this.face, device.face) &&
-        equalsNullable(this.latitude, device.latitude) &&
-        equalsNullable(this.longitude, device.longitude) &&
+        Objects.equals(this.latitude, device.latitude) &&
+        Objects.equals(this.longitude, device.longitude) &&
         Objects.equals(this.parentDevice, device.parentDevice) &&
         Objects.equals(this.status, device.status) &&
         Objects.equals(this.airflow, device.airflow) &&
         Objects.equals(this.primaryIp, device.primaryIp) &&
-        equalsNullable(this.primaryIp4, device.primaryIp4) &&
-        equalsNullable(this.primaryIp6, device.primaryIp6) &&
-        equalsNullable(this.oobIp, device.oobIp) &&
-        equalsNullable(this.cluster, device.cluster) &&
-        equalsNullable(this.virtualChassis, device.virtualChassis) &&
-        equalsNullable(this.vcPosition, device.vcPosition) &&
-        equalsNullable(this.vcPriority, device.vcPriority) &&
+        Objects.equals(this.primaryIp4, device.primaryIp4) &&
+        Objects.equals(this.primaryIp6, device.primaryIp6) &&
+        Objects.equals(this.oobIp, device.oobIp) &&
+        Objects.equals(this.cluster, device.cluster) &&
+        Objects.equals(this.virtualChassis, device.virtualChassis) &&
+        Objects.equals(this.vcPosition, device.vcPosition) &&
+        Objects.equals(this.vcPriority, device.vcPriority) &&
         Objects.equals(this.description, device.description) &&
-        equalsNullable(this.owner, device.owner) &&
+        Objects.equals(this.owner, device.owner) &&
         Objects.equals(this.comments, device.comments) &&
-        equalsNullable(this.configTemplate, device.configTemplate) &&
-        equalsNullable(this.localContextData, device.localContextData) &&
+        Objects.equals(this.configTemplate, device.configTemplate) &&
+        Objects.equals(this.localContextData, device.localContextData) &&
         Objects.equals(this.tags, device.tags) &&
         Objects.equals(this.customFields, device.customFields) &&
         Objects.equals(this.created, device.created) &&
@@ -1585,20 +1429,9 @@ public class Device {
         Objects.equals(this.inventoryItemCount, device.inventoryItemCount);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, hashCodeNullable(name), deviceType, role, hashCodeNullable(tenant), hashCodeNullable(platform), serial, hashCodeNullable(assetTag), site, hashCodeNullable(location), hashCodeNullable(rack), hashCodeNullable(position), face, hashCodeNullable(latitude), hashCodeNullable(longitude), parentDevice, status, airflow, primaryIp, hashCodeNullable(primaryIp4), hashCodeNullable(primaryIp6), hashCodeNullable(oobIp), hashCodeNullable(cluster), hashCodeNullable(virtualChassis), hashCodeNullable(vcPosition), hashCodeNullable(vcPriority), description, hashCodeNullable(owner), comments, hashCodeNullable(configTemplate), hashCodeNullable(localContextData), tags, customFields, created, lastUpdated, consolePortCount, consoleServerPortCount, powerPortCount, powerOutletCount, interfaceCount, frontPortCount, rearPortCount, deviceBayCount, moduleBayCount, inventoryItemCount);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, name, deviceType, role, tenant, platform, serial, assetTag, site, location, rack, position, face, latitude, longitude, parentDevice, status, airflow, primaryIp, primaryIp4, primaryIp6, oobIp, cluster, virtualChassis, vcPosition, vcPriority, description, owner, comments, configTemplate, localContextData, tags, customFields, created, lastUpdated, consolePortCount, consoleServerPortCount, powerPortCount, powerOutletCount, interfaceCount, frontPortCount, rearPortCount, deviceBayCount, moduleBayCount, inventoryItemCount);
   }
 
   @Override

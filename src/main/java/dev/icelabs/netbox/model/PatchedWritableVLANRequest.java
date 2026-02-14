@@ -31,10 +31,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -57,15 +53,15 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   PatchedWritableVLANRequest.JSON_PROPERTY_TAGS,
   PatchedWritableVLANRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class PatchedWritableVLANRequest {
   public static final String JSON_PROPERTY_SITE = "site";
   @javax.annotation.Nullable
-  private JsonNullable<PatchedWritableVLANRequestSite> site = JsonNullable.<PatchedWritableVLANRequestSite>undefined();
+  private PatchedWritableVLANRequestSite site;
 
   public static final String JSON_PROPERTY_GROUP = "group";
   @javax.annotation.Nullable
-  private JsonNullable<PatchedWritableVLANRequestGroup> group = JsonNullable.<PatchedWritableVLANRequestGroup>undefined();
+  private PatchedWritableVLANRequestGroup group;
 
   public static final String JSON_PROPERTY_VID = "vid";
   @javax.annotation.Nullable
@@ -77,7 +73,7 @@ public class PatchedWritableVLANRequest {
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestTenant> tenant = JsonNullable.<ASNRangeRequestTenant>undefined();
+  private ASNRangeRequestTenant tenant;
 
   /**
    * Operational status of this VLAN  * &#x60;active&#x60; - Active * &#x60;reserved&#x60; - Reserved * &#x60;deprecated&#x60; - Deprecated
@@ -122,7 +118,7 @@ public class PatchedWritableVLANRequest {
 
   public static final String JSON_PROPERTY_ROLE = "role";
   @javax.annotation.Nullable
-  private JsonNullable<IPRangeRequestRole> role = JsonNullable.<IPRangeRequestRole>undefined();
+  private IPRangeRequestRole role;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -167,15 +163,15 @@ public class PatchedWritableVLANRequest {
 
   public static final String JSON_PROPERTY_QINQ_ROLE = "qinq_role";
   @javax.annotation.Nullable
-  private JsonNullable<QinqRoleEnum> qinqRole = JsonNullable.<QinqRoleEnum>undefined();
+  private QinqRoleEnum qinqRole;
 
   public static final String JSON_PROPERTY_QINQ_SVLAN = "qinq_svlan";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> qinqSvlan = JsonNullable.<Integer>undefined();
+  private Integer qinqSvlan;
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -193,8 +189,8 @@ public class PatchedWritableVLANRequest {
   }
 
   public PatchedWritableVLANRequest site(@javax.annotation.Nullable PatchedWritableVLANRequestSite site) {
-    this.site = JsonNullable.<PatchedWritableVLANRequestSite>of(site);
     
+    this.site = site;
     return this;
   }
 
@@ -203,31 +199,23 @@ public class PatchedWritableVLANRequest {
    * @return site
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public PatchedWritableVLANRequestSite getSite() {
-        return site.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SITE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<PatchedWritableVLANRequestSite> getSite_JsonNullable() {
+  public PatchedWritableVLANRequestSite getSite() {
     return site;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SITE)
-  public void setSite_JsonNullable(JsonNullable<PatchedWritableVLANRequestSite> site) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_SITE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSite(@javax.annotation.Nullable PatchedWritableVLANRequestSite site) {
     this.site = site;
   }
 
-  public void setSite(@javax.annotation.Nullable PatchedWritableVLANRequestSite site) {
-    this.site = JsonNullable.<PatchedWritableVLANRequestSite>of(site);
-  }
-
   public PatchedWritableVLANRequest group(@javax.annotation.Nullable PatchedWritableVLANRequestGroup group) {
-    this.group = JsonNullable.<PatchedWritableVLANRequestGroup>of(group);
     
+    this.group = group;
     return this;
   }
 
@@ -236,26 +224,18 @@ public class PatchedWritableVLANRequest {
    * @return group
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public PatchedWritableVLANRequestGroup getGroup() {
-        return group.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_GROUP, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<PatchedWritableVLANRequestGroup> getGroup_JsonNullable() {
+  public PatchedWritableVLANRequestGroup getGroup() {
     return group;
   }
-  
-  @JsonProperty(JSON_PROPERTY_GROUP)
-  public void setGroup_JsonNullable(JsonNullable<PatchedWritableVLANRequestGroup> group) {
-    this.group = group;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_GROUP, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroup(@javax.annotation.Nullable PatchedWritableVLANRequestGroup group) {
-    this.group = JsonNullable.<PatchedWritableVLANRequestGroup>of(group);
+    this.group = group;
   }
 
   public PatchedWritableVLANRequest vid(@javax.annotation.Nullable Integer vid) {
@@ -311,8 +291,8 @@ public class PatchedWritableVLANRequest {
   }
 
   public PatchedWritableVLANRequest tenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -321,26 +301,18 @@ public class PatchedWritableVLANRequest {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestTenant> getTenant_JsonNullable() {
+  public ASNRangeRequestTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<ASNRangeRequestTenant> tenant) {
-    this.tenant = tenant;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
+    this.tenant = tenant;
   }
 
   public PatchedWritableVLANRequest status(@javax.annotation.Nullable StatusEnum status) {
@@ -369,8 +341,8 @@ public class PatchedWritableVLANRequest {
   }
 
   public PatchedWritableVLANRequest role(@javax.annotation.Nullable IPRangeRequestRole role) {
-    this.role = JsonNullable.<IPRangeRequestRole>of(role);
     
+    this.role = role;
     return this;
   }
 
@@ -379,26 +351,18 @@ public class PatchedWritableVLANRequest {
    * @return role
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public IPRangeRequestRole getRole() {
-        return role.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<IPRangeRequestRole> getRole_JsonNullable() {
+  public IPRangeRequestRole getRole() {
     return role;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ROLE)
-  public void setRole_JsonNullable(JsonNullable<IPRangeRequestRole> role) {
-    this.role = role;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRole(@javax.annotation.Nullable IPRangeRequestRole role) {
-    this.role = JsonNullable.<IPRangeRequestRole>of(role);
+    this.role = role;
   }
 
   public PatchedWritableVLANRequest description(@javax.annotation.Nullable String description) {
@@ -427,8 +391,8 @@ public class PatchedWritableVLANRequest {
   }
 
   public PatchedWritableVLANRequest qinqRole(@javax.annotation.Nullable QinqRoleEnum qinqRole) {
-    this.qinqRole = JsonNullable.<QinqRoleEnum>of(qinqRole);
     
+    this.qinqRole = qinqRole;
     return this;
   }
 
@@ -437,31 +401,23 @@ public class PatchedWritableVLANRequest {
    * @return qinqRole
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public QinqRoleEnum getQinqRole() {
-        return qinqRole.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_QINQ_ROLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<QinqRoleEnum> getQinqRole_JsonNullable() {
+  public QinqRoleEnum getQinqRole() {
     return qinqRole;
   }
-  
-  @JsonProperty(JSON_PROPERTY_QINQ_ROLE)
-  public void setQinqRole_JsonNullable(JsonNullable<QinqRoleEnum> qinqRole) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_QINQ_ROLE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setQinqRole(@javax.annotation.Nullable QinqRoleEnum qinqRole) {
     this.qinqRole = qinqRole;
   }
 
-  public void setQinqRole(@javax.annotation.Nullable QinqRoleEnum qinqRole) {
-    this.qinqRole = JsonNullable.<QinqRoleEnum>of(qinqRole);
-  }
-
   public PatchedWritableVLANRequest qinqSvlan(@javax.annotation.Nullable Integer qinqSvlan) {
-    this.qinqSvlan = JsonNullable.<Integer>of(qinqSvlan);
     
+    this.qinqSvlan = qinqSvlan;
     return this;
   }
 
@@ -470,31 +426,23 @@ public class PatchedWritableVLANRequest {
    * @return qinqSvlan
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getQinqSvlan() {
-        return qinqSvlan.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_QINQ_SVLAN, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getQinqSvlan_JsonNullable() {
+  public Integer getQinqSvlan() {
     return qinqSvlan;
   }
-  
-  @JsonProperty(JSON_PROPERTY_QINQ_SVLAN)
-  public void setQinqSvlan_JsonNullable(JsonNullable<Integer> qinqSvlan) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_QINQ_SVLAN, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setQinqSvlan(@javax.annotation.Nullable Integer qinqSvlan) {
     this.qinqSvlan = qinqSvlan;
   }
 
-  public void setQinqSvlan(@javax.annotation.Nullable Integer qinqSvlan) {
-    this.qinqSvlan = JsonNullable.<Integer>of(qinqSvlan);
-  }
-
   public PatchedWritableVLANRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -503,26 +451,18 @@ public class PatchedWritableVLANRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public PatchedWritableVLANRequest comments(@javax.annotation.Nullable String comments) {
@@ -626,36 +566,25 @@ public class PatchedWritableVLANRequest {
       return false;
     }
     PatchedWritableVLANRequest patchedWritableVLANRequest = (PatchedWritableVLANRequest) o;
-    return equalsNullable(this.site, patchedWritableVLANRequest.site) &&
-        equalsNullable(this.group, patchedWritableVLANRequest.group) &&
+    return Objects.equals(this.site, patchedWritableVLANRequest.site) &&
+        Objects.equals(this.group, patchedWritableVLANRequest.group) &&
         Objects.equals(this.vid, patchedWritableVLANRequest.vid) &&
         Objects.equals(this.name, patchedWritableVLANRequest.name) &&
-        equalsNullable(this.tenant, patchedWritableVLANRequest.tenant) &&
+        Objects.equals(this.tenant, patchedWritableVLANRequest.tenant) &&
         Objects.equals(this.status, patchedWritableVLANRequest.status) &&
-        equalsNullable(this.role, patchedWritableVLANRequest.role) &&
+        Objects.equals(this.role, patchedWritableVLANRequest.role) &&
         Objects.equals(this.description, patchedWritableVLANRequest.description) &&
-        equalsNullable(this.qinqRole, patchedWritableVLANRequest.qinqRole) &&
-        equalsNullable(this.qinqSvlan, patchedWritableVLANRequest.qinqSvlan) &&
-        equalsNullable(this.owner, patchedWritableVLANRequest.owner) &&
+        Objects.equals(this.qinqRole, patchedWritableVLANRequest.qinqRole) &&
+        Objects.equals(this.qinqSvlan, patchedWritableVLANRequest.qinqSvlan) &&
+        Objects.equals(this.owner, patchedWritableVLANRequest.owner) &&
         Objects.equals(this.comments, patchedWritableVLANRequest.comments) &&
         Objects.equals(this.tags, patchedWritableVLANRequest.tags) &&
         Objects.equals(this.customFields, patchedWritableVLANRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(site), hashCodeNullable(group), vid, name, hashCodeNullable(tenant), status, hashCodeNullable(role), description, hashCodeNullable(qinqRole), hashCodeNullable(qinqSvlan), hashCodeNullable(owner), comments, tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(site, group, vid, name, tenant, status, role, description, qinqRole, qinqSvlan, owner, comments, tags, customFields);
   }
 
   @Override

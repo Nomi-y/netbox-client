@@ -22,10 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import dev.icelabs.netbox.model.BriefL2VPNType;
 import java.net.URI;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -42,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   BriefL2VPN.JSON_PROPERTY_TYPE,
   BriefL2VPN.JSON_PROPERTY_DESCRIPTION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class BriefL2VPN {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -58,7 +54,7 @@ public class BriefL2VPN {
 
   public static final String JSON_PROPERTY_IDENTIFIER = "identifier";
   @javax.annotation.Nullable
-  private JsonNullable<Long> identifier = JsonNullable.<Long>undefined();
+  private Long identifier;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -136,8 +132,8 @@ public class BriefL2VPN {
 
 
   public BriefL2VPN identifier(@javax.annotation.Nullable Long identifier) {
-    this.identifier = JsonNullable.<Long>of(identifier);
     
+    this.identifier = identifier;
     return this;
   }
 
@@ -148,26 +144,18 @@ public class BriefL2VPN {
    * @return identifier
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Long getIdentifier() {
-        return identifier.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_IDENTIFIER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Long> getIdentifier_JsonNullable() {
+  public Long getIdentifier() {
     return identifier;
   }
-  
-  @JsonProperty(JSON_PROPERTY_IDENTIFIER)
-  public void setIdentifier_JsonNullable(JsonNullable<Long> identifier) {
-    this.identifier = identifier;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_IDENTIFIER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIdentifier(@javax.annotation.Nullable Long identifier) {
-    this.identifier = JsonNullable.<Long>of(identifier);
+    this.identifier = identifier;
   }
 
   public BriefL2VPN name(@javax.annotation.Nonnull String name) {
@@ -283,27 +271,16 @@ public class BriefL2VPN {
     return Objects.equals(this.id, briefL2VPN.id) &&
         Objects.equals(this.url, briefL2VPN.url) &&
         Objects.equals(this.display, briefL2VPN.display) &&
-        equalsNullable(this.identifier, briefL2VPN.identifier) &&
+        Objects.equals(this.identifier, briefL2VPN.identifier) &&
         Objects.equals(this.name, briefL2VPN.name) &&
         Objects.equals(this.slug, briefL2VPN.slug) &&
         Objects.equals(this.type, briefL2VPN.type) &&
         Objects.equals(this.description, briefL2VPN.description);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, display, hashCodeNullable(identifier), name, slug, type, description);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, display, identifier, name, slug, type, description);
   }
 
   @Override

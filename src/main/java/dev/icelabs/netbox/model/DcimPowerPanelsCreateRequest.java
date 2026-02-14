@@ -30,10 +30,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -51,7 +47,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   DcimPowerPanelsCreateRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
 @JsonTypeName("dcim_power_panels_create_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class DcimPowerPanelsCreateRequest {
   public static final String JSON_PROPERTY_SITE = "site";
   @javax.annotation.Nonnull
@@ -59,7 +55,7 @@ public class DcimPowerPanelsCreateRequest {
 
   public static final String JSON_PROPERTY_LOCATION = "location";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceWithConfigContextRequestLocation> location = JsonNullable.<DeviceWithConfigContextRequestLocation>undefined();
+  private DeviceWithConfigContextRequestLocation location;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -71,7 +67,7 @@ public class DcimPowerPanelsCreateRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -114,8 +110,8 @@ public class DcimPowerPanelsCreateRequest {
   }
 
   public DcimPowerPanelsCreateRequest location(@javax.annotation.Nullable DeviceWithConfigContextRequestLocation location) {
-    this.location = JsonNullable.<DeviceWithConfigContextRequestLocation>of(location);
     
+    this.location = location;
     return this;
   }
 
@@ -124,26 +120,18 @@ public class DcimPowerPanelsCreateRequest {
    * @return location
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceWithConfigContextRequestLocation getLocation() {
-        return location.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_LOCATION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceWithConfigContextRequestLocation> getLocation_JsonNullable() {
+  public DeviceWithConfigContextRequestLocation getLocation() {
     return location;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LOCATION)
-  public void setLocation_JsonNullable(JsonNullable<DeviceWithConfigContextRequestLocation> location) {
-    this.location = location;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_LOCATION, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLocation(@javax.annotation.Nullable DeviceWithConfigContextRequestLocation location) {
-    this.location = JsonNullable.<DeviceWithConfigContextRequestLocation>of(location);
+    this.location = location;
   }
 
   public DcimPowerPanelsCreateRequest name(@javax.annotation.Nonnull String name) {
@@ -197,8 +185,8 @@ public class DcimPowerPanelsCreateRequest {
   }
 
   public DcimPowerPanelsCreateRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -207,26 +195,18 @@ public class DcimPowerPanelsCreateRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public DcimPowerPanelsCreateRequest comments(@javax.annotation.Nullable String comments) {
@@ -331,29 +311,18 @@ public class DcimPowerPanelsCreateRequest {
     }
     DcimPowerPanelsCreateRequest dcimPowerPanelsCreateRequest = (DcimPowerPanelsCreateRequest) o;
     return Objects.equals(this.site, dcimPowerPanelsCreateRequest.site) &&
-        equalsNullable(this.location, dcimPowerPanelsCreateRequest.location) &&
+        Objects.equals(this.location, dcimPowerPanelsCreateRequest.location) &&
         Objects.equals(this.name, dcimPowerPanelsCreateRequest.name) &&
         Objects.equals(this.description, dcimPowerPanelsCreateRequest.description) &&
-        equalsNullable(this.owner, dcimPowerPanelsCreateRequest.owner) &&
+        Objects.equals(this.owner, dcimPowerPanelsCreateRequest.owner) &&
         Objects.equals(this.comments, dcimPowerPanelsCreateRequest.comments) &&
         Objects.equals(this.tags, dcimPowerPanelsCreateRequest.tags) &&
         Objects.equals(this.customFields, dcimPowerPanelsCreateRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(site, hashCodeNullable(location), name, description, hashCodeNullable(owner), comments, tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(site, location, name, description, owner, comments, tags, customFields);
   }
 
   @Override

@@ -27,10 +27,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -50,7 +46,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   PatchedWritableIKEProposalRequest.JSON_PROPERTY_TAGS,
   PatchedWritableIKEProposalRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class PatchedWritableIKEProposalRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable
@@ -199,7 +195,7 @@ public class PatchedWritableIKEProposalRequest {
 
   public static final String JSON_PROPERTY_AUTHENTICATION_ALGORITHM = "authentication_algorithm";
   @javax.annotation.Nullable
-  private JsonNullable<AuthenticationAlgorithmEnum> authenticationAlgorithm = JsonNullable.<AuthenticationAlgorithmEnum>undefined();
+  private AuthenticationAlgorithmEnum authenticationAlgorithm;
 
   /**
    * Diffie-Hellman group ID  * &#x60;1&#x60; - Group 1 * &#x60;2&#x60; - Group 2 * &#x60;5&#x60; - Group 5 * &#x60;14&#x60; - Group 14 * &#x60;15&#x60; - Group 15 * &#x60;16&#x60; - Group 16 * &#x60;17&#x60; - Group 17 * &#x60;18&#x60; - Group 18 * &#x60;19&#x60; - Group 19 * &#x60;20&#x60; - Group 20 * &#x60;21&#x60; - Group 21 * &#x60;22&#x60; - Group 22 * &#x60;23&#x60; - Group 23 * &#x60;24&#x60; - Group 24 * &#x60;25&#x60; - Group 25 * &#x60;26&#x60; - Group 26 * &#x60;27&#x60; - Group 27 * &#x60;28&#x60; - Group 28 * &#x60;29&#x60; - Group 29 * &#x60;30&#x60; - Group 30 * &#x60;31&#x60; - Group 31 * &#x60;32&#x60; - Group 32 * &#x60;33&#x60; - Group 33 * &#x60;34&#x60; - Group 34
@@ -286,11 +282,11 @@ public class PatchedWritableIKEProposalRequest {
 
   public static final String JSON_PROPERTY_SA_LIFETIME = "sa_lifetime";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> saLifetime = JsonNullable.<Integer>undefined();
+  private Integer saLifetime;
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -408,8 +404,8 @@ public class PatchedWritableIKEProposalRequest {
   }
 
   public PatchedWritableIKEProposalRequest authenticationAlgorithm(@javax.annotation.Nullable AuthenticationAlgorithmEnum authenticationAlgorithm) {
-    this.authenticationAlgorithm = JsonNullable.<AuthenticationAlgorithmEnum>of(authenticationAlgorithm);
     
+    this.authenticationAlgorithm = authenticationAlgorithm;
     return this;
   }
 
@@ -418,26 +414,18 @@ public class PatchedWritableIKEProposalRequest {
    * @return authenticationAlgorithm
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public AuthenticationAlgorithmEnum getAuthenticationAlgorithm() {
-        return authenticationAlgorithm.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_AUTHENTICATION_ALGORITHM, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<AuthenticationAlgorithmEnum> getAuthenticationAlgorithm_JsonNullable() {
+  public AuthenticationAlgorithmEnum getAuthenticationAlgorithm() {
     return authenticationAlgorithm;
   }
-  
-  @JsonProperty(JSON_PROPERTY_AUTHENTICATION_ALGORITHM)
-  public void setAuthenticationAlgorithm_JsonNullable(JsonNullable<AuthenticationAlgorithmEnum> authenticationAlgorithm) {
-    this.authenticationAlgorithm = authenticationAlgorithm;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_AUTHENTICATION_ALGORITHM, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAuthenticationAlgorithm(@javax.annotation.Nullable AuthenticationAlgorithmEnum authenticationAlgorithm) {
-    this.authenticationAlgorithm = JsonNullable.<AuthenticationAlgorithmEnum>of(authenticationAlgorithm);
+    this.authenticationAlgorithm = authenticationAlgorithm;
   }
 
   public PatchedWritableIKEProposalRequest group(@javax.annotation.Nullable GroupEnum group) {
@@ -468,8 +456,8 @@ public class PatchedWritableIKEProposalRequest {
   }
 
   public PatchedWritableIKEProposalRequest saLifetime(@javax.annotation.Nullable Integer saLifetime) {
-    this.saLifetime = JsonNullable.<Integer>of(saLifetime);
     
+    this.saLifetime = saLifetime;
     return this;
   }
 
@@ -480,31 +468,23 @@ public class PatchedWritableIKEProposalRequest {
    * @return saLifetime
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getSaLifetime() {
-        return saLifetime.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SA_LIFETIME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getSaLifetime_JsonNullable() {
+  public Integer getSaLifetime() {
     return saLifetime;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SA_LIFETIME)
-  public void setSaLifetime_JsonNullable(JsonNullable<Integer> saLifetime) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_SA_LIFETIME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSaLifetime(@javax.annotation.Nullable Integer saLifetime) {
     this.saLifetime = saLifetime;
   }
 
-  public void setSaLifetime(@javax.annotation.Nullable Integer saLifetime) {
-    this.saLifetime = JsonNullable.<Integer>of(saLifetime);
-  }
-
   public PatchedWritableIKEProposalRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -513,26 +493,18 @@ public class PatchedWritableIKEProposalRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public PatchedWritableIKEProposalRequest comments(@javax.annotation.Nullable String comments) {
@@ -640,29 +612,18 @@ public class PatchedWritableIKEProposalRequest {
         Objects.equals(this.description, patchedWritableIKEProposalRequest.description) &&
         Objects.equals(this.authenticationMethod, patchedWritableIKEProposalRequest.authenticationMethod) &&
         Objects.equals(this.encryptionAlgorithm, patchedWritableIKEProposalRequest.encryptionAlgorithm) &&
-        equalsNullable(this.authenticationAlgorithm, patchedWritableIKEProposalRequest.authenticationAlgorithm) &&
+        Objects.equals(this.authenticationAlgorithm, patchedWritableIKEProposalRequest.authenticationAlgorithm) &&
         Objects.equals(this.group, patchedWritableIKEProposalRequest.group) &&
-        equalsNullable(this.saLifetime, patchedWritableIKEProposalRequest.saLifetime) &&
-        equalsNullable(this.owner, patchedWritableIKEProposalRequest.owner) &&
+        Objects.equals(this.saLifetime, patchedWritableIKEProposalRequest.saLifetime) &&
+        Objects.equals(this.owner, patchedWritableIKEProposalRequest.owner) &&
         Objects.equals(this.comments, patchedWritableIKEProposalRequest.comments) &&
         Objects.equals(this.tags, patchedWritableIKEProposalRequest.tags) &&
         Objects.equals(this.customFields, patchedWritableIKEProposalRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, authenticationMethod, encryptionAlgorithm, hashCodeNullable(authenticationAlgorithm), group, hashCodeNullable(saLifetime), hashCodeNullable(owner), comments, tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, description, authenticationMethod, encryptionAlgorithm, authenticationAlgorithm, group, saLifetime, owner, comments, tags, customFields);
   }
 
   @Override

@@ -32,10 +32,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -60,7 +56,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   IpamPrefixesCreateRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
 @JsonTypeName("ipam_prefixes_create_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class IpamPrefixesCreateRequest {
   public static final String JSON_PROPERTY_PREFIX = "prefix";
   @javax.annotation.Nonnull
@@ -68,23 +64,23 @@ public class IpamPrefixesCreateRequest {
 
   public static final String JSON_PROPERTY_VRF = "vrf";
   @javax.annotation.Nullable
-  private JsonNullable<IPAddressRequestVrf> vrf = JsonNullable.<IPAddressRequestVrf>undefined();
+  private IPAddressRequestVrf vrf;
 
   public static final String JSON_PROPERTY_SCOPE_TYPE = "scope_type";
   @javax.annotation.Nullable
-  private JsonNullable<String> scopeType = JsonNullable.<String>undefined();
+  private String scopeType;
 
   public static final String JSON_PROPERTY_SCOPE_ID = "scope_id";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> scopeId = JsonNullable.<Integer>undefined();
+  private Integer scopeId;
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestTenant> tenant = JsonNullable.<ASNRangeRequestTenant>undefined();
+  private ASNRangeRequestTenant tenant;
 
   public static final String JSON_PROPERTY_VLAN = "vlan";
   @javax.annotation.Nullable
-  private JsonNullable<InterfaceRequestUntaggedVlan> vlan = JsonNullable.<InterfaceRequestUntaggedVlan>undefined();
+  private InterfaceRequestUntaggedVlan vlan;
 
   /**
    * Operational status of this prefix  * &#x60;container&#x60; - Container * &#x60;active&#x60; - Active * &#x60;reserved&#x60; - Reserved * &#x60;deprecated&#x60; - Deprecated
@@ -131,7 +127,7 @@ public class IpamPrefixesCreateRequest {
 
   public static final String JSON_PROPERTY_ROLE = "role";
   @javax.annotation.Nullable
-  private JsonNullable<IPRangeRequestRole> role = JsonNullable.<IPRangeRequestRole>undefined();
+  private IPRangeRequestRole role;
 
   public static final String JSON_PROPERTY_IS_POOL = "is_pool";
   @javax.annotation.Nullable
@@ -147,7 +143,7 @@ public class IpamPrefixesCreateRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -190,8 +186,8 @@ public class IpamPrefixesCreateRequest {
   }
 
   public IpamPrefixesCreateRequest vrf(@javax.annotation.Nullable IPAddressRequestVrf vrf) {
-    this.vrf = JsonNullable.<IPAddressRequestVrf>of(vrf);
     
+    this.vrf = vrf;
     return this;
   }
 
@@ -200,31 +196,23 @@ public class IpamPrefixesCreateRequest {
    * @return vrf
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public IPAddressRequestVrf getVrf() {
-        return vrf.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VRF, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<IPAddressRequestVrf> getVrf_JsonNullable() {
+  public IPAddressRequestVrf getVrf() {
     return vrf;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VRF)
-  public void setVrf_JsonNullable(JsonNullable<IPAddressRequestVrf> vrf) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_VRF, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setVrf(@javax.annotation.Nullable IPAddressRequestVrf vrf) {
     this.vrf = vrf;
   }
 
-  public void setVrf(@javax.annotation.Nullable IPAddressRequestVrf vrf) {
-    this.vrf = JsonNullable.<IPAddressRequestVrf>of(vrf);
-  }
-
   public IpamPrefixesCreateRequest scopeType(@javax.annotation.Nullable String scopeType) {
-    this.scopeType = JsonNullable.<String>of(scopeType);
     
+    this.scopeType = scopeType;
     return this;
   }
 
@@ -233,31 +221,23 @@ public class IpamPrefixesCreateRequest {
    * @return scopeType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getScopeType() {
-        return scopeType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SCOPE_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getScopeType_JsonNullable() {
+  public String getScopeType() {
     return scopeType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SCOPE_TYPE)
-  public void setScopeType_JsonNullable(JsonNullable<String> scopeType) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_SCOPE_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setScopeType(@javax.annotation.Nullable String scopeType) {
     this.scopeType = scopeType;
   }
 
-  public void setScopeType(@javax.annotation.Nullable String scopeType) {
-    this.scopeType = JsonNullable.<String>of(scopeType);
-  }
-
   public IpamPrefixesCreateRequest scopeId(@javax.annotation.Nullable Integer scopeId) {
-    this.scopeId = JsonNullable.<Integer>of(scopeId);
     
+    this.scopeId = scopeId;
     return this;
   }
 
@@ -266,31 +246,23 @@ public class IpamPrefixesCreateRequest {
    * @return scopeId
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getScopeId() {
-        return scopeId.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SCOPE_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getScopeId_JsonNullable() {
+  public Integer getScopeId() {
     return scopeId;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SCOPE_ID)
-  public void setScopeId_JsonNullable(JsonNullable<Integer> scopeId) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_SCOPE_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setScopeId(@javax.annotation.Nullable Integer scopeId) {
     this.scopeId = scopeId;
   }
 
-  public void setScopeId(@javax.annotation.Nullable Integer scopeId) {
-    this.scopeId = JsonNullable.<Integer>of(scopeId);
-  }
-
   public IpamPrefixesCreateRequest tenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -299,31 +271,23 @@ public class IpamPrefixesCreateRequest {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestTenant> getTenant_JsonNullable() {
+  public ASNRangeRequestTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<ASNRangeRequestTenant> tenant) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
     this.tenant = tenant;
   }
 
-  public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
-  }
-
   public IpamPrefixesCreateRequest vlan(@javax.annotation.Nullable InterfaceRequestUntaggedVlan vlan) {
-    this.vlan = JsonNullable.<InterfaceRequestUntaggedVlan>of(vlan);
     
+    this.vlan = vlan;
     return this;
   }
 
@@ -332,26 +296,18 @@ public class IpamPrefixesCreateRequest {
    * @return vlan
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public InterfaceRequestUntaggedVlan getVlan() {
-        return vlan.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VLAN, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<InterfaceRequestUntaggedVlan> getVlan_JsonNullable() {
+  public InterfaceRequestUntaggedVlan getVlan() {
     return vlan;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VLAN)
-  public void setVlan_JsonNullable(JsonNullable<InterfaceRequestUntaggedVlan> vlan) {
-    this.vlan = vlan;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_VLAN, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVlan(@javax.annotation.Nullable InterfaceRequestUntaggedVlan vlan) {
-    this.vlan = JsonNullable.<InterfaceRequestUntaggedVlan>of(vlan);
+    this.vlan = vlan;
   }
 
   public IpamPrefixesCreateRequest status(@javax.annotation.Nullable StatusEnum status) {
@@ -380,8 +336,8 @@ public class IpamPrefixesCreateRequest {
   }
 
   public IpamPrefixesCreateRequest role(@javax.annotation.Nullable IPRangeRequestRole role) {
-    this.role = JsonNullable.<IPRangeRequestRole>of(role);
     
+    this.role = role;
     return this;
   }
 
@@ -390,26 +346,18 @@ public class IpamPrefixesCreateRequest {
    * @return role
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public IPRangeRequestRole getRole() {
-        return role.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<IPRangeRequestRole> getRole_JsonNullable() {
+  public IPRangeRequestRole getRole() {
     return role;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ROLE)
-  public void setRole_JsonNullable(JsonNullable<IPRangeRequestRole> role) {
-    this.role = role;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRole(@javax.annotation.Nullable IPRangeRequestRole role) {
-    this.role = JsonNullable.<IPRangeRequestRole>of(role);
+    this.role = role;
   }
 
   public IpamPrefixesCreateRequest isPool(@javax.annotation.Nullable Boolean isPool) {
@@ -488,8 +436,8 @@ public class IpamPrefixesCreateRequest {
   }
 
   public IpamPrefixesCreateRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -498,26 +446,18 @@ public class IpamPrefixesCreateRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public IpamPrefixesCreateRequest comments(@javax.annotation.Nullable String comments) {
@@ -622,36 +562,25 @@ public class IpamPrefixesCreateRequest {
     }
     IpamPrefixesCreateRequest ipamPrefixesCreateRequest = (IpamPrefixesCreateRequest) o;
     return Objects.equals(this.prefix, ipamPrefixesCreateRequest.prefix) &&
-        equalsNullable(this.vrf, ipamPrefixesCreateRequest.vrf) &&
-        equalsNullable(this.scopeType, ipamPrefixesCreateRequest.scopeType) &&
-        equalsNullable(this.scopeId, ipamPrefixesCreateRequest.scopeId) &&
-        equalsNullable(this.tenant, ipamPrefixesCreateRequest.tenant) &&
-        equalsNullable(this.vlan, ipamPrefixesCreateRequest.vlan) &&
+        Objects.equals(this.vrf, ipamPrefixesCreateRequest.vrf) &&
+        Objects.equals(this.scopeType, ipamPrefixesCreateRequest.scopeType) &&
+        Objects.equals(this.scopeId, ipamPrefixesCreateRequest.scopeId) &&
+        Objects.equals(this.tenant, ipamPrefixesCreateRequest.tenant) &&
+        Objects.equals(this.vlan, ipamPrefixesCreateRequest.vlan) &&
         Objects.equals(this.status, ipamPrefixesCreateRequest.status) &&
-        equalsNullable(this.role, ipamPrefixesCreateRequest.role) &&
+        Objects.equals(this.role, ipamPrefixesCreateRequest.role) &&
         Objects.equals(this.isPool, ipamPrefixesCreateRequest.isPool) &&
         Objects.equals(this.markUtilized, ipamPrefixesCreateRequest.markUtilized) &&
         Objects.equals(this.description, ipamPrefixesCreateRequest.description) &&
-        equalsNullable(this.owner, ipamPrefixesCreateRequest.owner) &&
+        Objects.equals(this.owner, ipamPrefixesCreateRequest.owner) &&
         Objects.equals(this.comments, ipamPrefixesCreateRequest.comments) &&
         Objects.equals(this.tags, ipamPrefixesCreateRequest.tags) &&
         Objects.equals(this.customFields, ipamPrefixesCreateRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(prefix, hashCodeNullable(vrf), hashCodeNullable(scopeType), hashCodeNullable(scopeId), hashCodeNullable(tenant), hashCodeNullable(vlan), status, hashCodeNullable(role), isPool, markUtilized, description, hashCodeNullable(owner), comments, tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(prefix, vrf, scopeType, scopeId, tenant, vlan, status, role, isPool, markUtilized, description, owner, comments, tags, customFields);
   }
 
   @Override

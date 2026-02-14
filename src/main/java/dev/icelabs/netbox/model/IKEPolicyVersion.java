@@ -31,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   IKEPolicyVersion.JSON_PROPERTY_LABEL
 })
 @JsonTypeName("IKEPolicy_version")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class IKEPolicyVersion {
   /**
    * * &#x60;1&#x60; - IKEv1 * &#x60;2&#x60; - IKEv2

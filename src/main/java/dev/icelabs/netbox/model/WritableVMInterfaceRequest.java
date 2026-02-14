@@ -32,10 +32,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -61,7 +57,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   WritableVMInterfaceRequest.JSON_PROPERTY_TAGS,
   WritableVMInterfaceRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class WritableVMInterfaceRequest {
   public static final String JSON_PROPERTY_VIRTUAL_MACHINE = "virtual_machine";
   @javax.annotation.Nonnull
@@ -77,19 +73,19 @@ public class WritableVMInterfaceRequest {
 
   public static final String JSON_PROPERTY_PARENT = "parent";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> parent = JsonNullable.<Integer>undefined();
+  private Integer parent;
 
   public static final String JSON_PROPERTY_BRIDGE = "bridge";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> bridge = JsonNullable.<Integer>undefined();
+  private Integer bridge;
 
   public static final String JSON_PROPERTY_MTU = "mtu";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> mtu = JsonNullable.<Integer>undefined();
+  private Integer mtu;
 
   public static final String JSON_PROPERTY_PRIMARY_MAC_ADDRESS = "primary_mac_address";
   @javax.annotation.Nullable
-  private JsonNullable<InterfaceRequestPrimaryMacAddress> primaryMacAddress = JsonNullable.<InterfaceRequestPrimaryMacAddress>undefined();
+  private InterfaceRequestPrimaryMacAddress primaryMacAddress;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -138,11 +134,11 @@ public class WritableVMInterfaceRequest {
 
   public static final String JSON_PROPERTY_MODE = "mode";
   @javax.annotation.Nullable
-  private JsonNullable<ModeEnum> mode = JsonNullable.<ModeEnum>undefined();
+  private ModeEnum mode;
 
   public static final String JSON_PROPERTY_UNTAGGED_VLAN = "untagged_vlan";
   @javax.annotation.Nullable
-  private JsonNullable<InterfaceRequestUntaggedVlan> untaggedVlan = JsonNullable.<InterfaceRequestUntaggedVlan>undefined();
+  private InterfaceRequestUntaggedVlan untaggedVlan;
 
   public static final String JSON_PROPERTY_TAGGED_VLANS = "tagged_vlans";
   @javax.annotation.Nullable
@@ -150,19 +146,19 @@ public class WritableVMInterfaceRequest {
 
   public static final String JSON_PROPERTY_QINQ_SVLAN = "qinq_svlan";
   @javax.annotation.Nullable
-  private JsonNullable<InterfaceRequestUntaggedVlan> qinqSvlan = JsonNullable.<InterfaceRequestUntaggedVlan>undefined();
+  private InterfaceRequestUntaggedVlan qinqSvlan;
 
   public static final String JSON_PROPERTY_VLAN_TRANSLATION_POLICY = "vlan_translation_policy";
   @javax.annotation.Nullable
-  private JsonNullable<InterfaceRequestVlanTranslationPolicy> vlanTranslationPolicy = JsonNullable.<InterfaceRequestVlanTranslationPolicy>undefined();
+  private InterfaceRequestVlanTranslationPolicy vlanTranslationPolicy;
 
   public static final String JSON_PROPERTY_VRF = "vrf";
   @javax.annotation.Nullable
-  private JsonNullable<IPAddressRequestVrf> vrf = JsonNullable.<IPAddressRequestVrf>undefined();
+  private IPAddressRequestVrf vrf;
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -251,8 +247,8 @@ public class WritableVMInterfaceRequest {
   }
 
   public WritableVMInterfaceRequest parent(@javax.annotation.Nullable Integer parent) {
-    this.parent = JsonNullable.<Integer>of(parent);
     
+    this.parent = parent;
     return this;
   }
 
@@ -261,31 +257,23 @@ public class WritableVMInterfaceRequest {
    * @return parent
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getParent() {
-        return parent.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getParent_JsonNullable() {
+  public Integer getParent() {
     return parent;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PARENT)
-  public void setParent_JsonNullable(JsonNullable<Integer> parent) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setParent(@javax.annotation.Nullable Integer parent) {
     this.parent = parent;
   }
 
-  public void setParent(@javax.annotation.Nullable Integer parent) {
-    this.parent = JsonNullable.<Integer>of(parent);
-  }
-
   public WritableVMInterfaceRequest bridge(@javax.annotation.Nullable Integer bridge) {
-    this.bridge = JsonNullable.<Integer>of(bridge);
     
+    this.bridge = bridge;
     return this;
   }
 
@@ -294,31 +282,23 @@ public class WritableVMInterfaceRequest {
    * @return bridge
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getBridge() {
-        return bridge.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_BRIDGE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getBridge_JsonNullable() {
+  public Integer getBridge() {
     return bridge;
   }
-  
-  @JsonProperty(JSON_PROPERTY_BRIDGE)
-  public void setBridge_JsonNullable(JsonNullable<Integer> bridge) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_BRIDGE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setBridge(@javax.annotation.Nullable Integer bridge) {
     this.bridge = bridge;
   }
 
-  public void setBridge(@javax.annotation.Nullable Integer bridge) {
-    this.bridge = JsonNullable.<Integer>of(bridge);
-  }
-
   public WritableVMInterfaceRequest mtu(@javax.annotation.Nullable Integer mtu) {
-    this.mtu = JsonNullable.<Integer>of(mtu);
     
+    this.mtu = mtu;
     return this;
   }
 
@@ -329,31 +309,23 @@ public class WritableVMInterfaceRequest {
    * @return mtu
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getMtu() {
-        return mtu.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MTU, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getMtu_JsonNullable() {
+  public Integer getMtu() {
     return mtu;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MTU)
-  public void setMtu_JsonNullable(JsonNullable<Integer> mtu) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_MTU, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMtu(@javax.annotation.Nullable Integer mtu) {
     this.mtu = mtu;
   }
 
-  public void setMtu(@javax.annotation.Nullable Integer mtu) {
-    this.mtu = JsonNullable.<Integer>of(mtu);
-  }
-
   public WritableVMInterfaceRequest primaryMacAddress(@javax.annotation.Nullable InterfaceRequestPrimaryMacAddress primaryMacAddress) {
-    this.primaryMacAddress = JsonNullable.<InterfaceRequestPrimaryMacAddress>of(primaryMacAddress);
     
+    this.primaryMacAddress = primaryMacAddress;
     return this;
   }
 
@@ -362,26 +334,18 @@ public class WritableVMInterfaceRequest {
    * @return primaryMacAddress
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public InterfaceRequestPrimaryMacAddress getPrimaryMacAddress() {
-        return primaryMacAddress.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PRIMARY_MAC_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<InterfaceRequestPrimaryMacAddress> getPrimaryMacAddress_JsonNullable() {
+  public InterfaceRequestPrimaryMacAddress getPrimaryMacAddress() {
     return primaryMacAddress;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PRIMARY_MAC_ADDRESS)
-  public void setPrimaryMacAddress_JsonNullable(JsonNullable<InterfaceRequestPrimaryMacAddress> primaryMacAddress) {
-    this.primaryMacAddress = primaryMacAddress;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PRIMARY_MAC_ADDRESS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrimaryMacAddress(@javax.annotation.Nullable InterfaceRequestPrimaryMacAddress primaryMacAddress) {
-    this.primaryMacAddress = JsonNullable.<InterfaceRequestPrimaryMacAddress>of(primaryMacAddress);
+    this.primaryMacAddress = primaryMacAddress;
   }
 
   public WritableVMInterfaceRequest description(@javax.annotation.Nullable String description) {
@@ -410,8 +374,8 @@ public class WritableVMInterfaceRequest {
   }
 
   public WritableVMInterfaceRequest mode(@javax.annotation.Nullable ModeEnum mode) {
-    this.mode = JsonNullable.<ModeEnum>of(mode);
     
+    this.mode = mode;
     return this;
   }
 
@@ -420,31 +384,23 @@ public class WritableVMInterfaceRequest {
    * @return mode
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ModeEnum getMode() {
-        return mode.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ModeEnum> getMode_JsonNullable() {
+  public ModeEnum getMode() {
     return mode;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MODE)
-  public void setMode_JsonNullable(JsonNullable<ModeEnum> mode) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_MODE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMode(@javax.annotation.Nullable ModeEnum mode) {
     this.mode = mode;
   }
 
-  public void setMode(@javax.annotation.Nullable ModeEnum mode) {
-    this.mode = JsonNullable.<ModeEnum>of(mode);
-  }
-
   public WritableVMInterfaceRequest untaggedVlan(@javax.annotation.Nullable InterfaceRequestUntaggedVlan untaggedVlan) {
-    this.untaggedVlan = JsonNullable.<InterfaceRequestUntaggedVlan>of(untaggedVlan);
     
+    this.untaggedVlan = untaggedVlan;
     return this;
   }
 
@@ -453,26 +409,18 @@ public class WritableVMInterfaceRequest {
    * @return untaggedVlan
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public InterfaceRequestUntaggedVlan getUntaggedVlan() {
-        return untaggedVlan.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_UNTAGGED_VLAN, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<InterfaceRequestUntaggedVlan> getUntaggedVlan_JsonNullable() {
+  public InterfaceRequestUntaggedVlan getUntaggedVlan() {
     return untaggedVlan;
   }
-  
-  @JsonProperty(JSON_PROPERTY_UNTAGGED_VLAN)
-  public void setUntaggedVlan_JsonNullable(JsonNullable<InterfaceRequestUntaggedVlan> untaggedVlan) {
-    this.untaggedVlan = untaggedVlan;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_UNTAGGED_VLAN, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUntaggedVlan(@javax.annotation.Nullable InterfaceRequestUntaggedVlan untaggedVlan) {
-    this.untaggedVlan = JsonNullable.<InterfaceRequestUntaggedVlan>of(untaggedVlan);
+    this.untaggedVlan = untaggedVlan;
   }
 
   public WritableVMInterfaceRequest taggedVlans(@javax.annotation.Nullable List<Integer> taggedVlans) {
@@ -509,8 +457,8 @@ public class WritableVMInterfaceRequest {
   }
 
   public WritableVMInterfaceRequest qinqSvlan(@javax.annotation.Nullable InterfaceRequestUntaggedVlan qinqSvlan) {
-    this.qinqSvlan = JsonNullable.<InterfaceRequestUntaggedVlan>of(qinqSvlan);
     
+    this.qinqSvlan = qinqSvlan;
     return this;
   }
 
@@ -519,31 +467,23 @@ public class WritableVMInterfaceRequest {
    * @return qinqSvlan
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public InterfaceRequestUntaggedVlan getQinqSvlan() {
-        return qinqSvlan.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_QINQ_SVLAN, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<InterfaceRequestUntaggedVlan> getQinqSvlan_JsonNullable() {
+  public InterfaceRequestUntaggedVlan getQinqSvlan() {
     return qinqSvlan;
   }
-  
-  @JsonProperty(JSON_PROPERTY_QINQ_SVLAN)
-  public void setQinqSvlan_JsonNullable(JsonNullable<InterfaceRequestUntaggedVlan> qinqSvlan) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_QINQ_SVLAN, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setQinqSvlan(@javax.annotation.Nullable InterfaceRequestUntaggedVlan qinqSvlan) {
     this.qinqSvlan = qinqSvlan;
   }
 
-  public void setQinqSvlan(@javax.annotation.Nullable InterfaceRequestUntaggedVlan qinqSvlan) {
-    this.qinqSvlan = JsonNullable.<InterfaceRequestUntaggedVlan>of(qinqSvlan);
-  }
-
   public WritableVMInterfaceRequest vlanTranslationPolicy(@javax.annotation.Nullable InterfaceRequestVlanTranslationPolicy vlanTranslationPolicy) {
-    this.vlanTranslationPolicy = JsonNullable.<InterfaceRequestVlanTranslationPolicy>of(vlanTranslationPolicy);
     
+    this.vlanTranslationPolicy = vlanTranslationPolicy;
     return this;
   }
 
@@ -552,31 +492,23 @@ public class WritableVMInterfaceRequest {
    * @return vlanTranslationPolicy
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public InterfaceRequestVlanTranslationPolicy getVlanTranslationPolicy() {
-        return vlanTranslationPolicy.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VLAN_TRANSLATION_POLICY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<InterfaceRequestVlanTranslationPolicy> getVlanTranslationPolicy_JsonNullable() {
+  public InterfaceRequestVlanTranslationPolicy getVlanTranslationPolicy() {
     return vlanTranslationPolicy;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VLAN_TRANSLATION_POLICY)
-  public void setVlanTranslationPolicy_JsonNullable(JsonNullable<InterfaceRequestVlanTranslationPolicy> vlanTranslationPolicy) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_VLAN_TRANSLATION_POLICY, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setVlanTranslationPolicy(@javax.annotation.Nullable InterfaceRequestVlanTranslationPolicy vlanTranslationPolicy) {
     this.vlanTranslationPolicy = vlanTranslationPolicy;
   }
 
-  public void setVlanTranslationPolicy(@javax.annotation.Nullable InterfaceRequestVlanTranslationPolicy vlanTranslationPolicy) {
-    this.vlanTranslationPolicy = JsonNullable.<InterfaceRequestVlanTranslationPolicy>of(vlanTranslationPolicy);
-  }
-
   public WritableVMInterfaceRequest vrf(@javax.annotation.Nullable IPAddressRequestVrf vrf) {
-    this.vrf = JsonNullable.<IPAddressRequestVrf>of(vrf);
     
+    this.vrf = vrf;
     return this;
   }
 
@@ -585,31 +517,23 @@ public class WritableVMInterfaceRequest {
    * @return vrf
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public IPAddressRequestVrf getVrf() {
-        return vrf.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VRF, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<IPAddressRequestVrf> getVrf_JsonNullable() {
+  public IPAddressRequestVrf getVrf() {
     return vrf;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VRF)
-  public void setVrf_JsonNullable(JsonNullable<IPAddressRequestVrf> vrf) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_VRF, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setVrf(@javax.annotation.Nullable IPAddressRequestVrf vrf) {
     this.vrf = vrf;
   }
 
-  public void setVrf(@javax.annotation.Nullable IPAddressRequestVrf vrf) {
-    this.vrf = JsonNullable.<IPAddressRequestVrf>of(vrf);
-  }
-
   public WritableVMInterfaceRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -618,26 +542,18 @@ public class WritableVMInterfaceRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public WritableVMInterfaceRequest tags(@javax.annotation.Nullable List<NestedTagRequest> tags) {
@@ -719,36 +635,25 @@ public class WritableVMInterfaceRequest {
     return Objects.equals(this.virtualMachine, writableVMInterfaceRequest.virtualMachine) &&
         Objects.equals(this.name, writableVMInterfaceRequest.name) &&
         Objects.equals(this.enabled, writableVMInterfaceRequest.enabled) &&
-        equalsNullable(this.parent, writableVMInterfaceRequest.parent) &&
-        equalsNullable(this.bridge, writableVMInterfaceRequest.bridge) &&
-        equalsNullable(this.mtu, writableVMInterfaceRequest.mtu) &&
-        equalsNullable(this.primaryMacAddress, writableVMInterfaceRequest.primaryMacAddress) &&
+        Objects.equals(this.parent, writableVMInterfaceRequest.parent) &&
+        Objects.equals(this.bridge, writableVMInterfaceRequest.bridge) &&
+        Objects.equals(this.mtu, writableVMInterfaceRequest.mtu) &&
+        Objects.equals(this.primaryMacAddress, writableVMInterfaceRequest.primaryMacAddress) &&
         Objects.equals(this.description, writableVMInterfaceRequest.description) &&
-        equalsNullable(this.mode, writableVMInterfaceRequest.mode) &&
-        equalsNullable(this.untaggedVlan, writableVMInterfaceRequest.untaggedVlan) &&
+        Objects.equals(this.mode, writableVMInterfaceRequest.mode) &&
+        Objects.equals(this.untaggedVlan, writableVMInterfaceRequest.untaggedVlan) &&
         Objects.equals(this.taggedVlans, writableVMInterfaceRequest.taggedVlans) &&
-        equalsNullable(this.qinqSvlan, writableVMInterfaceRequest.qinqSvlan) &&
-        equalsNullable(this.vlanTranslationPolicy, writableVMInterfaceRequest.vlanTranslationPolicy) &&
-        equalsNullable(this.vrf, writableVMInterfaceRequest.vrf) &&
-        equalsNullable(this.owner, writableVMInterfaceRequest.owner) &&
+        Objects.equals(this.qinqSvlan, writableVMInterfaceRequest.qinqSvlan) &&
+        Objects.equals(this.vlanTranslationPolicy, writableVMInterfaceRequest.vlanTranslationPolicy) &&
+        Objects.equals(this.vrf, writableVMInterfaceRequest.vrf) &&
+        Objects.equals(this.owner, writableVMInterfaceRequest.owner) &&
         Objects.equals(this.tags, writableVMInterfaceRequest.tags) &&
         Objects.equals(this.customFields, writableVMInterfaceRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(virtualMachine, name, enabled, hashCodeNullable(parent), hashCodeNullable(bridge), hashCodeNullable(mtu), hashCodeNullable(primaryMacAddress), description, hashCodeNullable(mode), hashCodeNullable(untaggedVlan), taggedVlans, hashCodeNullable(qinqSvlan), hashCodeNullable(vlanTranslationPolicy), hashCodeNullable(vrf), hashCodeNullable(owner), tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(virtualMachine, name, enabled, parent, bridge, mtu, primaryMacAddress, description, mode, untaggedVlan, taggedVlans, qinqSvlan, vlanTranslationPolicy, vrf, owner, tags, customFields);
   }
 
   @Override

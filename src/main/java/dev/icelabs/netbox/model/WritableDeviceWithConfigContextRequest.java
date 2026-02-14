@@ -38,10 +38,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -80,11 +76,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   WritableDeviceWithConfigContextRequest.JSON_PROPERTY_TAGS,
   WritableDeviceWithConfigContextRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class WritableDeviceWithConfigContextRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable
-  private JsonNullable<String> name = JsonNullable.<String>undefined();
+  private String name;
 
   public static final String JSON_PROPERTY_DEVICE_TYPE = "device_type";
   @javax.annotation.Nonnull
@@ -96,11 +92,11 @@ public class WritableDeviceWithConfigContextRequest {
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestTenant> tenant = JsonNullable.<ASNRangeRequestTenant>undefined();
+  private ASNRangeRequestTenant tenant;
 
   public static final String JSON_PROPERTY_PLATFORM = "platform";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceTypeRequestDefaultPlatform> platform = JsonNullable.<DeviceTypeRequestDefaultPlatform>undefined();
+  private DeviceTypeRequestDefaultPlatform platform;
 
   public static final String JSON_PROPERTY_SERIAL = "serial";
   @javax.annotation.Nullable
@@ -108,7 +104,7 @@ public class WritableDeviceWithConfigContextRequest {
 
   public static final String JSON_PROPERTY_ASSET_TAG = "asset_tag";
   @javax.annotation.Nullable
-  private JsonNullable<String> assetTag = JsonNullable.<String>undefined();
+  private String assetTag;
 
   public static final String JSON_PROPERTY_SITE = "site";
   @javax.annotation.Nonnull
@@ -116,15 +112,15 @@ public class WritableDeviceWithConfigContextRequest {
 
   public static final String JSON_PROPERTY_LOCATION = "location";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceWithConfigContextRequestLocation> location = JsonNullable.<DeviceWithConfigContextRequestLocation>undefined();
+  private DeviceWithConfigContextRequestLocation location;
 
   public static final String JSON_PROPERTY_RACK = "rack";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceWithConfigContextRequestRack> rack = JsonNullable.<DeviceWithConfigContextRequestRack>undefined();
+  private DeviceWithConfigContextRequestRack rack;
 
   public static final String JSON_PROPERTY_POSITION = "position";
   @javax.annotation.Nullable
-  private JsonNullable<Double> position = JsonNullable.<Double>undefined();
+  private Double position;
 
   /**
    * * &#x60;front&#x60; - Front * &#x60;rear&#x60; - Rear
@@ -165,15 +161,15 @@ public class WritableDeviceWithConfigContextRequest {
 
   public static final String JSON_PROPERTY_FACE = "face";
   @javax.annotation.Nullable
-  private JsonNullable<FaceEnum> face = JsonNullable.<FaceEnum>undefined();
+  private FaceEnum face;
 
   public static final String JSON_PROPERTY_LATITUDE = "latitude";
   @javax.annotation.Nullable
-  private JsonNullable<Double> latitude = JsonNullable.<Double>undefined();
+  private Double latitude;
 
   public static final String JSON_PROPERTY_LONGITUDE = "longitude";
   @javax.annotation.Nullable
-  private JsonNullable<Double> longitude = JsonNullable.<Double>undefined();
+  private Double longitude;
 
   /**
    * * &#x60;offline&#x60; - Offline * &#x60;active&#x60; - Active * &#x60;planned&#x60; - Planned * &#x60;staged&#x60; - Staged * &#x60;failed&#x60; - Failed * &#x60;inventory&#x60; - Inventory * &#x60;decommissioning&#x60; - Decommissioning
@@ -279,35 +275,35 @@ public class WritableDeviceWithConfigContextRequest {
 
   public static final String JSON_PROPERTY_AIRFLOW = "airflow";
   @javax.annotation.Nullable
-  private JsonNullable<AirflowEnum> airflow = JsonNullable.<AirflowEnum>undefined();
+  private AirflowEnum airflow;
 
   public static final String JSON_PROPERTY_PRIMARY_IP4 = "primary_ip4";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceWithConfigContextRequestPrimaryIp4> primaryIp4 = JsonNullable.<DeviceWithConfigContextRequestPrimaryIp4>undefined();
+  private DeviceWithConfigContextRequestPrimaryIp4 primaryIp4;
 
   public static final String JSON_PROPERTY_PRIMARY_IP6 = "primary_ip6";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceWithConfigContextRequestPrimaryIp4> primaryIp6 = JsonNullable.<DeviceWithConfigContextRequestPrimaryIp4>undefined();
+  private DeviceWithConfigContextRequestPrimaryIp4 primaryIp6;
 
   public static final String JSON_PROPERTY_OOB_IP = "oob_ip";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceWithConfigContextRequestPrimaryIp4> oobIp = JsonNullable.<DeviceWithConfigContextRequestPrimaryIp4>undefined();
+  private DeviceWithConfigContextRequestPrimaryIp4 oobIp;
 
   public static final String JSON_PROPERTY_CLUSTER = "cluster";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceWithConfigContextRequestCluster> cluster = JsonNullable.<DeviceWithConfigContextRequestCluster>undefined();
+  private DeviceWithConfigContextRequestCluster cluster;
 
   public static final String JSON_PROPERTY_VIRTUAL_CHASSIS = "virtual_chassis";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceWithConfigContextRequestVirtualChassis> virtualChassis = JsonNullable.<DeviceWithConfigContextRequestVirtualChassis>undefined();
+  private DeviceWithConfigContextRequestVirtualChassis virtualChassis;
 
   public static final String JSON_PROPERTY_VC_POSITION = "vc_position";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> vcPosition = JsonNullable.<Integer>undefined();
+  private Integer vcPosition;
 
   public static final String JSON_PROPERTY_VC_PRIORITY = "vc_priority";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> vcPriority = JsonNullable.<Integer>undefined();
+  private Integer vcPriority;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -315,7 +311,7 @@ public class WritableDeviceWithConfigContextRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -323,11 +319,11 @@ public class WritableDeviceWithConfigContextRequest {
 
   public static final String JSON_PROPERTY_CONFIG_TEMPLATE = "config_template";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceRoleRequestConfigTemplate> configTemplate = JsonNullable.<DeviceRoleRequestConfigTemplate>undefined();
+  private DeviceRoleRequestConfigTemplate configTemplate;
 
   public static final String JSON_PROPERTY_LOCAL_CONTEXT_DATA = "local_context_data";
   @javax.annotation.Nullable
-  private JsonNullable<Object> localContextData = JsonNullable.<Object>of(null);
+  private Object localContextData = null;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -341,8 +337,8 @@ public class WritableDeviceWithConfigContextRequest {
   }
 
   public WritableDeviceWithConfigContextRequest name(@javax.annotation.Nullable String name) {
-    this.name = JsonNullable.<String>of(name);
     
+    this.name = name;
     return this;
   }
 
@@ -351,26 +347,18 @@ public class WritableDeviceWithConfigContextRequest {
    * @return name
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getName() {
-        return name.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getName_JsonNullable() {
+  public String getName() {
     return name;
   }
-  
-  @JsonProperty(JSON_PROPERTY_NAME)
-  public void setName_JsonNullable(JsonNullable<String> name) {
-    this.name = name;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@javax.annotation.Nullable String name) {
-    this.name = JsonNullable.<String>of(name);
+    this.name = name;
   }
 
   public WritableDeviceWithConfigContextRequest deviceType(@javax.annotation.Nonnull DeviceBayTemplateRequestDeviceType deviceType) {
@@ -424,8 +412,8 @@ public class WritableDeviceWithConfigContextRequest {
   }
 
   public WritableDeviceWithConfigContextRequest tenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -434,31 +422,23 @@ public class WritableDeviceWithConfigContextRequest {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestTenant> getTenant_JsonNullable() {
+  public ASNRangeRequestTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<ASNRangeRequestTenant> tenant) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
     this.tenant = tenant;
   }
 
-  public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
-  }
-
   public WritableDeviceWithConfigContextRequest platform(@javax.annotation.Nullable DeviceTypeRequestDefaultPlatform platform) {
-    this.platform = JsonNullable.<DeviceTypeRequestDefaultPlatform>of(platform);
     
+    this.platform = platform;
     return this;
   }
 
@@ -467,26 +447,18 @@ public class WritableDeviceWithConfigContextRequest {
    * @return platform
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceTypeRequestDefaultPlatform getPlatform() {
-        return platform.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PLATFORM, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceTypeRequestDefaultPlatform> getPlatform_JsonNullable() {
+  public DeviceTypeRequestDefaultPlatform getPlatform() {
     return platform;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PLATFORM)
-  public void setPlatform_JsonNullable(JsonNullable<DeviceTypeRequestDefaultPlatform> platform) {
-    this.platform = platform;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PLATFORM, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPlatform(@javax.annotation.Nullable DeviceTypeRequestDefaultPlatform platform) {
-    this.platform = JsonNullable.<DeviceTypeRequestDefaultPlatform>of(platform);
+    this.platform = platform;
   }
 
   public WritableDeviceWithConfigContextRequest serial(@javax.annotation.Nullable String serial) {
@@ -515,8 +487,8 @@ public class WritableDeviceWithConfigContextRequest {
   }
 
   public WritableDeviceWithConfigContextRequest assetTag(@javax.annotation.Nullable String assetTag) {
-    this.assetTag = JsonNullable.<String>of(assetTag);
     
+    this.assetTag = assetTag;
     return this;
   }
 
@@ -525,26 +497,18 @@ public class WritableDeviceWithConfigContextRequest {
    * @return assetTag
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getAssetTag() {
-        return assetTag.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ASSET_TAG, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getAssetTag_JsonNullable() {
+  public String getAssetTag() {
     return assetTag;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ASSET_TAG)
-  public void setAssetTag_JsonNullable(JsonNullable<String> assetTag) {
-    this.assetTag = assetTag;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_ASSET_TAG, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssetTag(@javax.annotation.Nullable String assetTag) {
-    this.assetTag = JsonNullable.<String>of(assetTag);
+    this.assetTag = assetTag;
   }
 
   public WritableDeviceWithConfigContextRequest site(@javax.annotation.Nonnull DeviceWithConfigContextRequestSite site) {
@@ -573,8 +537,8 @@ public class WritableDeviceWithConfigContextRequest {
   }
 
   public WritableDeviceWithConfigContextRequest location(@javax.annotation.Nullable DeviceWithConfigContextRequestLocation location) {
-    this.location = JsonNullable.<DeviceWithConfigContextRequestLocation>of(location);
     
+    this.location = location;
     return this;
   }
 
@@ -583,31 +547,23 @@ public class WritableDeviceWithConfigContextRequest {
    * @return location
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceWithConfigContextRequestLocation getLocation() {
-        return location.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_LOCATION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceWithConfigContextRequestLocation> getLocation_JsonNullable() {
+  public DeviceWithConfigContextRequestLocation getLocation() {
     return location;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LOCATION)
-  public void setLocation_JsonNullable(JsonNullable<DeviceWithConfigContextRequestLocation> location) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_LOCATION, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setLocation(@javax.annotation.Nullable DeviceWithConfigContextRequestLocation location) {
     this.location = location;
   }
 
-  public void setLocation(@javax.annotation.Nullable DeviceWithConfigContextRequestLocation location) {
-    this.location = JsonNullable.<DeviceWithConfigContextRequestLocation>of(location);
-  }
-
   public WritableDeviceWithConfigContextRequest rack(@javax.annotation.Nullable DeviceWithConfigContextRequestRack rack) {
-    this.rack = JsonNullable.<DeviceWithConfigContextRequestRack>of(rack);
     
+    this.rack = rack;
     return this;
   }
 
@@ -616,31 +572,23 @@ public class WritableDeviceWithConfigContextRequest {
    * @return rack
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceWithConfigContextRequestRack getRack() {
-        return rack.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_RACK, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceWithConfigContextRequestRack> getRack_JsonNullable() {
+  public DeviceWithConfigContextRequestRack getRack() {
     return rack;
   }
-  
-  @JsonProperty(JSON_PROPERTY_RACK)
-  public void setRack_JsonNullable(JsonNullable<DeviceWithConfigContextRequestRack> rack) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_RACK, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRack(@javax.annotation.Nullable DeviceWithConfigContextRequestRack rack) {
     this.rack = rack;
   }
 
-  public void setRack(@javax.annotation.Nullable DeviceWithConfigContextRequestRack rack) {
-    this.rack = JsonNullable.<DeviceWithConfigContextRequestRack>of(rack);
-  }
-
   public WritableDeviceWithConfigContextRequest position(@javax.annotation.Nullable Double position) {
-    this.position = JsonNullable.<Double>of(position);
     
+    this.position = position;
     return this;
   }
 
@@ -651,31 +599,23 @@ public class WritableDeviceWithConfigContextRequest {
    * @return position
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getPosition() {
-        return position.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_POSITION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getPosition_JsonNullable() {
+  public Double getPosition() {
     return position;
   }
-  
-  @JsonProperty(JSON_PROPERTY_POSITION)
-  public void setPosition_JsonNullable(JsonNullable<Double> position) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_POSITION, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPosition(@javax.annotation.Nullable Double position) {
     this.position = position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Double position) {
-    this.position = JsonNullable.<Double>of(position);
-  }
-
   public WritableDeviceWithConfigContextRequest face(@javax.annotation.Nullable FaceEnum face) {
-    this.face = JsonNullable.<FaceEnum>of(face);
     
+    this.face = face;
     return this;
   }
 
@@ -684,31 +624,23 @@ public class WritableDeviceWithConfigContextRequest {
    * @return face
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public FaceEnum getFace() {
-        return face.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_FACE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<FaceEnum> getFace_JsonNullable() {
+  public FaceEnum getFace() {
     return face;
   }
-  
-  @JsonProperty(JSON_PROPERTY_FACE)
-  public void setFace_JsonNullable(JsonNullable<FaceEnum> face) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_FACE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setFace(@javax.annotation.Nullable FaceEnum face) {
     this.face = face;
   }
 
-  public void setFace(@javax.annotation.Nullable FaceEnum face) {
-    this.face = JsonNullable.<FaceEnum>of(face);
-  }
-
   public WritableDeviceWithConfigContextRequest latitude(@javax.annotation.Nullable Double latitude) {
-    this.latitude = JsonNullable.<Double>of(latitude);
     
+    this.latitude = latitude;
     return this;
   }
 
@@ -719,31 +651,23 @@ public class WritableDeviceWithConfigContextRequest {
    * @return latitude
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getLatitude() {
-        return latitude.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_LATITUDE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getLatitude_JsonNullable() {
+  public Double getLatitude() {
     return latitude;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LATITUDE)
-  public void setLatitude_JsonNullable(JsonNullable<Double> latitude) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_LATITUDE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setLatitude(@javax.annotation.Nullable Double latitude) {
     this.latitude = latitude;
   }
 
-  public void setLatitude(@javax.annotation.Nullable Double latitude) {
-    this.latitude = JsonNullable.<Double>of(latitude);
-  }
-
   public WritableDeviceWithConfigContextRequest longitude(@javax.annotation.Nullable Double longitude) {
-    this.longitude = JsonNullable.<Double>of(longitude);
     
+    this.longitude = longitude;
     return this;
   }
 
@@ -754,26 +678,18 @@ public class WritableDeviceWithConfigContextRequest {
    * @return longitude
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getLongitude() {
-        return longitude.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_LONGITUDE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getLongitude_JsonNullable() {
+  public Double getLongitude() {
     return longitude;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LONGITUDE)
-  public void setLongitude_JsonNullable(JsonNullable<Double> longitude) {
-    this.longitude = longitude;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_LONGITUDE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLongitude(@javax.annotation.Nullable Double longitude) {
-    this.longitude = JsonNullable.<Double>of(longitude);
+    this.longitude = longitude;
   }
 
   public WritableDeviceWithConfigContextRequest status(@javax.annotation.Nullable StatusEnum status) {
@@ -802,8 +718,8 @@ public class WritableDeviceWithConfigContextRequest {
   }
 
   public WritableDeviceWithConfigContextRequest airflow(@javax.annotation.Nullable AirflowEnum airflow) {
-    this.airflow = JsonNullable.<AirflowEnum>of(airflow);
     
+    this.airflow = airflow;
     return this;
   }
 
@@ -812,31 +728,23 @@ public class WritableDeviceWithConfigContextRequest {
    * @return airflow
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public AirflowEnum getAirflow() {
-        return airflow.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_AIRFLOW, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<AirflowEnum> getAirflow_JsonNullable() {
+  public AirflowEnum getAirflow() {
     return airflow;
   }
-  
-  @JsonProperty(JSON_PROPERTY_AIRFLOW)
-  public void setAirflow_JsonNullable(JsonNullable<AirflowEnum> airflow) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_AIRFLOW, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAirflow(@javax.annotation.Nullable AirflowEnum airflow) {
     this.airflow = airflow;
   }
 
-  public void setAirflow(@javax.annotation.Nullable AirflowEnum airflow) {
-    this.airflow = JsonNullable.<AirflowEnum>of(airflow);
-  }
-
   public WritableDeviceWithConfigContextRequest primaryIp4(@javax.annotation.Nullable DeviceWithConfigContextRequestPrimaryIp4 primaryIp4) {
-    this.primaryIp4 = JsonNullable.<DeviceWithConfigContextRequestPrimaryIp4>of(primaryIp4);
     
+    this.primaryIp4 = primaryIp4;
     return this;
   }
 
@@ -845,31 +753,23 @@ public class WritableDeviceWithConfigContextRequest {
    * @return primaryIp4
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceWithConfigContextRequestPrimaryIp4 getPrimaryIp4() {
-        return primaryIp4.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PRIMARY_IP4, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceWithConfigContextRequestPrimaryIp4> getPrimaryIp4_JsonNullable() {
+  public DeviceWithConfigContextRequestPrimaryIp4 getPrimaryIp4() {
     return primaryIp4;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PRIMARY_IP4)
-  public void setPrimaryIp4_JsonNullable(JsonNullable<DeviceWithConfigContextRequestPrimaryIp4> primaryIp4) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_PRIMARY_IP4, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPrimaryIp4(@javax.annotation.Nullable DeviceWithConfigContextRequestPrimaryIp4 primaryIp4) {
     this.primaryIp4 = primaryIp4;
   }
 
-  public void setPrimaryIp4(@javax.annotation.Nullable DeviceWithConfigContextRequestPrimaryIp4 primaryIp4) {
-    this.primaryIp4 = JsonNullable.<DeviceWithConfigContextRequestPrimaryIp4>of(primaryIp4);
-  }
-
   public WritableDeviceWithConfigContextRequest primaryIp6(@javax.annotation.Nullable DeviceWithConfigContextRequestPrimaryIp4 primaryIp6) {
-    this.primaryIp6 = JsonNullable.<DeviceWithConfigContextRequestPrimaryIp4>of(primaryIp6);
     
+    this.primaryIp6 = primaryIp6;
     return this;
   }
 
@@ -878,31 +778,23 @@ public class WritableDeviceWithConfigContextRequest {
    * @return primaryIp6
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceWithConfigContextRequestPrimaryIp4 getPrimaryIp6() {
-        return primaryIp6.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PRIMARY_IP6, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceWithConfigContextRequestPrimaryIp4> getPrimaryIp6_JsonNullable() {
+  public DeviceWithConfigContextRequestPrimaryIp4 getPrimaryIp6() {
     return primaryIp6;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PRIMARY_IP6)
-  public void setPrimaryIp6_JsonNullable(JsonNullable<DeviceWithConfigContextRequestPrimaryIp4> primaryIp6) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_PRIMARY_IP6, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPrimaryIp6(@javax.annotation.Nullable DeviceWithConfigContextRequestPrimaryIp4 primaryIp6) {
     this.primaryIp6 = primaryIp6;
   }
 
-  public void setPrimaryIp6(@javax.annotation.Nullable DeviceWithConfigContextRequestPrimaryIp4 primaryIp6) {
-    this.primaryIp6 = JsonNullable.<DeviceWithConfigContextRequestPrimaryIp4>of(primaryIp6);
-  }
-
   public WritableDeviceWithConfigContextRequest oobIp(@javax.annotation.Nullable DeviceWithConfigContextRequestPrimaryIp4 oobIp) {
-    this.oobIp = JsonNullable.<DeviceWithConfigContextRequestPrimaryIp4>of(oobIp);
     
+    this.oobIp = oobIp;
     return this;
   }
 
@@ -911,31 +803,23 @@ public class WritableDeviceWithConfigContextRequest {
    * @return oobIp
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceWithConfigContextRequestPrimaryIp4 getOobIp() {
-        return oobIp.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OOB_IP, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceWithConfigContextRequestPrimaryIp4> getOobIp_JsonNullable() {
+  public DeviceWithConfigContextRequestPrimaryIp4 getOobIp() {
     return oobIp;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OOB_IP)
-  public void setOobIp_JsonNullable(JsonNullable<DeviceWithConfigContextRequestPrimaryIp4> oobIp) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_OOB_IP, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setOobIp(@javax.annotation.Nullable DeviceWithConfigContextRequestPrimaryIp4 oobIp) {
     this.oobIp = oobIp;
   }
 
-  public void setOobIp(@javax.annotation.Nullable DeviceWithConfigContextRequestPrimaryIp4 oobIp) {
-    this.oobIp = JsonNullable.<DeviceWithConfigContextRequestPrimaryIp4>of(oobIp);
-  }
-
   public WritableDeviceWithConfigContextRequest cluster(@javax.annotation.Nullable DeviceWithConfigContextRequestCluster cluster) {
-    this.cluster = JsonNullable.<DeviceWithConfigContextRequestCluster>of(cluster);
     
+    this.cluster = cluster;
     return this;
   }
 
@@ -944,31 +828,23 @@ public class WritableDeviceWithConfigContextRequest {
    * @return cluster
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceWithConfigContextRequestCluster getCluster() {
-        return cluster.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_CLUSTER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceWithConfigContextRequestCluster> getCluster_JsonNullable() {
+  public DeviceWithConfigContextRequestCluster getCluster() {
     return cluster;
   }
-  
-  @JsonProperty(JSON_PROPERTY_CLUSTER)
-  public void setCluster_JsonNullable(JsonNullable<DeviceWithConfigContextRequestCluster> cluster) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_CLUSTER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCluster(@javax.annotation.Nullable DeviceWithConfigContextRequestCluster cluster) {
     this.cluster = cluster;
   }
 
-  public void setCluster(@javax.annotation.Nullable DeviceWithConfigContextRequestCluster cluster) {
-    this.cluster = JsonNullable.<DeviceWithConfigContextRequestCluster>of(cluster);
-  }
-
   public WritableDeviceWithConfigContextRequest virtualChassis(@javax.annotation.Nullable DeviceWithConfigContextRequestVirtualChassis virtualChassis) {
-    this.virtualChassis = JsonNullable.<DeviceWithConfigContextRequestVirtualChassis>of(virtualChassis);
     
+    this.virtualChassis = virtualChassis;
     return this;
   }
 
@@ -977,31 +853,23 @@ public class WritableDeviceWithConfigContextRequest {
    * @return virtualChassis
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceWithConfigContextRequestVirtualChassis getVirtualChassis() {
-        return virtualChassis.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VIRTUAL_CHASSIS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceWithConfigContextRequestVirtualChassis> getVirtualChassis_JsonNullable() {
+  public DeviceWithConfigContextRequestVirtualChassis getVirtualChassis() {
     return virtualChassis;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VIRTUAL_CHASSIS)
-  public void setVirtualChassis_JsonNullable(JsonNullable<DeviceWithConfigContextRequestVirtualChassis> virtualChassis) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_VIRTUAL_CHASSIS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setVirtualChassis(@javax.annotation.Nullable DeviceWithConfigContextRequestVirtualChassis virtualChassis) {
     this.virtualChassis = virtualChassis;
   }
 
-  public void setVirtualChassis(@javax.annotation.Nullable DeviceWithConfigContextRequestVirtualChassis virtualChassis) {
-    this.virtualChassis = JsonNullable.<DeviceWithConfigContextRequestVirtualChassis>of(virtualChassis);
-  }
-
   public WritableDeviceWithConfigContextRequest vcPosition(@javax.annotation.Nullable Integer vcPosition) {
-    this.vcPosition = JsonNullable.<Integer>of(vcPosition);
     
+    this.vcPosition = vcPosition;
     return this;
   }
 
@@ -1012,31 +880,23 @@ public class WritableDeviceWithConfigContextRequest {
    * @return vcPosition
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getVcPosition() {
-        return vcPosition.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VC_POSITION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getVcPosition_JsonNullable() {
+  public Integer getVcPosition() {
     return vcPosition;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VC_POSITION)
-  public void setVcPosition_JsonNullable(JsonNullable<Integer> vcPosition) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_VC_POSITION, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setVcPosition(@javax.annotation.Nullable Integer vcPosition) {
     this.vcPosition = vcPosition;
   }
 
-  public void setVcPosition(@javax.annotation.Nullable Integer vcPosition) {
-    this.vcPosition = JsonNullable.<Integer>of(vcPosition);
-  }
-
   public WritableDeviceWithConfigContextRequest vcPriority(@javax.annotation.Nullable Integer vcPriority) {
-    this.vcPriority = JsonNullable.<Integer>of(vcPriority);
     
+    this.vcPriority = vcPriority;
     return this;
   }
 
@@ -1047,26 +907,18 @@ public class WritableDeviceWithConfigContextRequest {
    * @return vcPriority
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getVcPriority() {
-        return vcPriority.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VC_PRIORITY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getVcPriority_JsonNullable() {
+  public Integer getVcPriority() {
     return vcPriority;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VC_PRIORITY)
-  public void setVcPriority_JsonNullable(JsonNullable<Integer> vcPriority) {
-    this.vcPriority = vcPriority;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_VC_PRIORITY, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVcPriority(@javax.annotation.Nullable Integer vcPriority) {
-    this.vcPriority = JsonNullable.<Integer>of(vcPriority);
+    this.vcPriority = vcPriority;
   }
 
   public WritableDeviceWithConfigContextRequest description(@javax.annotation.Nullable String description) {
@@ -1095,8 +947,8 @@ public class WritableDeviceWithConfigContextRequest {
   }
 
   public WritableDeviceWithConfigContextRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -1105,26 +957,18 @@ public class WritableDeviceWithConfigContextRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public WritableDeviceWithConfigContextRequest comments(@javax.annotation.Nullable String comments) {
@@ -1153,8 +997,8 @@ public class WritableDeviceWithConfigContextRequest {
   }
 
   public WritableDeviceWithConfigContextRequest configTemplate(@javax.annotation.Nullable DeviceRoleRequestConfigTemplate configTemplate) {
-    this.configTemplate = JsonNullable.<DeviceRoleRequestConfigTemplate>of(configTemplate);
     
+    this.configTemplate = configTemplate;
     return this;
   }
 
@@ -1163,31 +1007,23 @@ public class WritableDeviceWithConfigContextRequest {
    * @return configTemplate
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceRoleRequestConfigTemplate getConfigTemplate() {
-        return configTemplate.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_CONFIG_TEMPLATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceRoleRequestConfigTemplate> getConfigTemplate_JsonNullable() {
+  public DeviceRoleRequestConfigTemplate getConfigTemplate() {
     return configTemplate;
   }
-  
-  @JsonProperty(JSON_PROPERTY_CONFIG_TEMPLATE)
-  public void setConfigTemplate_JsonNullable(JsonNullable<DeviceRoleRequestConfigTemplate> configTemplate) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_CONFIG_TEMPLATE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setConfigTemplate(@javax.annotation.Nullable DeviceRoleRequestConfigTemplate configTemplate) {
     this.configTemplate = configTemplate;
   }
 
-  public void setConfigTemplate(@javax.annotation.Nullable DeviceRoleRequestConfigTemplate configTemplate) {
-    this.configTemplate = JsonNullable.<DeviceRoleRequestConfigTemplate>of(configTemplate);
-  }
-
   public WritableDeviceWithConfigContextRequest localContextData(@javax.annotation.Nullable Object localContextData) {
-    this.localContextData = JsonNullable.<Object>of(localContextData);
     
+    this.localContextData = localContextData;
     return this;
   }
 
@@ -1196,26 +1032,18 @@ public class WritableDeviceWithConfigContextRequest {
    * @return localContextData
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Object getLocalContextData() {
-        return localContextData.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_LOCAL_CONTEXT_DATA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Object> getLocalContextData_JsonNullable() {
+  public Object getLocalContextData() {
     return localContextData;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LOCAL_CONTEXT_DATA)
-  public void setLocalContextData_JsonNullable(JsonNullable<Object> localContextData) {
-    this.localContextData = localContextData;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_LOCAL_CONTEXT_DATA, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLocalContextData(@javax.annotation.Nullable Object localContextData) {
-    this.localContextData = JsonNullable.<Object>of(localContextData);
+    this.localContextData = localContextData;
   }
 
   public WritableDeviceWithConfigContextRequest tags(@javax.annotation.Nullable List<NestedTagRequest> tags) {
@@ -1294,52 +1122,41 @@ public class WritableDeviceWithConfigContextRequest {
       return false;
     }
     WritableDeviceWithConfigContextRequest writableDeviceWithConfigContextRequest = (WritableDeviceWithConfigContextRequest) o;
-    return equalsNullable(this.name, writableDeviceWithConfigContextRequest.name) &&
+    return Objects.equals(this.name, writableDeviceWithConfigContextRequest.name) &&
         Objects.equals(this.deviceType, writableDeviceWithConfigContextRequest.deviceType) &&
         Objects.equals(this.role, writableDeviceWithConfigContextRequest.role) &&
-        equalsNullable(this.tenant, writableDeviceWithConfigContextRequest.tenant) &&
-        equalsNullable(this.platform, writableDeviceWithConfigContextRequest.platform) &&
+        Objects.equals(this.tenant, writableDeviceWithConfigContextRequest.tenant) &&
+        Objects.equals(this.platform, writableDeviceWithConfigContextRequest.platform) &&
         Objects.equals(this.serial, writableDeviceWithConfigContextRequest.serial) &&
-        equalsNullable(this.assetTag, writableDeviceWithConfigContextRequest.assetTag) &&
+        Objects.equals(this.assetTag, writableDeviceWithConfigContextRequest.assetTag) &&
         Objects.equals(this.site, writableDeviceWithConfigContextRequest.site) &&
-        equalsNullable(this.location, writableDeviceWithConfigContextRequest.location) &&
-        equalsNullable(this.rack, writableDeviceWithConfigContextRequest.rack) &&
-        equalsNullable(this.position, writableDeviceWithConfigContextRequest.position) &&
-        equalsNullable(this.face, writableDeviceWithConfigContextRequest.face) &&
-        equalsNullable(this.latitude, writableDeviceWithConfigContextRequest.latitude) &&
-        equalsNullable(this.longitude, writableDeviceWithConfigContextRequest.longitude) &&
+        Objects.equals(this.location, writableDeviceWithConfigContextRequest.location) &&
+        Objects.equals(this.rack, writableDeviceWithConfigContextRequest.rack) &&
+        Objects.equals(this.position, writableDeviceWithConfigContextRequest.position) &&
+        Objects.equals(this.face, writableDeviceWithConfigContextRequest.face) &&
+        Objects.equals(this.latitude, writableDeviceWithConfigContextRequest.latitude) &&
+        Objects.equals(this.longitude, writableDeviceWithConfigContextRequest.longitude) &&
         Objects.equals(this.status, writableDeviceWithConfigContextRequest.status) &&
-        equalsNullable(this.airflow, writableDeviceWithConfigContextRequest.airflow) &&
-        equalsNullable(this.primaryIp4, writableDeviceWithConfigContextRequest.primaryIp4) &&
-        equalsNullable(this.primaryIp6, writableDeviceWithConfigContextRequest.primaryIp6) &&
-        equalsNullable(this.oobIp, writableDeviceWithConfigContextRequest.oobIp) &&
-        equalsNullable(this.cluster, writableDeviceWithConfigContextRequest.cluster) &&
-        equalsNullable(this.virtualChassis, writableDeviceWithConfigContextRequest.virtualChassis) &&
-        equalsNullable(this.vcPosition, writableDeviceWithConfigContextRequest.vcPosition) &&
-        equalsNullable(this.vcPriority, writableDeviceWithConfigContextRequest.vcPriority) &&
+        Objects.equals(this.airflow, writableDeviceWithConfigContextRequest.airflow) &&
+        Objects.equals(this.primaryIp4, writableDeviceWithConfigContextRequest.primaryIp4) &&
+        Objects.equals(this.primaryIp6, writableDeviceWithConfigContextRequest.primaryIp6) &&
+        Objects.equals(this.oobIp, writableDeviceWithConfigContextRequest.oobIp) &&
+        Objects.equals(this.cluster, writableDeviceWithConfigContextRequest.cluster) &&
+        Objects.equals(this.virtualChassis, writableDeviceWithConfigContextRequest.virtualChassis) &&
+        Objects.equals(this.vcPosition, writableDeviceWithConfigContextRequest.vcPosition) &&
+        Objects.equals(this.vcPriority, writableDeviceWithConfigContextRequest.vcPriority) &&
         Objects.equals(this.description, writableDeviceWithConfigContextRequest.description) &&
-        equalsNullable(this.owner, writableDeviceWithConfigContextRequest.owner) &&
+        Objects.equals(this.owner, writableDeviceWithConfigContextRequest.owner) &&
         Objects.equals(this.comments, writableDeviceWithConfigContextRequest.comments) &&
-        equalsNullable(this.configTemplate, writableDeviceWithConfigContextRequest.configTemplate) &&
-        equalsNullable(this.localContextData, writableDeviceWithConfigContextRequest.localContextData) &&
+        Objects.equals(this.configTemplate, writableDeviceWithConfigContextRequest.configTemplate) &&
+        Objects.equals(this.localContextData, writableDeviceWithConfigContextRequest.localContextData) &&
         Objects.equals(this.tags, writableDeviceWithConfigContextRequest.tags) &&
         Objects.equals(this.customFields, writableDeviceWithConfigContextRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(name), deviceType, role, hashCodeNullable(tenant), hashCodeNullable(platform), serial, hashCodeNullable(assetTag), site, hashCodeNullable(location), hashCodeNullable(rack), hashCodeNullable(position), hashCodeNullable(face), hashCodeNullable(latitude), hashCodeNullable(longitude), status, hashCodeNullable(airflow), hashCodeNullable(primaryIp4), hashCodeNullable(primaryIp6), hashCodeNullable(oobIp), hashCodeNullable(cluster), hashCodeNullable(virtualChassis), hashCodeNullable(vcPosition), hashCodeNullable(vcPriority), description, hashCodeNullable(owner), comments, hashCodeNullable(configTemplate), hashCodeNullable(localContextData), tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, deviceType, role, tenant, platform, serial, assetTag, site, location, rack, position, face, latitude, longitude, status, airflow, primaryIp4, primaryIp6, oobIp, cluster, virtualChassis, vcPosition, vcPriority, description, owner, comments, configTemplate, localContextData, tags, customFields);
   }
 
   @Override

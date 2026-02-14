@@ -31,10 +31,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -61,7 +57,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   DcimPowerFeedsCreateRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
 @JsonTypeName("dcim_power_feeds_create_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class DcimPowerFeedsCreateRequest {
   public static final String JSON_PROPERTY_POWER_PANEL = "power_panel";
   @javax.annotation.Nonnull
@@ -69,7 +65,7 @@ public class DcimPowerFeedsCreateRequest {
 
   public static final String JSON_PROPERTY_RACK = "rack";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceWithConfigContextRequestRack> rack = JsonNullable.<DeviceWithConfigContextRequestRack>undefined();
+  private DeviceWithConfigContextRequestRack rack;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -257,11 +253,11 @@ public class DcimPowerFeedsCreateRequest {
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestTenant> tenant = JsonNullable.<ASNRangeRequestTenant>undefined();
+  private ASNRangeRequestTenant tenant;
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -304,8 +300,8 @@ public class DcimPowerFeedsCreateRequest {
   }
 
   public DcimPowerFeedsCreateRequest rack(@javax.annotation.Nullable DeviceWithConfigContextRequestRack rack) {
-    this.rack = JsonNullable.<DeviceWithConfigContextRequestRack>of(rack);
     
+    this.rack = rack;
     return this;
   }
 
@@ -314,26 +310,18 @@ public class DcimPowerFeedsCreateRequest {
    * @return rack
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceWithConfigContextRequestRack getRack() {
-        return rack.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_RACK, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceWithConfigContextRequestRack> getRack_JsonNullable() {
+  public DeviceWithConfigContextRequestRack getRack() {
     return rack;
   }
-  
-  @JsonProperty(JSON_PROPERTY_RACK)
-  public void setRack_JsonNullable(JsonNullable<DeviceWithConfigContextRequestRack> rack) {
-    this.rack = rack;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_RACK, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRack(@javax.annotation.Nullable DeviceWithConfigContextRequestRack rack) {
-    this.rack = JsonNullable.<DeviceWithConfigContextRequestRack>of(rack);
+    this.rack = rack;
   }
 
   public DcimPowerFeedsCreateRequest name(@javax.annotation.Nonnull String name) {
@@ -593,8 +581,8 @@ public class DcimPowerFeedsCreateRequest {
   }
 
   public DcimPowerFeedsCreateRequest tenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -603,31 +591,23 @@ public class DcimPowerFeedsCreateRequest {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestTenant> getTenant_JsonNullable() {
+  public ASNRangeRequestTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<ASNRangeRequestTenant> tenant) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
     this.tenant = tenant;
   }
 
-  public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
-  }
-
   public DcimPowerFeedsCreateRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -636,26 +616,18 @@ public class DcimPowerFeedsCreateRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public DcimPowerFeedsCreateRequest comments(@javax.annotation.Nullable String comments) {
@@ -760,7 +732,7 @@ public class DcimPowerFeedsCreateRequest {
     }
     DcimPowerFeedsCreateRequest dcimPowerFeedsCreateRequest = (DcimPowerFeedsCreateRequest) o;
     return Objects.equals(this.powerPanel, dcimPowerFeedsCreateRequest.powerPanel) &&
-        equalsNullable(this.rack, dcimPowerFeedsCreateRequest.rack) &&
+        Objects.equals(this.rack, dcimPowerFeedsCreateRequest.rack) &&
         Objects.equals(this.name, dcimPowerFeedsCreateRequest.name) &&
         Objects.equals(this.status, dcimPowerFeedsCreateRequest.status) &&
         Objects.equals(this.type, dcimPowerFeedsCreateRequest.type) &&
@@ -771,27 +743,16 @@ public class DcimPowerFeedsCreateRequest {
         Objects.equals(this.maxUtilization, dcimPowerFeedsCreateRequest.maxUtilization) &&
         Objects.equals(this.markConnected, dcimPowerFeedsCreateRequest.markConnected) &&
         Objects.equals(this.description, dcimPowerFeedsCreateRequest.description) &&
-        equalsNullable(this.tenant, dcimPowerFeedsCreateRequest.tenant) &&
-        equalsNullable(this.owner, dcimPowerFeedsCreateRequest.owner) &&
+        Objects.equals(this.tenant, dcimPowerFeedsCreateRequest.tenant) &&
+        Objects.equals(this.owner, dcimPowerFeedsCreateRequest.owner) &&
         Objects.equals(this.comments, dcimPowerFeedsCreateRequest.comments) &&
         Objects.equals(this.tags, dcimPowerFeedsCreateRequest.tags) &&
         Objects.equals(this.customFields, dcimPowerFeedsCreateRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(powerPanel, hashCodeNullable(rack), name, status, type, supply, phase, voltage, amperage, maxUtilization, markConnected, description, hashCodeNullable(tenant), hashCodeNullable(owner), comments, tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(powerPanel, rack, name, status, type, supply, phase, voltage, amperage, maxUtilization, markConnected, description, tenant, owner, comments, tags, customFields);
   }
 
   @Override

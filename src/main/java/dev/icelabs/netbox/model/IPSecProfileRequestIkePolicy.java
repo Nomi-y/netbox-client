@@ -32,7 +32,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   IPSecProfileRequestIkePolicy.JSON_PROPERTY_DESCRIPTION
 })
 @JsonTypeName("IPSecProfileRequest_ike_policy")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class IPSecProfileRequestIkePolicy {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull

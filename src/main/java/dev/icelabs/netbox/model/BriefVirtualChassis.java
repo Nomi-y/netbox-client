@@ -22,10 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import dev.icelabs.netbox.model.NestedDevice;
 import java.net.URI;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -41,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   BriefVirtualChassis.JSON_PROPERTY_DESCRIPTION,
   BriefVirtualChassis.JSON_PROPERTY_MEMBER_COUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class BriefVirtualChassis {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -61,7 +57,7 @@ public class BriefVirtualChassis {
 
   public static final String JSON_PROPERTY_MASTER = "master";
   @javax.annotation.Nullable
-  private JsonNullable<NestedDevice> master = JsonNullable.<NestedDevice>undefined();
+  private NestedDevice master;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -158,8 +154,8 @@ public class BriefVirtualChassis {
   }
 
   public BriefVirtualChassis master(@javax.annotation.Nullable NestedDevice master) {
-    this.master = JsonNullable.<NestedDevice>of(master);
     
+    this.master = master;
     return this;
   }
 
@@ -168,26 +164,18 @@ public class BriefVirtualChassis {
    * @return master
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public NestedDevice getMaster() {
-        return master.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MASTER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<NestedDevice> getMaster_JsonNullable() {
+  public NestedDevice getMaster() {
     return master;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MASTER)
-  public void setMaster_JsonNullable(JsonNullable<NestedDevice> master) {
-    this.master = master;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_MASTER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMaster(@javax.annotation.Nullable NestedDevice master) {
-    this.master = JsonNullable.<NestedDevice>of(master);
+    this.master = master;
   }
 
   public BriefVirtualChassis description(@javax.annotation.Nullable String description) {
@@ -243,25 +231,14 @@ public class BriefVirtualChassis {
         Objects.equals(this.url, briefVirtualChassis.url) &&
         Objects.equals(this.display, briefVirtualChassis.display) &&
         Objects.equals(this.name, briefVirtualChassis.name) &&
-        equalsNullable(this.master, briefVirtualChassis.master) &&
+        Objects.equals(this.master, briefVirtualChassis.master) &&
         Objects.equals(this.description, briefVirtualChassis.description) &&
         Objects.equals(this.memberCount, briefVirtualChassis.memberCount);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, display, name, hashCodeNullable(master), description, memberCount);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, display, name, master, description, memberCount);
   }
 
   @Override

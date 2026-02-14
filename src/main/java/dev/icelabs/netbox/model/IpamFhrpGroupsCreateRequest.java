@@ -28,10 +28,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -51,7 +47,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   IpamFhrpGroupsCreateRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
 @JsonTypeName("ipam_fhrp_groups_create_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class IpamFhrpGroupsCreateRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable
@@ -149,7 +145,7 @@ public class IpamFhrpGroupsCreateRequest {
 
   public static final String JSON_PROPERTY_AUTH_TYPE = "auth_type";
   @javax.annotation.Nullable
-  private JsonNullable<AuthTypeEnum> authType = JsonNullable.<AuthTypeEnum>undefined();
+  private AuthTypeEnum authType;
 
   public static final String JSON_PROPERTY_AUTH_KEY = "auth_key";
   @javax.annotation.Nullable
@@ -161,7 +157,7 @@ public class IpamFhrpGroupsCreateRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -256,8 +252,8 @@ public class IpamFhrpGroupsCreateRequest {
   }
 
   public IpamFhrpGroupsCreateRequest authType(@javax.annotation.Nullable AuthTypeEnum authType) {
-    this.authType = JsonNullable.<AuthTypeEnum>of(authType);
     
+    this.authType = authType;
     return this;
   }
 
@@ -266,26 +262,18 @@ public class IpamFhrpGroupsCreateRequest {
    * @return authType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public AuthTypeEnum getAuthType() {
-        return authType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_AUTH_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<AuthTypeEnum> getAuthType_JsonNullable() {
+  public AuthTypeEnum getAuthType() {
     return authType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_AUTH_TYPE)
-  public void setAuthType_JsonNullable(JsonNullable<AuthTypeEnum> authType) {
-    this.authType = authType;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_AUTH_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAuthType(@javax.annotation.Nullable AuthTypeEnum authType) {
-    this.authType = JsonNullable.<AuthTypeEnum>of(authType);
+    this.authType = authType;
   }
 
   public IpamFhrpGroupsCreateRequest authKey(@javax.annotation.Nullable String authKey) {
@@ -339,8 +327,8 @@ public class IpamFhrpGroupsCreateRequest {
   }
 
   public IpamFhrpGroupsCreateRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -349,26 +337,18 @@ public class IpamFhrpGroupsCreateRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public IpamFhrpGroupsCreateRequest comments(@javax.annotation.Nullable String comments) {
@@ -475,29 +455,18 @@ public class IpamFhrpGroupsCreateRequest {
     return Objects.equals(this.name, ipamFhrpGroupsCreateRequest.name) &&
         Objects.equals(this.protocol, ipamFhrpGroupsCreateRequest.protocol) &&
         Objects.equals(this.groupId, ipamFhrpGroupsCreateRequest.groupId) &&
-        equalsNullable(this.authType, ipamFhrpGroupsCreateRequest.authType) &&
+        Objects.equals(this.authType, ipamFhrpGroupsCreateRequest.authType) &&
         Objects.equals(this.authKey, ipamFhrpGroupsCreateRequest.authKey) &&
         Objects.equals(this.description, ipamFhrpGroupsCreateRequest.description) &&
-        equalsNullable(this.owner, ipamFhrpGroupsCreateRequest.owner) &&
+        Objects.equals(this.owner, ipamFhrpGroupsCreateRequest.owner) &&
         Objects.equals(this.comments, ipamFhrpGroupsCreateRequest.comments) &&
         Objects.equals(this.tags, ipamFhrpGroupsCreateRequest.tags) &&
         Objects.equals(this.customFields, ipamFhrpGroupsCreateRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(name, protocol, groupId, hashCodeNullable(authType), authKey, description, hashCodeNullable(owner), comments, tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, protocol, groupId, authType, authKey, description, owner, comments, tags, customFields);
   }
 
   @Override

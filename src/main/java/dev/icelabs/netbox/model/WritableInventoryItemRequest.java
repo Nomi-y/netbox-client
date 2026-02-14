@@ -30,10 +30,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -59,7 +55,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   WritableInventoryItemRequest.JSON_PROPERTY_TAGS,
   WritableInventoryItemRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class WritableInventoryItemRequest {
   public static final String JSON_PROPERTY_DEVICE = "device";
   @javax.annotation.Nonnull
@@ -67,7 +63,7 @@ public class WritableInventoryItemRequest {
 
   public static final String JSON_PROPERTY_PARENT = "parent";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> parent = JsonNullable.<Integer>undefined();
+  private Integer parent;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -126,11 +122,11 @@ public class WritableInventoryItemRequest {
 
   public static final String JSON_PROPERTY_ROLE = "role";
   @javax.annotation.Nullable
-  private JsonNullable<InventoryItemRequestRole> role = JsonNullable.<InventoryItemRequestRole>undefined();
+  private InventoryItemRequestRole role;
 
   public static final String JSON_PROPERTY_MANUFACTURER = "manufacturer";
   @javax.annotation.Nullable
-  private JsonNullable<InventoryItemRequestManufacturer> manufacturer = JsonNullable.<InventoryItemRequestManufacturer>undefined();
+  private InventoryItemRequestManufacturer manufacturer;
 
   public static final String JSON_PROPERTY_PART_ID = "part_id";
   @javax.annotation.Nullable
@@ -142,7 +138,7 @@ public class WritableInventoryItemRequest {
 
   public static final String JSON_PROPERTY_ASSET_TAG = "asset_tag";
   @javax.annotation.Nullable
-  private JsonNullable<String> assetTag = JsonNullable.<String>undefined();
+  private String assetTag;
 
   public static final String JSON_PROPERTY_DISCOVERED = "discovered";
   @javax.annotation.Nullable
@@ -154,15 +150,15 @@ public class WritableInventoryItemRequest {
 
   public static final String JSON_PROPERTY_COMPONENT_TYPE = "component_type";
   @javax.annotation.Nullable
-  private JsonNullable<String> componentType = JsonNullable.<String>undefined();
+  private String componentType;
 
   public static final String JSON_PROPERTY_COMPONENT_ID = "component_id";
   @javax.annotation.Nullable
-  private JsonNullable<Long> componentId = JsonNullable.<Long>undefined();
+  private Long componentId;
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -201,8 +197,8 @@ public class WritableInventoryItemRequest {
   }
 
   public WritableInventoryItemRequest parent(@javax.annotation.Nullable Integer parent) {
-    this.parent = JsonNullable.<Integer>of(parent);
     
+    this.parent = parent;
     return this;
   }
 
@@ -211,26 +207,18 @@ public class WritableInventoryItemRequest {
    * @return parent
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getParent() {
-        return parent.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getParent_JsonNullable() {
+  public Integer getParent() {
     return parent;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PARENT)
-  public void setParent_JsonNullable(JsonNullable<Integer> parent) {
-    this.parent = parent;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setParent(@javax.annotation.Nullable Integer parent) {
-    this.parent = JsonNullable.<Integer>of(parent);
+    this.parent = parent;
   }
 
   public WritableInventoryItemRequest name(@javax.annotation.Nonnull String name) {
@@ -309,8 +297,8 @@ public class WritableInventoryItemRequest {
   }
 
   public WritableInventoryItemRequest role(@javax.annotation.Nullable InventoryItemRequestRole role) {
-    this.role = JsonNullable.<InventoryItemRequestRole>of(role);
     
+    this.role = role;
     return this;
   }
 
@@ -319,31 +307,23 @@ public class WritableInventoryItemRequest {
    * @return role
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public InventoryItemRequestRole getRole() {
-        return role.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<InventoryItemRequestRole> getRole_JsonNullable() {
+  public InventoryItemRequestRole getRole() {
     return role;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ROLE)
-  public void setRole_JsonNullable(JsonNullable<InventoryItemRequestRole> role) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRole(@javax.annotation.Nullable InventoryItemRequestRole role) {
     this.role = role;
   }
 
-  public void setRole(@javax.annotation.Nullable InventoryItemRequestRole role) {
-    this.role = JsonNullable.<InventoryItemRequestRole>of(role);
-  }
-
   public WritableInventoryItemRequest manufacturer(@javax.annotation.Nullable InventoryItemRequestManufacturer manufacturer) {
-    this.manufacturer = JsonNullable.<InventoryItemRequestManufacturer>of(manufacturer);
     
+    this.manufacturer = manufacturer;
     return this;
   }
 
@@ -352,26 +332,18 @@ public class WritableInventoryItemRequest {
    * @return manufacturer
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public InventoryItemRequestManufacturer getManufacturer() {
-        return manufacturer.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MANUFACTURER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<InventoryItemRequestManufacturer> getManufacturer_JsonNullable() {
+  public InventoryItemRequestManufacturer getManufacturer() {
     return manufacturer;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MANUFACTURER)
-  public void setManufacturer_JsonNullable(JsonNullable<InventoryItemRequestManufacturer> manufacturer) {
-    this.manufacturer = manufacturer;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_MANUFACTURER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setManufacturer(@javax.annotation.Nullable InventoryItemRequestManufacturer manufacturer) {
-    this.manufacturer = JsonNullable.<InventoryItemRequestManufacturer>of(manufacturer);
+    this.manufacturer = manufacturer;
   }
 
   public WritableInventoryItemRequest partId(@javax.annotation.Nullable String partId) {
@@ -425,8 +397,8 @@ public class WritableInventoryItemRequest {
   }
 
   public WritableInventoryItemRequest assetTag(@javax.annotation.Nullable String assetTag) {
-    this.assetTag = JsonNullable.<String>of(assetTag);
     
+    this.assetTag = assetTag;
     return this;
   }
 
@@ -435,26 +407,18 @@ public class WritableInventoryItemRequest {
    * @return assetTag
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getAssetTag() {
-        return assetTag.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ASSET_TAG, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getAssetTag_JsonNullable() {
+  public String getAssetTag() {
     return assetTag;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ASSET_TAG)
-  public void setAssetTag_JsonNullable(JsonNullable<String> assetTag) {
-    this.assetTag = assetTag;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_ASSET_TAG, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssetTag(@javax.annotation.Nullable String assetTag) {
-    this.assetTag = JsonNullable.<String>of(assetTag);
+    this.assetTag = assetTag;
   }
 
   public WritableInventoryItemRequest discovered(@javax.annotation.Nullable Boolean discovered) {
@@ -508,8 +472,8 @@ public class WritableInventoryItemRequest {
   }
 
   public WritableInventoryItemRequest componentType(@javax.annotation.Nullable String componentType) {
-    this.componentType = JsonNullable.<String>of(componentType);
     
+    this.componentType = componentType;
     return this;
   }
 
@@ -518,31 +482,23 @@ public class WritableInventoryItemRequest {
    * @return componentType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getComponentType() {
-        return componentType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_COMPONENT_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getComponentType_JsonNullable() {
+  public String getComponentType() {
     return componentType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_COMPONENT_TYPE)
-  public void setComponentType_JsonNullable(JsonNullable<String> componentType) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_COMPONENT_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setComponentType(@javax.annotation.Nullable String componentType) {
     this.componentType = componentType;
   }
 
-  public void setComponentType(@javax.annotation.Nullable String componentType) {
-    this.componentType = JsonNullable.<String>of(componentType);
-  }
-
   public WritableInventoryItemRequest componentId(@javax.annotation.Nullable Long componentId) {
-    this.componentId = JsonNullable.<Long>of(componentId);
     
+    this.componentId = componentId;
     return this;
   }
 
@@ -553,31 +509,23 @@ public class WritableInventoryItemRequest {
    * @return componentId
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Long getComponentId() {
-        return componentId.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_COMPONENT_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Long> getComponentId_JsonNullable() {
+  public Long getComponentId() {
     return componentId;
   }
-  
-  @JsonProperty(JSON_PROPERTY_COMPONENT_ID)
-  public void setComponentId_JsonNullable(JsonNullable<Long> componentId) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_COMPONENT_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setComponentId(@javax.annotation.Nullable Long componentId) {
     this.componentId = componentId;
   }
 
-  public void setComponentId(@javax.annotation.Nullable Long componentId) {
-    this.componentId = JsonNullable.<Long>of(componentId);
-  }
-
   public WritableInventoryItemRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -586,26 +534,18 @@ public class WritableInventoryItemRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public WritableInventoryItemRequest tags(@javax.annotation.Nullable List<NestedTagRequest> tags) {
@@ -685,38 +625,27 @@ public class WritableInventoryItemRequest {
     }
     WritableInventoryItemRequest writableInventoryItemRequest = (WritableInventoryItemRequest) o;
     return Objects.equals(this.device, writableInventoryItemRequest.device) &&
-        equalsNullable(this.parent, writableInventoryItemRequest.parent) &&
+        Objects.equals(this.parent, writableInventoryItemRequest.parent) &&
         Objects.equals(this.name, writableInventoryItemRequest.name) &&
         Objects.equals(this.label, writableInventoryItemRequest.label) &&
         Objects.equals(this.status, writableInventoryItemRequest.status) &&
-        equalsNullable(this.role, writableInventoryItemRequest.role) &&
-        equalsNullable(this.manufacturer, writableInventoryItemRequest.manufacturer) &&
+        Objects.equals(this.role, writableInventoryItemRequest.role) &&
+        Objects.equals(this.manufacturer, writableInventoryItemRequest.manufacturer) &&
         Objects.equals(this.partId, writableInventoryItemRequest.partId) &&
         Objects.equals(this.serial, writableInventoryItemRequest.serial) &&
-        equalsNullable(this.assetTag, writableInventoryItemRequest.assetTag) &&
+        Objects.equals(this.assetTag, writableInventoryItemRequest.assetTag) &&
         Objects.equals(this.discovered, writableInventoryItemRequest.discovered) &&
         Objects.equals(this.description, writableInventoryItemRequest.description) &&
-        equalsNullable(this.componentType, writableInventoryItemRequest.componentType) &&
-        equalsNullable(this.componentId, writableInventoryItemRequest.componentId) &&
-        equalsNullable(this.owner, writableInventoryItemRequest.owner) &&
+        Objects.equals(this.componentType, writableInventoryItemRequest.componentType) &&
+        Objects.equals(this.componentId, writableInventoryItemRequest.componentId) &&
+        Objects.equals(this.owner, writableInventoryItemRequest.owner) &&
         Objects.equals(this.tags, writableInventoryItemRequest.tags) &&
         Objects.equals(this.customFields, writableInventoryItemRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(device, hashCodeNullable(parent), name, label, status, hashCodeNullable(role), hashCodeNullable(manufacturer), partId, serial, hashCodeNullable(assetTag), discovered, description, hashCodeNullable(componentType), hashCodeNullable(componentId), hashCodeNullable(owner), tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(device, parent, name, label, status, role, manufacturer, partId, serial, assetTag, discovered, description, componentType, componentId, owner, tags, customFields);
   }
 
   @Override

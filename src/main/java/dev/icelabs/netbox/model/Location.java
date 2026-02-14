@@ -33,10 +33,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -67,7 +63,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   Location.JSON_PROPERTY_COMMENTS,
   Location.JSON_PROPERTY_DEPTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class Location {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -99,7 +95,7 @@ public class Location {
 
   public static final String JSON_PROPERTY_PARENT = "parent";
   @javax.annotation.Nullable
-  private JsonNullable<NestedLocation> parent = JsonNullable.<NestedLocation>undefined();
+  private NestedLocation parent;
 
   public static final String JSON_PROPERTY_STATUS = "status";
   @javax.annotation.Nullable
@@ -107,7 +103,7 @@ public class Location {
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<BriefTenant> tenant = JsonNullable.<BriefTenant>undefined();
+  private BriefTenant tenant;
 
   public static final String JSON_PROPERTY_FACILITY = "facility";
   @javax.annotation.Nullable
@@ -147,7 +143,7 @@ public class Location {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -320,8 +316,8 @@ public class Location {
   }
 
   public Location parent(@javax.annotation.Nullable NestedLocation parent) {
-    this.parent = JsonNullable.<NestedLocation>of(parent);
     
+    this.parent = parent;
     return this;
   }
 
@@ -330,26 +326,18 @@ public class Location {
    * @return parent
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public NestedLocation getParent() {
-        return parent.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<NestedLocation> getParent_JsonNullable() {
+  public NestedLocation getParent() {
     return parent;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PARENT)
-  public void setParent_JsonNullable(JsonNullable<NestedLocation> parent) {
-    this.parent = parent;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setParent(@javax.annotation.Nullable NestedLocation parent) {
-    this.parent = JsonNullable.<NestedLocation>of(parent);
+    this.parent = parent;
   }
 
   public Location status(@javax.annotation.Nullable LocationStatus status) {
@@ -378,8 +366,8 @@ public class Location {
   }
 
   public Location tenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -388,26 +376,18 @@ public class Location {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefTenant> getTenant_JsonNullable() {
+  public BriefTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<BriefTenant> tenant) {
-    this.tenant = tenant;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
+    this.tenant = tenant;
   }
 
   public Location facility(@javax.annotation.Nullable String facility) {
@@ -597,8 +577,8 @@ public class Location {
 
 
   public Location owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -607,26 +587,18 @@ public class Location {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public Location comments(@javax.annotation.Nullable String comments) {
@@ -685,9 +657,9 @@ public class Location {
         Objects.equals(this.name, location.name) &&
         Objects.equals(this.slug, location.slug) &&
         Objects.equals(this.site, location.site) &&
-        equalsNullable(this.parent, location.parent) &&
+        Objects.equals(this.parent, location.parent) &&
         Objects.equals(this.status, location.status) &&
-        equalsNullable(this.tenant, location.tenant) &&
+        Objects.equals(this.tenant, location.tenant) &&
         Objects.equals(this.facility, location.facility) &&
         Objects.equals(this.description, location.description) &&
         Objects.equals(this.tags, location.tags) &&
@@ -697,25 +669,14 @@ public class Location {
         Objects.equals(this.rackCount, location.rackCount) &&
         Objects.equals(this.deviceCount, location.deviceCount) &&
         Objects.equals(this.prefixCount, location.prefixCount) &&
-        equalsNullable(this.owner, location.owner) &&
+        Objects.equals(this.owner, location.owner) &&
         Objects.equals(this.comments, location.comments) &&
         Objects.equals(this.depth, location.depth);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, name, slug, site, hashCodeNullable(parent), status, hashCodeNullable(tenant), facility, description, tags, customFields, created, lastUpdated, rackCount, deviceCount, prefixCount, hashCodeNullable(owner), comments, depth);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, name, slug, site, parent, status, tenant, facility, description, tags, customFields, created, lastUpdated, rackCount, deviceCount, prefixCount, owner, comments, depth);
   }
 
   @Override

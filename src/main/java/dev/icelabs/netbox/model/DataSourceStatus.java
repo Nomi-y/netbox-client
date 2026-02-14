@@ -31,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   DataSourceStatus.JSON_PROPERTY_LABEL
 })
 @JsonTypeName("DataSource_status")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class DataSourceStatus {
   /**
    * * &#x60;new&#x60; - New * &#x60;queued&#x60; - Queued * &#x60;syncing&#x60; - Syncing * &#x60;completed&#x60; - Completed * &#x60;failed&#x60; - Failed

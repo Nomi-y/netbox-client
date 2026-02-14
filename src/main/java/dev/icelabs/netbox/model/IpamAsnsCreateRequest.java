@@ -30,10 +30,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -52,7 +48,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   IpamAsnsCreateRequest.JSON_PROPERTY_SITES
 })
 @JsonTypeName("ipam_asns_create_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class IpamAsnsCreateRequest {
   public static final String JSON_PROPERTY_ASN = "asn";
   @javax.annotation.Nonnull
@@ -60,11 +56,11 @@ public class IpamAsnsCreateRequest {
 
   public static final String JSON_PROPERTY_RIR = "rir";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRequestRir> rir = JsonNullable.<ASNRequestRir>undefined();
+  private ASNRequestRir rir;
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestTenant> tenant = JsonNullable.<ASNRangeRequestTenant>undefined();
+  private ASNRangeRequestTenant tenant;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -72,7 +68,7 @@ public class IpamAsnsCreateRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -121,8 +117,8 @@ public class IpamAsnsCreateRequest {
   }
 
   public IpamAsnsCreateRequest rir(@javax.annotation.Nullable ASNRequestRir rir) {
-    this.rir = JsonNullable.<ASNRequestRir>of(rir);
     
+    this.rir = rir;
     return this;
   }
 
@@ -131,31 +127,23 @@ public class IpamAsnsCreateRequest {
    * @return rir
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRequestRir getRir() {
-        return rir.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_RIR, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRequestRir> getRir_JsonNullable() {
+  public ASNRequestRir getRir() {
     return rir;
   }
-  
-  @JsonProperty(JSON_PROPERTY_RIR)
-  public void setRir_JsonNullable(JsonNullable<ASNRequestRir> rir) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_RIR, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRir(@javax.annotation.Nullable ASNRequestRir rir) {
     this.rir = rir;
   }
 
-  public void setRir(@javax.annotation.Nullable ASNRequestRir rir) {
-    this.rir = JsonNullable.<ASNRequestRir>of(rir);
-  }
-
   public IpamAsnsCreateRequest tenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -164,26 +152,18 @@ public class IpamAsnsCreateRequest {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestTenant> getTenant_JsonNullable() {
+  public ASNRangeRequestTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<ASNRangeRequestTenant> tenant) {
-    this.tenant = tenant;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
+    this.tenant = tenant;
   }
 
   public IpamAsnsCreateRequest description(@javax.annotation.Nullable String description) {
@@ -212,8 +192,8 @@ public class IpamAsnsCreateRequest {
   }
 
   public IpamAsnsCreateRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -222,26 +202,18 @@ public class IpamAsnsCreateRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public IpamAsnsCreateRequest comments(@javax.annotation.Nullable String comments) {
@@ -379,30 +351,19 @@ public class IpamAsnsCreateRequest {
     }
     IpamAsnsCreateRequest ipamAsnsCreateRequest = (IpamAsnsCreateRequest) o;
     return Objects.equals(this.asn, ipamAsnsCreateRequest.asn) &&
-        equalsNullable(this.rir, ipamAsnsCreateRequest.rir) &&
-        equalsNullable(this.tenant, ipamAsnsCreateRequest.tenant) &&
+        Objects.equals(this.rir, ipamAsnsCreateRequest.rir) &&
+        Objects.equals(this.tenant, ipamAsnsCreateRequest.tenant) &&
         Objects.equals(this.description, ipamAsnsCreateRequest.description) &&
-        equalsNullable(this.owner, ipamAsnsCreateRequest.owner) &&
+        Objects.equals(this.owner, ipamAsnsCreateRequest.owner) &&
         Objects.equals(this.comments, ipamAsnsCreateRequest.comments) &&
         Objects.equals(this.tags, ipamAsnsCreateRequest.tags) &&
         Objects.equals(this.customFields, ipamAsnsCreateRequest.customFields) &&
         Objects.equals(this.sites, ipamAsnsCreateRequest.sites);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(asn, hashCodeNullable(rir), hashCodeNullable(tenant), description, hashCodeNullable(owner), comments, tags, customFields, sites);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(asn, rir, tenant, description, owner, comments, tags, customFields, sites);
   }
 
   @Override

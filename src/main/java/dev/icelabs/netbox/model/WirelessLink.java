@@ -35,10 +35,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -68,7 +64,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   WirelessLink.JSON_PROPERTY_CREATED,
   WirelessLink.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class WirelessLink {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -104,7 +100,7 @@ public class WirelessLink {
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<BriefTenant> tenant = JsonNullable.<BriefTenant>undefined();
+  private BriefTenant tenant;
 
   public static final String JSON_PROPERTY_AUTH_TYPE = "auth_type";
   @javax.annotation.Nullable
@@ -120,11 +116,11 @@ public class WirelessLink {
 
   public static final String JSON_PROPERTY_DISTANCE = "distance";
   @javax.annotation.Nullable
-  private JsonNullable<Double> distance = JsonNullable.<Double>undefined();
+  private Double distance;
 
   public static final String JSON_PROPERTY_DISTANCE_UNIT = "distance_unit";
   @javax.annotation.Nullable
-  private JsonNullable<CircuitDistanceUnit> distanceUnit = JsonNullable.<CircuitDistanceUnit>undefined();
+  private CircuitDistanceUnit distanceUnit;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -132,7 +128,7 @@ public class WirelessLink {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -334,8 +330,8 @@ public class WirelessLink {
   }
 
   public WirelessLink tenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -344,26 +340,18 @@ public class WirelessLink {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefTenant> getTenant_JsonNullable() {
+  public BriefTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<BriefTenant> tenant) {
-    this.tenant = tenant;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
+    this.tenant = tenant;
   }
 
   public WirelessLink authType(@javax.annotation.Nullable WirelessLANAuthType authType) {
@@ -442,8 +430,8 @@ public class WirelessLink {
   }
 
   public WirelessLink distance(@javax.annotation.Nullable Double distance) {
-    this.distance = JsonNullable.<Double>of(distance);
     
+    this.distance = distance;
     return this;
   }
 
@@ -454,31 +442,23 @@ public class WirelessLink {
    * @return distance
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getDistance() {
-        return distance.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_DISTANCE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getDistance_JsonNullable() {
+  public Double getDistance() {
     return distance;
   }
-  
-  @JsonProperty(JSON_PROPERTY_DISTANCE)
-  public void setDistance_JsonNullable(JsonNullable<Double> distance) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_DISTANCE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDistance(@javax.annotation.Nullable Double distance) {
     this.distance = distance;
   }
 
-  public void setDistance(@javax.annotation.Nullable Double distance) {
-    this.distance = JsonNullable.<Double>of(distance);
-  }
-
   public WirelessLink distanceUnit(@javax.annotation.Nullable CircuitDistanceUnit distanceUnit) {
-    this.distanceUnit = JsonNullable.<CircuitDistanceUnit>of(distanceUnit);
     
+    this.distanceUnit = distanceUnit;
     return this;
   }
 
@@ -487,26 +467,18 @@ public class WirelessLink {
    * @return distanceUnit
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public CircuitDistanceUnit getDistanceUnit() {
-        return distanceUnit.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_DISTANCE_UNIT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<CircuitDistanceUnit> getDistanceUnit_JsonNullable() {
+  public CircuitDistanceUnit getDistanceUnit() {
     return distanceUnit;
   }
-  
-  @JsonProperty(JSON_PROPERTY_DISTANCE_UNIT)
-  public void setDistanceUnit_JsonNullable(JsonNullable<CircuitDistanceUnit> distanceUnit) {
-    this.distanceUnit = distanceUnit;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_DISTANCE_UNIT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDistanceUnit(@javax.annotation.Nullable CircuitDistanceUnit distanceUnit) {
-    this.distanceUnit = JsonNullable.<CircuitDistanceUnit>of(distanceUnit);
+    this.distanceUnit = distanceUnit;
   }
 
   public WirelessLink description(@javax.annotation.Nullable String description) {
@@ -535,8 +507,8 @@ public class WirelessLink {
   }
 
   public WirelessLink owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -545,26 +517,18 @@ public class WirelessLink {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public WirelessLink comments(@javax.annotation.Nullable String comments) {
@@ -704,14 +668,14 @@ public class WirelessLink {
         Objects.equals(this.interfaceB, wirelessLink.interfaceB) &&
         Objects.equals(this.ssid, wirelessLink.ssid) &&
         Objects.equals(this.status, wirelessLink.status) &&
-        equalsNullable(this.tenant, wirelessLink.tenant) &&
+        Objects.equals(this.tenant, wirelessLink.tenant) &&
         Objects.equals(this.authType, wirelessLink.authType) &&
         Objects.equals(this.authCipher, wirelessLink.authCipher) &&
         Objects.equals(this.authPsk, wirelessLink.authPsk) &&
-        equalsNullable(this.distance, wirelessLink.distance) &&
-        equalsNullable(this.distanceUnit, wirelessLink.distanceUnit) &&
+        Objects.equals(this.distance, wirelessLink.distance) &&
+        Objects.equals(this.distanceUnit, wirelessLink.distanceUnit) &&
         Objects.equals(this.description, wirelessLink.description) &&
-        equalsNullable(this.owner, wirelessLink.owner) &&
+        Objects.equals(this.owner, wirelessLink.owner) &&
         Objects.equals(this.comments, wirelessLink.comments) &&
         Objects.equals(this.tags, wirelessLink.tags) &&
         Objects.equals(this.customFields, wirelessLink.customFields) &&
@@ -719,20 +683,9 @@ public class WirelessLink {
         Objects.equals(this.lastUpdated, wirelessLink.lastUpdated);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, interfaceA, interfaceB, ssid, status, hashCodeNullable(tenant), authType, authCipher, authPsk, hashCodeNullable(distance), hashCodeNullable(distanceUnit), description, hashCodeNullable(owner), comments, tags, customFields, created, lastUpdated);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, interfaceA, interfaceB, ssid, status, tenant, authType, authCipher, authPsk, distance, distanceUnit, description, owner, comments, tags, customFields, created, lastUpdated);
   }
 
   @Override

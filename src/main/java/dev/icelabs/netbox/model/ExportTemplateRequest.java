@@ -25,10 +25,6 @@ import dev.icelabs.netbox.model.ConfigContextProfileRequestDataSource;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -48,7 +44,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ExportTemplateRequest.JSON_PROPERTY_DATA_SOURCE,
   ExportTemplateRequest.JSON_PROPERTY_OWNER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class ExportTemplateRequest {
   public static final String JSON_PROPERTY_OBJECT_TYPES = "object_types";
   @javax.annotation.Nonnull
@@ -64,7 +60,7 @@ public class ExportTemplateRequest {
 
   public static final String JSON_PROPERTY_ENVIRONMENT_PARAMS = "environment_params";
   @javax.annotation.Nullable
-  private JsonNullable<Object> environmentParams = JsonNullable.<Object>of(null);
+  private Object environmentParams = null;
 
   public static final String JSON_PROPERTY_TEMPLATE_CODE = "template_code";
   @javax.annotation.Nonnull
@@ -92,7 +88,7 @@ public class ExportTemplateRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public ExportTemplateRequest() {
   }
@@ -181,8 +177,8 @@ public class ExportTemplateRequest {
   }
 
   public ExportTemplateRequest environmentParams(@javax.annotation.Nullable Object environmentParams) {
-    this.environmentParams = JsonNullable.<Object>of(environmentParams);
     
+    this.environmentParams = environmentParams;
     return this;
   }
 
@@ -191,26 +187,18 @@ public class ExportTemplateRequest {
    * @return environmentParams
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Object getEnvironmentParams() {
-        return environmentParams.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ENVIRONMENT_PARAMS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Object> getEnvironmentParams_JsonNullable() {
+  public Object getEnvironmentParams() {
     return environmentParams;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ENVIRONMENT_PARAMS)
-  public void setEnvironmentParams_JsonNullable(JsonNullable<Object> environmentParams) {
-    this.environmentParams = environmentParams;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_ENVIRONMENT_PARAMS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEnvironmentParams(@javax.annotation.Nullable Object environmentParams) {
-    this.environmentParams = JsonNullable.<Object>of(environmentParams);
+    this.environmentParams = environmentParams;
   }
 
   public ExportTemplateRequest templateCode(@javax.annotation.Nonnull String templateCode) {
@@ -364,8 +352,8 @@ public class ExportTemplateRequest {
   }
 
   public ExportTemplateRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -374,26 +362,18 @@ public class ExportTemplateRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
 
@@ -409,30 +389,19 @@ public class ExportTemplateRequest {
     return Objects.equals(this.objectTypes, exportTemplateRequest.objectTypes) &&
         Objects.equals(this.name, exportTemplateRequest.name) &&
         Objects.equals(this.description, exportTemplateRequest.description) &&
-        equalsNullable(this.environmentParams, exportTemplateRequest.environmentParams) &&
+        Objects.equals(this.environmentParams, exportTemplateRequest.environmentParams) &&
         Objects.equals(this.templateCode, exportTemplateRequest.templateCode) &&
         Objects.equals(this.mimeType, exportTemplateRequest.mimeType) &&
         Objects.equals(this.fileName, exportTemplateRequest.fileName) &&
         Objects.equals(this.fileExtension, exportTemplateRequest.fileExtension) &&
         Objects.equals(this.asAttachment, exportTemplateRequest.asAttachment) &&
         Objects.equals(this.dataSource, exportTemplateRequest.dataSource) &&
-        equalsNullable(this.owner, exportTemplateRequest.owner);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+        Objects.equals(this.owner, exportTemplateRequest.owner);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(objectTypes, name, description, hashCodeNullable(environmentParams), templateCode, mimeType, fileName, fileExtension, asAttachment, dataSource, hashCodeNullable(owner));
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(objectTypes, name, description, environmentParams, templateCode, mimeType, fileName, fileExtension, asAttachment, dataSource, owner);
   }
 
   @Override

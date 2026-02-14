@@ -31,10 +31,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -59,7 +55,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ModuleBay.JSON_PROPERTY_CREATED,
   ModuleBay.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class ModuleBay {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -83,7 +79,7 @@ public class ModuleBay {
 
   public static final String JSON_PROPERTY_MODULE = "module";
   @javax.annotation.Nullable
-  private JsonNullable<BriefModule> module = JsonNullable.<BriefModule>undefined();
+  private BriefModule module;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -91,7 +87,7 @@ public class ModuleBay {
 
   public static final String JSON_PROPERTY_INSTALLED_MODULE = "installed_module";
   @javax.annotation.Nullable
-  private JsonNullable<BriefModule> installedModule = JsonNullable.<BriefModule>undefined();
+  private BriefModule installedModule;
 
   public static final String JSON_PROPERTY_LABEL = "label";
   @javax.annotation.Nullable
@@ -107,7 +103,7 @@ public class ModuleBay {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -230,8 +226,8 @@ public class ModuleBay {
   }
 
   public ModuleBay module(@javax.annotation.Nullable BriefModule module) {
-    this.module = JsonNullable.<BriefModule>of(module);
     
+    this.module = module;
     return this;
   }
 
@@ -240,26 +236,18 @@ public class ModuleBay {
    * @return module
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefModule getModule() {
-        return module.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MODULE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefModule> getModule_JsonNullable() {
+  public BriefModule getModule() {
     return module;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MODULE)
-  public void setModule_JsonNullable(JsonNullable<BriefModule> module) {
-    this.module = module;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_MODULE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setModule(@javax.annotation.Nullable BriefModule module) {
-    this.module = JsonNullable.<BriefModule>of(module);
+    this.module = module;
   }
 
   public ModuleBay name(@javax.annotation.Nonnull String name) {
@@ -288,8 +276,8 @@ public class ModuleBay {
   }
 
   public ModuleBay installedModule(@javax.annotation.Nullable BriefModule installedModule) {
-    this.installedModule = JsonNullable.<BriefModule>of(installedModule);
     
+    this.installedModule = installedModule;
     return this;
   }
 
@@ -298,26 +286,18 @@ public class ModuleBay {
    * @return installedModule
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefModule getInstalledModule() {
-        return installedModule.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_INSTALLED_MODULE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefModule> getInstalledModule_JsonNullable() {
+  public BriefModule getInstalledModule() {
     return installedModule;
   }
-  
-  @JsonProperty(JSON_PROPERTY_INSTALLED_MODULE)
-  public void setInstalledModule_JsonNullable(JsonNullable<BriefModule> installedModule) {
-    this.installedModule = installedModule;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_INSTALLED_MODULE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInstalledModule(@javax.annotation.Nullable BriefModule installedModule) {
-    this.installedModule = JsonNullable.<BriefModule>of(installedModule);
+    this.installedModule = installedModule;
   }
 
   public ModuleBay label(@javax.annotation.Nullable String label) {
@@ -396,8 +376,8 @@ public class ModuleBay {
   }
 
   public ModuleBay owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -406,26 +386,18 @@ public class ModuleBay {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public ModuleBay tags(@javax.annotation.Nullable List<NestedTag> tags) {
@@ -537,33 +509,22 @@ public class ModuleBay {
         Objects.equals(this.displayUrl, moduleBay.displayUrl) &&
         Objects.equals(this.display, moduleBay.display) &&
         Objects.equals(this.device, moduleBay.device) &&
-        equalsNullable(this.module, moduleBay.module) &&
+        Objects.equals(this.module, moduleBay.module) &&
         Objects.equals(this.name, moduleBay.name) &&
-        equalsNullable(this.installedModule, moduleBay.installedModule) &&
+        Objects.equals(this.installedModule, moduleBay.installedModule) &&
         Objects.equals(this.label, moduleBay.label) &&
         Objects.equals(this.position, moduleBay.position) &&
         Objects.equals(this.description, moduleBay.description) &&
-        equalsNullable(this.owner, moduleBay.owner) &&
+        Objects.equals(this.owner, moduleBay.owner) &&
         Objects.equals(this.tags, moduleBay.tags) &&
         Objects.equals(this.customFields, moduleBay.customFields) &&
         Objects.equals(this.created, moduleBay.created) &&
         Objects.equals(this.lastUpdated, moduleBay.lastUpdated);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, device, hashCodeNullable(module), name, hashCodeNullable(installedModule), label, position, description, hashCodeNullable(owner), tags, customFields, created, lastUpdated);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, device, module, name, installedModule, label, position, description, owner, tags, customFields, created, lastUpdated);
   }
 
   @Override

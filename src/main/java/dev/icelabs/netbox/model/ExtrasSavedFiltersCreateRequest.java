@@ -25,10 +25,6 @@ import dev.icelabs.netbox.model.SavedFilterRequest;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -48,7 +44,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ExtrasSavedFiltersCreateRequest.JSON_PROPERTY_OWNER
 })
 @JsonTypeName("extras_saved_filters_create_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class ExtrasSavedFiltersCreateRequest {
   public static final String JSON_PROPERTY_OBJECT_TYPES = "object_types";
   @javax.annotation.Nonnull
@@ -68,7 +64,7 @@ public class ExtrasSavedFiltersCreateRequest {
 
   public static final String JSON_PROPERTY_USER = "user";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> user = JsonNullable.<Integer>undefined();
+  private Integer user;
 
   public static final String JSON_PROPERTY_WEIGHT = "weight";
   @javax.annotation.Nullable
@@ -88,7 +84,7 @@ public class ExtrasSavedFiltersCreateRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public ExtrasSavedFiltersCreateRequest() {
   }
@@ -202,8 +198,8 @@ public class ExtrasSavedFiltersCreateRequest {
   }
 
   public ExtrasSavedFiltersCreateRequest user(@javax.annotation.Nullable Integer user) {
-    this.user = JsonNullable.<Integer>of(user);
     
+    this.user = user;
     return this;
   }
 
@@ -212,26 +208,18 @@ public class ExtrasSavedFiltersCreateRequest {
    * @return user
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getUser() {
-        return user.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_USER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getUser_JsonNullable() {
+  public Integer getUser() {
     return user;
   }
-  
-  @JsonProperty(JSON_PROPERTY_USER)
-  public void setUser_JsonNullable(JsonNullable<Integer> user) {
-    this.user = user;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_USER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUser(@javax.annotation.Nullable Integer user) {
-    this.user = JsonNullable.<Integer>of(user);
+    this.user = user;
   }
 
   public ExtrasSavedFiltersCreateRequest weight(@javax.annotation.Nullable Integer weight) {
@@ -337,8 +325,8 @@ public class ExtrasSavedFiltersCreateRequest {
   }
 
   public ExtrasSavedFiltersCreateRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -347,26 +335,18 @@ public class ExtrasSavedFiltersCreateRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
 
@@ -383,28 +363,17 @@ public class ExtrasSavedFiltersCreateRequest {
         Objects.equals(this.name, extrasSavedFiltersCreateRequest.name) &&
         Objects.equals(this.slug, extrasSavedFiltersCreateRequest.slug) &&
         Objects.equals(this.description, extrasSavedFiltersCreateRequest.description) &&
-        equalsNullable(this.user, extrasSavedFiltersCreateRequest.user) &&
+        Objects.equals(this.user, extrasSavedFiltersCreateRequest.user) &&
         Objects.equals(this.weight, extrasSavedFiltersCreateRequest.weight) &&
         Objects.equals(this.enabled, extrasSavedFiltersCreateRequest.enabled) &&
         Objects.equals(this.shared, extrasSavedFiltersCreateRequest.shared) &&
         Objects.equals(this.parameters, extrasSavedFiltersCreateRequest.parameters) &&
-        equalsNullable(this.owner, extrasSavedFiltersCreateRequest.owner);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+        Objects.equals(this.owner, extrasSavedFiltersCreateRequest.owner);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(objectTypes, name, slug, description, hashCodeNullable(user), weight, enabled, shared, parameters, hashCodeNullable(owner));
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(objectTypes, name, slug, description, user, weight, enabled, shared, parameters, owner);
   }
 
   @Override

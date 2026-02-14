@@ -36,10 +36,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -76,7 +72,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   PowerOutlet.JSON_PROPERTY_LAST_UPDATED,
   PowerOutlet.JSON_PROPERTY_OCCUPIED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class PowerOutlet {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -100,7 +96,7 @@ public class PowerOutlet {
 
   public static final String JSON_PROPERTY_MODULE = "module";
   @javax.annotation.Nullable
-  private JsonNullable<BriefModule> module = JsonNullable.<BriefModule>undefined();
+  private BriefModule module;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -112,7 +108,7 @@ public class PowerOutlet {
 
   public static final String JSON_PROPERTY_TYPE = "type";
   @javax.annotation.Nullable
-  private JsonNullable<PowerOutletType> type = JsonNullable.<PowerOutletType>undefined();
+  private PowerOutletType type;
 
   public static final String JSON_PROPERTY_STATUS = "status";
   @javax.annotation.Nullable
@@ -124,11 +120,11 @@ public class PowerOutlet {
 
   public static final String JSON_PROPERTY_POWER_PORT = "power_port";
   @javax.annotation.Nullable
-  private JsonNullable<BriefPowerPort> powerPort = JsonNullable.<BriefPowerPort>undefined();
+  private BriefPowerPort powerPort;
 
   public static final String JSON_PROPERTY_FEED_LEG = "feed_leg";
   @javax.annotation.Nullable
-  private JsonNullable<PowerOutletFeedLeg> feedLeg = JsonNullable.<PowerOutletFeedLeg>undefined();
+  private PowerOutletFeedLeg feedLeg;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -168,7 +164,7 @@ public class PowerOutlet {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -311,8 +307,8 @@ public class PowerOutlet {
   }
 
   public PowerOutlet module(@javax.annotation.Nullable BriefModule module) {
-    this.module = JsonNullable.<BriefModule>of(module);
     
+    this.module = module;
     return this;
   }
 
@@ -321,26 +317,18 @@ public class PowerOutlet {
    * @return module
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefModule getModule() {
-        return module.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MODULE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefModule> getModule_JsonNullable() {
+  public BriefModule getModule() {
     return module;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MODULE)
-  public void setModule_JsonNullable(JsonNullable<BriefModule> module) {
-    this.module = module;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_MODULE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setModule(@javax.annotation.Nullable BriefModule module) {
-    this.module = JsonNullable.<BriefModule>of(module);
+    this.module = module;
   }
 
   public PowerOutlet name(@javax.annotation.Nonnull String name) {
@@ -394,8 +382,8 @@ public class PowerOutlet {
   }
 
   public PowerOutlet type(@javax.annotation.Nullable PowerOutletType type) {
-    this.type = JsonNullable.<PowerOutletType>of(type);
     
+    this.type = type;
     return this;
   }
 
@@ -404,26 +392,18 @@ public class PowerOutlet {
    * @return type
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public PowerOutletType getType() {
-        return type.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<PowerOutletType> getType_JsonNullable() {
+  public PowerOutletType getType() {
     return type;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TYPE)
-  public void setType_JsonNullable(JsonNullable<PowerOutletType> type) {
-    this.type = type;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setType(@javax.annotation.Nullable PowerOutletType type) {
-    this.type = JsonNullable.<PowerOutletType>of(type);
+    this.type = type;
   }
 
   public PowerOutlet status(@javax.annotation.Nullable PowerOutletStatus status) {
@@ -477,8 +457,8 @@ public class PowerOutlet {
   }
 
   public PowerOutlet powerPort(@javax.annotation.Nullable BriefPowerPort powerPort) {
-    this.powerPort = JsonNullable.<BriefPowerPort>of(powerPort);
     
+    this.powerPort = powerPort;
     return this;
   }
 
@@ -487,31 +467,23 @@ public class PowerOutlet {
    * @return powerPort
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefPowerPort getPowerPort() {
-        return powerPort.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_POWER_PORT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefPowerPort> getPowerPort_JsonNullable() {
+  public BriefPowerPort getPowerPort() {
     return powerPort;
   }
-  
-  @JsonProperty(JSON_PROPERTY_POWER_PORT)
-  public void setPowerPort_JsonNullable(JsonNullable<BriefPowerPort> powerPort) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_POWER_PORT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPowerPort(@javax.annotation.Nullable BriefPowerPort powerPort) {
     this.powerPort = powerPort;
   }
 
-  public void setPowerPort(@javax.annotation.Nullable BriefPowerPort powerPort) {
-    this.powerPort = JsonNullable.<BriefPowerPort>of(powerPort);
-  }
-
   public PowerOutlet feedLeg(@javax.annotation.Nullable PowerOutletFeedLeg feedLeg) {
-    this.feedLeg = JsonNullable.<PowerOutletFeedLeg>of(feedLeg);
     
+    this.feedLeg = feedLeg;
     return this;
   }
 
@@ -520,26 +492,18 @@ public class PowerOutlet {
    * @return feedLeg
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public PowerOutletFeedLeg getFeedLeg() {
-        return feedLeg.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_FEED_LEG, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<PowerOutletFeedLeg> getFeedLeg_JsonNullable() {
+  public PowerOutletFeedLeg getFeedLeg() {
     return feedLeg;
   }
-  
-  @JsonProperty(JSON_PROPERTY_FEED_LEG)
-  public void setFeedLeg_JsonNullable(JsonNullable<PowerOutletFeedLeg> feedLeg) {
-    this.feedLeg = feedLeg;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_FEED_LEG, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFeedLeg(@javax.annotation.Nullable PowerOutletFeedLeg feedLeg) {
-    this.feedLeg = JsonNullable.<PowerOutletFeedLeg>of(feedLeg);
+    this.feedLeg = feedLeg;
   }
 
   public PowerOutlet description(@javax.annotation.Nullable String description) {
@@ -691,8 +655,8 @@ public class PowerOutlet {
 
 
   public PowerOutlet owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -701,26 +665,18 @@ public class PowerOutlet {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public PowerOutlet tags(@javax.annotation.Nullable List<NestedTag> tags) {
@@ -846,14 +802,14 @@ public class PowerOutlet {
         Objects.equals(this.displayUrl, powerOutlet.displayUrl) &&
         Objects.equals(this.display, powerOutlet.display) &&
         Objects.equals(this.device, powerOutlet.device) &&
-        equalsNullable(this.module, powerOutlet.module) &&
+        Objects.equals(this.module, powerOutlet.module) &&
         Objects.equals(this.name, powerOutlet.name) &&
         Objects.equals(this.label, powerOutlet.label) &&
-        equalsNullable(this.type, powerOutlet.type) &&
+        Objects.equals(this.type, powerOutlet.type) &&
         Objects.equals(this.status, powerOutlet.status) &&
         Objects.equals(this.color, powerOutlet.color) &&
-        equalsNullable(this.powerPort, powerOutlet.powerPort) &&
-        equalsNullable(this.feedLeg, powerOutlet.feedLeg) &&
+        Objects.equals(this.powerPort, powerOutlet.powerPort) &&
+        Objects.equals(this.feedLeg, powerOutlet.feedLeg) &&
         Objects.equals(this.description, powerOutlet.description) &&
         Objects.equals(this.markConnected, powerOutlet.markConnected) &&
         Objects.equals(this.cable, powerOutlet.cable) &&
@@ -863,7 +819,7 @@ public class PowerOutlet {
         Objects.equals(this.connectedEndpoints, powerOutlet.connectedEndpoints) &&
         Objects.equals(this.connectedEndpointsType, powerOutlet.connectedEndpointsType) &&
         Objects.equals(this.connectedEndpointsReachable, powerOutlet.connectedEndpointsReachable) &&
-        equalsNullable(this.owner, powerOutlet.owner) &&
+        Objects.equals(this.owner, powerOutlet.owner) &&
         Objects.equals(this.tags, powerOutlet.tags) &&
         Objects.equals(this.customFields, powerOutlet.customFields) &&
         Objects.equals(this.created, powerOutlet.created) &&
@@ -871,20 +827,9 @@ public class PowerOutlet {
         Objects.equals(this.occupied, powerOutlet.occupied);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, device, hashCodeNullable(module), name, label, hashCodeNullable(type), status, color, hashCodeNullable(powerPort), hashCodeNullable(feedLeg), description, markConnected, cable, cableEnd, linkPeers, linkPeersType, connectedEndpoints, connectedEndpointsType, connectedEndpointsReachable, hashCodeNullable(owner), tags, customFields, created, lastUpdated, occupied);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, device, module, name, label, type, status, color, powerPort, feedLeg, description, markConnected, cable, cableEnd, linkPeers, linkPeersType, connectedEndpoints, connectedEndpointsType, connectedEndpointsReachable, owner, tags, customFields, created, lastUpdated, occupied);
   }
 
   @Override

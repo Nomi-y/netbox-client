@@ -27,10 +27,6 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -52,7 +48,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   User.JSON_PROPERTY_GROUPS,
   User.JSON_PROPERTY_PERMISSIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class User {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -96,7 +92,7 @@ public class User {
 
   public static final String JSON_PROPERTY_LAST_LOGIN = "last_login";
   @javax.annotation.Nullable
-  private JsonNullable<OffsetDateTime> lastLogin = JsonNullable.<OffsetDateTime>undefined();
+  private OffsetDateTime lastLogin;
 
   public static final String JSON_PROPERTY_GROUPS = "groups";
   @javax.annotation.Nullable
@@ -332,8 +328,8 @@ public class User {
   }
 
   public User lastLogin(@javax.annotation.Nullable OffsetDateTime lastLogin) {
-    this.lastLogin = JsonNullable.<OffsetDateTime>of(lastLogin);
     
+    this.lastLogin = lastLogin;
     return this;
   }
 
@@ -342,26 +338,18 @@ public class User {
    * @return lastLogin
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public OffsetDateTime getLastLogin() {
-        return lastLogin.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_LAST_LOGIN, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<OffsetDateTime> getLastLogin_JsonNullable() {
+  public OffsetDateTime getLastLogin() {
     return lastLogin;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LAST_LOGIN)
-  public void setLastLogin_JsonNullable(JsonNullable<OffsetDateTime> lastLogin) {
-    this.lastLogin = lastLogin;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_LAST_LOGIN, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLastLogin(@javax.annotation.Nullable OffsetDateTime lastLogin) {
-    this.lastLogin = JsonNullable.<OffsetDateTime>of(lastLogin);
+    this.lastLogin = lastLogin;
   }
 
   public User groups(@javax.annotation.Nullable List<Group> groups) {
@@ -450,25 +438,14 @@ public class User {
         Objects.equals(this.email, user.email) &&
         Objects.equals(this.isActive, user.isActive) &&
         Objects.equals(this.dateJoined, user.dateJoined) &&
-        equalsNullable(this.lastLogin, user.lastLogin) &&
+        Objects.equals(this.lastLogin, user.lastLogin) &&
         Objects.equals(this.groups, user.groups) &&
         Objects.equals(this.permissions, user.permissions);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, username, firstName, lastName, email, isActive, dateJoined, hashCodeNullable(lastLogin), groups, permissions);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, username, firstName, lastName, email, isActive, dateJoined, lastLogin, groups, permissions);
   }
 
   @Override

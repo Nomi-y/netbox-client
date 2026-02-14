@@ -30,10 +30,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -58,7 +54,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ContactGroup.JSON_PROPERTY_COMMENTS,
   ContactGroup.JSON_PROPERTY_DEPTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class ContactGroup {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -86,7 +82,7 @@ public class ContactGroup {
 
   public static final String JSON_PROPERTY_PARENT = "parent";
   @javax.annotation.Nullable
-  private JsonNullable<NestedContactGroup> parent = JsonNullable.<NestedContactGroup>undefined();
+  private NestedContactGroup parent;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -114,7 +110,7 @@ public class ContactGroup {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -258,8 +254,8 @@ public class ContactGroup {
   }
 
   public ContactGroup parent(@javax.annotation.Nullable NestedContactGroup parent) {
-    this.parent = JsonNullable.<NestedContactGroup>of(parent);
     
+    this.parent = parent;
     return this;
   }
 
@@ -268,26 +264,18 @@ public class ContactGroup {
    * @return parent
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public NestedContactGroup getParent() {
-        return parent.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<NestedContactGroup> getParent_JsonNullable() {
+  public NestedContactGroup getParent() {
     return parent;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PARENT)
-  public void setParent_JsonNullable(JsonNullable<NestedContactGroup> parent) {
-    this.parent = parent;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setParent(@javax.annotation.Nullable NestedContactGroup parent) {
-    this.parent = JsonNullable.<NestedContactGroup>of(parent);
+    this.parent = parent;
   }
 
   public ContactGroup description(@javax.annotation.Nullable String description) {
@@ -424,8 +412,8 @@ public class ContactGroup {
 
 
   public ContactGroup owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -434,26 +422,18 @@ public class ContactGroup {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public ContactGroup comments(@javax.annotation.Nullable String comments) {
@@ -511,32 +491,21 @@ public class ContactGroup {
         Objects.equals(this.display, contactGroup.display) &&
         Objects.equals(this.name, contactGroup.name) &&
         Objects.equals(this.slug, contactGroup.slug) &&
-        equalsNullable(this.parent, contactGroup.parent) &&
+        Objects.equals(this.parent, contactGroup.parent) &&
         Objects.equals(this.description, contactGroup.description) &&
         Objects.equals(this.tags, contactGroup.tags) &&
         Objects.equals(this.customFields, contactGroup.customFields) &&
         Objects.equals(this.created, contactGroup.created) &&
         Objects.equals(this.lastUpdated, contactGroup.lastUpdated) &&
         Objects.equals(this.contactCount, contactGroup.contactCount) &&
-        equalsNullable(this.owner, contactGroup.owner) &&
+        Objects.equals(this.owner, contactGroup.owner) &&
         Objects.equals(this.comments, contactGroup.comments) &&
         Objects.equals(this.depth, contactGroup.depth);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, name, slug, hashCodeNullable(parent), description, tags, customFields, created, lastUpdated, contactCount, hashCodeNullable(owner), comments, depth);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, name, slug, parent, description, tags, customFields, created, lastUpdated, contactCount, owner, comments, depth);
   }
 
   @Override

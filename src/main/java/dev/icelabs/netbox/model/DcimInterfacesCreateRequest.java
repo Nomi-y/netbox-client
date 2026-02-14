@@ -34,10 +34,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -82,7 +78,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   DcimInterfacesCreateRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
 @JsonTypeName("dcim_interfaces_create_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class DcimInterfacesCreateRequest {
   public static final String JSON_PROPERTY_DEVICE = "device";
   @javax.annotation.Nonnull
@@ -94,7 +90,7 @@ public class DcimInterfacesCreateRequest {
 
   public static final String JSON_PROPERTY_MODULE = "module";
   @javax.annotation.Nullable
-  private JsonNullable<ConsolePortRequestModule> module = JsonNullable.<ConsolePortRequestModule>undefined();
+  private ConsolePortRequestModule module;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -557,27 +553,27 @@ public class DcimInterfacesCreateRequest {
 
   public static final String JSON_PROPERTY_PARENT = "parent";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> parent = JsonNullable.<Integer>undefined();
+  private Integer parent;
 
   public static final String JSON_PROPERTY_BRIDGE = "bridge";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> bridge = JsonNullable.<Integer>undefined();
+  private Integer bridge;
 
   public static final String JSON_PROPERTY_LAG = "lag";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> lag = JsonNullable.<Integer>undefined();
+  private Integer lag;
 
   public static final String JSON_PROPERTY_MTU = "mtu";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> mtu = JsonNullable.<Integer>undefined();
+  private Integer mtu;
 
   public static final String JSON_PROPERTY_PRIMARY_MAC_ADDRESS = "primary_mac_address";
   @javax.annotation.Nullable
-  private JsonNullable<InterfaceRequestPrimaryMacAddress> primaryMacAddress = JsonNullable.<InterfaceRequestPrimaryMacAddress>undefined();
+  private InterfaceRequestPrimaryMacAddress primaryMacAddress;
 
   public static final String JSON_PROPERTY_SPEED = "speed";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> speed = JsonNullable.<Integer>undefined();
+  private Integer speed;
 
   /**
    * * &#x60;half&#x60; - Half * &#x60;full&#x60; - Full * &#x60;auto&#x60; - Auto
@@ -620,11 +616,11 @@ public class DcimInterfacesCreateRequest {
 
   public static final String JSON_PROPERTY_DUPLEX = "duplex";
   @javax.annotation.Nullable
-  private JsonNullable<DuplexEnum> duplex = JsonNullable.<DuplexEnum>undefined();
+  private DuplexEnum duplex;
 
   public static final String JSON_PROPERTY_WWN = "wwn";
   @javax.annotation.Nullable
-  private JsonNullable<String> wwn = JsonNullable.<String>undefined();
+  private String wwn;
 
   public static final String JSON_PROPERTY_MGMT_ONLY = "mgmt_only";
   @javax.annotation.Nullable
@@ -677,7 +673,7 @@ public class DcimInterfacesCreateRequest {
 
   public static final String JSON_PROPERTY_MODE = "mode";
   @javax.annotation.Nullable
-  private JsonNullable<ModeEnum> mode = JsonNullable.<ModeEnum>undefined();
+  private ModeEnum mode;
 
   /**
    * * &#x60;ap&#x60; - Access point * &#x60;station&#x60; - Station
@@ -718,7 +714,7 @@ public class DcimInterfacesCreateRequest {
 
   public static final String JSON_PROPERTY_RF_ROLE = "rf_role";
   @javax.annotation.Nullable
-  private JsonNullable<RfRoleEnum> rfRole = JsonNullable.<RfRoleEnum>undefined();
+  private RfRoleEnum rfRole;
 
   /**
    * * &#x60;2.4g-1-2412-22&#x60; - 1 (2412 MHz) * &#x60;2.4g-2-2417-22&#x60; - 2 (2417 MHz) * &#x60;2.4g-3-2422-22&#x60; - 3 (2422 MHz) * &#x60;2.4g-4-2427-22&#x60; - 4 (2427 MHz) * &#x60;2.4g-5-2432-22&#x60; - 5 (2432 MHz) * &#x60;2.4g-6-2437-22&#x60; - 6 (2437 MHz) * &#x60;2.4g-7-2442-22&#x60; - 7 (2442 MHz) * &#x60;2.4g-8-2447-22&#x60; - 8 (2447 MHz) * &#x60;2.4g-9-2452-22&#x60; - 9 (2452 MHz) * &#x60;2.4g-10-2457-22&#x60; - 10 (2457 MHz) * &#x60;2.4g-11-2462-22&#x60; - 11 (2462 MHz) * &#x60;2.4g-12-2467-22&#x60; - 12 (2467 MHz) * &#x60;2.4g-13-2472-22&#x60; - 13 (2472 MHz) * &#x60;5g-32-5160-20&#x60; - 32 (5160/20 MHz) * &#x60;5g-34-5170-40&#x60; - 34 (5170/40 MHz) * &#x60;5g-36-5180-20&#x60; - 36 (5180/20 MHz) * &#x60;5g-38-5190-40&#x60; - 38 (5190/40 MHz) * &#x60;5g-40-5200-20&#x60; - 40 (5200/20 MHz) * &#x60;5g-42-5210-80&#x60; - 42 (5210/80 MHz) * &#x60;5g-44-5220-20&#x60; - 44 (5220/20 MHz) * &#x60;5g-46-5230-40&#x60; - 46 (5230/40 MHz) * &#x60;5g-48-5240-20&#x60; - 48 (5240/20 MHz) * &#x60;5g-50-5250-160&#x60; - 50 (5250/160 MHz) * &#x60;5g-52-5260-20&#x60; - 52 (5260/20 MHz) * &#x60;5g-54-5270-40&#x60; - 54 (5270/40 MHz) * &#x60;5g-56-5280-20&#x60; - 56 (5280/20 MHz) * &#x60;5g-58-5290-80&#x60; - 58 (5290/80 MHz) * &#x60;5g-60-5300-20&#x60; - 60 (5300/20 MHz) * &#x60;5g-62-5310-40&#x60; - 62 (5310/40 MHz) * &#x60;5g-64-5320-20&#x60; - 64 (5320/20 MHz) * &#x60;5g-100-5500-20&#x60; - 100 (5500/20 MHz) * &#x60;5g-102-5510-40&#x60; - 102 (5510/40 MHz) * &#x60;5g-104-5520-20&#x60; - 104 (5520/20 MHz) * &#x60;5g-106-5530-80&#x60; - 106 (5530/80 MHz) * &#x60;5g-108-5540-20&#x60; - 108 (5540/20 MHz) * &#x60;5g-110-5550-40&#x60; - 110 (5550/40 MHz) * &#x60;5g-112-5560-20&#x60; - 112 (5560/20 MHz) * &#x60;5g-114-5570-160&#x60; - 114 (5570/160 MHz) * &#x60;5g-116-5580-20&#x60; - 116 (5580/20 MHz) * &#x60;5g-118-5590-40&#x60; - 118 (5590/40 MHz) * &#x60;5g-120-5600-20&#x60; - 120 (5600/20 MHz) * &#x60;5g-122-5610-80&#x60; - 122 (5610/80 MHz) * &#x60;5g-124-5620-20&#x60; - 124 (5620/20 MHz) * &#x60;5g-126-5630-40&#x60; - 126 (5630/40 MHz) * &#x60;5g-128-5640-20&#x60; - 128 (5640/20 MHz) * &#x60;5g-132-5660-20&#x60; - 132 (5660/20 MHz) * &#x60;5g-134-5670-40&#x60; - 134 (5670/40 MHz) * &#x60;5g-136-5680-20&#x60; - 136 (5680/20 MHz) * &#x60;5g-138-5690-80&#x60; - 138 (5690/80 MHz) * &#x60;5g-140-5700-20&#x60; - 140 (5700/20 MHz) * &#x60;5g-142-5710-40&#x60; - 142 (5710/40 MHz) * &#x60;5g-144-5720-20&#x60; - 144 (5720/20 MHz) * &#x60;5g-149-5745-20&#x60; - 149 (5745/20 MHz) * &#x60;5g-151-5755-40&#x60; - 151 (5755/40 MHz) * &#x60;5g-153-5765-20&#x60; - 153 (5765/20 MHz) * &#x60;5g-155-5775-80&#x60; - 155 (5775/80 MHz) * &#x60;5g-157-5785-20&#x60; - 157 (5785/20 MHz) * &#x60;5g-159-5795-40&#x60; - 159 (5795/40 MHz) * &#x60;5g-161-5805-20&#x60; - 161 (5805/20 MHz) * &#x60;5g-163-5815-160&#x60; - 163 (5815/160 MHz) * &#x60;5g-165-5825-20&#x60; - 165 (5825/20 MHz) * &#x60;5g-167-5835-40&#x60; - 167 (5835/40 MHz) * &#x60;5g-169-5845-20&#x60; - 169 (5845/20 MHz) * &#x60;5g-171-5855-80&#x60; - 171 (5855/80 MHz) * &#x60;5g-173-5865-20&#x60; - 173 (5865/20 MHz) * &#x60;5g-175-5875-40&#x60; - 175 (5875/40 MHz) * &#x60;5g-177-5885-20&#x60; - 177 (5885/20 MHz) * &#x60;6g-1-5955-20&#x60; - 1 (5955/20 MHz) * &#x60;6g-3-5965-40&#x60; - 3 (5965/40 MHz) * &#x60;6g-5-5975-20&#x60; - 5 (5975/20 MHz) * &#x60;6g-7-5985-80&#x60; - 7 (5985/80 MHz) * &#x60;6g-9-5995-20&#x60; - 9 (5995/20 MHz) * &#x60;6g-11-6005-40&#x60; - 11 (6005/40 MHz) * &#x60;6g-13-6015-20&#x60; - 13 (6015/20 MHz) * &#x60;6g-15-6025-160&#x60; - 15 (6025/160 MHz) * &#x60;6g-17-6035-20&#x60; - 17 (6035/20 MHz) * &#x60;6g-19-6045-40&#x60; - 19 (6045/40 MHz) * &#x60;6g-21-6055-20&#x60; - 21 (6055/20 MHz) * &#x60;6g-23-6065-80&#x60; - 23 (6065/80 MHz) * &#x60;6g-25-6075-20&#x60; - 25 (6075/20 MHz) * &#x60;6g-27-6085-40&#x60; - 27 (6085/40 MHz) * &#x60;6g-29-6095-20&#x60; - 29 (6095/20 MHz) * &#x60;6g-31-6105-320&#x60; - 31 (6105/320 MHz) * &#x60;6g-33-6115-20&#x60; - 33 (6115/20 MHz) * &#x60;6g-35-6125-40&#x60; - 35 (6125/40 MHz) * &#x60;6g-37-6135-20&#x60; - 37 (6135/20 MHz) * &#x60;6g-39-6145-80&#x60; - 39 (6145/80 MHz) * &#x60;6g-41-6155-20&#x60; - 41 (6155/20 MHz) * &#x60;6g-43-6165-40&#x60; - 43 (6165/40 MHz) * &#x60;6g-45-6175-20&#x60; - 45 (6175/20 MHz) * &#x60;6g-47-6185-160&#x60; - 47 (6185/160 MHz) * &#x60;6g-49-6195-20&#x60; - 49 (6195/20 MHz) * &#x60;6g-51-6205-40&#x60; - 51 (6205/40 MHz) * &#x60;6g-53-6215-20&#x60; - 53 (6215/20 MHz) * &#x60;6g-55-6225-80&#x60; - 55 (6225/80 MHz) * &#x60;6g-57-6235-20&#x60; - 57 (6235/20 MHz) * &#x60;6g-59-6245-40&#x60; - 59 (6245/40 MHz) * &#x60;6g-61-6255-20&#x60; - 61 (6255/20 MHz) * &#x60;6g-65-6275-20&#x60; - 65 (6275/20 MHz) * &#x60;6g-67-6285-40&#x60; - 67 (6285/40 MHz) * &#x60;6g-69-6295-20&#x60; - 69 (6295/20 MHz) * &#x60;6g-71-6305-80&#x60; - 71 (6305/80 MHz) * &#x60;6g-73-6315-20&#x60; - 73 (6315/20 MHz) * &#x60;6g-75-6325-40&#x60; - 75 (6325/40 MHz) * &#x60;6g-77-6335-20&#x60; - 77 (6335/20 MHz) * &#x60;6g-79-6345-160&#x60; - 79 (6345/160 MHz) * &#x60;6g-81-6355-20&#x60; - 81 (6355/20 MHz) * &#x60;6g-83-6365-40&#x60; - 83 (6365/40 MHz) * &#x60;6g-85-6375-20&#x60; - 85 (6375/20 MHz) * &#x60;6g-87-6385-80&#x60; - 87 (6385/80 MHz) * &#x60;6g-89-6395-20&#x60; - 89 (6395/20 MHz) * &#x60;6g-91-6405-40&#x60; - 91 (6405/40 MHz) * &#x60;6g-93-6415-20&#x60; - 93 (6415/20 MHz) * &#x60;6g-95-6425-320&#x60; - 95 (6425/320 MHz) * &#x60;6g-97-6435-20&#x60; - 97 (6435/20 MHz) * &#x60;6g-99-6445-40&#x60; - 99 (6445/40 MHz) * &#x60;6g-101-6455-20&#x60; - 101 (6455/20 MHz) * &#x60;6g-103-6465-80&#x60; - 103 (6465/80 MHz) * &#x60;6g-105-6475-20&#x60; - 105 (6475/20 MHz) * &#x60;6g-107-6485-40&#x60; - 107 (6485/40 MHz) * &#x60;6g-109-6495-20&#x60; - 109 (6495/20 MHz) * &#x60;6g-111-6505-160&#x60; - 111 (6505/160 MHz) * &#x60;6g-113-6515-20&#x60; - 113 (6515/20 MHz) * &#x60;6g-115-6525-40&#x60; - 115 (6525/40 MHz) * &#x60;6g-117-6535-20&#x60; - 117 (6535/20 MHz) * &#x60;6g-119-6545-80&#x60; - 119 (6545/80 MHz) * &#x60;6g-121-6555-20&#x60; - 121 (6555/20 MHz) * &#x60;6g-123-6565-40&#x60; - 123 (6565/40 MHz) * &#x60;6g-125-6575-20&#x60; - 125 (6575/20 MHz) * &#x60;6g-129-6595-20&#x60; - 129 (6595/20 MHz) * &#x60;6g-131-6605-40&#x60; - 131 (6605/40 MHz) * &#x60;6g-133-6615-20&#x60; - 133 (6615/20 MHz) * &#x60;6g-135-6625-80&#x60; - 135 (6625/80 MHz) * &#x60;6g-137-6635-20&#x60; - 137 (6635/20 MHz) * &#x60;6g-139-6645-40&#x60; - 139 (6645/40 MHz) * &#x60;6g-141-6655-20&#x60; - 141 (6655/20 MHz) * &#x60;6g-143-6665-160&#x60; - 143 (6665/160 MHz) * &#x60;6g-145-6675-20&#x60; - 145 (6675/20 MHz) * &#x60;6g-147-6685-40&#x60; - 147 (6685/40 MHz) * &#x60;6g-149-6695-20&#x60; - 149 (6695/20 MHz) * &#x60;6g-151-6705-80&#x60; - 151 (6705/80 MHz) * &#x60;6g-153-6715-20&#x60; - 153 (6715/20 MHz) * &#x60;6g-155-6725-40&#x60; - 155 (6725/40 MHz) * &#x60;6g-157-6735-20&#x60; - 157 (6735/20 MHz) * &#x60;6g-159-6745-320&#x60; - 159 (6745/320 MHz) * &#x60;6g-161-6755-20&#x60; - 161 (6755/20 MHz) * &#x60;6g-163-6765-40&#x60; - 163 (6765/40 MHz) * &#x60;6g-165-6775-20&#x60; - 165 (6775/20 MHz) * &#x60;6g-167-6785-80&#x60; - 167 (6785/80 MHz) * &#x60;6g-169-6795-20&#x60; - 169 (6795/20 MHz) * &#x60;6g-171-6805-40&#x60; - 171 (6805/40 MHz) * &#x60;6g-173-6815-20&#x60; - 173 (6815/20 MHz) * &#x60;6g-175-6825-160&#x60; - 175 (6825/160 MHz) * &#x60;6g-177-6835-20&#x60; - 177 (6835/20 MHz) * &#x60;6g-179-6845-40&#x60; - 179 (6845/40 MHz) * &#x60;6g-181-6855-20&#x60; - 181 (6855/20 MHz) * &#x60;6g-183-6865-80&#x60; - 183 (6865/80 MHz) * &#x60;6g-185-6875-20&#x60; - 185 (6875/20 MHz) * &#x60;6g-187-6885-40&#x60; - 187 (6885/40 MHz) * &#x60;6g-189-6895-20&#x60; - 189 (6895/20 MHz) * &#x60;6g-193-6915-20&#x60; - 193 (6915/20 MHz) * &#x60;6g-195-6925-40&#x60; - 195 (6925/40 MHz) * &#x60;6g-197-6935-20&#x60; - 197 (6935/20 MHz) * &#x60;6g-199-6945-80&#x60; - 199 (6945/80 MHz) * &#x60;6g-201-6955-20&#x60; - 201 (6955/20 MHz) * &#x60;6g-203-6965-40&#x60; - 203 (6965/40 MHz) * &#x60;6g-205-6975-20&#x60; - 205 (6975/20 MHz) * &#x60;6g-207-6985-160&#x60; - 207 (6985/160 MHz) * &#x60;6g-209-6995-20&#x60; - 209 (6995/20 MHz) * &#x60;6g-211-7005-40&#x60; - 211 (7005/40 MHz) * &#x60;6g-213-7015-20&#x60; - 213 (7015/20 MHz) * &#x60;6g-215-7025-80&#x60; - 215 (7025/80 MHz) * &#x60;6g-217-7035-20&#x60; - 217 (7035/20 MHz) * &#x60;6g-219-7045-40&#x60; - 219 (7045/40 MHz) * &#x60;6g-221-7055-20&#x60; - 221 (7055/20 MHz) * &#x60;6g-225-7075-20&#x60; - 225 (7075/20 MHz) * &#x60;6g-227-7085-40&#x60; - 227 (7085/40 MHz) * &#x60;6g-229-7095-20&#x60; - 229 (7095/20 MHz) * &#x60;6g-233-7115-20&#x60; - 233 (7115/20 MHz) * &#x60;60g-1-58320-2160&#x60; - 1 (58.32/2.16 GHz) * &#x60;60g-2-60480-2160&#x60; - 2 (60.48/2.16 GHz) * &#x60;60g-3-62640-2160&#x60; - 3 (62.64/2.16 GHz) * &#x60;60g-4-64800-2160&#x60; - 4 (64.80/2.16 GHz) * &#x60;60g-5-66960-2160&#x60; - 5 (66.96/2.16 GHz) * &#x60;60g-6-69120-2160&#x60; - 6 (69.12/2.16 GHz) * &#x60;60g-9-59400-4320&#x60; - 9 (59.40/4.32 GHz) * &#x60;60g-10-61560-4320&#x60; - 10 (61.56/4.32 GHz) * &#x60;60g-11-63720-4320&#x60; - 11 (63.72/4.32 GHz) * &#x60;60g-12-65880-4320&#x60; - 12 (65.88/4.32 GHz) * &#x60;60g-13-68040-4320&#x60; - 13 (68.04/4.32 GHz) * &#x60;60g-17-60480-6480&#x60; - 17 (60.48/6.48 GHz) * &#x60;60g-18-62640-6480&#x60; - 18 (62.64/6.48 GHz) * &#x60;60g-19-64800-6480&#x60; - 19 (64.80/6.48 GHz) * &#x60;60g-20-66960-6480&#x60; - 20 (66.96/6.48 GHz) * &#x60;60g-25-61560-6480&#x60; - 25 (61.56/8.64 GHz) * &#x60;60g-26-63720-6480&#x60; - 26 (63.72/8.64 GHz) * &#x60;60g-27-65880-6480&#x60; - 27 (65.88/8.64 GHz)
@@ -1149,7 +1145,7 @@ public class DcimInterfacesCreateRequest {
 
   public static final String JSON_PROPERTY_RF_CHANNEL = "rf_channel";
   @javax.annotation.Nullable
-  private JsonNullable<RfChannelEnum> rfChannel = JsonNullable.<RfChannelEnum>undefined();
+  private RfChannelEnum rfChannel;
 
   /**
    * * &#x60;pd&#x60; - PD * &#x60;pse&#x60; - PSE
@@ -1190,7 +1186,7 @@ public class DcimInterfacesCreateRequest {
 
   public static final String JSON_PROPERTY_POE_MODE = "poe_mode";
   @javax.annotation.Nullable
-  private JsonNullable<PoeModeEnum> poeMode = JsonNullable.<PoeModeEnum>undefined();
+  private PoeModeEnum poeMode;
 
   /**
    * * &#x60;type1-ieee802.3af&#x60; - 802.3af (Type 1) * &#x60;type2-ieee802.3at&#x60; - 802.3at (Type 2) * &#x60;type3-ieee802.3bt&#x60; - 802.3bt (Type 3) * &#x60;type4-ieee802.3bt&#x60; - 802.3bt (Type 4) * &#x60;passive-24v-2pair&#x60; - Passive 24V (2-pair) * &#x60;passive-24v-4pair&#x60; - Passive 24V (4-pair) * &#x60;passive-48v-2pair&#x60; - Passive 48V (2-pair) * &#x60;passive-48v-4pair&#x60; - Passive 48V (4-pair)
@@ -1243,23 +1239,23 @@ public class DcimInterfacesCreateRequest {
 
   public static final String JSON_PROPERTY_POE_TYPE = "poe_type";
   @javax.annotation.Nullable
-  private JsonNullable<PoeTypeEnum> poeType = JsonNullable.<PoeTypeEnum>undefined();
+  private PoeTypeEnum poeType;
 
   public static final String JSON_PROPERTY_RF_CHANNEL_FREQUENCY = "rf_channel_frequency";
   @javax.annotation.Nullable
-  private JsonNullable<Double> rfChannelFrequency = JsonNullable.<Double>undefined();
+  private Double rfChannelFrequency;
 
   public static final String JSON_PROPERTY_RF_CHANNEL_WIDTH = "rf_channel_width";
   @javax.annotation.Nullable
-  private JsonNullable<Double> rfChannelWidth = JsonNullable.<Double>undefined();
+  private Double rfChannelWidth;
 
   public static final String JSON_PROPERTY_TX_POWER = "tx_power";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> txPower = JsonNullable.<Integer>undefined();
+  private Integer txPower;
 
   public static final String JSON_PROPERTY_UNTAGGED_VLAN = "untagged_vlan";
   @javax.annotation.Nullable
-  private JsonNullable<InterfaceRequestUntaggedVlan> untaggedVlan = JsonNullable.<InterfaceRequestUntaggedVlan>undefined();
+  private InterfaceRequestUntaggedVlan untaggedVlan;
 
   public static final String JSON_PROPERTY_TAGGED_VLANS = "tagged_vlans";
   @javax.annotation.Nullable
@@ -1267,11 +1263,11 @@ public class DcimInterfacesCreateRequest {
 
   public static final String JSON_PROPERTY_QINQ_SVLAN = "qinq_svlan";
   @javax.annotation.Nullable
-  private JsonNullable<InterfaceRequestUntaggedVlan> qinqSvlan = JsonNullable.<InterfaceRequestUntaggedVlan>undefined();
+  private InterfaceRequestUntaggedVlan qinqSvlan;
 
   public static final String JSON_PROPERTY_VLAN_TRANSLATION_POLICY = "vlan_translation_policy";
   @javax.annotation.Nullable
-  private JsonNullable<InterfaceRequestVlanTranslationPolicy> vlanTranslationPolicy = JsonNullable.<InterfaceRequestVlanTranslationPolicy>undefined();
+  private InterfaceRequestVlanTranslationPolicy vlanTranslationPolicy;
 
   public static final String JSON_PROPERTY_MARK_CONNECTED = "mark_connected";
   @javax.annotation.Nullable
@@ -1283,11 +1279,11 @@ public class DcimInterfacesCreateRequest {
 
   public static final String JSON_PROPERTY_VRF = "vrf";
   @javax.annotation.Nullable
-  private JsonNullable<IPAddressRequestVrf> vrf = JsonNullable.<IPAddressRequestVrf>undefined();
+  private IPAddressRequestVrf vrf;
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -1359,8 +1355,8 @@ public class DcimInterfacesCreateRequest {
   }
 
   public DcimInterfacesCreateRequest module(@javax.annotation.Nullable ConsolePortRequestModule module) {
-    this.module = JsonNullable.<ConsolePortRequestModule>of(module);
     
+    this.module = module;
     return this;
   }
 
@@ -1369,26 +1365,18 @@ public class DcimInterfacesCreateRequest {
    * @return module
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ConsolePortRequestModule getModule() {
-        return module.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MODULE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ConsolePortRequestModule> getModule_JsonNullable() {
+  public ConsolePortRequestModule getModule() {
     return module;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MODULE)
-  public void setModule_JsonNullable(JsonNullable<ConsolePortRequestModule> module) {
-    this.module = module;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_MODULE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setModule(@javax.annotation.Nullable ConsolePortRequestModule module) {
-    this.module = JsonNullable.<ConsolePortRequestModule>of(module);
+    this.module = module;
   }
 
   public DcimInterfacesCreateRequest name(@javax.annotation.Nonnull String name) {
@@ -1492,8 +1480,8 @@ public class DcimInterfacesCreateRequest {
   }
 
   public DcimInterfacesCreateRequest parent(@javax.annotation.Nullable Integer parent) {
-    this.parent = JsonNullable.<Integer>of(parent);
     
+    this.parent = parent;
     return this;
   }
 
@@ -1502,31 +1490,23 @@ public class DcimInterfacesCreateRequest {
    * @return parent
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getParent() {
-        return parent.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getParent_JsonNullable() {
+  public Integer getParent() {
     return parent;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PARENT)
-  public void setParent_JsonNullable(JsonNullable<Integer> parent) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setParent(@javax.annotation.Nullable Integer parent) {
     this.parent = parent;
   }
 
-  public void setParent(@javax.annotation.Nullable Integer parent) {
-    this.parent = JsonNullable.<Integer>of(parent);
-  }
-
   public DcimInterfacesCreateRequest bridge(@javax.annotation.Nullable Integer bridge) {
-    this.bridge = JsonNullable.<Integer>of(bridge);
     
+    this.bridge = bridge;
     return this;
   }
 
@@ -1535,31 +1515,23 @@ public class DcimInterfacesCreateRequest {
    * @return bridge
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getBridge() {
-        return bridge.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_BRIDGE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getBridge_JsonNullable() {
+  public Integer getBridge() {
     return bridge;
   }
-  
-  @JsonProperty(JSON_PROPERTY_BRIDGE)
-  public void setBridge_JsonNullable(JsonNullable<Integer> bridge) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_BRIDGE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setBridge(@javax.annotation.Nullable Integer bridge) {
     this.bridge = bridge;
   }
 
-  public void setBridge(@javax.annotation.Nullable Integer bridge) {
-    this.bridge = JsonNullable.<Integer>of(bridge);
-  }
-
   public DcimInterfacesCreateRequest lag(@javax.annotation.Nullable Integer lag) {
-    this.lag = JsonNullable.<Integer>of(lag);
     
+    this.lag = lag;
     return this;
   }
 
@@ -1568,31 +1540,23 @@ public class DcimInterfacesCreateRequest {
    * @return lag
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getLag() {
-        return lag.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_LAG, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getLag_JsonNullable() {
+  public Integer getLag() {
     return lag;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LAG)
-  public void setLag_JsonNullable(JsonNullable<Integer> lag) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_LAG, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setLag(@javax.annotation.Nullable Integer lag) {
     this.lag = lag;
   }
 
-  public void setLag(@javax.annotation.Nullable Integer lag) {
-    this.lag = JsonNullable.<Integer>of(lag);
-  }
-
   public DcimInterfacesCreateRequest mtu(@javax.annotation.Nullable Integer mtu) {
-    this.mtu = JsonNullable.<Integer>of(mtu);
     
+    this.mtu = mtu;
     return this;
   }
 
@@ -1603,31 +1567,23 @@ public class DcimInterfacesCreateRequest {
    * @return mtu
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getMtu() {
-        return mtu.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MTU, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getMtu_JsonNullable() {
+  public Integer getMtu() {
     return mtu;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MTU)
-  public void setMtu_JsonNullable(JsonNullable<Integer> mtu) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_MTU, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMtu(@javax.annotation.Nullable Integer mtu) {
     this.mtu = mtu;
   }
 
-  public void setMtu(@javax.annotation.Nullable Integer mtu) {
-    this.mtu = JsonNullable.<Integer>of(mtu);
-  }
-
   public DcimInterfacesCreateRequest primaryMacAddress(@javax.annotation.Nullable InterfaceRequestPrimaryMacAddress primaryMacAddress) {
-    this.primaryMacAddress = JsonNullable.<InterfaceRequestPrimaryMacAddress>of(primaryMacAddress);
     
+    this.primaryMacAddress = primaryMacAddress;
     return this;
   }
 
@@ -1636,31 +1592,23 @@ public class DcimInterfacesCreateRequest {
    * @return primaryMacAddress
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public InterfaceRequestPrimaryMacAddress getPrimaryMacAddress() {
-        return primaryMacAddress.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PRIMARY_MAC_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<InterfaceRequestPrimaryMacAddress> getPrimaryMacAddress_JsonNullable() {
+  public InterfaceRequestPrimaryMacAddress getPrimaryMacAddress() {
     return primaryMacAddress;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PRIMARY_MAC_ADDRESS)
-  public void setPrimaryMacAddress_JsonNullable(JsonNullable<InterfaceRequestPrimaryMacAddress> primaryMacAddress) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_PRIMARY_MAC_ADDRESS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPrimaryMacAddress(@javax.annotation.Nullable InterfaceRequestPrimaryMacAddress primaryMacAddress) {
     this.primaryMacAddress = primaryMacAddress;
   }
 
-  public void setPrimaryMacAddress(@javax.annotation.Nullable InterfaceRequestPrimaryMacAddress primaryMacAddress) {
-    this.primaryMacAddress = JsonNullable.<InterfaceRequestPrimaryMacAddress>of(primaryMacAddress);
-  }
-
   public DcimInterfacesCreateRequest speed(@javax.annotation.Nullable Integer speed) {
-    this.speed = JsonNullable.<Integer>of(speed);
     
+    this.speed = speed;
     return this;
   }
 
@@ -1671,31 +1619,23 @@ public class DcimInterfacesCreateRequest {
    * @return speed
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getSpeed() {
-        return speed.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SPEED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getSpeed_JsonNullable() {
+  public Integer getSpeed() {
     return speed;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SPEED)
-  public void setSpeed_JsonNullable(JsonNullable<Integer> speed) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_SPEED, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSpeed(@javax.annotation.Nullable Integer speed) {
     this.speed = speed;
   }
 
-  public void setSpeed(@javax.annotation.Nullable Integer speed) {
-    this.speed = JsonNullable.<Integer>of(speed);
-  }
-
   public DcimInterfacesCreateRequest duplex(@javax.annotation.Nullable DuplexEnum duplex) {
-    this.duplex = JsonNullable.<DuplexEnum>of(duplex);
     
+    this.duplex = duplex;
     return this;
   }
 
@@ -1704,31 +1644,23 @@ public class DcimInterfacesCreateRequest {
    * @return duplex
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DuplexEnum getDuplex() {
-        return duplex.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_DUPLEX, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DuplexEnum> getDuplex_JsonNullable() {
+  public DuplexEnum getDuplex() {
     return duplex;
   }
-  
-  @JsonProperty(JSON_PROPERTY_DUPLEX)
-  public void setDuplex_JsonNullable(JsonNullable<DuplexEnum> duplex) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_DUPLEX, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDuplex(@javax.annotation.Nullable DuplexEnum duplex) {
     this.duplex = duplex;
   }
 
-  public void setDuplex(@javax.annotation.Nullable DuplexEnum duplex) {
-    this.duplex = JsonNullable.<DuplexEnum>of(duplex);
-  }
-
   public DcimInterfacesCreateRequest wwn(@javax.annotation.Nullable String wwn) {
-    this.wwn = JsonNullable.<String>of(wwn);
     
+    this.wwn = wwn;
     return this;
   }
 
@@ -1737,26 +1669,18 @@ public class DcimInterfacesCreateRequest {
    * @return wwn
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getWwn() {
-        return wwn.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_WWN, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getWwn_JsonNullable() {
+  public String getWwn() {
     return wwn;
   }
-  
-  @JsonProperty(JSON_PROPERTY_WWN)
-  public void setWwn_JsonNullable(JsonNullable<String> wwn) {
-    this.wwn = wwn;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_WWN, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setWwn(@javax.annotation.Nullable String wwn) {
-    this.wwn = JsonNullable.<String>of(wwn);
+    this.wwn = wwn;
   }
 
   public DcimInterfacesCreateRequest mgmtOnly(@javax.annotation.Nullable Boolean mgmtOnly) {
@@ -1810,8 +1734,8 @@ public class DcimInterfacesCreateRequest {
   }
 
   public DcimInterfacesCreateRequest mode(@javax.annotation.Nullable ModeEnum mode) {
-    this.mode = JsonNullable.<ModeEnum>of(mode);
     
+    this.mode = mode;
     return this;
   }
 
@@ -1820,31 +1744,23 @@ public class DcimInterfacesCreateRequest {
    * @return mode
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ModeEnum getMode() {
-        return mode.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ModeEnum> getMode_JsonNullable() {
+  public ModeEnum getMode() {
     return mode;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MODE)
-  public void setMode_JsonNullable(JsonNullable<ModeEnum> mode) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_MODE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMode(@javax.annotation.Nullable ModeEnum mode) {
     this.mode = mode;
   }
 
-  public void setMode(@javax.annotation.Nullable ModeEnum mode) {
-    this.mode = JsonNullable.<ModeEnum>of(mode);
-  }
-
   public DcimInterfacesCreateRequest rfRole(@javax.annotation.Nullable RfRoleEnum rfRole) {
-    this.rfRole = JsonNullable.<RfRoleEnum>of(rfRole);
     
+    this.rfRole = rfRole;
     return this;
   }
 
@@ -1853,31 +1769,23 @@ public class DcimInterfacesCreateRequest {
    * @return rfRole
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public RfRoleEnum getRfRole() {
-        return rfRole.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_RF_ROLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<RfRoleEnum> getRfRole_JsonNullable() {
+  public RfRoleEnum getRfRole() {
     return rfRole;
   }
-  
-  @JsonProperty(JSON_PROPERTY_RF_ROLE)
-  public void setRfRole_JsonNullable(JsonNullable<RfRoleEnum> rfRole) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_RF_ROLE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRfRole(@javax.annotation.Nullable RfRoleEnum rfRole) {
     this.rfRole = rfRole;
   }
 
-  public void setRfRole(@javax.annotation.Nullable RfRoleEnum rfRole) {
-    this.rfRole = JsonNullable.<RfRoleEnum>of(rfRole);
-  }
-
   public DcimInterfacesCreateRequest rfChannel(@javax.annotation.Nullable RfChannelEnum rfChannel) {
-    this.rfChannel = JsonNullable.<RfChannelEnum>of(rfChannel);
     
+    this.rfChannel = rfChannel;
     return this;
   }
 
@@ -1886,31 +1794,23 @@ public class DcimInterfacesCreateRequest {
    * @return rfChannel
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public RfChannelEnum getRfChannel() {
-        return rfChannel.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_RF_CHANNEL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<RfChannelEnum> getRfChannel_JsonNullable() {
+  public RfChannelEnum getRfChannel() {
     return rfChannel;
   }
-  
-  @JsonProperty(JSON_PROPERTY_RF_CHANNEL)
-  public void setRfChannel_JsonNullable(JsonNullable<RfChannelEnum> rfChannel) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_RF_CHANNEL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRfChannel(@javax.annotation.Nullable RfChannelEnum rfChannel) {
     this.rfChannel = rfChannel;
   }
 
-  public void setRfChannel(@javax.annotation.Nullable RfChannelEnum rfChannel) {
-    this.rfChannel = JsonNullable.<RfChannelEnum>of(rfChannel);
-  }
-
   public DcimInterfacesCreateRequest poeMode(@javax.annotation.Nullable PoeModeEnum poeMode) {
-    this.poeMode = JsonNullable.<PoeModeEnum>of(poeMode);
     
+    this.poeMode = poeMode;
     return this;
   }
 
@@ -1919,31 +1819,23 @@ public class DcimInterfacesCreateRequest {
    * @return poeMode
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public PoeModeEnum getPoeMode() {
-        return poeMode.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_POE_MODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<PoeModeEnum> getPoeMode_JsonNullable() {
+  public PoeModeEnum getPoeMode() {
     return poeMode;
   }
-  
-  @JsonProperty(JSON_PROPERTY_POE_MODE)
-  public void setPoeMode_JsonNullable(JsonNullable<PoeModeEnum> poeMode) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_POE_MODE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPoeMode(@javax.annotation.Nullable PoeModeEnum poeMode) {
     this.poeMode = poeMode;
   }
 
-  public void setPoeMode(@javax.annotation.Nullable PoeModeEnum poeMode) {
-    this.poeMode = JsonNullable.<PoeModeEnum>of(poeMode);
-  }
-
   public DcimInterfacesCreateRequest poeType(@javax.annotation.Nullable PoeTypeEnum poeType) {
-    this.poeType = JsonNullable.<PoeTypeEnum>of(poeType);
     
+    this.poeType = poeType;
     return this;
   }
 
@@ -1952,31 +1844,23 @@ public class DcimInterfacesCreateRequest {
    * @return poeType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public PoeTypeEnum getPoeType() {
-        return poeType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_POE_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<PoeTypeEnum> getPoeType_JsonNullable() {
+  public PoeTypeEnum getPoeType() {
     return poeType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_POE_TYPE)
-  public void setPoeType_JsonNullable(JsonNullable<PoeTypeEnum> poeType) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_POE_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPoeType(@javax.annotation.Nullable PoeTypeEnum poeType) {
     this.poeType = poeType;
   }
 
-  public void setPoeType(@javax.annotation.Nullable PoeTypeEnum poeType) {
-    this.poeType = JsonNullable.<PoeTypeEnum>of(poeType);
-  }
-
   public DcimInterfacesCreateRequest rfChannelFrequency(@javax.annotation.Nullable Double rfChannelFrequency) {
-    this.rfChannelFrequency = JsonNullable.<Double>of(rfChannelFrequency);
     
+    this.rfChannelFrequency = rfChannelFrequency;
     return this;
   }
 
@@ -1987,31 +1871,23 @@ public class DcimInterfacesCreateRequest {
    * @return rfChannelFrequency
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getRfChannelFrequency() {
-        return rfChannelFrequency.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_RF_CHANNEL_FREQUENCY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getRfChannelFrequency_JsonNullable() {
+  public Double getRfChannelFrequency() {
     return rfChannelFrequency;
   }
-  
-  @JsonProperty(JSON_PROPERTY_RF_CHANNEL_FREQUENCY)
-  public void setRfChannelFrequency_JsonNullable(JsonNullable<Double> rfChannelFrequency) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_RF_CHANNEL_FREQUENCY, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRfChannelFrequency(@javax.annotation.Nullable Double rfChannelFrequency) {
     this.rfChannelFrequency = rfChannelFrequency;
   }
 
-  public void setRfChannelFrequency(@javax.annotation.Nullable Double rfChannelFrequency) {
-    this.rfChannelFrequency = JsonNullable.<Double>of(rfChannelFrequency);
-  }
-
   public DcimInterfacesCreateRequest rfChannelWidth(@javax.annotation.Nullable Double rfChannelWidth) {
-    this.rfChannelWidth = JsonNullable.<Double>of(rfChannelWidth);
     
+    this.rfChannelWidth = rfChannelWidth;
     return this;
   }
 
@@ -2022,31 +1898,23 @@ public class DcimInterfacesCreateRequest {
    * @return rfChannelWidth
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getRfChannelWidth() {
-        return rfChannelWidth.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_RF_CHANNEL_WIDTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getRfChannelWidth_JsonNullable() {
+  public Double getRfChannelWidth() {
     return rfChannelWidth;
   }
-  
-  @JsonProperty(JSON_PROPERTY_RF_CHANNEL_WIDTH)
-  public void setRfChannelWidth_JsonNullable(JsonNullable<Double> rfChannelWidth) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_RF_CHANNEL_WIDTH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRfChannelWidth(@javax.annotation.Nullable Double rfChannelWidth) {
     this.rfChannelWidth = rfChannelWidth;
   }
 
-  public void setRfChannelWidth(@javax.annotation.Nullable Double rfChannelWidth) {
-    this.rfChannelWidth = JsonNullable.<Double>of(rfChannelWidth);
-  }
-
   public DcimInterfacesCreateRequest txPower(@javax.annotation.Nullable Integer txPower) {
-    this.txPower = JsonNullable.<Integer>of(txPower);
     
+    this.txPower = txPower;
     return this;
   }
 
@@ -2057,31 +1925,23 @@ public class DcimInterfacesCreateRequest {
    * @return txPower
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getTxPower() {
-        return txPower.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TX_POWER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getTxPower_JsonNullable() {
+  public Integer getTxPower() {
     return txPower;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TX_POWER)
-  public void setTxPower_JsonNullable(JsonNullable<Integer> txPower) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TX_POWER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTxPower(@javax.annotation.Nullable Integer txPower) {
     this.txPower = txPower;
   }
 
-  public void setTxPower(@javax.annotation.Nullable Integer txPower) {
-    this.txPower = JsonNullable.<Integer>of(txPower);
-  }
-
   public DcimInterfacesCreateRequest untaggedVlan(@javax.annotation.Nullable InterfaceRequestUntaggedVlan untaggedVlan) {
-    this.untaggedVlan = JsonNullable.<InterfaceRequestUntaggedVlan>of(untaggedVlan);
     
+    this.untaggedVlan = untaggedVlan;
     return this;
   }
 
@@ -2090,26 +1950,18 @@ public class DcimInterfacesCreateRequest {
    * @return untaggedVlan
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public InterfaceRequestUntaggedVlan getUntaggedVlan() {
-        return untaggedVlan.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_UNTAGGED_VLAN, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<InterfaceRequestUntaggedVlan> getUntaggedVlan_JsonNullable() {
+  public InterfaceRequestUntaggedVlan getUntaggedVlan() {
     return untaggedVlan;
   }
-  
-  @JsonProperty(JSON_PROPERTY_UNTAGGED_VLAN)
-  public void setUntaggedVlan_JsonNullable(JsonNullable<InterfaceRequestUntaggedVlan> untaggedVlan) {
-    this.untaggedVlan = untaggedVlan;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_UNTAGGED_VLAN, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUntaggedVlan(@javax.annotation.Nullable InterfaceRequestUntaggedVlan untaggedVlan) {
-    this.untaggedVlan = JsonNullable.<InterfaceRequestUntaggedVlan>of(untaggedVlan);
+    this.untaggedVlan = untaggedVlan;
   }
 
   public DcimInterfacesCreateRequest taggedVlans(@javax.annotation.Nullable List<Integer> taggedVlans) {
@@ -2146,8 +1998,8 @@ public class DcimInterfacesCreateRequest {
   }
 
   public DcimInterfacesCreateRequest qinqSvlan(@javax.annotation.Nullable InterfaceRequestUntaggedVlan qinqSvlan) {
-    this.qinqSvlan = JsonNullable.<InterfaceRequestUntaggedVlan>of(qinqSvlan);
     
+    this.qinqSvlan = qinqSvlan;
     return this;
   }
 
@@ -2156,31 +2008,23 @@ public class DcimInterfacesCreateRequest {
    * @return qinqSvlan
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public InterfaceRequestUntaggedVlan getQinqSvlan() {
-        return qinqSvlan.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_QINQ_SVLAN, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<InterfaceRequestUntaggedVlan> getQinqSvlan_JsonNullable() {
+  public InterfaceRequestUntaggedVlan getQinqSvlan() {
     return qinqSvlan;
   }
-  
-  @JsonProperty(JSON_PROPERTY_QINQ_SVLAN)
-  public void setQinqSvlan_JsonNullable(JsonNullable<InterfaceRequestUntaggedVlan> qinqSvlan) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_QINQ_SVLAN, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setQinqSvlan(@javax.annotation.Nullable InterfaceRequestUntaggedVlan qinqSvlan) {
     this.qinqSvlan = qinqSvlan;
   }
 
-  public void setQinqSvlan(@javax.annotation.Nullable InterfaceRequestUntaggedVlan qinqSvlan) {
-    this.qinqSvlan = JsonNullable.<InterfaceRequestUntaggedVlan>of(qinqSvlan);
-  }
-
   public DcimInterfacesCreateRequest vlanTranslationPolicy(@javax.annotation.Nullable InterfaceRequestVlanTranslationPolicy vlanTranslationPolicy) {
-    this.vlanTranslationPolicy = JsonNullable.<InterfaceRequestVlanTranslationPolicy>of(vlanTranslationPolicy);
     
+    this.vlanTranslationPolicy = vlanTranslationPolicy;
     return this;
   }
 
@@ -2189,26 +2033,18 @@ public class DcimInterfacesCreateRequest {
    * @return vlanTranslationPolicy
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public InterfaceRequestVlanTranslationPolicy getVlanTranslationPolicy() {
-        return vlanTranslationPolicy.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VLAN_TRANSLATION_POLICY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<InterfaceRequestVlanTranslationPolicy> getVlanTranslationPolicy_JsonNullable() {
+  public InterfaceRequestVlanTranslationPolicy getVlanTranslationPolicy() {
     return vlanTranslationPolicy;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VLAN_TRANSLATION_POLICY)
-  public void setVlanTranslationPolicy_JsonNullable(JsonNullable<InterfaceRequestVlanTranslationPolicy> vlanTranslationPolicy) {
-    this.vlanTranslationPolicy = vlanTranslationPolicy;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_VLAN_TRANSLATION_POLICY, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVlanTranslationPolicy(@javax.annotation.Nullable InterfaceRequestVlanTranslationPolicy vlanTranslationPolicy) {
-    this.vlanTranslationPolicy = JsonNullable.<InterfaceRequestVlanTranslationPolicy>of(vlanTranslationPolicy);
+    this.vlanTranslationPolicy = vlanTranslationPolicy;
   }
 
   public DcimInterfacesCreateRequest markConnected(@javax.annotation.Nullable Boolean markConnected) {
@@ -2270,8 +2106,8 @@ public class DcimInterfacesCreateRequest {
   }
 
   public DcimInterfacesCreateRequest vrf(@javax.annotation.Nullable IPAddressRequestVrf vrf) {
-    this.vrf = JsonNullable.<IPAddressRequestVrf>of(vrf);
     
+    this.vrf = vrf;
     return this;
   }
 
@@ -2280,31 +2116,23 @@ public class DcimInterfacesCreateRequest {
    * @return vrf
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public IPAddressRequestVrf getVrf() {
-        return vrf.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VRF, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<IPAddressRequestVrf> getVrf_JsonNullable() {
+  public IPAddressRequestVrf getVrf() {
     return vrf;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VRF)
-  public void setVrf_JsonNullable(JsonNullable<IPAddressRequestVrf> vrf) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_VRF, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setVrf(@javax.annotation.Nullable IPAddressRequestVrf vrf) {
     this.vrf = vrf;
   }
 
-  public void setVrf(@javax.annotation.Nullable IPAddressRequestVrf vrf) {
-    this.vrf = JsonNullable.<IPAddressRequestVrf>of(vrf);
-  }
-
   public DcimInterfacesCreateRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -2313,26 +2141,18 @@ public class DcimInterfacesCreateRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public DcimInterfacesCreateRequest tags(@javax.annotation.Nullable List<NestedTagRequest> tags) {
@@ -2413,55 +2233,44 @@ public class DcimInterfacesCreateRequest {
     DcimInterfacesCreateRequest dcimInterfacesCreateRequest = (DcimInterfacesCreateRequest) o;
     return Objects.equals(this.device, dcimInterfacesCreateRequest.device) &&
         Objects.equals(this.vdcs, dcimInterfacesCreateRequest.vdcs) &&
-        equalsNullable(this.module, dcimInterfacesCreateRequest.module) &&
+        Objects.equals(this.module, dcimInterfacesCreateRequest.module) &&
         Objects.equals(this.name, dcimInterfacesCreateRequest.name) &&
         Objects.equals(this.label, dcimInterfacesCreateRequest.label) &&
         Objects.equals(this.type, dcimInterfacesCreateRequest.type) &&
         Objects.equals(this.enabled, dcimInterfacesCreateRequest.enabled) &&
-        equalsNullable(this.parent, dcimInterfacesCreateRequest.parent) &&
-        equalsNullable(this.bridge, dcimInterfacesCreateRequest.bridge) &&
-        equalsNullable(this.lag, dcimInterfacesCreateRequest.lag) &&
-        equalsNullable(this.mtu, dcimInterfacesCreateRequest.mtu) &&
-        equalsNullable(this.primaryMacAddress, dcimInterfacesCreateRequest.primaryMacAddress) &&
-        equalsNullable(this.speed, dcimInterfacesCreateRequest.speed) &&
-        equalsNullable(this.duplex, dcimInterfacesCreateRequest.duplex) &&
-        equalsNullable(this.wwn, dcimInterfacesCreateRequest.wwn) &&
+        Objects.equals(this.parent, dcimInterfacesCreateRequest.parent) &&
+        Objects.equals(this.bridge, dcimInterfacesCreateRequest.bridge) &&
+        Objects.equals(this.lag, dcimInterfacesCreateRequest.lag) &&
+        Objects.equals(this.mtu, dcimInterfacesCreateRequest.mtu) &&
+        Objects.equals(this.primaryMacAddress, dcimInterfacesCreateRequest.primaryMacAddress) &&
+        Objects.equals(this.speed, dcimInterfacesCreateRequest.speed) &&
+        Objects.equals(this.duplex, dcimInterfacesCreateRequest.duplex) &&
+        Objects.equals(this.wwn, dcimInterfacesCreateRequest.wwn) &&
         Objects.equals(this.mgmtOnly, dcimInterfacesCreateRequest.mgmtOnly) &&
         Objects.equals(this.description, dcimInterfacesCreateRequest.description) &&
-        equalsNullable(this.mode, dcimInterfacesCreateRequest.mode) &&
-        equalsNullable(this.rfRole, dcimInterfacesCreateRequest.rfRole) &&
-        equalsNullable(this.rfChannel, dcimInterfacesCreateRequest.rfChannel) &&
-        equalsNullable(this.poeMode, dcimInterfacesCreateRequest.poeMode) &&
-        equalsNullable(this.poeType, dcimInterfacesCreateRequest.poeType) &&
-        equalsNullable(this.rfChannelFrequency, dcimInterfacesCreateRequest.rfChannelFrequency) &&
-        equalsNullable(this.rfChannelWidth, dcimInterfacesCreateRequest.rfChannelWidth) &&
-        equalsNullable(this.txPower, dcimInterfacesCreateRequest.txPower) &&
-        equalsNullable(this.untaggedVlan, dcimInterfacesCreateRequest.untaggedVlan) &&
+        Objects.equals(this.mode, dcimInterfacesCreateRequest.mode) &&
+        Objects.equals(this.rfRole, dcimInterfacesCreateRequest.rfRole) &&
+        Objects.equals(this.rfChannel, dcimInterfacesCreateRequest.rfChannel) &&
+        Objects.equals(this.poeMode, dcimInterfacesCreateRequest.poeMode) &&
+        Objects.equals(this.poeType, dcimInterfacesCreateRequest.poeType) &&
+        Objects.equals(this.rfChannelFrequency, dcimInterfacesCreateRequest.rfChannelFrequency) &&
+        Objects.equals(this.rfChannelWidth, dcimInterfacesCreateRequest.rfChannelWidth) &&
+        Objects.equals(this.txPower, dcimInterfacesCreateRequest.txPower) &&
+        Objects.equals(this.untaggedVlan, dcimInterfacesCreateRequest.untaggedVlan) &&
         Objects.equals(this.taggedVlans, dcimInterfacesCreateRequest.taggedVlans) &&
-        equalsNullable(this.qinqSvlan, dcimInterfacesCreateRequest.qinqSvlan) &&
-        equalsNullable(this.vlanTranslationPolicy, dcimInterfacesCreateRequest.vlanTranslationPolicy) &&
+        Objects.equals(this.qinqSvlan, dcimInterfacesCreateRequest.qinqSvlan) &&
+        Objects.equals(this.vlanTranslationPolicy, dcimInterfacesCreateRequest.vlanTranslationPolicy) &&
         Objects.equals(this.markConnected, dcimInterfacesCreateRequest.markConnected) &&
         Objects.equals(this.wirelessLans, dcimInterfacesCreateRequest.wirelessLans) &&
-        equalsNullable(this.vrf, dcimInterfacesCreateRequest.vrf) &&
-        equalsNullable(this.owner, dcimInterfacesCreateRequest.owner) &&
+        Objects.equals(this.vrf, dcimInterfacesCreateRequest.vrf) &&
+        Objects.equals(this.owner, dcimInterfacesCreateRequest.owner) &&
         Objects.equals(this.tags, dcimInterfacesCreateRequest.tags) &&
         Objects.equals(this.customFields, dcimInterfacesCreateRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(device, vdcs, hashCodeNullable(module), name, label, type, enabled, hashCodeNullable(parent), hashCodeNullable(bridge), hashCodeNullable(lag), hashCodeNullable(mtu), hashCodeNullable(primaryMacAddress), hashCodeNullable(speed), hashCodeNullable(duplex), hashCodeNullable(wwn), mgmtOnly, description, hashCodeNullable(mode), hashCodeNullable(rfRole), hashCodeNullable(rfChannel), hashCodeNullable(poeMode), hashCodeNullable(poeType), hashCodeNullable(rfChannelFrequency), hashCodeNullable(rfChannelWidth), hashCodeNullable(txPower), hashCodeNullable(untaggedVlan), taggedVlans, hashCodeNullable(qinqSvlan), hashCodeNullable(vlanTranslationPolicy), markConnected, wirelessLans, hashCodeNullable(vrf), hashCodeNullable(owner), tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(device, vdcs, module, name, label, type, enabled, parent, bridge, lag, mtu, primaryMacAddress, speed, duplex, wwn, mgmtOnly, description, mode, rfRole, rfChannel, poeMode, poeType, rfChannelFrequency, rfChannelWidth, txPower, untaggedVlan, taggedVlans, qinqSvlan, vlanTranslationPolicy, markConnected, wirelessLans, vrf, owner, tags, customFields);
   }
 
   @Override

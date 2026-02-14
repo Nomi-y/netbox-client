@@ -10,7 +10,7 @@ import dev.icelabs.netbox.lib.ResponseProcessor;
 public abstract class Endpoint {
 
     protected final RestClient client;
-    private final String endpoint;
+    protected final String endpoint;
 
     protected Endpoint(
             RestClient client,
@@ -31,14 +31,14 @@ public abstract class Endpoint {
 
     }
 
-    protected ResponseProcessor _get() {
+    public ResponseProcessor _get() {
         var spec = this.client.get()
                 .uri(this.endpoint)
                 .retrieve();
         return new ResponseProcessor(spec);
     }
 
-    protected ResponseProcessor _get(int id) {
+    public ResponseProcessor _get(int id) {
         var spec = this.client.get()
                 .uri(
                         new PathBuilder()

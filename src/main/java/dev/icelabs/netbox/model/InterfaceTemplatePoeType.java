@@ -20,10 +20,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -35,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   InterfaceTemplatePoeType.JSON_PROPERTY_LABEL
 })
 @JsonTypeName("InterfaceTemplate_poe_type")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class InterfaceTemplatePoeType {
   /**
    * * &#x60;type1-ieee802.3af&#x60; - 802.3af (Type 1) * &#x60;type2-ieee802.3at&#x60; - 802.3at (Type 2) * &#x60;type3-ieee802.3bt&#x60; - 802.3bt (Type 3) * &#x60;type4-ieee802.3bt&#x60; - 802.3bt (Type 4) * &#x60;passive-24v-2pair&#x60; - Passive 24V (2-pair) * &#x60;passive-24v-4pair&#x60; - Passive 24V (4-pair) * &#x60;passive-48v-2pair&#x60; - Passive 48V (2-pair) * &#x60;passive-48v-4pair&#x60; - Passive 48V (4-pair)
@@ -88,7 +84,7 @@ public class InterfaceTemplatePoeType {
 
   public static final String JSON_PROPERTY_VALUE = "value";
   @javax.annotation.Nullable
-  private JsonNullable<ValueEnum> value = JsonNullable.<ValueEnum>undefined();
+  private ValueEnum value;
 
   /**
    * Gets or Sets label
@@ -145,8 +141,8 @@ public class InterfaceTemplatePoeType {
   }
 
   public InterfaceTemplatePoeType value(@javax.annotation.Nullable ValueEnum value) {
-    this.value = JsonNullable.<ValueEnum>of(value);
     
+    this.value = value;
     return this;
   }
 
@@ -155,26 +151,18 @@ public class InterfaceTemplatePoeType {
    * @return value
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ValueEnum getValue() {
-        return value.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VALUE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ValueEnum> getValue_JsonNullable() {
+  public ValueEnum getValue() {
     return value;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VALUE)
-  public void setValue_JsonNullable(JsonNullable<ValueEnum> value) {
-    this.value = value;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_VALUE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setValue(@javax.annotation.Nullable ValueEnum value) {
-    this.value = JsonNullable.<ValueEnum>of(value);
+    this.value = value;
   }
 
   public InterfaceTemplatePoeType label(@javax.annotation.Nullable LabelEnum label) {
@@ -212,24 +200,13 @@ public class InterfaceTemplatePoeType {
       return false;
     }
     InterfaceTemplatePoeType interfaceTemplatePoeType = (InterfaceTemplatePoeType) o;
-    return equalsNullable(this.value, interfaceTemplatePoeType.value) &&
+    return Objects.equals(this.value, interfaceTemplatePoeType.value) &&
         Objects.equals(this.label, interfaceTemplatePoeType.label);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(value), label);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(value, label);
   }
 
   @Override

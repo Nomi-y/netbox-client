@@ -22,10 +22,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import dev.icelabs.netbox.model.BookmarkRequestUser;
 import java.time.OffsetDateTime;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -43,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   TokenRequest.JSON_PROPERTY_PEPPER_ID,
   TokenRequest.JSON_PROPERTY_TOKEN
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class TokenRequest {
   /**
    * * &#x60;1&#x60; - v1 * &#x60;2&#x60; - v2
@@ -94,11 +90,11 @@ public class TokenRequest {
 
   public static final String JSON_PROPERTY_EXPIRES = "expires";
   @javax.annotation.Nullable
-  private JsonNullable<OffsetDateTime> expires = JsonNullable.<OffsetDateTime>undefined();
+  private OffsetDateTime expires;
 
   public static final String JSON_PROPERTY_LAST_USED = "last_used";
   @javax.annotation.Nullable
-  private JsonNullable<OffsetDateTime> lastUsed = JsonNullable.<OffsetDateTime>undefined();
+  private OffsetDateTime lastUsed;
 
   public static final String JSON_PROPERTY_ENABLED = "enabled";
   @javax.annotation.Nullable
@@ -110,7 +106,7 @@ public class TokenRequest {
 
   public static final String JSON_PROPERTY_PEPPER_ID = "pepper_id";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> pepperId = JsonNullable.<Integer>undefined();
+  private Integer pepperId;
 
   public static final String JSON_PROPERTY_TOKEN = "token";
   @javax.annotation.Nullable
@@ -197,8 +193,8 @@ public class TokenRequest {
   }
 
   public TokenRequest expires(@javax.annotation.Nullable OffsetDateTime expires) {
-    this.expires = JsonNullable.<OffsetDateTime>of(expires);
     
+    this.expires = expires;
     return this;
   }
 
@@ -207,31 +203,23 @@ public class TokenRequest {
    * @return expires
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public OffsetDateTime getExpires() {
-        return expires.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_EXPIRES, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<OffsetDateTime> getExpires_JsonNullable() {
+  public OffsetDateTime getExpires() {
     return expires;
   }
-  
-  @JsonProperty(JSON_PROPERTY_EXPIRES)
-  public void setExpires_JsonNullable(JsonNullable<OffsetDateTime> expires) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_EXPIRES, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setExpires(@javax.annotation.Nullable OffsetDateTime expires) {
     this.expires = expires;
   }
 
-  public void setExpires(@javax.annotation.Nullable OffsetDateTime expires) {
-    this.expires = JsonNullable.<OffsetDateTime>of(expires);
-  }
-
   public TokenRequest lastUsed(@javax.annotation.Nullable OffsetDateTime lastUsed) {
-    this.lastUsed = JsonNullable.<OffsetDateTime>of(lastUsed);
     
+    this.lastUsed = lastUsed;
     return this;
   }
 
@@ -240,26 +228,18 @@ public class TokenRequest {
    * @return lastUsed
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public OffsetDateTime getLastUsed() {
-        return lastUsed.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_LAST_USED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<OffsetDateTime> getLastUsed_JsonNullable() {
+  public OffsetDateTime getLastUsed() {
     return lastUsed;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LAST_USED)
-  public void setLastUsed_JsonNullable(JsonNullable<OffsetDateTime> lastUsed) {
-    this.lastUsed = lastUsed;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_LAST_USED, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLastUsed(@javax.annotation.Nullable OffsetDateTime lastUsed) {
-    this.lastUsed = JsonNullable.<OffsetDateTime>of(lastUsed);
+    this.lastUsed = lastUsed;
   }
 
   public TokenRequest enabled(@javax.annotation.Nullable Boolean enabled) {
@@ -313,8 +293,8 @@ public class TokenRequest {
   }
 
   public TokenRequest pepperId(@javax.annotation.Nullable Integer pepperId) {
-    this.pepperId = JsonNullable.<Integer>of(pepperId);
     
+    this.pepperId = pepperId;
     return this;
   }
 
@@ -325,26 +305,18 @@ public class TokenRequest {
    * @return pepperId
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getPepperId() {
-        return pepperId.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PEPPER_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getPepperId_JsonNullable() {
+  public Integer getPepperId() {
     return pepperId;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PEPPER_ID)
-  public void setPepperId_JsonNullable(JsonNullable<Integer> pepperId) {
-    this.pepperId = pepperId;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PEPPER_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPepperId(@javax.annotation.Nullable Integer pepperId) {
-    this.pepperId = JsonNullable.<Integer>of(pepperId);
+    this.pepperId = pepperId;
   }
 
   public TokenRequest token(@javax.annotation.Nullable String token) {
@@ -385,28 +357,17 @@ public class TokenRequest {
     return Objects.equals(this.version, tokenRequest.version) &&
         Objects.equals(this.user, tokenRequest.user) &&
         Objects.equals(this.description, tokenRequest.description) &&
-        equalsNullable(this.expires, tokenRequest.expires) &&
-        equalsNullable(this.lastUsed, tokenRequest.lastUsed) &&
+        Objects.equals(this.expires, tokenRequest.expires) &&
+        Objects.equals(this.lastUsed, tokenRequest.lastUsed) &&
         Objects.equals(this.enabled, tokenRequest.enabled) &&
         Objects.equals(this.writeEnabled, tokenRequest.writeEnabled) &&
-        equalsNullable(this.pepperId, tokenRequest.pepperId) &&
+        Objects.equals(this.pepperId, tokenRequest.pepperId) &&
         Objects.equals(this.token, tokenRequest.token);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(version, user, description, hashCodeNullable(expires), hashCodeNullable(lastUsed), enabled, writeEnabled, hashCodeNullable(pepperId), token);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(version, user, description, expires, lastUsed, enabled, writeEnabled, pepperId, token);
   }
 
   @Override

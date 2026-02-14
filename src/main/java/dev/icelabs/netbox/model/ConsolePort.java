@@ -34,10 +34,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -71,7 +67,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ConsolePort.JSON_PROPERTY_LAST_UPDATED,
   ConsolePort.JSON_PROPERTY_OCCUPIED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class ConsolePort {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -95,7 +91,7 @@ public class ConsolePort {
 
   public static final String JSON_PROPERTY_MODULE = "module";
   @javax.annotation.Nullable
-  private JsonNullable<BriefModule> module = JsonNullable.<BriefModule>undefined();
+  private BriefModule module;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -111,7 +107,7 @@ public class ConsolePort {
 
   public static final String JSON_PROPERTY_SPEED = "speed";
   @javax.annotation.Nullable
-  private JsonNullable<ConsolePortSpeed> speed = JsonNullable.<ConsolePortSpeed>undefined();
+  private ConsolePortSpeed speed;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -151,7 +147,7 @@ public class ConsolePort {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -294,8 +290,8 @@ public class ConsolePort {
   }
 
   public ConsolePort module(@javax.annotation.Nullable BriefModule module) {
-    this.module = JsonNullable.<BriefModule>of(module);
     
+    this.module = module;
     return this;
   }
 
@@ -304,26 +300,18 @@ public class ConsolePort {
    * @return module
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefModule getModule() {
-        return module.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MODULE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefModule> getModule_JsonNullable() {
+  public BriefModule getModule() {
     return module;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MODULE)
-  public void setModule_JsonNullable(JsonNullable<BriefModule> module) {
-    this.module = module;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_MODULE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setModule(@javax.annotation.Nullable BriefModule module) {
-    this.module = JsonNullable.<BriefModule>of(module);
+    this.module = module;
   }
 
   public ConsolePort name(@javax.annotation.Nonnull String name) {
@@ -402,8 +390,8 @@ public class ConsolePort {
   }
 
   public ConsolePort speed(@javax.annotation.Nullable ConsolePortSpeed speed) {
-    this.speed = JsonNullable.<ConsolePortSpeed>of(speed);
     
+    this.speed = speed;
     return this;
   }
 
@@ -412,26 +400,18 @@ public class ConsolePort {
    * @return speed
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ConsolePortSpeed getSpeed() {
-        return speed.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SPEED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ConsolePortSpeed> getSpeed_JsonNullable() {
+  public ConsolePortSpeed getSpeed() {
     return speed;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SPEED)
-  public void setSpeed_JsonNullable(JsonNullable<ConsolePortSpeed> speed) {
-    this.speed = speed;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_SPEED, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSpeed(@javax.annotation.Nullable ConsolePortSpeed speed) {
-    this.speed = JsonNullable.<ConsolePortSpeed>of(speed);
+    this.speed = speed;
   }
 
   public ConsolePort description(@javax.annotation.Nullable String description) {
@@ -583,8 +563,8 @@ public class ConsolePort {
 
 
   public ConsolePort owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -593,26 +573,18 @@ public class ConsolePort {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public ConsolePort tags(@javax.annotation.Nullable List<NestedTag> tags) {
@@ -738,11 +710,11 @@ public class ConsolePort {
         Objects.equals(this.displayUrl, consolePort.displayUrl) &&
         Objects.equals(this.display, consolePort.display) &&
         Objects.equals(this.device, consolePort.device) &&
-        equalsNullable(this.module, consolePort.module) &&
+        Objects.equals(this.module, consolePort.module) &&
         Objects.equals(this.name, consolePort.name) &&
         Objects.equals(this.label, consolePort.label) &&
         Objects.equals(this.type, consolePort.type) &&
-        equalsNullable(this.speed, consolePort.speed) &&
+        Objects.equals(this.speed, consolePort.speed) &&
         Objects.equals(this.description, consolePort.description) &&
         Objects.equals(this.markConnected, consolePort.markConnected) &&
         Objects.equals(this.cable, consolePort.cable) &&
@@ -752,7 +724,7 @@ public class ConsolePort {
         Objects.equals(this.connectedEndpoints, consolePort.connectedEndpoints) &&
         Objects.equals(this.connectedEndpointsType, consolePort.connectedEndpointsType) &&
         Objects.equals(this.connectedEndpointsReachable, consolePort.connectedEndpointsReachable) &&
-        equalsNullable(this.owner, consolePort.owner) &&
+        Objects.equals(this.owner, consolePort.owner) &&
         Objects.equals(this.tags, consolePort.tags) &&
         Objects.equals(this.customFields, consolePort.customFields) &&
         Objects.equals(this.created, consolePort.created) &&
@@ -760,20 +732,9 @@ public class ConsolePort {
         Objects.equals(this.occupied, consolePort.occupied);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, device, hashCodeNullable(module), name, label, type, hashCodeNullable(speed), description, markConnected, cable, cableEnd, linkPeers, linkPeersType, connectedEndpoints, connectedEndpointsType, connectedEndpointsReachable, hashCodeNullable(owner), tags, customFields, created, lastUpdated, occupied);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, device, module, name, label, type, speed, description, markConnected, cable, cableEnd, linkPeers, linkPeersType, connectedEndpoints, connectedEndpointsType, connectedEndpointsReachable, owner, tags, customFields, created, lastUpdated, occupied);
   }
 
   @Override

@@ -31,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   EventRuleActionType.JSON_PROPERTY_LABEL
 })
 @JsonTypeName("EventRule_action_type")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class EventRuleActionType {
   /**
    * * &#x60;webhook&#x60; - Webhook * &#x60;script&#x60; - Script * &#x60;notification&#x60; - Notification

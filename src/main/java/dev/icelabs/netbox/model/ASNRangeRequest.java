@@ -10,476 +10,433 @@
  * Do not edit the class manually.
  */
 
-
 package dev.icelabs.netbox.model;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import dev.icelabs.netbox.model.ASNRangeRequestOwner;
-import dev.icelabs.netbox.model.ASNRangeRequestRir;
-import dev.icelabs.netbox.model.ASNRangeRequestTenant;
-import dev.icelabs.netbox.model.NestedTagRequest;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
+import java.util.Objects;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * Base serializer class for models inheriting from OrganizationalModel.
  */
 @JsonPropertyOrder({
-  ASNRangeRequest.JSON_PROPERTY_NAME,
-  ASNRangeRequest.JSON_PROPERTY_SLUG,
-  ASNRangeRequest.JSON_PROPERTY_RIR,
-  ASNRangeRequest.JSON_PROPERTY_START,
-  ASNRangeRequest.JSON_PROPERTY_END,
-  ASNRangeRequest.JSON_PROPERTY_TENANT,
-  ASNRangeRequest.JSON_PROPERTY_DESCRIPTION,
-  ASNRangeRequest.JSON_PROPERTY_OWNER,
-  ASNRangeRequest.JSON_PROPERTY_COMMENTS,
-  ASNRangeRequest.JSON_PROPERTY_TAGS,
-  ASNRangeRequest.JSON_PROPERTY_CUSTOM_FIELDS
+        ASNRangeRequest.JSON_PROPERTY_NAME,
+        ASNRangeRequest.JSON_PROPERTY_SLUG,
+        ASNRangeRequest.JSON_PROPERTY_RIR,
+        ASNRangeRequest.JSON_PROPERTY_START,
+        ASNRangeRequest.JSON_PROPERTY_END,
+        ASNRangeRequest.JSON_PROPERTY_TENANT,
+        ASNRangeRequest.JSON_PROPERTY_DESCRIPTION,
+        ASNRangeRequest.JSON_PROPERTY_OWNER,
+        ASNRangeRequest.JSON_PROPERTY_COMMENTS,
+        ASNRangeRequest.JSON_PROPERTY_TAGS,
+        ASNRangeRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class ASNRangeRequest {
-  public static final String JSON_PROPERTY_NAME = "name";
-  @javax.annotation.Nonnull
-  private String name;
+    public static final String JSON_PROPERTY_NAME = "name";
+    @javax.annotation.Nonnull
+    private String name;
 
-  public static final String JSON_PROPERTY_SLUG = "slug";
-  @javax.annotation.Nonnull
-  private String slug;
+    public static final String JSON_PROPERTY_SLUG = "slug";
+    @javax.annotation.Nonnull
+    private String slug;
 
-  public static final String JSON_PROPERTY_RIR = "rir";
-  @javax.annotation.Nonnull
-  private ASNRangeRequestRir rir;
+    public static final String JSON_PROPERTY_RIR = "rir";
+    @javax.annotation.Nonnull
+    private ASNRangeRequestRir rir;
 
-  public static final String JSON_PROPERTY_START = "start";
-  @javax.annotation.Nonnull
-  private Long start;
+    public static final String JSON_PROPERTY_START = "start";
+    @javax.annotation.Nonnull
+    private Long start;
 
-  public static final String JSON_PROPERTY_END = "end";
-  @javax.annotation.Nonnull
-  private Long end;
+    public static final String JSON_PROPERTY_END = "end";
+    @javax.annotation.Nonnull
+    private Long end;
 
-  public static final String JSON_PROPERTY_TENANT = "tenant";
-  @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestTenant> tenant = JsonNullable.<ASNRangeRequestTenant>undefined();
+    public static final String JSON_PROPERTY_TENANT = "tenant";
+    @javax.annotation.Nullable
+    private ASNRangeRequestTenant tenant;
 
-  public static final String JSON_PROPERTY_DESCRIPTION = "description";
-  @javax.annotation.Nullable
-  private String description;
+    public static final String JSON_PROPERTY_DESCRIPTION = "description";
+    @javax.annotation.Nullable
+    private String description;
 
-  public static final String JSON_PROPERTY_OWNER = "owner";
-  @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+    public static final String JSON_PROPERTY_OWNER = "owner";
+    @javax.annotation.Nullable
+    private ASNRangeRequestOwner owner;
 
-  public static final String JSON_PROPERTY_COMMENTS = "comments";
-  @javax.annotation.Nullable
-  private String comments;
+    public static final String JSON_PROPERTY_COMMENTS = "comments";
+    @javax.annotation.Nullable
+    private String comments;
 
-  public static final String JSON_PROPERTY_TAGS = "tags";
-  @javax.annotation.Nullable
-  private List<NestedTagRequest> tags = new ArrayList<>();
+    public static final String JSON_PROPERTY_TAGS = "tags";
+    @javax.annotation.Nullable
+    private List<NestedTagRequest> tags = new ArrayList<>();
 
-  public static final String JSON_PROPERTY_CUSTOM_FIELDS = "custom_fields";
-  @javax.annotation.Nullable
-  private Map<String, Object> customFields = new HashMap<>();
+    public static final String JSON_PROPERTY_CUSTOM_FIELDS = "custom_fields";
+    @javax.annotation.Nullable
+    private Map<String, Object> customFields = new HashMap<>();
 
-  public ASNRangeRequest() {
-  }
-
-  public ASNRangeRequest name(@javax.annotation.Nonnull String name) {
-    
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Get name
-   * @return name
-   */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getName() {
-    return name;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(@javax.annotation.Nonnull String name) {
-    this.name = name;
-  }
-
-  public ASNRangeRequest slug(@javax.annotation.Nonnull String slug) {
-    
-    this.slug = slug;
-    return this;
-  }
-
-  /**
-   * Get slug
-   * @return slug
-   */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_SLUG, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getSlug() {
-    return slug;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_SLUG, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSlug(@javax.annotation.Nonnull String slug) {
-    this.slug = slug;
-  }
-
-  public ASNRangeRequest rir(@javax.annotation.Nonnull ASNRangeRequestRir rir) {
-    
-    this.rir = rir;
-    return this;
-  }
-
-  /**
-   * Get rir
-   * @return rir
-   */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_RIR, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public ASNRangeRequestRir getRir() {
-    return rir;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_RIR, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setRir(@javax.annotation.Nonnull ASNRangeRequestRir rir) {
-    this.rir = rir;
-  }
-
-  public ASNRangeRequest start(@javax.annotation.Nonnull Long start) {
-    
-    this.start = start;
-    return this;
-  }
-
-  /**
-   * Get start
-   * minimum: 1
-   * maximum: 4294967295
-   * @return start
-   */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_START, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Long getStart() {
-    return start;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_START, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setStart(@javax.annotation.Nonnull Long start) {
-    this.start = start;
-  }
-
-  public ASNRangeRequest end(@javax.annotation.Nonnull Long end) {
-    
-    this.end = end;
-    return this;
-  }
-
-  /**
-   * Get end
-   * minimum: 1
-   * maximum: 4294967295
-   * @return end
-   */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_END, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Long getEnd() {
-    return end;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_END, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setEnd(@javax.annotation.Nonnull Long end) {
-    this.end = end;
-  }
-
-  public ASNRangeRequest tenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
-    
-    return this;
-  }
-
-  /**
-   * Get tenant
-   * @return tenant
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
-  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<ASNRangeRequestTenant> getTenant_JsonNullable() {
-    return tenant;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<ASNRangeRequestTenant> tenant) {
-    this.tenant = tenant;
-  }
-
-  public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
-  }
-
-  public ASNRangeRequest description(@javax.annotation.Nullable String description) {
-    
-    this.description = description;
-    return this;
-  }
-
-  /**
-   * Get description
-   * @return description
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getDescription() {
-    return description;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDescription(@javax.annotation.Nullable String description) {
-    this.description = description;
-  }
-
-  public ASNRangeRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
-    
-    return this;
-  }
-
-  /**
-   * Get owner
-   * @return owner
-   */
-  @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
-  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
-    return owner;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
-
-  public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
-  }
-
-  public ASNRangeRequest comments(@javax.annotation.Nullable String comments) {
-    
-    this.comments = comments;
-    return this;
-  }
-
-  /**
-   * Get comments
-   * @return comments
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_COMMENTS, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getComments() {
-    return comments;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_COMMENTS, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setComments(@javax.annotation.Nullable String comments) {
-    this.comments = comments;
-  }
-
-  public ASNRangeRequest tags(@javax.annotation.Nullable List<NestedTagRequest> tags) {
-    
-    this.tags = tags;
-    return this;
-  }
-
-  public ASNRangeRequest addTagsItem(NestedTagRequest tagsItem) {
-    if (this.tags == null) {
-      this.tags = new ArrayList<>();
+    public ASNRangeRequest() {
     }
-    this.tags.add(tagsItem);
-    return this;
-  }
 
-  /**
-   * Get tags
-   * @return tags
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_TAGS, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    public ASNRangeRequest name(@javax.annotation.Nonnull String name) {
 
-  public List<NestedTagRequest> getTags() {
-    return tags;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_TAGS, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTags(@javax.annotation.Nullable List<NestedTagRequest> tags) {
-    this.tags = tags;
-  }
-
-  public ASNRangeRequest customFields(@javax.annotation.Nullable Map<String, Object> customFields) {
-    
-    this.customFields = customFields;
-    return this;
-  }
-
-  public ASNRangeRequest putCustomFieldsItem(String key, Object customFieldsItem) {
-    if (this.customFields == null) {
-      this.customFields = new HashMap<>();
+        this.name = name;
+        return this;
     }
-    this.customFields.put(key, customFieldsItem);
-    return this;
-  }
 
-  /**
-   * Get customFields
-   * @return customFields
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_CUSTOM_FIELDS, required = false)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+    /**
+     * Get name
+     * 
+     * @return name
+     */
+    @javax.annotation.Nonnull
+    @JsonProperty(value = JSON_PROPERTY_NAME, required = true)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public Map<String, Object> getCustomFields() {
-    return customFields;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_CUSTOM_FIELDS, required = false)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCustomFields(@javax.annotation.Nullable Map<String, Object> customFields) {
-    this.customFields = customFields;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+    public String getName() {
+        return name;
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    @JsonProperty(value = JSON_PROPERTY_NAME, required = true)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
+    public void setName(@javax.annotation.Nonnull String name) {
+        this.name = name;
     }
-    ASNRangeRequest asNRangeRequest = (ASNRangeRequest) o;
-    return Objects.equals(this.name, asNRangeRequest.name) &&
-        Objects.equals(this.slug, asNRangeRequest.slug) &&
-        Objects.equals(this.rir, asNRangeRequest.rir) &&
-        Objects.equals(this.start, asNRangeRequest.start) &&
-        Objects.equals(this.end, asNRangeRequest.end) &&
-        equalsNullable(this.tenant, asNRangeRequest.tenant) &&
-        Objects.equals(this.description, asNRangeRequest.description) &&
-        equalsNullable(this.owner, asNRangeRequest.owner) &&
-        Objects.equals(this.comments, asNRangeRequest.comments) &&
-        Objects.equals(this.tags, asNRangeRequest.tags) &&
-        Objects.equals(this.customFields, asNRangeRequest.customFields);
-  }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
+    public ASNRangeRequest slug(@javax.annotation.Nonnull String slug) {
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(name, slug, rir, start, end, hashCodeNullable(tenant), description, hashCodeNullable(owner), comments, tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
+        this.slug = slug;
+        return this;
     }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
-  }
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ASNRangeRequest {\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
-    sb.append("    rir: ").append(toIndentedString(rir)).append("\n");
-    sb.append("    start: ").append(toIndentedString(start)).append("\n");
-    sb.append("    end: ").append(toIndentedString(end)).append("\n");
-    sb.append("    tenant: ").append(toIndentedString(tenant)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
-    sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
-    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-    sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
+    /**
+     * Get slug
+     * 
+     * @return slug
+     */
+    @javax.annotation.Nonnull
+    @JsonProperty(value = JSON_PROPERTY_SLUG, required = true)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public String getSlug() {
+        return slug;
     }
-    return o.toString().replace("\n", "\n    ");
-  }
+
+    @JsonProperty(value = JSON_PROPERTY_SLUG, required = true)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
+    public void setSlug(@javax.annotation.Nonnull String slug) {
+        this.slug = slug;
+    }
+
+    public ASNRangeRequest rir(@javax.annotation.Nonnull ASNRangeRequestRir rir) {
+
+        this.rir = rir;
+        return this;
+    }
+
+    /**
+     * Get rir
+     * 
+     * @return rir
+     */
+    @javax.annotation.Nonnull
+    @JsonProperty(value = JSON_PROPERTY_RIR, required = true)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+    public ASNRangeRequestRir getRir() {
+        return rir;
+    }
+
+    @JsonProperty(value = JSON_PROPERTY_RIR, required = true)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
+    public void setRir(@javax.annotation.Nonnull ASNRangeRequestRir rir) {
+        this.rir = rir;
+    }
+
+    public ASNRangeRequest start(@javax.annotation.Nonnull Long start) {
+
+        this.start = start;
+        return this;
+    }
+
+    /**
+     * Get start
+     * minimum: 1
+     * maximum: 4294967295
+     * 
+     * @return start
+     */
+    @javax.annotation.Nonnull
+    @JsonProperty(value = JSON_PROPERTY_START, required = true)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+    public Long getStart() {
+        return start;
+    }
+
+    @JsonProperty(value = JSON_PROPERTY_START, required = true)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
+    public void setStart(@javax.annotation.Nonnull Long start) {
+        this.start = start;
+    }
+
+    public ASNRangeRequest end(@javax.annotation.Nonnull Long end) {
+
+        this.end = end;
+        return this;
+    }
+
+    /**
+     * Get end
+     * minimum: 1
+     * maximum: 4294967295
+     * 
+     * @return end
+     */
+    @javax.annotation.Nonnull
+    @JsonProperty(value = JSON_PROPERTY_END, required = true)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+    public Long getEnd() {
+        return end;
+    }
+
+    @JsonProperty(value = JSON_PROPERTY_END, required = true)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
+    public void setEnd(@javax.annotation.Nonnull Long end) {
+        this.end = end;
+    }
+
+    public ASNRangeRequest tenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
+
+        this.tenant = tenant;
+        return this;
+    }
+
+    /**
+     * Get tenant
+     * 
+     * @return tenant
+     */
+    @javax.annotation.Nullable
+    @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+    public ASNRangeRequestTenant getTenant() {
+        return tenant;
+    }
+
+    @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
+        this.tenant = tenant;
+    }
+
+    public ASNRangeRequest description(@javax.annotation.Nullable String description) {
+
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * Get description
+     * 
+     * @return description
+     */
+    @javax.annotation.Nullable
+    @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = false)
+    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+    public String getDescription() {
+        return description;
+    }
+
+    @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = false)
+    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    public void setDescription(@javax.annotation.Nullable String description) {
+        this.description = description;
+    }
+
+    public ASNRangeRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
+
+        this.owner = owner;
+        return this;
+    }
+
+    /**
+     * Get owner
+     * 
+     * @return owner
+     */
+    @javax.annotation.Nullable
+    @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+    public ASNRangeRequestOwner getOwner() {
+        return owner;
+    }
+
+    @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
+        this.owner = owner;
+    }
+
+    public ASNRangeRequest comments(@javax.annotation.Nullable String comments) {
+
+        this.comments = comments;
+        return this;
+    }
+
+    /**
+     * Get comments
+     * 
+     * @return comments
+     */
+    @javax.annotation.Nullable
+    @JsonProperty(value = JSON_PROPERTY_COMMENTS, required = false)
+    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+    public String getComments() {
+        return comments;
+    }
+
+    @JsonProperty(value = JSON_PROPERTY_COMMENTS, required = false)
+    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    public void setComments(@javax.annotation.Nullable String comments) {
+        this.comments = comments;
+    }
+
+    public ASNRangeRequest tags(@javax.annotation.Nullable List<NestedTagRequest> tags) {
+
+        this.tags = tags;
+        return this;
+    }
+
+    public ASNRangeRequest addTagsItem(NestedTagRequest tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    /**
+     * Get tags
+     * 
+     * @return tags
+     */
+    @javax.annotation.Nullable
+    @JsonProperty(value = JSON_PROPERTY_TAGS, required = false)
+    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+    public List<NestedTagRequest> getTags() {
+        return tags;
+    }
+
+    @JsonProperty(value = JSON_PROPERTY_TAGS, required = false)
+    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    public void setTags(@javax.annotation.Nullable List<NestedTagRequest> tags) {
+        this.tags = tags;
+    }
+
+    public ASNRangeRequest customFields(@javax.annotation.Nullable Map<String, Object> customFields) {
+
+        this.customFields = customFields;
+        return this;
+    }
+
+    public ASNRangeRequest putCustomFieldsItem(String key, Object customFieldsItem) {
+        if (this.customFields == null) {
+            this.customFields = new HashMap<>();
+        }
+        this.customFields.put(key, customFieldsItem);
+        return this;
+    }
+
+    /**
+     * Get customFields
+     * 
+     * @return customFields
+     */
+    @javax.annotation.Nullable
+    @JsonProperty(value = JSON_PROPERTY_CUSTOM_FIELDS, required = false)
+    @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+
+    public Map<String, Object> getCustomFields() {
+        return customFields;
+    }
+
+    @JsonProperty(value = JSON_PROPERTY_CUSTOM_FIELDS, required = false)
+    @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+    public void setCustomFields(@javax.annotation.Nullable Map<String, Object> customFields) {
+        this.customFields = customFields;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ASNRangeRequest asNRangeRequest = (ASNRangeRequest) o;
+        return Objects.equals(this.name, asNRangeRequest.name) &&
+                Objects.equals(this.slug, asNRangeRequest.slug) &&
+                Objects.equals(this.rir, asNRangeRequest.rir) &&
+                Objects.equals(this.start, asNRangeRequest.start) &&
+                Objects.equals(this.end, asNRangeRequest.end) &&
+                Objects.equals(this.tenant, asNRangeRequest.tenant) &&
+                Objects.equals(this.description, asNRangeRequest.description) &&
+                Objects.equals(this.owner, asNRangeRequest.owner) &&
+                Objects.equals(this.comments, asNRangeRequest.comments) &&
+                Objects.equals(this.tags, asNRangeRequest.tags) &&
+                Objects.equals(this.customFields, asNRangeRequest.customFields);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, slug, rir, start, end, tenant, description, owner, comments, tags, customFields);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ASNRangeRequest {\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
+        sb.append("    rir: ").append(toIndentedString(rir)).append("\n");
+        sb.append("    start: ").append(toIndentedString(start)).append("\n");
+        sb.append("    end: ").append(toIndentedString(end)).append("\n");
+        sb.append("    tenant: ").append(toIndentedString(tenant)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
+        sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
 
 }
-

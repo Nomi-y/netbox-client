@@ -28,10 +28,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -47,7 +43,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ContactAssignmentRequest.JSON_PROPERTY_TAGS,
   ContactAssignmentRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class ContactAssignmentRequest {
   public static final String JSON_PROPERTY_OBJECT_TYPE = "object_type";
   @javax.annotation.Nonnull
@@ -63,7 +59,7 @@ public class ContactAssignmentRequest {
 
   public static final String JSON_PROPERTY_ROLE = "role";
   @javax.annotation.Nullable
-  private JsonNullable<ContactAssignmentRequestRole> role = JsonNullable.<ContactAssignmentRequestRole>undefined();
+  private ContactAssignmentRequestRole role;
 
   /**
    * * &#x60;primary&#x60; - Primary * &#x60;secondary&#x60; - Secondary * &#x60;tertiary&#x60; - Tertiary * &#x60;inactive&#x60; - Inactive
@@ -199,8 +195,8 @@ public class ContactAssignmentRequest {
   }
 
   public ContactAssignmentRequest role(@javax.annotation.Nullable ContactAssignmentRequestRole role) {
-    this.role = JsonNullable.<ContactAssignmentRequestRole>of(role);
     
+    this.role = role;
     return this;
   }
 
@@ -209,26 +205,18 @@ public class ContactAssignmentRequest {
    * @return role
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ContactAssignmentRequestRole getRole() {
-        return role.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ContactAssignmentRequestRole> getRole_JsonNullable() {
+  public ContactAssignmentRequestRole getRole() {
     return role;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ROLE)
-  public void setRole_JsonNullable(JsonNullable<ContactAssignmentRequestRole> role) {
-    this.role = role;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRole(@javax.annotation.Nullable ContactAssignmentRequestRole role) {
-    this.role = JsonNullable.<ContactAssignmentRequestRole>of(role);
+    this.role = role;
   }
 
   public ContactAssignmentRequest priority(@javax.annotation.Nullable PriorityEnum priority) {
@@ -335,26 +323,15 @@ public class ContactAssignmentRequest {
     return Objects.equals(this.objectType, contactAssignmentRequest.objectType) &&
         Objects.equals(this.objectId, contactAssignmentRequest.objectId) &&
         Objects.equals(this.contact, contactAssignmentRequest.contact) &&
-        equalsNullable(this.role, contactAssignmentRequest.role) &&
+        Objects.equals(this.role, contactAssignmentRequest.role) &&
         Objects.equals(this.priority, contactAssignmentRequest.priority) &&
         Objects.equals(this.tags, contactAssignmentRequest.tags) &&
         Objects.equals(this.customFields, contactAssignmentRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(objectType, objectId, contact, hashCodeNullable(role), priority, tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(objectType, objectId, contact, role, priority, tags, customFields);
   }
 
   @Override

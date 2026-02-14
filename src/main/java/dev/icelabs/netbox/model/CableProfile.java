@@ -31,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   CableProfile.JSON_PROPERTY_LABEL
 })
 @JsonTypeName("Cable_profile")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class CableProfile {
   /**
    * * &#x60;single-1c1p&#x60; - 1C1P * &#x60;single-1c2p&#x60; - 1C2P * &#x60;single-1c4p&#x60; - 1C4P * &#x60;single-1c6p&#x60; - 1C6P * &#x60;single-1c8p&#x60; - 1C8P * &#x60;single-1c12p&#x60; - 1C12P * &#x60;single-1c16p&#x60; - 1C16P * &#x60;trunk-2c1p&#x60; - 2C1P trunk * &#x60;trunk-2c2p&#x60; - 2C2P trunk * &#x60;trunk-2c4p&#x60; - 2C4P trunk * &#x60;trunk-2c4p-shuffle&#x60; - 2C4P trunk (shuffle) * &#x60;trunk-2c6p&#x60; - 2C6P trunk * &#x60;trunk-2c8p&#x60; - 2C8P trunk * &#x60;trunk-2c12p&#x60; - 2C12P trunk * &#x60;trunk-4c1p&#x60; - 4C1P trunk * &#x60;trunk-4c2p&#x60; - 4C2P trunk * &#x60;trunk-4c4p&#x60; - 4C4P trunk * &#x60;trunk-4c4p-shuffle&#x60; - 4C4P trunk (shuffle) * &#x60;trunk-4c6p&#x60; - 4C6P trunk * &#x60;trunk-4c8p&#x60; - 4C8P trunk * &#x60;trunk-8c4p&#x60; - 8C4P trunk * &#x60;breakout-1c4p-4c1p&#x60; - 1C4P:4C1P breakout * &#x60;breakout-1c6p-6c1p&#x60; - 1C6P:6C1P breakout * &#x60;breakout-2c4p-8c1p-shuffle&#x60; - 2C4P:8C1P breakout (shuffle)

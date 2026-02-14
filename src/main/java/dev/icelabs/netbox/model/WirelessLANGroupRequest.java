@@ -28,10 +28,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -48,7 +44,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   WirelessLANGroupRequest.JSON_PROPERTY_OWNER,
   WirelessLANGroupRequest.JSON_PROPERTY_COMMENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class WirelessLANGroupRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -60,7 +56,7 @@ public class WirelessLANGroupRequest {
 
   public static final String JSON_PROPERTY_PARENT = "parent";
   @javax.annotation.Nullable
-  private JsonNullable<NestedWirelessLANGroupRequest> parent = JsonNullable.<NestedWirelessLANGroupRequest>undefined();
+  private NestedWirelessLANGroupRequest parent;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -76,7 +72,7 @@ public class WirelessLANGroupRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -136,8 +132,8 @@ public class WirelessLANGroupRequest {
   }
 
   public WirelessLANGroupRequest parent(@javax.annotation.Nullable NestedWirelessLANGroupRequest parent) {
-    this.parent = JsonNullable.<NestedWirelessLANGroupRequest>of(parent);
     
+    this.parent = parent;
     return this;
   }
 
@@ -146,26 +142,18 @@ public class WirelessLANGroupRequest {
    * @return parent
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public NestedWirelessLANGroupRequest getParent() {
-        return parent.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<NestedWirelessLANGroupRequest> getParent_JsonNullable() {
+  public NestedWirelessLANGroupRequest getParent() {
     return parent;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PARENT)
-  public void setParent_JsonNullable(JsonNullable<NestedWirelessLANGroupRequest> parent) {
-    this.parent = parent;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setParent(@javax.annotation.Nullable NestedWirelessLANGroupRequest parent) {
-    this.parent = JsonNullable.<NestedWirelessLANGroupRequest>of(parent);
+    this.parent = parent;
   }
 
   public WirelessLANGroupRequest description(@javax.annotation.Nullable String description) {
@@ -260,8 +248,8 @@ public class WirelessLANGroupRequest {
   }
 
   public WirelessLANGroupRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -270,26 +258,18 @@ public class WirelessLANGroupRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public WirelessLANGroupRequest comments(@javax.annotation.Nullable String comments) {
@@ -329,28 +309,17 @@ public class WirelessLANGroupRequest {
     WirelessLANGroupRequest wirelessLANGroupRequest = (WirelessLANGroupRequest) o;
     return Objects.equals(this.name, wirelessLANGroupRequest.name) &&
         Objects.equals(this.slug, wirelessLANGroupRequest.slug) &&
-        equalsNullable(this.parent, wirelessLANGroupRequest.parent) &&
+        Objects.equals(this.parent, wirelessLANGroupRequest.parent) &&
         Objects.equals(this.description, wirelessLANGroupRequest.description) &&
         Objects.equals(this.tags, wirelessLANGroupRequest.tags) &&
         Objects.equals(this.customFields, wirelessLANGroupRequest.customFields) &&
-        equalsNullable(this.owner, wirelessLANGroupRequest.owner) &&
+        Objects.equals(this.owner, wirelessLANGroupRequest.owner) &&
         Objects.equals(this.comments, wirelessLANGroupRequest.comments);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, slug, hashCodeNullable(parent), description, tags, customFields, hashCodeNullable(owner), comments);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, slug, parent, description, tags, customFields, owner, comments);
   }
 
   @Override

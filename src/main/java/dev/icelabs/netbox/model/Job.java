@@ -28,10 +28,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -60,7 +56,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   Job.JSON_PROPERTY_QUEUE_NAME,
   Job.JSON_PROPERTY_LOG_ENTRIES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class Job {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -84,7 +80,7 @@ public class Job {
 
   public static final String JSON_PROPERTY_OBJECT_ID = "object_id";
   @javax.annotation.Nullable
-  private JsonNullable<Long> objectId = JsonNullable.<Long>undefined();
+  private Long objectId;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
   @javax.annotation.Nullable
@@ -104,19 +100,19 @@ public class Job {
 
   public static final String JSON_PROPERTY_SCHEDULED = "scheduled";
   @javax.annotation.Nullable
-  private JsonNullable<OffsetDateTime> scheduled = JsonNullable.<OffsetDateTime>undefined();
+  private OffsetDateTime scheduled;
 
   public static final String JSON_PROPERTY_INTERVAL = "interval";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> interval = JsonNullable.<Integer>undefined();
+  private Integer interval;
 
   public static final String JSON_PROPERTY_STARTED = "started";
   @javax.annotation.Nullable
-  private JsonNullable<OffsetDateTime> started = JsonNullable.<OffsetDateTime>undefined();
+  private OffsetDateTime started;
 
   public static final String JSON_PROPERTY_COMPLETED = "completed";
   @javax.annotation.Nullable
-  private JsonNullable<OffsetDateTime> completed = JsonNullable.<OffsetDateTime>undefined();
+  private OffsetDateTime completed;
 
   public static final String JSON_PROPERTY_USER = "user";
   @javax.annotation.Nonnull
@@ -124,7 +120,7 @@ public class Job {
 
   public static final String JSON_PROPERTY_DATA = "data";
   @javax.annotation.Nullable
-  private JsonNullable<Object> data = JsonNullable.<Object>of(null);
+  private Object data = null;
 
   public static final String JSON_PROPERTY_ERROR = "error";
   @javax.annotation.Nonnull
@@ -242,8 +238,8 @@ public class Job {
 
 
   public Job objectId(@javax.annotation.Nullable Long objectId) {
-    this.objectId = JsonNullable.<Long>of(objectId);
     
+    this.objectId = objectId;
     return this;
   }
 
@@ -254,26 +250,18 @@ public class Job {
    * @return objectId
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Long getObjectId() {
-        return objectId.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OBJECT_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Long> getObjectId_JsonNullable() {
+  public Long getObjectId() {
     return objectId;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OBJECT_ID)
-  public void setObjectId_JsonNullable(JsonNullable<Long> objectId) {
-    this.objectId = objectId;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OBJECT_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setObjectId(@javax.annotation.Nullable Long objectId) {
-    this.objectId = JsonNullable.<Long>of(objectId);
+    this.objectId = objectId;
   }
 
   /**
@@ -355,8 +343,8 @@ public class Job {
 
 
   public Job scheduled(@javax.annotation.Nullable OffsetDateTime scheduled) {
-    this.scheduled = JsonNullable.<OffsetDateTime>of(scheduled);
     
+    this.scheduled = scheduled;
     return this;
   }
 
@@ -365,31 +353,23 @@ public class Job {
    * @return scheduled
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public OffsetDateTime getScheduled() {
-        return scheduled.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SCHEDULED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<OffsetDateTime> getScheduled_JsonNullable() {
+  public OffsetDateTime getScheduled() {
     return scheduled;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SCHEDULED)
-  public void setScheduled_JsonNullable(JsonNullable<OffsetDateTime> scheduled) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_SCHEDULED, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setScheduled(@javax.annotation.Nullable OffsetDateTime scheduled) {
     this.scheduled = scheduled;
   }
 
-  public void setScheduled(@javax.annotation.Nullable OffsetDateTime scheduled) {
-    this.scheduled = JsonNullable.<OffsetDateTime>of(scheduled);
-  }
-
   public Job interval(@javax.annotation.Nullable Integer interval) {
-    this.interval = JsonNullable.<Integer>of(interval);
     
+    this.interval = interval;
     return this;
   }
 
@@ -400,31 +380,23 @@ public class Job {
    * @return interval
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getInterval() {
-        return interval.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_INTERVAL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getInterval_JsonNullable() {
+  public Integer getInterval() {
     return interval;
   }
-  
-  @JsonProperty(JSON_PROPERTY_INTERVAL)
-  public void setInterval_JsonNullable(JsonNullable<Integer> interval) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_INTERVAL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setInterval(@javax.annotation.Nullable Integer interval) {
     this.interval = interval;
   }
 
-  public void setInterval(@javax.annotation.Nullable Integer interval) {
-    this.interval = JsonNullable.<Integer>of(interval);
-  }
-
   public Job started(@javax.annotation.Nullable OffsetDateTime started) {
-    this.started = JsonNullable.<OffsetDateTime>of(started);
     
+    this.started = started;
     return this;
   }
 
@@ -433,31 +405,23 @@ public class Job {
    * @return started
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public OffsetDateTime getStarted() {
-        return started.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_STARTED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<OffsetDateTime> getStarted_JsonNullable() {
+  public OffsetDateTime getStarted() {
     return started;
   }
-  
-  @JsonProperty(JSON_PROPERTY_STARTED)
-  public void setStarted_JsonNullable(JsonNullable<OffsetDateTime> started) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_STARTED, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setStarted(@javax.annotation.Nullable OffsetDateTime started) {
     this.started = started;
   }
 
-  public void setStarted(@javax.annotation.Nullable OffsetDateTime started) {
-    this.started = JsonNullable.<OffsetDateTime>of(started);
-  }
-
   public Job completed(@javax.annotation.Nullable OffsetDateTime completed) {
-    this.completed = JsonNullable.<OffsetDateTime>of(completed);
     
+    this.completed = completed;
     return this;
   }
 
@@ -466,26 +430,18 @@ public class Job {
    * @return completed
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public OffsetDateTime getCompleted() {
-        return completed.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_COMPLETED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<OffsetDateTime> getCompleted_JsonNullable() {
+  public OffsetDateTime getCompleted() {
     return completed;
   }
-  
-  @JsonProperty(JSON_PROPERTY_COMPLETED)
-  public void setCompleted_JsonNullable(JsonNullable<OffsetDateTime> completed) {
-    this.completed = completed;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_COMPLETED, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCompleted(@javax.annotation.Nullable OffsetDateTime completed) {
-    this.completed = JsonNullable.<OffsetDateTime>of(completed);
+    this.completed = completed;
   }
 
   /**
@@ -503,8 +459,8 @@ public class Job {
 
 
   public Job data(@javax.annotation.Nullable Object data) {
-    this.data = JsonNullable.<Object>of(data);
     
+    this.data = data;
     return this;
   }
 
@@ -513,26 +469,18 @@ public class Job {
    * @return data
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Object getData() {
-        return data.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_DATA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Object> getData_JsonNullable() {
+  public Object getData() {
     return data;
   }
-  
-  @JsonProperty(JSON_PROPERTY_DATA)
-  public void setData_JsonNullable(JsonNullable<Object> data) {
-    this.data = data;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_DATA, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setData(@javax.annotation.Nullable Object data) {
-    this.data = JsonNullable.<Object>of(data);
+    this.data = data;
   }
 
   /**
@@ -647,37 +595,26 @@ public class Job {
         Objects.equals(this.displayUrl, job.displayUrl) &&
         Objects.equals(this.display, job.display) &&
         Objects.equals(this.objectType, job.objectType) &&
-        equalsNullable(this.objectId, job.objectId) &&
+        Objects.equals(this.objectId, job.objectId) &&
         Objects.equals(this._object, job._object) &&
         Objects.equals(this.name, job.name) &&
         Objects.equals(this.status, job.status) &&
         Objects.equals(this.created, job.created) &&
-        equalsNullable(this.scheduled, job.scheduled) &&
-        equalsNullable(this.interval, job.interval) &&
-        equalsNullable(this.started, job.started) &&
-        equalsNullable(this.completed, job.completed) &&
+        Objects.equals(this.scheduled, job.scheduled) &&
+        Objects.equals(this.interval, job.interval) &&
+        Objects.equals(this.started, job.started) &&
+        Objects.equals(this.completed, job.completed) &&
         Objects.equals(this.user, job.user) &&
-        equalsNullable(this.data, job.data) &&
+        Objects.equals(this.data, job.data) &&
         Objects.equals(this.error, job.error) &&
         Objects.equals(this.jobId, job.jobId) &&
         Objects.equals(this.queueName, job.queueName) &&
         Objects.equals(this.logEntries, job.logEntries);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, objectType, hashCodeNullable(objectId), _object, name, status, created, hashCodeNullable(scheduled), hashCodeNullable(interval), hashCodeNullable(started), hashCodeNullable(completed), user, hashCodeNullable(data), error, jobId, queueName, logEntries);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, objectType, objectId, _object, name, status, created, scheduled, interval, started, completed, user, data, error, jobId, queueName, logEntries);
   }
 
   @Override

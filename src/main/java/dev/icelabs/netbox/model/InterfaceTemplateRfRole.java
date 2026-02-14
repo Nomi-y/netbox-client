@@ -20,10 +20,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -35,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   InterfaceTemplateRfRole.JSON_PROPERTY_LABEL
 })
 @JsonTypeName("InterfaceTemplate_rf_role")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class InterfaceTemplateRfRole {
   /**
    * * &#x60;ap&#x60; - Access point * &#x60;station&#x60; - Station
@@ -76,7 +72,7 @@ public class InterfaceTemplateRfRole {
 
   public static final String JSON_PROPERTY_VALUE = "value";
   @javax.annotation.Nullable
-  private JsonNullable<ValueEnum> value = JsonNullable.<ValueEnum>undefined();
+  private ValueEnum value;
 
   /**
    * Gets or Sets label
@@ -121,8 +117,8 @@ public class InterfaceTemplateRfRole {
   }
 
   public InterfaceTemplateRfRole value(@javax.annotation.Nullable ValueEnum value) {
-    this.value = JsonNullable.<ValueEnum>of(value);
     
+    this.value = value;
     return this;
   }
 
@@ -131,26 +127,18 @@ public class InterfaceTemplateRfRole {
    * @return value
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ValueEnum getValue() {
-        return value.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VALUE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ValueEnum> getValue_JsonNullable() {
+  public ValueEnum getValue() {
     return value;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VALUE)
-  public void setValue_JsonNullable(JsonNullable<ValueEnum> value) {
-    this.value = value;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_VALUE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setValue(@javax.annotation.Nullable ValueEnum value) {
-    this.value = JsonNullable.<ValueEnum>of(value);
+    this.value = value;
   }
 
   public InterfaceTemplateRfRole label(@javax.annotation.Nullable LabelEnum label) {
@@ -188,24 +176,13 @@ public class InterfaceTemplateRfRole {
       return false;
     }
     InterfaceTemplateRfRole interfaceTemplateRfRole = (InterfaceTemplateRfRole) o;
-    return equalsNullable(this.value, interfaceTemplateRfRole.value) &&
+    return Objects.equals(this.value, interfaceTemplateRfRole.value) &&
         Objects.equals(this.label, interfaceTemplateRfRole.label);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(value), label);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(value, label);
   }
 
   @Override

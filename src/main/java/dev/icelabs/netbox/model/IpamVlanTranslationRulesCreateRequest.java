@@ -35,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   IpamVlanTranslationRulesCreateRequest.JSON_PROPERTY_DESCRIPTION
 })
 @JsonTypeName("ipam_vlan_translation_rules_create_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class IpamVlanTranslationRulesCreateRequest {
   public static final String JSON_PROPERTY_POLICY = "policy";
   @javax.annotation.Nonnull

@@ -29,10 +29,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -54,11 +50,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   WritableModuleTypeRequest.JSON_PROPERTY_TAGS,
   WritableModuleTypeRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class WritableModuleTypeRequest {
   public static final String JSON_PROPERTY_PROFILE = "profile";
   @javax.annotation.Nullable
-  private JsonNullable<BriefModuleTypeRequestProfile> profile = JsonNullable.<BriefModuleTypeRequestProfile>undefined();
+  private BriefModuleTypeRequestProfile profile;
 
   public static final String JSON_PROPERTY_MANUFACTURER = "manufacturer";
   @javax.annotation.Nonnull
@@ -119,11 +115,11 @@ public class WritableModuleTypeRequest {
 
   public static final String JSON_PROPERTY_AIRFLOW = "airflow";
   @javax.annotation.Nullable
-  private JsonNullable<AirflowEnum> airflow = JsonNullable.<AirflowEnum>undefined();
+  private AirflowEnum airflow;
 
   public static final String JSON_PROPERTY_WEIGHT = "weight";
   @javax.annotation.Nullable
-  private JsonNullable<Double> weight = JsonNullable.<Double>undefined();
+  private Double weight;
 
   /**
    * * &#x60;kg&#x60; - Kilograms * &#x60;g&#x60; - Grams * &#x60;lb&#x60; - Pounds * &#x60;oz&#x60; - Ounces
@@ -168,7 +164,7 @@ public class WritableModuleTypeRequest {
 
   public static final String JSON_PROPERTY_WEIGHT_UNIT = "weight_unit";
   @javax.annotation.Nullable
-  private JsonNullable<WeightUnitEnum> weightUnit = JsonNullable.<WeightUnitEnum>undefined();
+  private WeightUnitEnum weightUnit;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -176,11 +172,11 @@ public class WritableModuleTypeRequest {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private JsonNullable<Object> attributes = JsonNullable.<Object>of(null);
+  private Object attributes = null;
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -198,8 +194,8 @@ public class WritableModuleTypeRequest {
   }
 
   public WritableModuleTypeRequest profile(@javax.annotation.Nullable BriefModuleTypeRequestProfile profile) {
-    this.profile = JsonNullable.<BriefModuleTypeRequestProfile>of(profile);
     
+    this.profile = profile;
     return this;
   }
 
@@ -208,26 +204,18 @@ public class WritableModuleTypeRequest {
    * @return profile
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefModuleTypeRequestProfile getProfile() {
-        return profile.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PROFILE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefModuleTypeRequestProfile> getProfile_JsonNullable() {
+  public BriefModuleTypeRequestProfile getProfile() {
     return profile;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PROFILE)
-  public void setProfile_JsonNullable(JsonNullable<BriefModuleTypeRequestProfile> profile) {
-    this.profile = profile;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PROFILE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProfile(@javax.annotation.Nullable BriefModuleTypeRequestProfile profile) {
-    this.profile = JsonNullable.<BriefModuleTypeRequestProfile>of(profile);
+    this.profile = profile;
   }
 
   public WritableModuleTypeRequest manufacturer(@javax.annotation.Nonnull BriefDeviceTypeRequestManufacturer manufacturer) {
@@ -306,8 +294,8 @@ public class WritableModuleTypeRequest {
   }
 
   public WritableModuleTypeRequest airflow(@javax.annotation.Nullable AirflowEnum airflow) {
-    this.airflow = JsonNullable.<AirflowEnum>of(airflow);
     
+    this.airflow = airflow;
     return this;
   }
 
@@ -316,31 +304,23 @@ public class WritableModuleTypeRequest {
    * @return airflow
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public AirflowEnum getAirflow() {
-        return airflow.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_AIRFLOW, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<AirflowEnum> getAirflow_JsonNullable() {
+  public AirflowEnum getAirflow() {
     return airflow;
   }
-  
-  @JsonProperty(JSON_PROPERTY_AIRFLOW)
-  public void setAirflow_JsonNullable(JsonNullable<AirflowEnum> airflow) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_AIRFLOW, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAirflow(@javax.annotation.Nullable AirflowEnum airflow) {
     this.airflow = airflow;
   }
 
-  public void setAirflow(@javax.annotation.Nullable AirflowEnum airflow) {
-    this.airflow = JsonNullable.<AirflowEnum>of(airflow);
-  }
-
   public WritableModuleTypeRequest weight(@javax.annotation.Nullable Double weight) {
-    this.weight = JsonNullable.<Double>of(weight);
     
+    this.weight = weight;
     return this;
   }
 
@@ -351,31 +331,23 @@ public class WritableModuleTypeRequest {
    * @return weight
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getWeight() {
-        return weight.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_WEIGHT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getWeight_JsonNullable() {
+  public Double getWeight() {
     return weight;
   }
-  
-  @JsonProperty(JSON_PROPERTY_WEIGHT)
-  public void setWeight_JsonNullable(JsonNullable<Double> weight) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_WEIGHT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setWeight(@javax.annotation.Nullable Double weight) {
     this.weight = weight;
   }
 
-  public void setWeight(@javax.annotation.Nullable Double weight) {
-    this.weight = JsonNullable.<Double>of(weight);
-  }
-
   public WritableModuleTypeRequest weightUnit(@javax.annotation.Nullable WeightUnitEnum weightUnit) {
-    this.weightUnit = JsonNullable.<WeightUnitEnum>of(weightUnit);
     
+    this.weightUnit = weightUnit;
     return this;
   }
 
@@ -384,26 +356,18 @@ public class WritableModuleTypeRequest {
    * @return weightUnit
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public WeightUnitEnum getWeightUnit() {
-        return weightUnit.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_WEIGHT_UNIT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<WeightUnitEnum> getWeightUnit_JsonNullable() {
+  public WeightUnitEnum getWeightUnit() {
     return weightUnit;
   }
-  
-  @JsonProperty(JSON_PROPERTY_WEIGHT_UNIT)
-  public void setWeightUnit_JsonNullable(JsonNullable<WeightUnitEnum> weightUnit) {
-    this.weightUnit = weightUnit;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_WEIGHT_UNIT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setWeightUnit(@javax.annotation.Nullable WeightUnitEnum weightUnit) {
-    this.weightUnit = JsonNullable.<WeightUnitEnum>of(weightUnit);
+    this.weightUnit = weightUnit;
   }
 
   public WritableModuleTypeRequest description(@javax.annotation.Nullable String description) {
@@ -432,8 +396,8 @@ public class WritableModuleTypeRequest {
   }
 
   public WritableModuleTypeRequest attributes(@javax.annotation.Nullable Object attributes) {
-    this.attributes = JsonNullable.<Object>of(attributes);
     
+    this.attributes = attributes;
     return this;
   }
 
@@ -442,31 +406,23 @@ public class WritableModuleTypeRequest {
    * @return attributes
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Object getAttributes() {
-        return attributes.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Object> getAttributes_JsonNullable() {
+  public Object getAttributes() {
     return attributes;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  public void setAttributes_JsonNullable(JsonNullable<Object> attributes) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAttributes(@javax.annotation.Nullable Object attributes) {
     this.attributes = attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable Object attributes) {
-    this.attributes = JsonNullable.<Object>of(attributes);
-  }
-
   public WritableModuleTypeRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -475,26 +431,18 @@ public class WritableModuleTypeRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public WritableModuleTypeRequest comments(@javax.annotation.Nullable String comments) {
@@ -598,35 +546,24 @@ public class WritableModuleTypeRequest {
       return false;
     }
     WritableModuleTypeRequest writableModuleTypeRequest = (WritableModuleTypeRequest) o;
-    return equalsNullable(this.profile, writableModuleTypeRequest.profile) &&
+    return Objects.equals(this.profile, writableModuleTypeRequest.profile) &&
         Objects.equals(this.manufacturer, writableModuleTypeRequest.manufacturer) &&
         Objects.equals(this.model, writableModuleTypeRequest.model) &&
         Objects.equals(this.partNumber, writableModuleTypeRequest.partNumber) &&
-        equalsNullable(this.airflow, writableModuleTypeRequest.airflow) &&
-        equalsNullable(this.weight, writableModuleTypeRequest.weight) &&
-        equalsNullable(this.weightUnit, writableModuleTypeRequest.weightUnit) &&
+        Objects.equals(this.airflow, writableModuleTypeRequest.airflow) &&
+        Objects.equals(this.weight, writableModuleTypeRequest.weight) &&
+        Objects.equals(this.weightUnit, writableModuleTypeRequest.weightUnit) &&
         Objects.equals(this.description, writableModuleTypeRequest.description) &&
-        equalsNullable(this.attributes, writableModuleTypeRequest.attributes) &&
-        equalsNullable(this.owner, writableModuleTypeRequest.owner) &&
+        Objects.equals(this.attributes, writableModuleTypeRequest.attributes) &&
+        Objects.equals(this.owner, writableModuleTypeRequest.owner) &&
         Objects.equals(this.comments, writableModuleTypeRequest.comments) &&
         Objects.equals(this.tags, writableModuleTypeRequest.tags) &&
         Objects.equals(this.customFields, writableModuleTypeRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(profile), manufacturer, model, partNumber, hashCodeNullable(airflow), hashCodeNullable(weight), hashCodeNullable(weightUnit), description, hashCodeNullable(attributes), hashCodeNullable(owner), comments, tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(profile, manufacturer, model, partNumber, airflow, weight, weightUnit, description, attributes, owner, comments, tags, customFields);
   }
 
   @Override

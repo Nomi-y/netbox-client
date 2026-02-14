@@ -28,10 +28,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -53,7 +49,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   CircuitsCircuitTerminationsCreateRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
 @JsonTypeName("circuits_circuit_terminations_create_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class CircuitsCircuitTerminationsCreateRequest {
   public static final String JSON_PROPERTY_CIRCUIT = "circuit";
   @javax.annotation.Nonnull
@@ -100,19 +96,19 @@ public class CircuitsCircuitTerminationsCreateRequest {
 
   public static final String JSON_PROPERTY_TERMINATION_TYPE = "termination_type";
   @javax.annotation.Nullable
-  private JsonNullable<String> terminationType = JsonNullable.<String>undefined();
+  private String terminationType;
 
   public static final String JSON_PROPERTY_TERMINATION_ID = "termination_id";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> terminationId = JsonNullable.<Integer>undefined();
+  private Integer terminationId;
 
   public static final String JSON_PROPERTY_PORT_SPEED = "port_speed";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> portSpeed = JsonNullable.<Integer>undefined();
+  private Integer portSpeed;
 
   public static final String JSON_PROPERTY_UPSTREAM_SPEED = "upstream_speed";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> upstreamSpeed = JsonNullable.<Integer>undefined();
+  private Integer upstreamSpeed;
 
   public static final String JSON_PROPERTY_XCONNECT_ID = "xconnect_id";
   @javax.annotation.Nullable
@@ -192,8 +188,8 @@ public class CircuitsCircuitTerminationsCreateRequest {
   }
 
   public CircuitsCircuitTerminationsCreateRequest terminationType(@javax.annotation.Nullable String terminationType) {
-    this.terminationType = JsonNullable.<String>of(terminationType);
     
+    this.terminationType = terminationType;
     return this;
   }
 
@@ -202,31 +198,23 @@ public class CircuitsCircuitTerminationsCreateRequest {
    * @return terminationType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getTerminationType() {
-        return terminationType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TERMINATION_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getTerminationType_JsonNullable() {
+  public String getTerminationType() {
     return terminationType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TERMINATION_TYPE)
-  public void setTerminationType_JsonNullable(JsonNullable<String> terminationType) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TERMINATION_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTerminationType(@javax.annotation.Nullable String terminationType) {
     this.terminationType = terminationType;
   }
 
-  public void setTerminationType(@javax.annotation.Nullable String terminationType) {
-    this.terminationType = JsonNullable.<String>of(terminationType);
-  }
-
   public CircuitsCircuitTerminationsCreateRequest terminationId(@javax.annotation.Nullable Integer terminationId) {
-    this.terminationId = JsonNullable.<Integer>of(terminationId);
     
+    this.terminationId = terminationId;
     return this;
   }
 
@@ -235,31 +223,23 @@ public class CircuitsCircuitTerminationsCreateRequest {
    * @return terminationId
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getTerminationId() {
-        return terminationId.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TERMINATION_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getTerminationId_JsonNullable() {
+  public Integer getTerminationId() {
     return terminationId;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TERMINATION_ID)
-  public void setTerminationId_JsonNullable(JsonNullable<Integer> terminationId) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TERMINATION_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTerminationId(@javax.annotation.Nullable Integer terminationId) {
     this.terminationId = terminationId;
   }
 
-  public void setTerminationId(@javax.annotation.Nullable Integer terminationId) {
-    this.terminationId = JsonNullable.<Integer>of(terminationId);
-  }
-
   public CircuitsCircuitTerminationsCreateRequest portSpeed(@javax.annotation.Nullable Integer portSpeed) {
-    this.portSpeed = JsonNullable.<Integer>of(portSpeed);
     
+    this.portSpeed = portSpeed;
     return this;
   }
 
@@ -270,31 +250,23 @@ public class CircuitsCircuitTerminationsCreateRequest {
    * @return portSpeed
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getPortSpeed() {
-        return portSpeed.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PORT_SPEED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getPortSpeed_JsonNullable() {
+  public Integer getPortSpeed() {
     return portSpeed;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PORT_SPEED)
-  public void setPortSpeed_JsonNullable(JsonNullable<Integer> portSpeed) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_PORT_SPEED, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPortSpeed(@javax.annotation.Nullable Integer portSpeed) {
     this.portSpeed = portSpeed;
   }
 
-  public void setPortSpeed(@javax.annotation.Nullable Integer portSpeed) {
-    this.portSpeed = JsonNullable.<Integer>of(portSpeed);
-  }
-
   public CircuitsCircuitTerminationsCreateRequest upstreamSpeed(@javax.annotation.Nullable Integer upstreamSpeed) {
-    this.upstreamSpeed = JsonNullable.<Integer>of(upstreamSpeed);
     
+    this.upstreamSpeed = upstreamSpeed;
     return this;
   }
 
@@ -305,26 +277,18 @@ public class CircuitsCircuitTerminationsCreateRequest {
    * @return upstreamSpeed
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getUpstreamSpeed() {
-        return upstreamSpeed.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_UPSTREAM_SPEED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getUpstreamSpeed_JsonNullable() {
+  public Integer getUpstreamSpeed() {
     return upstreamSpeed;
   }
-  
-  @JsonProperty(JSON_PROPERTY_UPSTREAM_SPEED)
-  public void setUpstreamSpeed_JsonNullable(JsonNullable<Integer> upstreamSpeed) {
-    this.upstreamSpeed = upstreamSpeed;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_UPSTREAM_SPEED, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUpstreamSpeed(@javax.annotation.Nullable Integer upstreamSpeed) {
-    this.upstreamSpeed = JsonNullable.<Integer>of(upstreamSpeed);
+    this.upstreamSpeed = upstreamSpeed;
   }
 
   public CircuitsCircuitTerminationsCreateRequest xconnectId(@javax.annotation.Nullable String xconnectId) {
@@ -505,10 +469,10 @@ public class CircuitsCircuitTerminationsCreateRequest {
     CircuitsCircuitTerminationsCreateRequest circuitsCircuitTerminationsCreateRequest = (CircuitsCircuitTerminationsCreateRequest) o;
     return Objects.equals(this.circuit, circuitsCircuitTerminationsCreateRequest.circuit) &&
         Objects.equals(this.termSide, circuitsCircuitTerminationsCreateRequest.termSide) &&
-        equalsNullable(this.terminationType, circuitsCircuitTerminationsCreateRequest.terminationType) &&
-        equalsNullable(this.terminationId, circuitsCircuitTerminationsCreateRequest.terminationId) &&
-        equalsNullable(this.portSpeed, circuitsCircuitTerminationsCreateRequest.portSpeed) &&
-        equalsNullable(this.upstreamSpeed, circuitsCircuitTerminationsCreateRequest.upstreamSpeed) &&
+        Objects.equals(this.terminationType, circuitsCircuitTerminationsCreateRequest.terminationType) &&
+        Objects.equals(this.terminationId, circuitsCircuitTerminationsCreateRequest.terminationId) &&
+        Objects.equals(this.portSpeed, circuitsCircuitTerminationsCreateRequest.portSpeed) &&
+        Objects.equals(this.upstreamSpeed, circuitsCircuitTerminationsCreateRequest.upstreamSpeed) &&
         Objects.equals(this.xconnectId, circuitsCircuitTerminationsCreateRequest.xconnectId) &&
         Objects.equals(this.ppInfo, circuitsCircuitTerminationsCreateRequest.ppInfo) &&
         Objects.equals(this.description, circuitsCircuitTerminationsCreateRequest.description) &&
@@ -517,20 +481,9 @@ public class CircuitsCircuitTerminationsCreateRequest {
         Objects.equals(this.customFields, circuitsCircuitTerminationsCreateRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(circuit, termSide, hashCodeNullable(terminationType), hashCodeNullable(terminationId), hashCodeNullable(portSpeed), hashCodeNullable(upstreamSpeed), xconnectId, ppInfo, description, markConnected, tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(circuit, termSide, terminationType, terminationId, portSpeed, upstreamSpeed, xconnectId, ppInfo, description, markConnected, tags, customFields);
   }
 
   @Override

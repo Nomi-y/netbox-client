@@ -27,10 +27,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -50,7 +46,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   IKEProposalRequest.JSON_PROPERTY_TAGS,
   IKEProposalRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class IKEProposalRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -284,11 +280,11 @@ public class IKEProposalRequest {
 
   public static final String JSON_PROPERTY_SA_LIFETIME = "sa_lifetime";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> saLifetime = JsonNullable.<Integer>undefined();
+  private Integer saLifetime;
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -456,8 +452,8 @@ public class IKEProposalRequest {
   }
 
   public IKEProposalRequest saLifetime(@javax.annotation.Nullable Integer saLifetime) {
-    this.saLifetime = JsonNullable.<Integer>of(saLifetime);
     
+    this.saLifetime = saLifetime;
     return this;
   }
 
@@ -468,31 +464,23 @@ public class IKEProposalRequest {
    * @return saLifetime
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getSaLifetime() {
-        return saLifetime.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_SA_LIFETIME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getSaLifetime_JsonNullable() {
+  public Integer getSaLifetime() {
     return saLifetime;
   }
-  
-  @JsonProperty(JSON_PROPERTY_SA_LIFETIME)
-  public void setSaLifetime_JsonNullable(JsonNullable<Integer> saLifetime) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_SA_LIFETIME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSaLifetime(@javax.annotation.Nullable Integer saLifetime) {
     this.saLifetime = saLifetime;
   }
 
-  public void setSaLifetime(@javax.annotation.Nullable Integer saLifetime) {
-    this.saLifetime = JsonNullable.<Integer>of(saLifetime);
-  }
-
   public IKEProposalRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -501,26 +489,18 @@ public class IKEProposalRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public IKEProposalRequest comments(@javax.annotation.Nullable String comments) {
@@ -630,27 +610,16 @@ public class IKEProposalRequest {
         Objects.equals(this.encryptionAlgorithm, ikEProposalRequest.encryptionAlgorithm) &&
         Objects.equals(this.authenticationAlgorithm, ikEProposalRequest.authenticationAlgorithm) &&
         Objects.equals(this.group, ikEProposalRequest.group) &&
-        equalsNullable(this.saLifetime, ikEProposalRequest.saLifetime) &&
-        equalsNullable(this.owner, ikEProposalRequest.owner) &&
+        Objects.equals(this.saLifetime, ikEProposalRequest.saLifetime) &&
+        Objects.equals(this.owner, ikEProposalRequest.owner) &&
         Objects.equals(this.comments, ikEProposalRequest.comments) &&
         Objects.equals(this.tags, ikEProposalRequest.tags) &&
         Objects.equals(this.customFields, ikEProposalRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, authenticationMethod, encryptionAlgorithm, authenticationAlgorithm, group, hashCodeNullable(saLifetime), hashCodeNullable(owner), comments, tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, description, authenticationMethod, encryptionAlgorithm, authenticationAlgorithm, group, saLifetime, owner, comments, tags, customFields);
   }
 
   @Override

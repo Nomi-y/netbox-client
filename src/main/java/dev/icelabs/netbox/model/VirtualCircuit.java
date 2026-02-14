@@ -34,10 +34,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -63,7 +59,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   VirtualCircuit.JSON_PROPERTY_CREATED,
   VirtualCircuit.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class VirtualCircuit {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -91,7 +87,7 @@ public class VirtualCircuit {
 
   public static final String JSON_PROPERTY_PROVIDER_ACCOUNT = "provider_account";
   @javax.annotation.Nullable
-  private JsonNullable<BriefProviderAccount> providerAccount = JsonNullable.<BriefProviderAccount>undefined();
+  private BriefProviderAccount providerAccount;
 
   public static final String JSON_PROPERTY_TYPE = "type";
   @javax.annotation.Nonnull
@@ -103,7 +99,7 @@ public class VirtualCircuit {
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<BriefTenant> tenant = JsonNullable.<BriefTenant>undefined();
+  private BriefTenant tenant;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -111,7 +107,7 @@ public class VirtualCircuit {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -263,8 +259,8 @@ public class VirtualCircuit {
   }
 
   public VirtualCircuit providerAccount(@javax.annotation.Nullable BriefProviderAccount providerAccount) {
-    this.providerAccount = JsonNullable.<BriefProviderAccount>of(providerAccount);
     
+    this.providerAccount = providerAccount;
     return this;
   }
 
@@ -273,26 +269,18 @@ public class VirtualCircuit {
    * @return providerAccount
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefProviderAccount getProviderAccount() {
-        return providerAccount.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PROVIDER_ACCOUNT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefProviderAccount> getProviderAccount_JsonNullable() {
+  public BriefProviderAccount getProviderAccount() {
     return providerAccount;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PROVIDER_ACCOUNT)
-  public void setProviderAccount_JsonNullable(JsonNullable<BriefProviderAccount> providerAccount) {
-    this.providerAccount = providerAccount;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PROVIDER_ACCOUNT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProviderAccount(@javax.annotation.Nullable BriefProviderAccount providerAccount) {
-    this.providerAccount = JsonNullable.<BriefProviderAccount>of(providerAccount);
+    this.providerAccount = providerAccount;
   }
 
   public VirtualCircuit type(@javax.annotation.Nonnull BriefVirtualCircuitType type) {
@@ -346,8 +334,8 @@ public class VirtualCircuit {
   }
 
   public VirtualCircuit tenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -356,26 +344,18 @@ public class VirtualCircuit {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefTenant> getTenant_JsonNullable() {
+  public BriefTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<BriefTenant> tenant) {
-    this.tenant = tenant;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
+    this.tenant = tenant;
   }
 
   public VirtualCircuit description(@javax.annotation.Nullable String description) {
@@ -404,8 +384,8 @@ public class VirtualCircuit {
   }
 
   public VirtualCircuit owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -414,26 +394,18 @@ public class VirtualCircuit {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public VirtualCircuit comments(@javax.annotation.Nullable String comments) {
@@ -571,12 +543,12 @@ public class VirtualCircuit {
         Objects.equals(this.display, virtualCircuit.display) &&
         Objects.equals(this.cid, virtualCircuit.cid) &&
         Objects.equals(this.providerNetwork, virtualCircuit.providerNetwork) &&
-        equalsNullable(this.providerAccount, virtualCircuit.providerAccount) &&
+        Objects.equals(this.providerAccount, virtualCircuit.providerAccount) &&
         Objects.equals(this.type, virtualCircuit.type) &&
         Objects.equals(this.status, virtualCircuit.status) &&
-        equalsNullable(this.tenant, virtualCircuit.tenant) &&
+        Objects.equals(this.tenant, virtualCircuit.tenant) &&
         Objects.equals(this.description, virtualCircuit.description) &&
-        equalsNullable(this.owner, virtualCircuit.owner) &&
+        Objects.equals(this.owner, virtualCircuit.owner) &&
         Objects.equals(this.comments, virtualCircuit.comments) &&
         Objects.equals(this.tags, virtualCircuit.tags) &&
         Objects.equals(this.customFields, virtualCircuit.customFields) &&
@@ -584,20 +556,9 @@ public class VirtualCircuit {
         Objects.equals(this.lastUpdated, virtualCircuit.lastUpdated);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, cid, providerNetwork, hashCodeNullable(providerAccount), type, status, hashCodeNullable(tenant), description, hashCodeNullable(owner), comments, tags, customFields, created, lastUpdated);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, cid, providerNetwork, providerAccount, type, status, tenant, description, owner, comments, tags, customFields, created, lastUpdated);
   }
 
   @Override

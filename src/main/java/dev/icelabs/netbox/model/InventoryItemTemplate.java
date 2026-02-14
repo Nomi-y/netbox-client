@@ -25,10 +25,6 @@ import dev.icelabs.netbox.model.BriefInventoryItemRole;
 import dev.icelabs.netbox.model.BriefManufacturer;
 import java.net.URI;
 import java.time.OffsetDateTime;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -54,7 +50,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   InventoryItemTemplate.JSON_PROPERTY_LAST_UPDATED,
   InventoryItemTemplate.JSON_PROPERTY_DEPTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class InventoryItemTemplate {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -74,7 +70,7 @@ public class InventoryItemTemplate {
 
   public static final String JSON_PROPERTY_PARENT = "parent";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> parent = JsonNullable.<Integer>undefined();
+  private Integer parent;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -86,11 +82,11 @@ public class InventoryItemTemplate {
 
   public static final String JSON_PROPERTY_ROLE = "role";
   @javax.annotation.Nullable
-  private JsonNullable<BriefInventoryItemRole> role = JsonNullable.<BriefInventoryItemRole>undefined();
+  private BriefInventoryItemRole role;
 
   public static final String JSON_PROPERTY_MANUFACTURER = "manufacturer";
   @javax.annotation.Nullable
-  private JsonNullable<BriefManufacturer> manufacturer = JsonNullable.<BriefManufacturer>undefined();
+  private BriefManufacturer manufacturer;
 
   public static final String JSON_PROPERTY_PART_ID = "part_id";
   @javax.annotation.Nullable
@@ -102,11 +98,11 @@ public class InventoryItemTemplate {
 
   public static final String JSON_PROPERTY_COMPONENT_TYPE = "component_type";
   @javax.annotation.Nullable
-  private JsonNullable<String> componentType = JsonNullable.<String>undefined();
+  private String componentType;
 
   public static final String JSON_PROPERTY_COMPONENT_ID = "component_id";
   @javax.annotation.Nullable
-  private JsonNullable<Long> componentId = JsonNullable.<Long>undefined();
+  private Long componentId;
 
   public static final String JSON_PROPERTY_COMPONENT = "component";
   @javax.annotation.Nullable
@@ -217,8 +213,8 @@ public class InventoryItemTemplate {
   }
 
   public InventoryItemTemplate parent(@javax.annotation.Nullable Integer parent) {
-    this.parent = JsonNullable.<Integer>of(parent);
     
+    this.parent = parent;
     return this;
   }
 
@@ -227,26 +223,18 @@ public class InventoryItemTemplate {
    * @return parent
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getParent() {
-        return parent.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getParent_JsonNullable() {
+  public Integer getParent() {
     return parent;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PARENT)
-  public void setParent_JsonNullable(JsonNullable<Integer> parent) {
-    this.parent = parent;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setParent(@javax.annotation.Nullable Integer parent) {
-    this.parent = JsonNullable.<Integer>of(parent);
+    this.parent = parent;
   }
 
   public InventoryItemTemplate name(@javax.annotation.Nonnull String name) {
@@ -300,8 +288,8 @@ public class InventoryItemTemplate {
   }
 
   public InventoryItemTemplate role(@javax.annotation.Nullable BriefInventoryItemRole role) {
-    this.role = JsonNullable.<BriefInventoryItemRole>of(role);
     
+    this.role = role;
     return this;
   }
 
@@ -310,31 +298,23 @@ public class InventoryItemTemplate {
    * @return role
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefInventoryItemRole getRole() {
-        return role.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefInventoryItemRole> getRole_JsonNullable() {
+  public BriefInventoryItemRole getRole() {
     return role;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ROLE)
-  public void setRole_JsonNullable(JsonNullable<BriefInventoryItemRole> role) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRole(@javax.annotation.Nullable BriefInventoryItemRole role) {
     this.role = role;
   }
 
-  public void setRole(@javax.annotation.Nullable BriefInventoryItemRole role) {
-    this.role = JsonNullable.<BriefInventoryItemRole>of(role);
-  }
-
   public InventoryItemTemplate manufacturer(@javax.annotation.Nullable BriefManufacturer manufacturer) {
-    this.manufacturer = JsonNullable.<BriefManufacturer>of(manufacturer);
     
+    this.manufacturer = manufacturer;
     return this;
   }
 
@@ -343,26 +323,18 @@ public class InventoryItemTemplate {
    * @return manufacturer
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefManufacturer getManufacturer() {
-        return manufacturer.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MANUFACTURER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefManufacturer> getManufacturer_JsonNullable() {
+  public BriefManufacturer getManufacturer() {
     return manufacturer;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MANUFACTURER)
-  public void setManufacturer_JsonNullable(JsonNullable<BriefManufacturer> manufacturer) {
-    this.manufacturer = manufacturer;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_MANUFACTURER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setManufacturer(@javax.annotation.Nullable BriefManufacturer manufacturer) {
-    this.manufacturer = JsonNullable.<BriefManufacturer>of(manufacturer);
+    this.manufacturer = manufacturer;
   }
 
   public InventoryItemTemplate partId(@javax.annotation.Nullable String partId) {
@@ -416,8 +388,8 @@ public class InventoryItemTemplate {
   }
 
   public InventoryItemTemplate componentType(@javax.annotation.Nullable String componentType) {
-    this.componentType = JsonNullable.<String>of(componentType);
     
+    this.componentType = componentType;
     return this;
   }
 
@@ -426,31 +398,23 @@ public class InventoryItemTemplate {
    * @return componentType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getComponentType() {
-        return componentType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_COMPONENT_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getComponentType_JsonNullable() {
+  public String getComponentType() {
     return componentType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_COMPONENT_TYPE)
-  public void setComponentType_JsonNullable(JsonNullable<String> componentType) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_COMPONENT_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setComponentType(@javax.annotation.Nullable String componentType) {
     this.componentType = componentType;
   }
 
-  public void setComponentType(@javax.annotation.Nullable String componentType) {
-    this.componentType = JsonNullable.<String>of(componentType);
-  }
-
   public InventoryItemTemplate componentId(@javax.annotation.Nullable Long componentId) {
-    this.componentId = JsonNullable.<Long>of(componentId);
     
+    this.componentId = componentId;
     return this;
   }
 
@@ -461,26 +425,18 @@ public class InventoryItemTemplate {
    * @return componentId
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Long getComponentId() {
-        return componentId.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_COMPONENT_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Long> getComponentId_JsonNullable() {
+  public Long getComponentId() {
     return componentId;
   }
-  
-  @JsonProperty(JSON_PROPERTY_COMPONENT_ID)
-  public void setComponentId_JsonNullable(JsonNullable<Long> componentId) {
-    this.componentId = componentId;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_COMPONENT_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setComponentId(@javax.annotation.Nullable Long componentId) {
-    this.componentId = JsonNullable.<Long>of(componentId);
+    this.componentId = componentId;
   }
 
   /**
@@ -553,35 +509,24 @@ public class InventoryItemTemplate {
         Objects.equals(this.url, inventoryItemTemplate.url) &&
         Objects.equals(this.display, inventoryItemTemplate.display) &&
         Objects.equals(this.deviceType, inventoryItemTemplate.deviceType) &&
-        equalsNullable(this.parent, inventoryItemTemplate.parent) &&
+        Objects.equals(this.parent, inventoryItemTemplate.parent) &&
         Objects.equals(this.name, inventoryItemTemplate.name) &&
         Objects.equals(this.label, inventoryItemTemplate.label) &&
-        equalsNullable(this.role, inventoryItemTemplate.role) &&
-        equalsNullable(this.manufacturer, inventoryItemTemplate.manufacturer) &&
+        Objects.equals(this.role, inventoryItemTemplate.role) &&
+        Objects.equals(this.manufacturer, inventoryItemTemplate.manufacturer) &&
         Objects.equals(this.partId, inventoryItemTemplate.partId) &&
         Objects.equals(this.description, inventoryItemTemplate.description) &&
-        equalsNullable(this.componentType, inventoryItemTemplate.componentType) &&
-        equalsNullable(this.componentId, inventoryItemTemplate.componentId) &&
+        Objects.equals(this.componentType, inventoryItemTemplate.componentType) &&
+        Objects.equals(this.componentId, inventoryItemTemplate.componentId) &&
         Objects.equals(this.component, inventoryItemTemplate.component) &&
         Objects.equals(this.created, inventoryItemTemplate.created) &&
         Objects.equals(this.lastUpdated, inventoryItemTemplate.lastUpdated) &&
         Objects.equals(this.depth, inventoryItemTemplate.depth);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, display, deviceType, hashCodeNullable(parent), name, label, hashCodeNullable(role), hashCodeNullable(manufacturer), partId, description, hashCodeNullable(componentType), hashCodeNullable(componentId), component, created, lastUpdated, depth);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, display, deviceType, parent, name, label, role, manufacturer, partId, description, componentType, componentId, component, created, lastUpdated, depth);
   }
 
   @Override

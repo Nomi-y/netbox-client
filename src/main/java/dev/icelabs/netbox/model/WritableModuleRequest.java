@@ -29,10 +29,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -52,7 +48,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   WritableModuleRequest.JSON_PROPERTY_TAGS,
   WritableModuleRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class WritableModuleRequest {
   public static final String JSON_PROPERTY_DEVICE = "device";
   @javax.annotation.Nonnull
@@ -119,7 +115,7 @@ public class WritableModuleRequest {
 
   public static final String JSON_PROPERTY_ASSET_TAG = "asset_tag";
   @javax.annotation.Nullable
-  private JsonNullable<String> assetTag = JsonNullable.<String>undefined();
+  private String assetTag;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -127,7 +123,7 @@ public class WritableModuleRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -270,8 +266,8 @@ public class WritableModuleRequest {
   }
 
   public WritableModuleRequest assetTag(@javax.annotation.Nullable String assetTag) {
-    this.assetTag = JsonNullable.<String>of(assetTag);
     
+    this.assetTag = assetTag;
     return this;
   }
 
@@ -280,26 +276,18 @@ public class WritableModuleRequest {
    * @return assetTag
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getAssetTag() {
-        return assetTag.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ASSET_TAG, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getAssetTag_JsonNullable() {
+  public String getAssetTag() {
     return assetTag;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ASSET_TAG)
-  public void setAssetTag_JsonNullable(JsonNullable<String> assetTag) {
-    this.assetTag = assetTag;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_ASSET_TAG, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssetTag(@javax.annotation.Nullable String assetTag) {
-    this.assetTag = JsonNullable.<String>of(assetTag);
+    this.assetTag = assetTag;
   }
 
   public WritableModuleRequest description(@javax.annotation.Nullable String description) {
@@ -328,8 +316,8 @@ public class WritableModuleRequest {
   }
 
   public WritableModuleRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -338,26 +326,18 @@ public class WritableModuleRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public WritableModuleRequest comments(@javax.annotation.Nullable String comments) {
@@ -466,28 +446,17 @@ public class WritableModuleRequest {
         Objects.equals(this.moduleType, writableModuleRequest.moduleType) &&
         Objects.equals(this.status, writableModuleRequest.status) &&
         Objects.equals(this.serial, writableModuleRequest.serial) &&
-        equalsNullable(this.assetTag, writableModuleRequest.assetTag) &&
+        Objects.equals(this.assetTag, writableModuleRequest.assetTag) &&
         Objects.equals(this.description, writableModuleRequest.description) &&
-        equalsNullable(this.owner, writableModuleRequest.owner) &&
+        Objects.equals(this.owner, writableModuleRequest.owner) &&
         Objects.equals(this.comments, writableModuleRequest.comments) &&
         Objects.equals(this.tags, writableModuleRequest.tags) &&
         Objects.equals(this.customFields, writableModuleRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(device, moduleBay, moduleType, status, serial, hashCodeNullable(assetTag), description, hashCodeNullable(owner), comments, tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(device, moduleBay, moduleType, status, serial, assetTag, description, owner, comments, tags, customFields);
   }
 
   @Override

@@ -31,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   WirelessLANAuthCipher.JSON_PROPERTY_LABEL
 })
 @JsonTypeName("WirelessLAN_auth_cipher")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class WirelessLANAuthCipher {
   /**
    * * &#x60;auto&#x60; - Auto * &#x60;tkip&#x60; - TKIP * &#x60;aes&#x60; - AES

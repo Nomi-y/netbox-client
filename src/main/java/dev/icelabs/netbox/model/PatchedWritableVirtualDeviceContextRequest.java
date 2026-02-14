@@ -30,10 +30,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -54,7 +50,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   PatchedWritableVirtualDeviceContextRequest.JSON_PROPERTY_TAGS,
   PatchedWritableVirtualDeviceContextRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class PatchedWritableVirtualDeviceContextRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable
@@ -66,19 +62,19 @@ public class PatchedWritableVirtualDeviceContextRequest {
 
   public static final String JSON_PROPERTY_IDENTIFIER = "identifier";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> identifier = JsonNullable.<Integer>undefined();
+  private Integer identifier;
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestTenant> tenant = JsonNullable.<ASNRangeRequestTenant>undefined();
+  private ASNRangeRequestTenant tenant;
 
   public static final String JSON_PROPERTY_PRIMARY_IP4 = "primary_ip4";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceWithConfigContextRequestPrimaryIp4> primaryIp4 = JsonNullable.<DeviceWithConfigContextRequestPrimaryIp4>undefined();
+  private DeviceWithConfigContextRequestPrimaryIp4 primaryIp4;
 
   public static final String JSON_PROPERTY_PRIMARY_IP6 = "primary_ip6";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceWithConfigContextRequestPrimaryIp4> primaryIp6 = JsonNullable.<DeviceWithConfigContextRequestPrimaryIp4>undefined();
+  private DeviceWithConfigContextRequestPrimaryIp4 primaryIp6;
 
   /**
    * * &#x60;active&#x60; - Active * &#x60;planned&#x60; - Planned * &#x60;offline&#x60; - Offline
@@ -127,7 +123,7 @@ public class PatchedWritableVirtualDeviceContextRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -195,8 +191,8 @@ public class PatchedWritableVirtualDeviceContextRequest {
   }
 
   public PatchedWritableVirtualDeviceContextRequest identifier(@javax.annotation.Nullable Integer identifier) {
-    this.identifier = JsonNullable.<Integer>of(identifier);
     
+    this.identifier = identifier;
     return this;
   }
 
@@ -207,31 +203,23 @@ public class PatchedWritableVirtualDeviceContextRequest {
    * @return identifier
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getIdentifier() {
-        return identifier.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_IDENTIFIER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getIdentifier_JsonNullable() {
+  public Integer getIdentifier() {
     return identifier;
   }
-  
-  @JsonProperty(JSON_PROPERTY_IDENTIFIER)
-  public void setIdentifier_JsonNullable(JsonNullable<Integer> identifier) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_IDENTIFIER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setIdentifier(@javax.annotation.Nullable Integer identifier) {
     this.identifier = identifier;
   }
 
-  public void setIdentifier(@javax.annotation.Nullable Integer identifier) {
-    this.identifier = JsonNullable.<Integer>of(identifier);
-  }
-
   public PatchedWritableVirtualDeviceContextRequest tenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -240,31 +228,23 @@ public class PatchedWritableVirtualDeviceContextRequest {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestTenant> getTenant_JsonNullable() {
+  public ASNRangeRequestTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<ASNRangeRequestTenant> tenant) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
     this.tenant = tenant;
   }
 
-  public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
-  }
-
   public PatchedWritableVirtualDeviceContextRequest primaryIp4(@javax.annotation.Nullable DeviceWithConfigContextRequestPrimaryIp4 primaryIp4) {
-    this.primaryIp4 = JsonNullable.<DeviceWithConfigContextRequestPrimaryIp4>of(primaryIp4);
     
+    this.primaryIp4 = primaryIp4;
     return this;
   }
 
@@ -273,31 +253,23 @@ public class PatchedWritableVirtualDeviceContextRequest {
    * @return primaryIp4
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceWithConfigContextRequestPrimaryIp4 getPrimaryIp4() {
-        return primaryIp4.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PRIMARY_IP4, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceWithConfigContextRequestPrimaryIp4> getPrimaryIp4_JsonNullable() {
+  public DeviceWithConfigContextRequestPrimaryIp4 getPrimaryIp4() {
     return primaryIp4;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PRIMARY_IP4)
-  public void setPrimaryIp4_JsonNullable(JsonNullable<DeviceWithConfigContextRequestPrimaryIp4> primaryIp4) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_PRIMARY_IP4, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPrimaryIp4(@javax.annotation.Nullable DeviceWithConfigContextRequestPrimaryIp4 primaryIp4) {
     this.primaryIp4 = primaryIp4;
   }
 
-  public void setPrimaryIp4(@javax.annotation.Nullable DeviceWithConfigContextRequestPrimaryIp4 primaryIp4) {
-    this.primaryIp4 = JsonNullable.<DeviceWithConfigContextRequestPrimaryIp4>of(primaryIp4);
-  }
-
   public PatchedWritableVirtualDeviceContextRequest primaryIp6(@javax.annotation.Nullable DeviceWithConfigContextRequestPrimaryIp4 primaryIp6) {
-    this.primaryIp6 = JsonNullable.<DeviceWithConfigContextRequestPrimaryIp4>of(primaryIp6);
     
+    this.primaryIp6 = primaryIp6;
     return this;
   }
 
@@ -306,26 +278,18 @@ public class PatchedWritableVirtualDeviceContextRequest {
    * @return primaryIp6
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceWithConfigContextRequestPrimaryIp4 getPrimaryIp6() {
-        return primaryIp6.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PRIMARY_IP6, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceWithConfigContextRequestPrimaryIp4> getPrimaryIp6_JsonNullable() {
+  public DeviceWithConfigContextRequestPrimaryIp4 getPrimaryIp6() {
     return primaryIp6;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PRIMARY_IP6)
-  public void setPrimaryIp6_JsonNullable(JsonNullable<DeviceWithConfigContextRequestPrimaryIp4> primaryIp6) {
-    this.primaryIp6 = primaryIp6;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PRIMARY_IP6, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrimaryIp6(@javax.annotation.Nullable DeviceWithConfigContextRequestPrimaryIp4 primaryIp6) {
-    this.primaryIp6 = JsonNullable.<DeviceWithConfigContextRequestPrimaryIp4>of(primaryIp6);
+    this.primaryIp6 = primaryIp6;
   }
 
   public PatchedWritableVirtualDeviceContextRequest status(@javax.annotation.Nullable StatusEnum status) {
@@ -379,8 +343,8 @@ public class PatchedWritableVirtualDeviceContextRequest {
   }
 
   public PatchedWritableVirtualDeviceContextRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -389,26 +353,18 @@ public class PatchedWritableVirtualDeviceContextRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public PatchedWritableVirtualDeviceContextRequest comments(@javax.annotation.Nullable String comments) {
@@ -514,32 +470,21 @@ public class PatchedWritableVirtualDeviceContextRequest {
     PatchedWritableVirtualDeviceContextRequest patchedWritableVirtualDeviceContextRequest = (PatchedWritableVirtualDeviceContextRequest) o;
     return Objects.equals(this.name, patchedWritableVirtualDeviceContextRequest.name) &&
         Objects.equals(this.device, patchedWritableVirtualDeviceContextRequest.device) &&
-        equalsNullable(this.identifier, patchedWritableVirtualDeviceContextRequest.identifier) &&
-        equalsNullable(this.tenant, patchedWritableVirtualDeviceContextRequest.tenant) &&
-        equalsNullable(this.primaryIp4, patchedWritableVirtualDeviceContextRequest.primaryIp4) &&
-        equalsNullable(this.primaryIp6, patchedWritableVirtualDeviceContextRequest.primaryIp6) &&
+        Objects.equals(this.identifier, patchedWritableVirtualDeviceContextRequest.identifier) &&
+        Objects.equals(this.tenant, patchedWritableVirtualDeviceContextRequest.tenant) &&
+        Objects.equals(this.primaryIp4, patchedWritableVirtualDeviceContextRequest.primaryIp4) &&
+        Objects.equals(this.primaryIp6, patchedWritableVirtualDeviceContextRequest.primaryIp6) &&
         Objects.equals(this.status, patchedWritableVirtualDeviceContextRequest.status) &&
         Objects.equals(this.description, patchedWritableVirtualDeviceContextRequest.description) &&
-        equalsNullable(this.owner, patchedWritableVirtualDeviceContextRequest.owner) &&
+        Objects.equals(this.owner, patchedWritableVirtualDeviceContextRequest.owner) &&
         Objects.equals(this.comments, patchedWritableVirtualDeviceContextRequest.comments) &&
         Objects.equals(this.tags, patchedWritableVirtualDeviceContextRequest.tags) &&
         Objects.equals(this.customFields, patchedWritableVirtualDeviceContextRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(name, device, hashCodeNullable(identifier), hashCodeNullable(tenant), hashCodeNullable(primaryIp4), hashCodeNullable(primaryIp6), status, description, hashCodeNullable(owner), comments, tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, device, identifier, tenant, primaryIp4, primaryIp6, status, description, owner, comments, tags, customFields);
   }
 
   @Override

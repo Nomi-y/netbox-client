@@ -29,10 +29,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -51,7 +47,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   PatchedModuleBayRequest.JSON_PROPERTY_TAGS,
   PatchedModuleBayRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class PatchedModuleBayRequest {
   public static final String JSON_PROPERTY_DEVICE = "device";
   @javax.annotation.Nullable
@@ -59,7 +55,7 @@ public class PatchedModuleBayRequest {
 
   public static final String JSON_PROPERTY_MODULE = "module";
   @javax.annotation.Nullable
-  private JsonNullable<ConsolePortRequestModule> module = JsonNullable.<ConsolePortRequestModule>undefined();
+  private ConsolePortRequestModule module;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable
@@ -67,7 +63,7 @@ public class PatchedModuleBayRequest {
 
   public static final String JSON_PROPERTY_INSTALLED_MODULE = "installed_module";
   @javax.annotation.Nullable
-  private JsonNullable<ConsolePortRequestModule> installedModule = JsonNullable.<ConsolePortRequestModule>undefined();
+  private ConsolePortRequestModule installedModule;
 
   public static final String JSON_PROPERTY_LABEL = "label";
   @javax.annotation.Nullable
@@ -83,7 +79,7 @@ public class PatchedModuleBayRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -122,8 +118,8 @@ public class PatchedModuleBayRequest {
   }
 
   public PatchedModuleBayRequest module(@javax.annotation.Nullable ConsolePortRequestModule module) {
-    this.module = JsonNullable.<ConsolePortRequestModule>of(module);
     
+    this.module = module;
     return this;
   }
 
@@ -132,26 +128,18 @@ public class PatchedModuleBayRequest {
    * @return module
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ConsolePortRequestModule getModule() {
-        return module.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MODULE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ConsolePortRequestModule> getModule_JsonNullable() {
+  public ConsolePortRequestModule getModule() {
     return module;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MODULE)
-  public void setModule_JsonNullable(JsonNullable<ConsolePortRequestModule> module) {
-    this.module = module;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_MODULE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setModule(@javax.annotation.Nullable ConsolePortRequestModule module) {
-    this.module = JsonNullable.<ConsolePortRequestModule>of(module);
+    this.module = module;
   }
 
   public PatchedModuleBayRequest name(@javax.annotation.Nullable String name) {
@@ -180,8 +168,8 @@ public class PatchedModuleBayRequest {
   }
 
   public PatchedModuleBayRequest installedModule(@javax.annotation.Nullable ConsolePortRequestModule installedModule) {
-    this.installedModule = JsonNullable.<ConsolePortRequestModule>of(installedModule);
     
+    this.installedModule = installedModule;
     return this;
   }
 
@@ -190,26 +178,18 @@ public class PatchedModuleBayRequest {
    * @return installedModule
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ConsolePortRequestModule getInstalledModule() {
-        return installedModule.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_INSTALLED_MODULE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ConsolePortRequestModule> getInstalledModule_JsonNullable() {
+  public ConsolePortRequestModule getInstalledModule() {
     return installedModule;
   }
-  
-  @JsonProperty(JSON_PROPERTY_INSTALLED_MODULE)
-  public void setInstalledModule_JsonNullable(JsonNullable<ConsolePortRequestModule> installedModule) {
-    this.installedModule = installedModule;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_INSTALLED_MODULE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInstalledModule(@javax.annotation.Nullable ConsolePortRequestModule installedModule) {
-    this.installedModule = JsonNullable.<ConsolePortRequestModule>of(installedModule);
+    this.installedModule = installedModule;
   }
 
   public PatchedModuleBayRequest label(@javax.annotation.Nullable String label) {
@@ -288,8 +268,8 @@ public class PatchedModuleBayRequest {
   }
 
   public PatchedModuleBayRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -298,26 +278,18 @@ public class PatchedModuleBayRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public PatchedModuleBayRequest tags(@javax.annotation.Nullable List<NestedTagRequest> tags) {
@@ -397,31 +369,20 @@ public class PatchedModuleBayRequest {
     }
     PatchedModuleBayRequest patchedModuleBayRequest = (PatchedModuleBayRequest) o;
     return Objects.equals(this.device, patchedModuleBayRequest.device) &&
-        equalsNullable(this.module, patchedModuleBayRequest.module) &&
+        Objects.equals(this.module, patchedModuleBayRequest.module) &&
         Objects.equals(this.name, patchedModuleBayRequest.name) &&
-        equalsNullable(this.installedModule, patchedModuleBayRequest.installedModule) &&
+        Objects.equals(this.installedModule, patchedModuleBayRequest.installedModule) &&
         Objects.equals(this.label, patchedModuleBayRequest.label) &&
         Objects.equals(this.position, patchedModuleBayRequest.position) &&
         Objects.equals(this.description, patchedModuleBayRequest.description) &&
-        equalsNullable(this.owner, patchedModuleBayRequest.owner) &&
+        Objects.equals(this.owner, patchedModuleBayRequest.owner) &&
         Objects.equals(this.tags, patchedModuleBayRequest.tags) &&
         Objects.equals(this.customFields, patchedModuleBayRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(device, hashCodeNullable(module), name, hashCodeNullable(installedModule), label, position, description, hashCodeNullable(owner), tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(device, module, name, installedModule, label, position, description, owner, tags, customFields);
   }
 
   @Override

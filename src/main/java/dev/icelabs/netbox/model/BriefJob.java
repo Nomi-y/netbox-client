@@ -24,10 +24,6 @@ import dev.icelabs.netbox.model.BriefJobStatus;
 import dev.icelabs.netbox.model.BriefUser;
 import java.net.URI;
 import java.time.OffsetDateTime;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -41,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   BriefJob.JSON_PROPERTY_COMPLETED,
   BriefJob.JSON_PROPERTY_USER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class BriefJob {
   public static final String JSON_PROPERTY_URL = "url";
   @javax.annotation.Nonnull
@@ -57,7 +53,7 @@ public class BriefJob {
 
   public static final String JSON_PROPERTY_COMPLETED = "completed";
   @javax.annotation.Nullable
-  private JsonNullable<OffsetDateTime> completed = JsonNullable.<OffsetDateTime>undefined();
+  private OffsetDateTime completed;
 
   public static final String JSON_PROPERTY_USER = "user";
   @javax.annotation.Nonnull
@@ -134,8 +130,8 @@ public class BriefJob {
 
 
   public BriefJob completed(@javax.annotation.Nullable OffsetDateTime completed) {
-    this.completed = JsonNullable.<OffsetDateTime>of(completed);
     
+    this.completed = completed;
     return this;
   }
 
@@ -144,26 +140,18 @@ public class BriefJob {
    * @return completed
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public OffsetDateTime getCompleted() {
-        return completed.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_COMPLETED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<OffsetDateTime> getCompleted_JsonNullable() {
+  public OffsetDateTime getCompleted() {
     return completed;
   }
-  
-  @JsonProperty(JSON_PROPERTY_COMPLETED)
-  public void setCompleted_JsonNullable(JsonNullable<OffsetDateTime> completed) {
-    this.completed = completed;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_COMPLETED, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCompleted(@javax.annotation.Nullable OffsetDateTime completed) {
-    this.completed = JsonNullable.<OffsetDateTime>of(completed);
+    this.completed = completed;
   }
 
   /**
@@ -193,24 +181,13 @@ public class BriefJob {
     return Objects.equals(this.url, briefJob.url) &&
         Objects.equals(this.status, briefJob.status) &&
         Objects.equals(this.created, briefJob.created) &&
-        equalsNullable(this.completed, briefJob.completed) &&
+        Objects.equals(this.completed, briefJob.completed) &&
         Objects.equals(this.user, briefJob.user);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(url, status, created, hashCodeNullable(completed), user);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(url, status, created, completed, user);
   }
 
   @Override

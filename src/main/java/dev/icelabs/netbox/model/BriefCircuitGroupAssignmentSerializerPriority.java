@@ -31,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   BriefCircuitGroupAssignmentSerializerPriority.JSON_PROPERTY_LABEL
 })
 @JsonTypeName("BriefCircuitGroupAssignmentSerializer__priority")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class BriefCircuitGroupAssignmentSerializerPriority {
   /**
    * * &#x60;primary&#x60; - Primary * &#x60;secondary&#x60; - Secondary * &#x60;tertiary&#x60; - Tertiary * &#x60;inactive&#x60; - Inactive

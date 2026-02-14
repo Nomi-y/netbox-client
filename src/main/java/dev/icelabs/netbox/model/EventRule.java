@@ -30,10 +30,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -61,7 +57,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   EventRule.JSON_PROPERTY_CREATED,
   EventRule.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class EventRule {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -142,7 +138,7 @@ public class EventRule {
 
   public static final String JSON_PROPERTY_CONDITIONS = "conditions";
   @javax.annotation.Nullable
-  private JsonNullable<Object> conditions = JsonNullable.<Object>of(null);
+  private Object conditions = null;
 
   public static final String JSON_PROPERTY_ACTION_TYPE = "action_type";
   @javax.annotation.Nonnull
@@ -154,7 +150,7 @@ public class EventRule {
 
   public static final String JSON_PROPERTY_ACTION_OBJECT_ID = "action_object_id";
   @javax.annotation.Nullable
-  private JsonNullable<Long> actionObjectId = JsonNullable.<Long>undefined();
+  private Long actionObjectId;
 
   public static final String JSON_PROPERTY_ACTION_OBJECT = "action_object";
   @javax.annotation.Nullable
@@ -170,7 +166,7 @@ public class EventRule {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -382,8 +378,8 @@ public class EventRule {
   }
 
   public EventRule conditions(@javax.annotation.Nullable Object conditions) {
-    this.conditions = JsonNullable.<Object>of(conditions);
     
+    this.conditions = conditions;
     return this;
   }
 
@@ -392,26 +388,18 @@ public class EventRule {
    * @return conditions
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Object getConditions() {
-        return conditions.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_CONDITIONS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Object> getConditions_JsonNullable() {
+  public Object getConditions() {
     return conditions;
   }
-  
-  @JsonProperty(JSON_PROPERTY_CONDITIONS)
-  public void setConditions_JsonNullable(JsonNullable<Object> conditions) {
-    this.conditions = conditions;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_CONDITIONS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setConditions(@javax.annotation.Nullable Object conditions) {
-    this.conditions = JsonNullable.<Object>of(conditions);
+    this.conditions = conditions;
   }
 
   public EventRule actionType(@javax.annotation.Nonnull EventRuleActionType actionType) {
@@ -465,8 +453,8 @@ public class EventRule {
   }
 
   public EventRule actionObjectId(@javax.annotation.Nullable Long actionObjectId) {
-    this.actionObjectId = JsonNullable.<Long>of(actionObjectId);
     
+    this.actionObjectId = actionObjectId;
     return this;
   }
 
@@ -477,26 +465,18 @@ public class EventRule {
    * @return actionObjectId
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Long getActionObjectId() {
-        return actionObjectId.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ACTION_OBJECT_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Long> getActionObjectId_JsonNullable() {
+  public Long getActionObjectId() {
     return actionObjectId;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ACTION_OBJECT_ID)
-  public void setActionObjectId_JsonNullable(JsonNullable<Long> actionObjectId) {
-    this.actionObjectId = actionObjectId;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_ACTION_OBJECT_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setActionObjectId(@javax.annotation.Nullable Long actionObjectId) {
-    this.actionObjectId = JsonNullable.<Long>of(actionObjectId);
+    this.actionObjectId = actionObjectId;
   }
 
   /**
@@ -572,8 +552,8 @@ public class EventRule {
   }
 
   public EventRule owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -582,26 +562,18 @@ public class EventRule {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public EventRule tags(@javax.annotation.Nullable List<NestedTag> tags) {
@@ -683,33 +655,22 @@ public class EventRule {
         Objects.equals(this.name, eventRule.name) &&
         Objects.equals(this.enabled, eventRule.enabled) &&
         Objects.equals(this.eventTypes, eventRule.eventTypes) &&
-        equalsNullable(this.conditions, eventRule.conditions) &&
+        Objects.equals(this.conditions, eventRule.conditions) &&
         Objects.equals(this.actionType, eventRule.actionType) &&
         Objects.equals(this.actionObjectType, eventRule.actionObjectType) &&
-        equalsNullable(this.actionObjectId, eventRule.actionObjectId) &&
+        Objects.equals(this.actionObjectId, eventRule.actionObjectId) &&
         Objects.equals(this.actionObject, eventRule.actionObject) &&
         Objects.equals(this.description, eventRule.description) &&
         Objects.equals(this.customFields, eventRule.customFields) &&
-        equalsNullable(this.owner, eventRule.owner) &&
+        Objects.equals(this.owner, eventRule.owner) &&
         Objects.equals(this.tags, eventRule.tags) &&
         Objects.equals(this.created, eventRule.created) &&
         Objects.equals(this.lastUpdated, eventRule.lastUpdated);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, objectTypes, name, enabled, eventTypes, hashCodeNullable(conditions), actionType, actionObjectType, hashCodeNullable(actionObjectId), actionObject, description, customFields, hashCodeNullable(owner), tags, created, lastUpdated);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, objectTypes, name, enabled, eventTypes, conditions, actionType, actionObjectType, actionObjectId, actionObject, description, customFields, owner, tags, created, lastUpdated);
   }
 
   @Override

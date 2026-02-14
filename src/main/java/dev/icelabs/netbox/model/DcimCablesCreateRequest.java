@@ -30,10 +30,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -58,7 +54,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   DcimCablesCreateRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
 @JsonTypeName("dcim_cables_create_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class DcimCablesCreateRequest {
   /**
    * * &#x60;cat3&#x60; - CAT3 * &#x60;cat5&#x60; - CAT5 * &#x60;cat5e&#x60; - CAT5e * &#x60;cat6&#x60; - CAT6 * &#x60;cat6a&#x60; - CAT6a * &#x60;cat7&#x60; - CAT7 * &#x60;cat7a&#x60; - CAT7a * &#x60;cat8&#x60; - CAT8 * &#x60;mrj21-trunk&#x60; - MRJ21 Trunk * &#x60;dac-active&#x60; - Direct Attach Copper (Active) * &#x60;dac-passive&#x60; - Direct Attach Copper (Passive) * &#x60;coaxial&#x60; - Coaxial * &#x60;rg-6&#x60; - RG-6 * &#x60;rg-8&#x60; - RG-8 * &#x60;rg-11&#x60; - RG-11 * &#x60;rg-59&#x60; - RG-59 * &#x60;rg-62&#x60; - RG-62 * &#x60;rg-213&#x60; - RG-213 * &#x60;lmr-100&#x60; - LMR-100 * &#x60;lmr-200&#x60; - LMR-200 * &#x60;lmr-400&#x60; - LMR-400 * &#x60;mmf&#x60; - Multimode Fiber * &#x60;mmf-om1&#x60; - Multimode Fiber (OM1) * &#x60;mmf-om2&#x60; - Multimode Fiber (OM2) * &#x60;mmf-om3&#x60; - Multimode Fiber (OM3) * &#x60;mmf-om4&#x60; - Multimode Fiber (OM4) * &#x60;mmf-om5&#x60; - Multimode Fiber (OM5) * &#x60;smf&#x60; - Single-mode Fiber * &#x60;smf-os1&#x60; - Single-mode Fiber (OS1) * &#x60;smf-os2&#x60; - Single-mode Fiber (OS2) * &#x60;aoc&#x60; - Active Optical Cabling (AOC) * &#x60;power&#x60; - Power * &#x60;usb&#x60; - USB
@@ -161,7 +157,7 @@ public class DcimCablesCreateRequest {
 
   public static final String JSON_PROPERTY_TYPE = "type";
   @javax.annotation.Nullable
-  private JsonNullable<TypeEnum> type = JsonNullable.<TypeEnum>undefined();
+  private TypeEnum type;
 
   public static final String JSON_PROPERTY_A_TERMINATIONS = "a_terminations";
   @javax.annotation.Nullable
@@ -299,7 +295,7 @@ public class DcimCablesCreateRequest {
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestTenant> tenant = JsonNullable.<ASNRangeRequestTenant>undefined();
+  private ASNRangeRequestTenant tenant;
 
   public static final String JSON_PROPERTY_LABEL = "label";
   @javax.annotation.Nullable
@@ -311,7 +307,7 @@ public class DcimCablesCreateRequest {
 
   public static final String JSON_PROPERTY_LENGTH = "length";
   @javax.annotation.Nullable
-  private JsonNullable<Double> length = JsonNullable.<Double>undefined();
+  private Double length;
 
   /**
    * * &#x60;km&#x60; - Kilometers * &#x60;m&#x60; - Meters * &#x60;cm&#x60; - Centimeters * &#x60;mi&#x60; - Miles * &#x60;ft&#x60; - Feet * &#x60;in&#x60; - Inches
@@ -360,7 +356,7 @@ public class DcimCablesCreateRequest {
 
   public static final String JSON_PROPERTY_LENGTH_UNIT = "length_unit";
   @javax.annotation.Nullable
-  private JsonNullable<LengthUnitEnum> lengthUnit = JsonNullable.<LengthUnitEnum>undefined();
+  private LengthUnitEnum lengthUnit;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -368,7 +364,7 @@ public class DcimCablesCreateRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -386,8 +382,8 @@ public class DcimCablesCreateRequest {
   }
 
   public DcimCablesCreateRequest type(@javax.annotation.Nullable TypeEnum type) {
-    this.type = JsonNullable.<TypeEnum>of(type);
     
+    this.type = type;
     return this;
   }
 
@@ -396,26 +392,18 @@ public class DcimCablesCreateRequest {
    * @return type
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public TypeEnum getType() {
-        return type.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<TypeEnum> getType_JsonNullable() {
+  public TypeEnum getType() {
     return type;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TYPE)
-  public void setType_JsonNullable(JsonNullable<TypeEnum> type) {
-    this.type = type;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setType(@javax.annotation.Nullable TypeEnum type) {
-    this.type = JsonNullable.<TypeEnum>of(type);
+    this.type = type;
   }
 
   public DcimCablesCreateRequest aTerminations(@javax.annotation.Nullable List<GenericObjectRequest> aTerminations) {
@@ -535,8 +523,8 @@ public class DcimCablesCreateRequest {
   }
 
   public DcimCablesCreateRequest tenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -545,26 +533,18 @@ public class DcimCablesCreateRequest {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestTenant> getTenant_JsonNullable() {
+  public ASNRangeRequestTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<ASNRangeRequestTenant> tenant) {
-    this.tenant = tenant;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
+    this.tenant = tenant;
   }
 
   public DcimCablesCreateRequest label(@javax.annotation.Nullable String label) {
@@ -618,8 +598,8 @@ public class DcimCablesCreateRequest {
   }
 
   public DcimCablesCreateRequest length(@javax.annotation.Nullable Double length) {
-    this.length = JsonNullable.<Double>of(length);
     
+    this.length = length;
     return this;
   }
 
@@ -630,31 +610,23 @@ public class DcimCablesCreateRequest {
    * @return length
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getLength() {
-        return length.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_LENGTH, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getLength_JsonNullable() {
+  public Double getLength() {
     return length;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LENGTH)
-  public void setLength_JsonNullable(JsonNullable<Double> length) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_LENGTH, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setLength(@javax.annotation.Nullable Double length) {
     this.length = length;
   }
 
-  public void setLength(@javax.annotation.Nullable Double length) {
-    this.length = JsonNullable.<Double>of(length);
-  }
-
   public DcimCablesCreateRequest lengthUnit(@javax.annotation.Nullable LengthUnitEnum lengthUnit) {
-    this.lengthUnit = JsonNullable.<LengthUnitEnum>of(lengthUnit);
     
+    this.lengthUnit = lengthUnit;
     return this;
   }
 
@@ -663,26 +635,18 @@ public class DcimCablesCreateRequest {
    * @return lengthUnit
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public LengthUnitEnum getLengthUnit() {
-        return lengthUnit.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_LENGTH_UNIT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<LengthUnitEnum> getLengthUnit_JsonNullable() {
+  public LengthUnitEnum getLengthUnit() {
     return lengthUnit;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LENGTH_UNIT)
-  public void setLengthUnit_JsonNullable(JsonNullable<LengthUnitEnum> lengthUnit) {
-    this.lengthUnit = lengthUnit;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_LENGTH_UNIT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLengthUnit(@javax.annotation.Nullable LengthUnitEnum lengthUnit) {
-    this.lengthUnit = JsonNullable.<LengthUnitEnum>of(lengthUnit);
+    this.lengthUnit = lengthUnit;
   }
 
   public DcimCablesCreateRequest description(@javax.annotation.Nullable String description) {
@@ -711,8 +675,8 @@ public class DcimCablesCreateRequest {
   }
 
   public DcimCablesCreateRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -721,26 +685,18 @@ public class DcimCablesCreateRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public DcimCablesCreateRequest comments(@javax.annotation.Nullable String comments) {
@@ -844,37 +800,26 @@ public class DcimCablesCreateRequest {
       return false;
     }
     DcimCablesCreateRequest dcimCablesCreateRequest = (DcimCablesCreateRequest) o;
-    return equalsNullable(this.type, dcimCablesCreateRequest.type) &&
+    return Objects.equals(this.type, dcimCablesCreateRequest.type) &&
         Objects.equals(this.aTerminations, dcimCablesCreateRequest.aTerminations) &&
         Objects.equals(this.bTerminations, dcimCablesCreateRequest.bTerminations) &&
         Objects.equals(this.status, dcimCablesCreateRequest.status) &&
         Objects.equals(this.profile, dcimCablesCreateRequest.profile) &&
-        equalsNullable(this.tenant, dcimCablesCreateRequest.tenant) &&
+        Objects.equals(this.tenant, dcimCablesCreateRequest.tenant) &&
         Objects.equals(this.label, dcimCablesCreateRequest.label) &&
         Objects.equals(this.color, dcimCablesCreateRequest.color) &&
-        equalsNullable(this.length, dcimCablesCreateRequest.length) &&
-        equalsNullable(this.lengthUnit, dcimCablesCreateRequest.lengthUnit) &&
+        Objects.equals(this.length, dcimCablesCreateRequest.length) &&
+        Objects.equals(this.lengthUnit, dcimCablesCreateRequest.lengthUnit) &&
         Objects.equals(this.description, dcimCablesCreateRequest.description) &&
-        equalsNullable(this.owner, dcimCablesCreateRequest.owner) &&
+        Objects.equals(this.owner, dcimCablesCreateRequest.owner) &&
         Objects.equals(this.comments, dcimCablesCreateRequest.comments) &&
         Objects.equals(this.tags, dcimCablesCreateRequest.tags) &&
         Objects.equals(this.customFields, dcimCablesCreateRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(hashCodeNullable(type), aTerminations, bTerminations, status, profile, hashCodeNullable(tenant), label, color, hashCodeNullable(length), hashCodeNullable(lengthUnit), description, hashCodeNullable(owner), comments, tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(type, aTerminations, bTerminations, status, profile, tenant, label, color, length, lengthUnit, description, owner, comments, tags, customFields);
   }
 
   @Override

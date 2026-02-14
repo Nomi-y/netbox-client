@@ -30,10 +30,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -60,7 +56,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   SiteRequest.JSON_PROPERTY_TAGS,
   SiteRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class SiteRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -117,15 +113,15 @@ public class SiteRequest {
 
   public static final String JSON_PROPERTY_REGION = "region";
   @javax.annotation.Nullable
-  private JsonNullable<PatchedWritableSiteRequestRegion> region = JsonNullable.<PatchedWritableSiteRequestRegion>undefined();
+  private PatchedWritableSiteRequestRegion region;
 
   public static final String JSON_PROPERTY_GROUP = "group";
   @javax.annotation.Nullable
-  private JsonNullable<PatchedWritableSiteRequestGroup> group = JsonNullable.<PatchedWritableSiteRequestGroup>undefined();
+  private PatchedWritableSiteRequestGroup group;
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestTenant> tenant = JsonNullable.<ASNRangeRequestTenant>undefined();
+  private ASNRangeRequestTenant tenant;
 
   public static final String JSON_PROPERTY_FACILITY = "facility";
   @javax.annotation.Nullable
@@ -133,7 +129,7 @@ public class SiteRequest {
 
   public static final String JSON_PROPERTY_TIME_ZONE = "time_zone";
   @javax.annotation.Nullable
-  private JsonNullable<String> timeZone = JsonNullable.<String>undefined();
+  private String timeZone;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -149,15 +145,15 @@ public class SiteRequest {
 
   public static final String JSON_PROPERTY_LATITUDE = "latitude";
   @javax.annotation.Nullable
-  private JsonNullable<Double> latitude = JsonNullable.<Double>undefined();
+  private Double latitude;
 
   public static final String JSON_PROPERTY_LONGITUDE = "longitude";
   @javax.annotation.Nullable
-  private JsonNullable<Double> longitude = JsonNullable.<Double>undefined();
+  private Double longitude;
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -254,8 +250,8 @@ public class SiteRequest {
   }
 
   public SiteRequest region(@javax.annotation.Nullable PatchedWritableSiteRequestRegion region) {
-    this.region = JsonNullable.<PatchedWritableSiteRequestRegion>of(region);
     
+    this.region = region;
     return this;
   }
 
@@ -264,31 +260,23 @@ public class SiteRequest {
    * @return region
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public PatchedWritableSiteRequestRegion getRegion() {
-        return region.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_REGION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<PatchedWritableSiteRequestRegion> getRegion_JsonNullable() {
+  public PatchedWritableSiteRequestRegion getRegion() {
     return region;
   }
-  
-  @JsonProperty(JSON_PROPERTY_REGION)
-  public void setRegion_JsonNullable(JsonNullable<PatchedWritableSiteRequestRegion> region) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_REGION, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRegion(@javax.annotation.Nullable PatchedWritableSiteRequestRegion region) {
     this.region = region;
   }
 
-  public void setRegion(@javax.annotation.Nullable PatchedWritableSiteRequestRegion region) {
-    this.region = JsonNullable.<PatchedWritableSiteRequestRegion>of(region);
-  }
-
   public SiteRequest group(@javax.annotation.Nullable PatchedWritableSiteRequestGroup group) {
-    this.group = JsonNullable.<PatchedWritableSiteRequestGroup>of(group);
     
+    this.group = group;
     return this;
   }
 
@@ -297,31 +285,23 @@ public class SiteRequest {
    * @return group
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public PatchedWritableSiteRequestGroup getGroup() {
-        return group.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_GROUP, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<PatchedWritableSiteRequestGroup> getGroup_JsonNullable() {
+  public PatchedWritableSiteRequestGroup getGroup() {
     return group;
   }
-  
-  @JsonProperty(JSON_PROPERTY_GROUP)
-  public void setGroup_JsonNullable(JsonNullable<PatchedWritableSiteRequestGroup> group) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_GROUP, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setGroup(@javax.annotation.Nullable PatchedWritableSiteRequestGroup group) {
     this.group = group;
   }
 
-  public void setGroup(@javax.annotation.Nullable PatchedWritableSiteRequestGroup group) {
-    this.group = JsonNullable.<PatchedWritableSiteRequestGroup>of(group);
-  }
-
   public SiteRequest tenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -330,26 +310,18 @@ public class SiteRequest {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestTenant> getTenant_JsonNullable() {
+  public ASNRangeRequestTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<ASNRangeRequestTenant> tenant) {
-    this.tenant = tenant;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
+    this.tenant = tenant;
   }
 
   public SiteRequest facility(@javax.annotation.Nullable String facility) {
@@ -378,8 +350,8 @@ public class SiteRequest {
   }
 
   public SiteRequest timeZone(@javax.annotation.Nullable String timeZone) {
-    this.timeZone = JsonNullable.<String>of(timeZone);
     
+    this.timeZone = timeZone;
     return this;
   }
 
@@ -388,26 +360,18 @@ public class SiteRequest {
    * @return timeZone
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getTimeZone() {
-        return timeZone.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TIME_ZONE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getTimeZone_JsonNullable() {
+  public String getTimeZone() {
     return timeZone;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TIME_ZONE)
-  public void setTimeZone_JsonNullable(JsonNullable<String> timeZone) {
-    this.timeZone = timeZone;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TIME_ZONE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTimeZone(@javax.annotation.Nullable String timeZone) {
-    this.timeZone = JsonNullable.<String>of(timeZone);
+    this.timeZone = timeZone;
   }
 
   public SiteRequest description(@javax.annotation.Nullable String description) {
@@ -486,8 +450,8 @@ public class SiteRequest {
   }
 
   public SiteRequest latitude(@javax.annotation.Nullable Double latitude) {
-    this.latitude = JsonNullable.<Double>of(latitude);
     
+    this.latitude = latitude;
     return this;
   }
 
@@ -498,31 +462,23 @@ public class SiteRequest {
    * @return latitude
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getLatitude() {
-        return latitude.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_LATITUDE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getLatitude_JsonNullable() {
+  public Double getLatitude() {
     return latitude;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LATITUDE)
-  public void setLatitude_JsonNullable(JsonNullable<Double> latitude) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_LATITUDE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setLatitude(@javax.annotation.Nullable Double latitude) {
     this.latitude = latitude;
   }
 
-  public void setLatitude(@javax.annotation.Nullable Double latitude) {
-    this.latitude = JsonNullable.<Double>of(latitude);
-  }
-
   public SiteRequest longitude(@javax.annotation.Nullable Double longitude) {
-    this.longitude = JsonNullable.<Double>of(longitude);
     
+    this.longitude = longitude;
     return this;
   }
 
@@ -533,31 +489,23 @@ public class SiteRequest {
    * @return longitude
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getLongitude() {
-        return longitude.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_LONGITUDE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getLongitude_JsonNullable() {
+  public Double getLongitude() {
     return longitude;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LONGITUDE)
-  public void setLongitude_JsonNullable(JsonNullable<Double> longitude) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_LONGITUDE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setLongitude(@javax.annotation.Nullable Double longitude) {
     this.longitude = longitude;
   }
 
-  public void setLongitude(@javax.annotation.Nullable Double longitude) {
-    this.longitude = JsonNullable.<Double>of(longitude);
-  }
-
   public SiteRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -566,26 +514,18 @@ public class SiteRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public SiteRequest comments(@javax.annotation.Nullable String comments) {
@@ -725,37 +665,26 @@ public class SiteRequest {
     return Objects.equals(this.name, siteRequest.name) &&
         Objects.equals(this.slug, siteRequest.slug) &&
         Objects.equals(this.status, siteRequest.status) &&
-        equalsNullable(this.region, siteRequest.region) &&
-        equalsNullable(this.group, siteRequest.group) &&
-        equalsNullable(this.tenant, siteRequest.tenant) &&
+        Objects.equals(this.region, siteRequest.region) &&
+        Objects.equals(this.group, siteRequest.group) &&
+        Objects.equals(this.tenant, siteRequest.tenant) &&
         Objects.equals(this.facility, siteRequest.facility) &&
-        equalsNullable(this.timeZone, siteRequest.timeZone) &&
+        Objects.equals(this.timeZone, siteRequest.timeZone) &&
         Objects.equals(this.description, siteRequest.description) &&
         Objects.equals(this.physicalAddress, siteRequest.physicalAddress) &&
         Objects.equals(this.shippingAddress, siteRequest.shippingAddress) &&
-        equalsNullable(this.latitude, siteRequest.latitude) &&
-        equalsNullable(this.longitude, siteRequest.longitude) &&
-        equalsNullable(this.owner, siteRequest.owner) &&
+        Objects.equals(this.latitude, siteRequest.latitude) &&
+        Objects.equals(this.longitude, siteRequest.longitude) &&
+        Objects.equals(this.owner, siteRequest.owner) &&
         Objects.equals(this.comments, siteRequest.comments) &&
         Objects.equals(this.asns, siteRequest.asns) &&
         Objects.equals(this.tags, siteRequest.tags) &&
         Objects.equals(this.customFields, siteRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(name, slug, status, hashCodeNullable(region), hashCodeNullable(group), hashCodeNullable(tenant), facility, hashCodeNullable(timeZone), description, physicalAddress, shippingAddress, hashCodeNullable(latitude), hashCodeNullable(longitude), hashCodeNullable(owner), comments, asns, tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, slug, status, region, group, tenant, facility, timeZone, description, physicalAddress, shippingAddress, latitude, longitude, owner, comments, asns, tags, customFields);
   }
 
   @Override

@@ -30,7 +30,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   BriefIPAddressRequest.JSON_PROPERTY_ADDRESS,
   BriefIPAddressRequest.JSON_PROPERTY_DESCRIPTION
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class BriefIPAddressRequest {
   public static final String JSON_PROPERTY_ADDRESS = "address";
   @javax.annotation.Nonnull

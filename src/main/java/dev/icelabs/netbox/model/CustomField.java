@@ -31,10 +31,6 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -73,7 +69,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   CustomField.JSON_PROPERTY_CREATED,
   CustomField.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class CustomField {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -101,7 +97,7 @@ public class CustomField {
 
   public static final String JSON_PROPERTY_RELATED_OBJECT_TYPE = "related_object_type";
   @javax.annotation.Nullable
-  private JsonNullable<String> relatedObjectType = JsonNullable.<String>undefined();
+  private String relatedObjectType;
 
   public static final String JSON_PROPERTY_DATA_TYPE = "data_type";
   @javax.annotation.Nonnull
@@ -153,11 +149,11 @@ public class CustomField {
 
   public static final String JSON_PROPERTY_DEFAULT = "default";
   @javax.annotation.Nullable
-  private JsonNullable<Object> _default = JsonNullable.<Object>of(null);
+  private Object _default = null;
 
   public static final String JSON_PROPERTY_RELATED_OBJECT_FILTER = "related_object_filter";
   @javax.annotation.Nullable
-  private JsonNullable<Object> relatedObjectFilter = JsonNullable.<Object>of(null);
+  private Object relatedObjectFilter = null;
 
   public static final String JSON_PROPERTY_WEIGHT = "weight";
   @javax.annotation.Nullable
@@ -165,11 +161,11 @@ public class CustomField {
 
   public static final String JSON_PROPERTY_VALIDATION_MINIMUM = "validation_minimum";
   @javax.annotation.Nullable
-  private JsonNullable<Double> validationMinimum = JsonNullable.<Double>undefined();
+  private Double validationMinimum;
 
   public static final String JSON_PROPERTY_VALIDATION_MAXIMUM = "validation_maximum";
   @javax.annotation.Nullable
-  private JsonNullable<Double> validationMaximum = JsonNullable.<Double>undefined();
+  private Double validationMaximum;
 
   public static final String JSON_PROPERTY_VALIDATION_REGEX = "validation_regex";
   @javax.annotation.Nullable
@@ -177,11 +173,11 @@ public class CustomField {
 
   public static final String JSON_PROPERTY_CHOICE_SET = "choice_set";
   @javax.annotation.Nullable
-  private JsonNullable<BriefCustomFieldChoiceSet> choiceSet = JsonNullable.<BriefCustomFieldChoiceSet>undefined();
+  private BriefCustomFieldChoiceSet choiceSet;
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -335,8 +331,8 @@ public class CustomField {
   }
 
   public CustomField relatedObjectType(@javax.annotation.Nullable String relatedObjectType) {
-    this.relatedObjectType = JsonNullable.<String>of(relatedObjectType);
     
+    this.relatedObjectType = relatedObjectType;
     return this;
   }
 
@@ -345,26 +341,18 @@ public class CustomField {
    * @return relatedObjectType
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public String getRelatedObjectType() {
-        return relatedObjectType.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_RELATED_OBJECT_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<String> getRelatedObjectType_JsonNullable() {
+  public String getRelatedObjectType() {
     return relatedObjectType;
   }
-  
-  @JsonProperty(JSON_PROPERTY_RELATED_OBJECT_TYPE)
-  public void setRelatedObjectType_JsonNullable(JsonNullable<String> relatedObjectType) {
-    this.relatedObjectType = relatedObjectType;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_RELATED_OBJECT_TYPE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRelatedObjectType(@javax.annotation.Nullable String relatedObjectType) {
-    this.relatedObjectType = JsonNullable.<String>of(relatedObjectType);
+    this.relatedObjectType = relatedObjectType;
   }
 
   /**
@@ -659,8 +647,8 @@ public class CustomField {
   }
 
   public CustomField _default(@javax.annotation.Nullable Object _default) {
-    this._default = JsonNullable.<Object>of(_default);
     
+    this._default = _default;
     return this;
   }
 
@@ -669,31 +657,23 @@ public class CustomField {
    * @return _default
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Object getDefault() {
-        return _default.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_DEFAULT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Object> getDefault_JsonNullable() {
+  public Object getDefault() {
     return _default;
   }
-  
-  @JsonProperty(JSON_PROPERTY_DEFAULT)
-  public void setDefault_JsonNullable(JsonNullable<Object> _default) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_DEFAULT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDefault(@javax.annotation.Nullable Object _default) {
     this._default = _default;
   }
 
-  public void setDefault(@javax.annotation.Nullable Object _default) {
-    this._default = JsonNullable.<Object>of(_default);
-  }
-
   public CustomField relatedObjectFilter(@javax.annotation.Nullable Object relatedObjectFilter) {
-    this.relatedObjectFilter = JsonNullable.<Object>of(relatedObjectFilter);
     
+    this.relatedObjectFilter = relatedObjectFilter;
     return this;
   }
 
@@ -702,26 +682,18 @@ public class CustomField {
    * @return relatedObjectFilter
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Object getRelatedObjectFilter() {
-        return relatedObjectFilter.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_RELATED_OBJECT_FILTER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Object> getRelatedObjectFilter_JsonNullable() {
+  public Object getRelatedObjectFilter() {
     return relatedObjectFilter;
   }
-  
-  @JsonProperty(JSON_PROPERTY_RELATED_OBJECT_FILTER)
-  public void setRelatedObjectFilter_JsonNullable(JsonNullable<Object> relatedObjectFilter) {
-    this.relatedObjectFilter = relatedObjectFilter;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_RELATED_OBJECT_FILTER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRelatedObjectFilter(@javax.annotation.Nullable Object relatedObjectFilter) {
-    this.relatedObjectFilter = JsonNullable.<Object>of(relatedObjectFilter);
+    this.relatedObjectFilter = relatedObjectFilter;
   }
 
   public CustomField weight(@javax.annotation.Nullable Integer weight) {
@@ -752,8 +724,8 @@ public class CustomField {
   }
 
   public CustomField validationMinimum(@javax.annotation.Nullable Double validationMinimum) {
-    this.validationMinimum = JsonNullable.<Double>of(validationMinimum);
     
+    this.validationMinimum = validationMinimum;
     return this;
   }
 
@@ -764,31 +736,23 @@ public class CustomField {
    * @return validationMinimum
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getValidationMinimum() {
-        return validationMinimum.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VALIDATION_MINIMUM, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getValidationMinimum_JsonNullable() {
+  public Double getValidationMinimum() {
     return validationMinimum;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VALIDATION_MINIMUM)
-  public void setValidationMinimum_JsonNullable(JsonNullable<Double> validationMinimum) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_VALIDATION_MINIMUM, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setValidationMinimum(@javax.annotation.Nullable Double validationMinimum) {
     this.validationMinimum = validationMinimum;
   }
 
-  public void setValidationMinimum(@javax.annotation.Nullable Double validationMinimum) {
-    this.validationMinimum = JsonNullable.<Double>of(validationMinimum);
-  }
-
   public CustomField validationMaximum(@javax.annotation.Nullable Double validationMaximum) {
-    this.validationMaximum = JsonNullable.<Double>of(validationMaximum);
     
+    this.validationMaximum = validationMaximum;
     return this;
   }
 
@@ -799,26 +763,18 @@ public class CustomField {
    * @return validationMaximum
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getValidationMaximum() {
-        return validationMaximum.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VALIDATION_MAXIMUM, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getValidationMaximum_JsonNullable() {
+  public Double getValidationMaximum() {
     return validationMaximum;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VALIDATION_MAXIMUM)
-  public void setValidationMaximum_JsonNullable(JsonNullable<Double> validationMaximum) {
-    this.validationMaximum = validationMaximum;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_VALIDATION_MAXIMUM, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setValidationMaximum(@javax.annotation.Nullable Double validationMaximum) {
-    this.validationMaximum = JsonNullable.<Double>of(validationMaximum);
+    this.validationMaximum = validationMaximum;
   }
 
   public CustomField validationRegex(@javax.annotation.Nullable String validationRegex) {
@@ -847,8 +803,8 @@ public class CustomField {
   }
 
   public CustomField choiceSet(@javax.annotation.Nullable BriefCustomFieldChoiceSet choiceSet) {
-    this.choiceSet = JsonNullable.<BriefCustomFieldChoiceSet>of(choiceSet);
     
+    this.choiceSet = choiceSet;
     return this;
   }
 
@@ -857,31 +813,23 @@ public class CustomField {
    * @return choiceSet
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefCustomFieldChoiceSet getChoiceSet() {
-        return choiceSet.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_CHOICE_SET, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefCustomFieldChoiceSet> getChoiceSet_JsonNullable() {
+  public BriefCustomFieldChoiceSet getChoiceSet() {
     return choiceSet;
   }
-  
-  @JsonProperty(JSON_PROPERTY_CHOICE_SET)
-  public void setChoiceSet_JsonNullable(JsonNullable<BriefCustomFieldChoiceSet> choiceSet) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_CHOICE_SET, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setChoiceSet(@javax.annotation.Nullable BriefCustomFieldChoiceSet choiceSet) {
     this.choiceSet = choiceSet;
   }
 
-  public void setChoiceSet(@javax.annotation.Nullable BriefCustomFieldChoiceSet choiceSet) {
-    this.choiceSet = JsonNullable.<BriefCustomFieldChoiceSet>of(choiceSet);
-  }
-
   public CustomField owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -890,26 +838,18 @@ public class CustomField {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public CustomField comments(@javax.annotation.Nullable String comments) {
@@ -981,7 +921,7 @@ public class CustomField {
         Objects.equals(this.display, customField.display) &&
         Objects.equals(this.objectTypes, customField.objectTypes) &&
         Objects.equals(this.type, customField.type) &&
-        equalsNullable(this.relatedObjectType, customField.relatedObjectType) &&
+        Objects.equals(this.relatedObjectType, customField.relatedObjectType) &&
         Objects.equals(this.dataType, customField.dataType) &&
         Objects.equals(this.name, customField.name) &&
         Objects.equals(this.label, customField.label) &&
@@ -994,33 +934,22 @@ public class CustomField {
         Objects.equals(this.uiVisible, customField.uiVisible) &&
         Objects.equals(this.uiEditable, customField.uiEditable) &&
         Objects.equals(this.isCloneable, customField.isCloneable) &&
-        equalsNullable(this._default, customField._default) &&
-        equalsNullable(this.relatedObjectFilter, customField.relatedObjectFilter) &&
+        Objects.equals(this._default, customField._default) &&
+        Objects.equals(this.relatedObjectFilter, customField.relatedObjectFilter) &&
         Objects.equals(this.weight, customField.weight) &&
-        equalsNullable(this.validationMinimum, customField.validationMinimum) &&
-        equalsNullable(this.validationMaximum, customField.validationMaximum) &&
+        Objects.equals(this.validationMinimum, customField.validationMinimum) &&
+        Objects.equals(this.validationMaximum, customField.validationMaximum) &&
         Objects.equals(this.validationRegex, customField.validationRegex) &&
-        equalsNullable(this.choiceSet, customField.choiceSet) &&
-        equalsNullable(this.owner, customField.owner) &&
+        Objects.equals(this.choiceSet, customField.choiceSet) &&
+        Objects.equals(this.owner, customField.owner) &&
         Objects.equals(this.comments, customField.comments) &&
         Objects.equals(this.created, customField.created) &&
         Objects.equals(this.lastUpdated, customField.lastUpdated);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, objectTypes, type, hashCodeNullable(relatedObjectType), dataType, name, label, groupName, description, required, unique, searchWeight, filterLogic, uiVisible, uiEditable, isCloneable, hashCodeNullable(_default), hashCodeNullable(relatedObjectFilter), weight, hashCodeNullable(validationMinimum), hashCodeNullable(validationMaximum), validationRegex, hashCodeNullable(choiceSet), hashCodeNullable(owner), comments, created, lastUpdated);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, objectTypes, type, relatedObjectType, dataType, name, label, groupName, description, required, unique, searchWeight, filterLogic, uiVisible, uiEditable, isCloneable, _default, relatedObjectFilter, weight, validationMinimum, validationMaximum, validationRegex, choiceSet, owner, comments, created, lastUpdated);
   }
 
   @Override

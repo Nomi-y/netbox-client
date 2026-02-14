@@ -28,10 +28,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -47,7 +43,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   WritableContactAssignmentRequest.JSON_PROPERTY_TAGS,
   WritableContactAssignmentRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class WritableContactAssignmentRequest {
   public static final String JSON_PROPERTY_OBJECT_TYPE = "object_type";
   @javax.annotation.Nonnull
@@ -63,7 +59,7 @@ public class WritableContactAssignmentRequest {
 
   public static final String JSON_PROPERTY_ROLE = "role";
   @javax.annotation.Nullable
-  private JsonNullable<ContactAssignmentRequestRole> role = JsonNullable.<ContactAssignmentRequestRole>undefined();
+  private ContactAssignmentRequestRole role;
 
   /**
    * * &#x60;primary&#x60; - Primary * &#x60;secondary&#x60; - Secondary * &#x60;tertiary&#x60; - Tertiary * &#x60;inactive&#x60; - Inactive
@@ -108,7 +104,7 @@ public class WritableContactAssignmentRequest {
 
   public static final String JSON_PROPERTY_PRIORITY = "priority";
   @javax.annotation.Nullable
-  private JsonNullable<PriorityEnum> priority = JsonNullable.<PriorityEnum>undefined();
+  private PriorityEnum priority;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -199,8 +195,8 @@ public class WritableContactAssignmentRequest {
   }
 
   public WritableContactAssignmentRequest role(@javax.annotation.Nullable ContactAssignmentRequestRole role) {
-    this.role = JsonNullable.<ContactAssignmentRequestRole>of(role);
     
+    this.role = role;
     return this;
   }
 
@@ -209,31 +205,23 @@ public class WritableContactAssignmentRequest {
    * @return role
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ContactAssignmentRequestRole getRole() {
-        return role.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ContactAssignmentRequestRole> getRole_JsonNullable() {
+  public ContactAssignmentRequestRole getRole() {
     return role;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ROLE)
-  public void setRole_JsonNullable(JsonNullable<ContactAssignmentRequestRole> role) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRole(@javax.annotation.Nullable ContactAssignmentRequestRole role) {
     this.role = role;
   }
 
-  public void setRole(@javax.annotation.Nullable ContactAssignmentRequestRole role) {
-    this.role = JsonNullable.<ContactAssignmentRequestRole>of(role);
-  }
-
   public WritableContactAssignmentRequest priority(@javax.annotation.Nullable PriorityEnum priority) {
-    this.priority = JsonNullable.<PriorityEnum>of(priority);
     
+    this.priority = priority;
     return this;
   }
 
@@ -242,26 +230,18 @@ public class WritableContactAssignmentRequest {
    * @return priority
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public PriorityEnum getPriority() {
-        return priority.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PRIORITY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<PriorityEnum> getPriority_JsonNullable() {
+  public PriorityEnum getPriority() {
     return priority;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PRIORITY)
-  public void setPriority_JsonNullable(JsonNullable<PriorityEnum> priority) {
-    this.priority = priority;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PRIORITY, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPriority(@javax.annotation.Nullable PriorityEnum priority) {
-    this.priority = JsonNullable.<PriorityEnum>of(priority);
+    this.priority = priority;
   }
 
   public WritableContactAssignmentRequest tags(@javax.annotation.Nullable List<NestedTagRequest> tags) {
@@ -343,26 +323,15 @@ public class WritableContactAssignmentRequest {
     return Objects.equals(this.objectType, writableContactAssignmentRequest.objectType) &&
         Objects.equals(this.objectId, writableContactAssignmentRequest.objectId) &&
         Objects.equals(this.contact, writableContactAssignmentRequest.contact) &&
-        equalsNullable(this.role, writableContactAssignmentRequest.role) &&
-        equalsNullable(this.priority, writableContactAssignmentRequest.priority) &&
+        Objects.equals(this.role, writableContactAssignmentRequest.role) &&
+        Objects.equals(this.priority, writableContactAssignmentRequest.priority) &&
         Objects.equals(this.tags, writableContactAssignmentRequest.tags) &&
         Objects.equals(this.customFields, writableContactAssignmentRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(objectType, objectId, contact, hashCodeNullable(role), hashCodeNullable(priority), tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(objectType, objectId, contact, role, priority, tags, customFields);
   }
 
   @Override

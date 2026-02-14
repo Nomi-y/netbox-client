@@ -27,10 +27,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -47,7 +43,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   PatchedWritableVirtualChassisRequest.JSON_PROPERTY_TAGS,
   PatchedWritableVirtualChassisRequest.JSON_PROPERTY_CUSTOM_FIELDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class PatchedWritableVirtualChassisRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable
@@ -59,7 +55,7 @@ public class PatchedWritableVirtualChassisRequest {
 
   public static final String JSON_PROPERTY_MASTER = "master";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> master = JsonNullable.<Integer>undefined();
+  private Integer master;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -67,7 +63,7 @@ public class PatchedWritableVirtualChassisRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -135,8 +131,8 @@ public class PatchedWritableVirtualChassisRequest {
   }
 
   public PatchedWritableVirtualChassisRequest master(@javax.annotation.Nullable Integer master) {
-    this.master = JsonNullable.<Integer>of(master);
     
+    this.master = master;
     return this;
   }
 
@@ -145,26 +141,18 @@ public class PatchedWritableVirtualChassisRequest {
    * @return master
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getMaster() {
-        return master.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MASTER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getMaster_JsonNullable() {
+  public Integer getMaster() {
     return master;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MASTER)
-  public void setMaster_JsonNullable(JsonNullable<Integer> master) {
-    this.master = master;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_MASTER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMaster(@javax.annotation.Nullable Integer master) {
-    this.master = JsonNullable.<Integer>of(master);
+    this.master = master;
   }
 
   public PatchedWritableVirtualChassisRequest description(@javax.annotation.Nullable String description) {
@@ -193,8 +181,8 @@ public class PatchedWritableVirtualChassisRequest {
   }
 
   public PatchedWritableVirtualChassisRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -203,26 +191,18 @@ public class PatchedWritableVirtualChassisRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public PatchedWritableVirtualChassisRequest comments(@javax.annotation.Nullable String comments) {
@@ -328,28 +308,17 @@ public class PatchedWritableVirtualChassisRequest {
     PatchedWritableVirtualChassisRequest patchedWritableVirtualChassisRequest = (PatchedWritableVirtualChassisRequest) o;
     return Objects.equals(this.name, patchedWritableVirtualChassisRequest.name) &&
         Objects.equals(this.domain, patchedWritableVirtualChassisRequest.domain) &&
-        equalsNullable(this.master, patchedWritableVirtualChassisRequest.master) &&
+        Objects.equals(this.master, patchedWritableVirtualChassisRequest.master) &&
         Objects.equals(this.description, patchedWritableVirtualChassisRequest.description) &&
-        equalsNullable(this.owner, patchedWritableVirtualChassisRequest.owner) &&
+        Objects.equals(this.owner, patchedWritableVirtualChassisRequest.owner) &&
         Objects.equals(this.comments, patchedWritableVirtualChassisRequest.comments) &&
         Objects.equals(this.tags, patchedWritableVirtualChassisRequest.tags) &&
         Objects.equals(this.customFields, patchedWritableVirtualChassisRequest.customFields);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(name, domain, hashCodeNullable(master), description, hashCodeNullable(owner), comments, tags, customFields);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, domain, master, description, owner, comments, tags, customFields);
   }
 
   @Override

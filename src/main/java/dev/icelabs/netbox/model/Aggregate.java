@@ -33,10 +33,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -61,7 +57,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   Aggregate.JSON_PROPERTY_CREATED,
   Aggregate.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class Aggregate {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -93,11 +89,11 @@ public class Aggregate {
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<BriefTenant> tenant = JsonNullable.<BriefTenant>undefined();
+  private BriefTenant tenant;
 
   public static final String JSON_PROPERTY_DATE_ADDED = "date_added";
   @javax.annotation.Nullable
-  private JsonNullable<LocalDate> dateAdded = JsonNullable.<LocalDate>undefined();
+  private LocalDate dateAdded;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -105,7 +101,7 @@ public class Aggregate {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -282,8 +278,8 @@ public class Aggregate {
   }
 
   public Aggregate tenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -292,31 +288,23 @@ public class Aggregate {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefTenant> getTenant_JsonNullable() {
+  public BriefTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<BriefTenant> tenant) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTenant(@javax.annotation.Nullable BriefTenant tenant) {
     this.tenant = tenant;
   }
 
-  public void setTenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
-  }
-
   public Aggregate dateAdded(@javax.annotation.Nullable LocalDate dateAdded) {
-    this.dateAdded = JsonNullable.<LocalDate>of(dateAdded);
     
+    this.dateAdded = dateAdded;
     return this;
   }
 
@@ -325,26 +313,18 @@ public class Aggregate {
    * @return dateAdded
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public LocalDate getDateAdded() {
-        return dateAdded.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_DATE_ADDED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<LocalDate> getDateAdded_JsonNullable() {
+  public LocalDate getDateAdded() {
     return dateAdded;
   }
-  
-  @JsonProperty(JSON_PROPERTY_DATE_ADDED)
-  public void setDateAdded_JsonNullable(JsonNullable<LocalDate> dateAdded) {
-    this.dateAdded = dateAdded;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_DATE_ADDED, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDateAdded(@javax.annotation.Nullable LocalDate dateAdded) {
-    this.dateAdded = JsonNullable.<LocalDate>of(dateAdded);
+    this.dateAdded = dateAdded;
   }
 
   public Aggregate description(@javax.annotation.Nullable String description) {
@@ -373,8 +353,8 @@ public class Aggregate {
   }
 
   public Aggregate owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -383,26 +363,18 @@ public class Aggregate {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public Aggregate comments(@javax.annotation.Nullable String comments) {
@@ -541,10 +513,10 @@ public class Aggregate {
         Objects.equals(this.family, aggregate.family) &&
         Objects.equals(this.prefix, aggregate.prefix) &&
         Objects.equals(this.rir, aggregate.rir) &&
-        equalsNullable(this.tenant, aggregate.tenant) &&
-        equalsNullable(this.dateAdded, aggregate.dateAdded) &&
+        Objects.equals(this.tenant, aggregate.tenant) &&
+        Objects.equals(this.dateAdded, aggregate.dateAdded) &&
         Objects.equals(this.description, aggregate.description) &&
-        equalsNullable(this.owner, aggregate.owner) &&
+        Objects.equals(this.owner, aggregate.owner) &&
         Objects.equals(this.comments, aggregate.comments) &&
         Objects.equals(this.tags, aggregate.tags) &&
         Objects.equals(this.customFields, aggregate.customFields) &&
@@ -552,20 +524,9 @@ public class Aggregate {
         Objects.equals(this.lastUpdated, aggregate.lastUpdated);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, family, prefix, rir, hashCodeNullable(tenant), hashCodeNullable(dateAdded), description, hashCodeNullable(owner), comments, tags, customFields, created, lastUpdated);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, family, prefix, rir, tenant, dateAdded, description, owner, comments, tags, customFields, created, lastUpdated);
   }
 
   @Override

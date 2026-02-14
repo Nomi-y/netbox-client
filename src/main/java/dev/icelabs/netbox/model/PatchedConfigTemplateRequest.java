@@ -26,10 +26,6 @@ import dev.icelabs.netbox.model.NestedTagRequest;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -50,7 +46,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   PatchedConfigTemplateRequest.JSON_PROPERTY_OWNER,
   PatchedConfigTemplateRequest.JSON_PROPERTY_TAGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class PatchedConfigTemplateRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable
@@ -62,7 +58,7 @@ public class PatchedConfigTemplateRequest {
 
   public static final String JSON_PROPERTY_ENVIRONMENT_PARAMS = "environment_params";
   @javax.annotation.Nullable
-  private JsonNullable<Object> environmentParams = JsonNullable.<Object>of(null);
+  private Object environmentParams = null;
 
   public static final String JSON_PROPERTY_TEMPLATE_CODE = "template_code";
   @javax.annotation.Nullable
@@ -94,7 +90,7 @@ public class PatchedConfigTemplateRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -154,8 +150,8 @@ public class PatchedConfigTemplateRequest {
   }
 
   public PatchedConfigTemplateRequest environmentParams(@javax.annotation.Nullable Object environmentParams) {
-    this.environmentParams = JsonNullable.<Object>of(environmentParams);
     
+    this.environmentParams = environmentParams;
     return this;
   }
 
@@ -164,26 +160,18 @@ public class PatchedConfigTemplateRequest {
    * @return environmentParams
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Object getEnvironmentParams() {
-        return environmentParams.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ENVIRONMENT_PARAMS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Object> getEnvironmentParams_JsonNullable() {
+  public Object getEnvironmentParams() {
     return environmentParams;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ENVIRONMENT_PARAMS)
-  public void setEnvironmentParams_JsonNullable(JsonNullable<Object> environmentParams) {
-    this.environmentParams = environmentParams;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_ENVIRONMENT_PARAMS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEnvironmentParams(@javax.annotation.Nullable Object environmentParams) {
-    this.environmentParams = JsonNullable.<Object>of(environmentParams);
+    this.environmentParams = environmentParams;
   }
 
   public PatchedConfigTemplateRequest templateCode(@javax.annotation.Nullable String templateCode) {
@@ -362,8 +350,8 @@ public class PatchedConfigTemplateRequest {
   }
 
   public PatchedConfigTemplateRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -372,26 +360,18 @@ public class PatchedConfigTemplateRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public PatchedConfigTemplateRequest tags(@javax.annotation.Nullable List<NestedTagRequest> tags) {
@@ -439,7 +419,7 @@ public class PatchedConfigTemplateRequest {
     PatchedConfigTemplateRequest patchedConfigTemplateRequest = (PatchedConfigTemplateRequest) o;
     return Objects.equals(this.name, patchedConfigTemplateRequest.name) &&
         Objects.equals(this.description, patchedConfigTemplateRequest.description) &&
-        equalsNullable(this.environmentParams, patchedConfigTemplateRequest.environmentParams) &&
+        Objects.equals(this.environmentParams, patchedConfigTemplateRequest.environmentParams) &&
         Objects.equals(this.templateCode, patchedConfigTemplateRequest.templateCode) &&
         Objects.equals(this.mimeType, patchedConfigTemplateRequest.mimeType) &&
         Objects.equals(this.fileName, patchedConfigTemplateRequest.fileName) &&
@@ -447,24 +427,13 @@ public class PatchedConfigTemplateRequest {
         Objects.equals(this.asAttachment, patchedConfigTemplateRequest.asAttachment) &&
         Objects.equals(this.dataSource, patchedConfigTemplateRequest.dataSource) &&
         Objects.equals(this.autoSyncEnabled, patchedConfigTemplateRequest.autoSyncEnabled) &&
-        equalsNullable(this.owner, patchedConfigTemplateRequest.owner) &&
+        Objects.equals(this.owner, patchedConfigTemplateRequest.owner) &&
         Objects.equals(this.tags, patchedConfigTemplateRequest.tags);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, hashCodeNullable(environmentParams), templateCode, mimeType, fileName, fileExtension, asAttachment, dataSource, autoSyncEnabled, hashCodeNullable(owner), tags);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, description, environmentParams, templateCode, mimeType, fileName, fileExtension, asAttachment, dataSource, autoSyncEnabled, owner, tags);
   }
 
   @Override

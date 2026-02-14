@@ -25,10 +25,6 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -53,7 +49,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   TableConfig.JSON_PROPERTY_CREATED,
   TableConfig.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class TableConfig {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -89,7 +85,7 @@ public class TableConfig {
 
   public static final String JSON_PROPERTY_USER = "user";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> user = JsonNullable.<Integer>undefined();
+  private Integer user;
 
   public static final String JSON_PROPERTY_WEIGHT = "weight";
   @javax.annotation.Nullable
@@ -109,7 +105,7 @@ public class TableConfig {
 
   public static final String JSON_PROPERTY_ORDERING = "ordering";
   @javax.annotation.Nullable
-  private JsonNullable<List<String>> ordering = JsonNullable.<List<String>>undefined();
+  private List<String> ordering;
 
   public static final String JSON_PROPERTY_CREATED = "created";
   @javax.annotation.Nullable
@@ -299,8 +295,8 @@ public class TableConfig {
   }
 
   public TableConfig user(@javax.annotation.Nullable Integer user) {
-    this.user = JsonNullable.<Integer>of(user);
     
+    this.user = user;
     return this;
   }
 
@@ -309,26 +305,18 @@ public class TableConfig {
    * @return user
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getUser() {
-        return user.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_USER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getUser_JsonNullable() {
+  public Integer getUser() {
     return user;
   }
-  
-  @JsonProperty(JSON_PROPERTY_USER)
-  public void setUser_JsonNullable(JsonNullable<Integer> user) {
-    this.user = user;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_USER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUser(@javax.annotation.Nullable Integer user) {
-    this.user = JsonNullable.<Integer>of(user);
+    this.user = user;
   }
 
   public TableConfig weight(@javax.annotation.Nullable Integer weight) {
@@ -442,20 +430,16 @@ public class TableConfig {
   }
 
   public TableConfig ordering(@javax.annotation.Nullable List<String> ordering) {
-    this.ordering = JsonNullable.<List<String>>of(ordering);
     
+    this.ordering = ordering;
     return this;
   }
 
   public TableConfig addOrderingItem(String orderingItem) {
-    if (this.ordering == null || !this.ordering.isPresent()) {
-      this.ordering = JsonNullable.<List<String>>of(new ArrayList<>());
+    if (this.ordering == null) {
+      this.ordering = new ArrayList<>();
     }
-    try {
-      this.ordering.get().add(orderingItem);
-    } catch (java.util.NoSuchElementException e) {
-      // this can never happen, as we make sure above that the value is present
-    }
+    this.ordering.add(orderingItem);
     return this;
   }
 
@@ -464,26 +448,18 @@ public class TableConfig {
    * @return ordering
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public List<String> getOrdering() {
-        return ordering.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ORDERING, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<List<String>> getOrdering_JsonNullable() {
+  public List<String> getOrdering() {
     return ordering;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ORDERING)
-  public void setOrdering_JsonNullable(JsonNullable<List<String>> ordering) {
-    this.ordering = ordering;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_ORDERING, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOrdering(@javax.annotation.Nullable List<String> ordering) {
-    this.ordering = JsonNullable.<List<String>>of(ordering);
+    this.ordering = ordering;
   }
 
   /**
@@ -532,30 +508,19 @@ public class TableConfig {
         Objects.equals(this.table, tableConfig.table) &&
         Objects.equals(this.name, tableConfig.name) &&
         Objects.equals(this.description, tableConfig.description) &&
-        equalsNullable(this.user, tableConfig.user) &&
+        Objects.equals(this.user, tableConfig.user) &&
         Objects.equals(this.weight, tableConfig.weight) &&
         Objects.equals(this.enabled, tableConfig.enabled) &&
         Objects.equals(this.shared, tableConfig.shared) &&
         Objects.equals(this.columns, tableConfig.columns) &&
-        equalsNullable(this.ordering, tableConfig.ordering) &&
+        Objects.equals(this.ordering, tableConfig.ordering) &&
         Objects.equals(this.created, tableConfig.created) &&
         Objects.equals(this.lastUpdated, tableConfig.lastUpdated);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, objectType, table, name, description, hashCodeNullable(user), weight, enabled, shared, columns, hashCodeNullable(ordering), created, lastUpdated);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, objectType, table, name, description, user, weight, enabled, shared, columns, ordering, created, lastUpdated);
   }
 
   @Override

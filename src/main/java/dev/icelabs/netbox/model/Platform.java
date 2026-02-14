@@ -32,10 +32,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -63,7 +59,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   Platform.JSON_PROPERTY_VIRTUALMACHINE_COUNT,
   Platform.JSON_PROPERTY_DEPTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class Platform {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -83,7 +79,7 @@ public class Platform {
 
   public static final String JSON_PROPERTY_PARENT = "parent";
   @javax.annotation.Nullable
-  private JsonNullable<NestedPlatform> parent = JsonNullable.<NestedPlatform>undefined();
+  private NestedPlatform parent;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -95,11 +91,11 @@ public class Platform {
 
   public static final String JSON_PROPERTY_MANUFACTURER = "manufacturer";
   @javax.annotation.Nullable
-  private JsonNullable<BriefManufacturer> manufacturer = JsonNullable.<BriefManufacturer>undefined();
+  private BriefManufacturer manufacturer;
 
   public static final String JSON_PROPERTY_CONFIG_TEMPLATE = "config_template";
   @javax.annotation.Nullable
-  private JsonNullable<BriefConfigTemplate> configTemplate = JsonNullable.<BriefConfigTemplate>undefined();
+  private BriefConfigTemplate configTemplate;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -107,7 +103,7 @@ public class Platform {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -227,8 +223,8 @@ public class Platform {
 
 
   public Platform parent(@javax.annotation.Nullable NestedPlatform parent) {
-    this.parent = JsonNullable.<NestedPlatform>of(parent);
     
+    this.parent = parent;
     return this;
   }
 
@@ -237,26 +233,18 @@ public class Platform {
    * @return parent
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public NestedPlatform getParent() {
-        return parent.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<NestedPlatform> getParent_JsonNullable() {
+  public NestedPlatform getParent() {
     return parent;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PARENT)
-  public void setParent_JsonNullable(JsonNullable<NestedPlatform> parent) {
-    this.parent = parent;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PARENT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setParent(@javax.annotation.Nullable NestedPlatform parent) {
-    this.parent = JsonNullable.<NestedPlatform>of(parent);
+    this.parent = parent;
   }
 
   public Platform name(@javax.annotation.Nonnull String name) {
@@ -310,8 +298,8 @@ public class Platform {
   }
 
   public Platform manufacturer(@javax.annotation.Nullable BriefManufacturer manufacturer) {
-    this.manufacturer = JsonNullable.<BriefManufacturer>of(manufacturer);
     
+    this.manufacturer = manufacturer;
     return this;
   }
 
@@ -320,31 +308,23 @@ public class Platform {
    * @return manufacturer
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefManufacturer getManufacturer() {
-        return manufacturer.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_MANUFACTURER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefManufacturer> getManufacturer_JsonNullable() {
+  public BriefManufacturer getManufacturer() {
     return manufacturer;
   }
-  
-  @JsonProperty(JSON_PROPERTY_MANUFACTURER)
-  public void setManufacturer_JsonNullable(JsonNullable<BriefManufacturer> manufacturer) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_MANUFACTURER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setManufacturer(@javax.annotation.Nullable BriefManufacturer manufacturer) {
     this.manufacturer = manufacturer;
   }
 
-  public void setManufacturer(@javax.annotation.Nullable BriefManufacturer manufacturer) {
-    this.manufacturer = JsonNullable.<BriefManufacturer>of(manufacturer);
-  }
-
   public Platform configTemplate(@javax.annotation.Nullable BriefConfigTemplate configTemplate) {
-    this.configTemplate = JsonNullable.<BriefConfigTemplate>of(configTemplate);
     
+    this.configTemplate = configTemplate;
     return this;
   }
 
@@ -353,26 +333,18 @@ public class Platform {
    * @return configTemplate
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefConfigTemplate getConfigTemplate() {
-        return configTemplate.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_CONFIG_TEMPLATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefConfigTemplate> getConfigTemplate_JsonNullable() {
+  public BriefConfigTemplate getConfigTemplate() {
     return configTemplate;
   }
-  
-  @JsonProperty(JSON_PROPERTY_CONFIG_TEMPLATE)
-  public void setConfigTemplate_JsonNullable(JsonNullable<BriefConfigTemplate> configTemplate) {
-    this.configTemplate = configTemplate;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_CONFIG_TEMPLATE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setConfigTemplate(@javax.annotation.Nullable BriefConfigTemplate configTemplate) {
-    this.configTemplate = JsonNullable.<BriefConfigTemplate>of(configTemplate);
+    this.configTemplate = configTemplate;
   }
 
   public Platform description(@javax.annotation.Nullable String description) {
@@ -401,8 +373,8 @@ public class Platform {
   }
 
   public Platform owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -411,26 +383,18 @@ public class Platform {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public Platform comments(@javax.annotation.Nullable String comments) {
@@ -608,13 +572,13 @@ public class Platform {
         Objects.equals(this.url, platform.url) &&
         Objects.equals(this.displayUrl, platform.displayUrl) &&
         Objects.equals(this.display, platform.display) &&
-        equalsNullable(this.parent, platform.parent) &&
+        Objects.equals(this.parent, platform.parent) &&
         Objects.equals(this.name, platform.name) &&
         Objects.equals(this.slug, platform.slug) &&
-        equalsNullable(this.manufacturer, platform.manufacturer) &&
-        equalsNullable(this.configTemplate, platform.configTemplate) &&
+        Objects.equals(this.manufacturer, platform.manufacturer) &&
+        Objects.equals(this.configTemplate, platform.configTemplate) &&
         Objects.equals(this.description, platform.description) &&
-        equalsNullable(this.owner, platform.owner) &&
+        Objects.equals(this.owner, platform.owner) &&
         Objects.equals(this.comments, platform.comments) &&
         Objects.equals(this.tags, platform.tags) &&
         Objects.equals(this.customFields, platform.customFields) &&
@@ -625,20 +589,9 @@ public class Platform {
         Objects.equals(this.depth, platform.depth);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, hashCodeNullable(parent), name, slug, hashCodeNullable(manufacturer), hashCodeNullable(configTemplate), description, hashCodeNullable(owner), comments, tags, customFields, created, lastUpdated, deviceCount, virtualmachineCount, depth);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, parent, name, slug, manufacturer, configTemplate, description, owner, comments, tags, customFields, created, lastUpdated, deviceCount, virtualmachineCount, depth);
   }
 
   @Override

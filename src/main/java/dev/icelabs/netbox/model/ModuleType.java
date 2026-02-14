@@ -33,10 +33,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -65,7 +61,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ModuleType.JSON_PROPERTY_LAST_UPDATED,
   ModuleType.JSON_PROPERTY_MODULE_COUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class ModuleType {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -85,7 +81,7 @@ public class ModuleType {
 
   public static final String JSON_PROPERTY_PROFILE = "profile";
   @javax.annotation.Nullable
-  private JsonNullable<BriefModuleTypeProfile> profile = JsonNullable.<BriefModuleTypeProfile>undefined();
+  private BriefModuleTypeProfile profile;
 
   public static final String JSON_PROPERTY_MANUFACTURER = "manufacturer";
   @javax.annotation.Nonnull
@@ -101,15 +97,15 @@ public class ModuleType {
 
   public static final String JSON_PROPERTY_AIRFLOW = "airflow";
   @javax.annotation.Nullable
-  private JsonNullable<ModuleTypeAirflow> airflow = JsonNullable.<ModuleTypeAirflow>undefined();
+  private ModuleTypeAirflow airflow;
 
   public static final String JSON_PROPERTY_WEIGHT = "weight";
   @javax.annotation.Nullable
-  private JsonNullable<Double> weight = JsonNullable.<Double>undefined();
+  private Double weight;
 
   public static final String JSON_PROPERTY_WEIGHT_UNIT = "weight_unit";
   @javax.annotation.Nullable
-  private JsonNullable<DeviceTypeWeightUnit> weightUnit = JsonNullable.<DeviceTypeWeightUnit>undefined();
+  private DeviceTypeWeightUnit weightUnit;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -117,11 +113,11 @@ public class ModuleType {
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   @javax.annotation.Nullable
-  private JsonNullable<Object> attributes = JsonNullable.<Object>of(null);
+  private Object attributes = null;
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -229,8 +225,8 @@ public class ModuleType {
 
 
   public ModuleType profile(@javax.annotation.Nullable BriefModuleTypeProfile profile) {
-    this.profile = JsonNullable.<BriefModuleTypeProfile>of(profile);
     
+    this.profile = profile;
     return this;
   }
 
@@ -239,26 +235,18 @@ public class ModuleType {
    * @return profile
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefModuleTypeProfile getProfile() {
-        return profile.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_PROFILE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefModuleTypeProfile> getProfile_JsonNullable() {
+  public BriefModuleTypeProfile getProfile() {
     return profile;
   }
-  
-  @JsonProperty(JSON_PROPERTY_PROFILE)
-  public void setProfile_JsonNullable(JsonNullable<BriefModuleTypeProfile> profile) {
-    this.profile = profile;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_PROFILE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProfile(@javax.annotation.Nullable BriefModuleTypeProfile profile) {
-    this.profile = JsonNullable.<BriefModuleTypeProfile>of(profile);
+    this.profile = profile;
   }
 
   public ModuleType manufacturer(@javax.annotation.Nonnull BriefManufacturer manufacturer) {
@@ -337,8 +325,8 @@ public class ModuleType {
   }
 
   public ModuleType airflow(@javax.annotation.Nullable ModuleTypeAirflow airflow) {
-    this.airflow = JsonNullable.<ModuleTypeAirflow>of(airflow);
     
+    this.airflow = airflow;
     return this;
   }
 
@@ -347,31 +335,23 @@ public class ModuleType {
    * @return airflow
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ModuleTypeAirflow getAirflow() {
-        return airflow.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_AIRFLOW, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ModuleTypeAirflow> getAirflow_JsonNullable() {
+  public ModuleTypeAirflow getAirflow() {
     return airflow;
   }
-  
-  @JsonProperty(JSON_PROPERTY_AIRFLOW)
-  public void setAirflow_JsonNullable(JsonNullable<ModuleTypeAirflow> airflow) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_AIRFLOW, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAirflow(@javax.annotation.Nullable ModuleTypeAirflow airflow) {
     this.airflow = airflow;
   }
 
-  public void setAirflow(@javax.annotation.Nullable ModuleTypeAirflow airflow) {
-    this.airflow = JsonNullable.<ModuleTypeAirflow>of(airflow);
-  }
-
   public ModuleType weight(@javax.annotation.Nullable Double weight) {
-    this.weight = JsonNullable.<Double>of(weight);
     
+    this.weight = weight;
     return this;
   }
 
@@ -382,31 +362,23 @@ public class ModuleType {
    * @return weight
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Double getWeight() {
-        return weight.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_WEIGHT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Double> getWeight_JsonNullable() {
+  public Double getWeight() {
     return weight;
   }
-  
-  @JsonProperty(JSON_PROPERTY_WEIGHT)
-  public void setWeight_JsonNullable(JsonNullable<Double> weight) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_WEIGHT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setWeight(@javax.annotation.Nullable Double weight) {
     this.weight = weight;
   }
 
-  public void setWeight(@javax.annotation.Nullable Double weight) {
-    this.weight = JsonNullable.<Double>of(weight);
-  }
-
   public ModuleType weightUnit(@javax.annotation.Nullable DeviceTypeWeightUnit weightUnit) {
-    this.weightUnit = JsonNullable.<DeviceTypeWeightUnit>of(weightUnit);
     
+    this.weightUnit = weightUnit;
     return this;
   }
 
@@ -415,26 +387,18 @@ public class ModuleType {
    * @return weightUnit
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public DeviceTypeWeightUnit getWeightUnit() {
-        return weightUnit.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_WEIGHT_UNIT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<DeviceTypeWeightUnit> getWeightUnit_JsonNullable() {
+  public DeviceTypeWeightUnit getWeightUnit() {
     return weightUnit;
   }
-  
-  @JsonProperty(JSON_PROPERTY_WEIGHT_UNIT)
-  public void setWeightUnit_JsonNullable(JsonNullable<DeviceTypeWeightUnit> weightUnit) {
-    this.weightUnit = weightUnit;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_WEIGHT_UNIT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setWeightUnit(@javax.annotation.Nullable DeviceTypeWeightUnit weightUnit) {
-    this.weightUnit = JsonNullable.<DeviceTypeWeightUnit>of(weightUnit);
+    this.weightUnit = weightUnit;
   }
 
   public ModuleType description(@javax.annotation.Nullable String description) {
@@ -463,8 +427,8 @@ public class ModuleType {
   }
 
   public ModuleType attributes(@javax.annotation.Nullable Object attributes) {
-    this.attributes = JsonNullable.<Object>of(attributes);
     
+    this.attributes = attributes;
     return this;
   }
 
@@ -473,31 +437,23 @@ public class ModuleType {
    * @return attributes
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Object getAttributes() {
-        return attributes.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Object> getAttributes_JsonNullable() {
+  public Object getAttributes() {
     return attributes;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ATTRIBUTES)
-  public void setAttributes_JsonNullable(JsonNullable<Object> attributes) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_ATTRIBUTES, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAttributes(@javax.annotation.Nullable Object attributes) {
     this.attributes = attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable Object attributes) {
-    this.attributes = JsonNullable.<Object>of(attributes);
-  }
-
   public ModuleType owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -506,26 +462,18 @@ public class ModuleType {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public ModuleType comments(@javax.annotation.Nullable String comments) {
@@ -675,16 +623,16 @@ public class ModuleType {
         Objects.equals(this.url, moduleType.url) &&
         Objects.equals(this.displayUrl, moduleType.displayUrl) &&
         Objects.equals(this.display, moduleType.display) &&
-        equalsNullable(this.profile, moduleType.profile) &&
+        Objects.equals(this.profile, moduleType.profile) &&
         Objects.equals(this.manufacturer, moduleType.manufacturer) &&
         Objects.equals(this.model, moduleType.model) &&
         Objects.equals(this.partNumber, moduleType.partNumber) &&
-        equalsNullable(this.airflow, moduleType.airflow) &&
-        equalsNullable(this.weight, moduleType.weight) &&
-        equalsNullable(this.weightUnit, moduleType.weightUnit) &&
+        Objects.equals(this.airflow, moduleType.airflow) &&
+        Objects.equals(this.weight, moduleType.weight) &&
+        Objects.equals(this.weightUnit, moduleType.weightUnit) &&
         Objects.equals(this.description, moduleType.description) &&
-        equalsNullable(this.attributes, moduleType.attributes) &&
-        equalsNullable(this.owner, moduleType.owner) &&
+        Objects.equals(this.attributes, moduleType.attributes) &&
+        Objects.equals(this.owner, moduleType.owner) &&
         Objects.equals(this.comments, moduleType.comments) &&
         Objects.equals(this.tags, moduleType.tags) &&
         Objects.equals(this.customFields, moduleType.customFields) &&
@@ -693,20 +641,9 @@ public class ModuleType {
         Objects.equals(this.moduleCount, moduleType.moduleCount);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, hashCodeNullable(profile), manufacturer, model, partNumber, hashCodeNullable(airflow), hashCodeNullable(weight), hashCodeNullable(weightUnit), description, hashCodeNullable(attributes), hashCodeNullable(owner), comments, tags, customFields, created, lastUpdated, moduleCount);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, profile, manufacturer, model, partNumber, airflow, weight, weightUnit, description, attributes, owner, comments, tags, customFields, created, lastUpdated, moduleCount);
   }
 
   @Override

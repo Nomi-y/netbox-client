@@ -29,10 +29,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -55,7 +51,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   JournalEntry.JSON_PROPERTY_CUSTOM_FIELDS,
   JournalEntry.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class JournalEntry {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -91,7 +87,7 @@ public class JournalEntry {
 
   public static final String JSON_PROPERTY_CREATED_BY = "created_by";
   @javax.annotation.Nullable
-  private JsonNullable<Integer> createdBy = JsonNullable.<Integer>undefined();
+  private Integer createdBy;
 
   public static final String JSON_PROPERTY_KIND = "kind";
   @javax.annotation.Nullable
@@ -275,8 +271,8 @@ public class JournalEntry {
 
 
   public JournalEntry createdBy(@javax.annotation.Nullable Integer createdBy) {
-    this.createdBy = JsonNullable.<Integer>of(createdBy);
     
+    this.createdBy = createdBy;
     return this;
   }
 
@@ -285,26 +281,18 @@ public class JournalEntry {
    * @return createdBy
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Integer getCreatedBy() {
-        return createdBy.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_CREATED_BY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Integer> getCreatedBy_JsonNullable() {
+  public Integer getCreatedBy() {
     return createdBy;
   }
-  
-  @JsonProperty(JSON_PROPERTY_CREATED_BY)
-  public void setCreatedBy_JsonNullable(JsonNullable<Integer> createdBy) {
-    this.createdBy = createdBy;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_CREATED_BY, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreatedBy(@javax.annotation.Nullable Integer createdBy) {
-    this.createdBy = JsonNullable.<Integer>of(createdBy);
+    this.createdBy = createdBy;
   }
 
   public JournalEntry kind(@javax.annotation.Nullable JournalEntryKind kind) {
@@ -455,7 +443,7 @@ public class JournalEntry {
         Objects.equals(this.assignedObjectId, journalEntry.assignedObjectId) &&
         Objects.equals(this.assignedObject, journalEntry.assignedObject) &&
         Objects.equals(this.created, journalEntry.created) &&
-        equalsNullable(this.createdBy, journalEntry.createdBy) &&
+        Objects.equals(this.createdBy, journalEntry.createdBy) &&
         Objects.equals(this.kind, journalEntry.kind) &&
         Objects.equals(this.comments, journalEntry.comments) &&
         Objects.equals(this.tags, journalEntry.tags) &&
@@ -463,20 +451,9 @@ public class JournalEntry {
         Objects.equals(this.lastUpdated, journalEntry.lastUpdated);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, assignedObjectType, assignedObjectId, assignedObject, created, hashCodeNullable(createdBy), kind, comments, tags, customFields, lastUpdated);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, assignedObjectType, assignedObjectId, assignedObject, created, createdBy, kind, comments, tags, customFields, lastUpdated);
   }
 
   @Override

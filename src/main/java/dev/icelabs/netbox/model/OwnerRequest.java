@@ -37,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   OwnerRequest.JSON_PROPERTY_USER_GROUPS,
   OwnerRequest.JSON_PROPERTY_USERS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class OwnerRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull

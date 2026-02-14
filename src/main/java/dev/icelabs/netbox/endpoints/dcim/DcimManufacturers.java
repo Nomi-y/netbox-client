@@ -1,11 +1,11 @@
-package dev.icelabs.netbox.endpoints.dcim.manufacturers;
+package dev.icelabs.netbox.endpoints.dcim;
 
 import org.springframework.web.client.RestClient;
 
 import dev.icelabs.netbox.endpoints.ApiStrings;
 import dev.icelabs.netbox.endpoints.Endpoint;
-import dev.icelabs.netbox.model.response.Manufacturer;
-import dev.icelabs.netbox.model.response.PagedResponse;
+import dev.icelabs.netbox.model.Manufacturer;
+import dev.icelabs.netbox.model.PaginatedManufacturerList;
 
 public class DcimManufacturers extends Endpoint {
 
@@ -13,9 +13,9 @@ public class DcimManufacturers extends Endpoint {
         super(client, ApiStrings.DCIM_MANUFACTURERS, caller);
     }
 
-    public PagedResponse<Manufacturer> get() {
+    public PaginatedManufacturerList get() {
         return _get()
-                .asPaged(Manufacturer.class);
+                .as(PaginatedManufacturerList.class);
     }
 
     public Manufacturer get(int id) {

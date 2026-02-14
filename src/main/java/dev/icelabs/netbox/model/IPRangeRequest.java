@@ -30,10 +30,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -55,7 +51,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   IPRangeRequest.JSON_PROPERTY_MARK_POPULATED,
   IPRangeRequest.JSON_PROPERTY_MARK_UTILIZED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class IPRangeRequest {
   public static final String JSON_PROPERTY_START_ADDRESS = "start_address";
   @javax.annotation.Nonnull
@@ -67,11 +63,11 @@ public class IPRangeRequest {
 
   public static final String JSON_PROPERTY_VRF = "vrf";
   @javax.annotation.Nullable
-  private JsonNullable<IPAddressRequestVrf> vrf = JsonNullable.<IPAddressRequestVrf>undefined();
+  private IPAddressRequestVrf vrf;
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestTenant> tenant = JsonNullable.<ASNRangeRequestTenant>undefined();
+  private ASNRangeRequestTenant tenant;
 
   /**
    * * &#x60;active&#x60; - Active * &#x60;reserved&#x60; - Reserved * &#x60;deprecated&#x60; - Deprecated
@@ -116,7 +112,7 @@ public class IPRangeRequest {
 
   public static final String JSON_PROPERTY_ROLE = "role";
   @javax.annotation.Nullable
-  private JsonNullable<IPRangeRequestRole> role = JsonNullable.<IPRangeRequestRole>undefined();
+  private IPRangeRequestRole role;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -124,7 +120,7 @@ public class IPRangeRequest {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<ASNRangeRequestOwner> owner = JsonNullable.<ASNRangeRequestOwner>undefined();
+  private ASNRangeRequestOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -200,8 +196,8 @@ public class IPRangeRequest {
   }
 
   public IPRangeRequest vrf(@javax.annotation.Nullable IPAddressRequestVrf vrf) {
-    this.vrf = JsonNullable.<IPAddressRequestVrf>of(vrf);
     
+    this.vrf = vrf;
     return this;
   }
 
@@ -210,31 +206,23 @@ public class IPRangeRequest {
    * @return vrf
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public IPAddressRequestVrf getVrf() {
-        return vrf.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_VRF, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<IPAddressRequestVrf> getVrf_JsonNullable() {
+  public IPAddressRequestVrf getVrf() {
     return vrf;
   }
-  
-  @JsonProperty(JSON_PROPERTY_VRF)
-  public void setVrf_JsonNullable(JsonNullable<IPAddressRequestVrf> vrf) {
+
+
+  @JsonProperty(value = JSON_PROPERTY_VRF, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setVrf(@javax.annotation.Nullable IPAddressRequestVrf vrf) {
     this.vrf = vrf;
   }
 
-  public void setVrf(@javax.annotation.Nullable IPAddressRequestVrf vrf) {
-    this.vrf = JsonNullable.<IPAddressRequestVrf>of(vrf);
-  }
-
   public IPRangeRequest tenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -243,26 +231,18 @@ public class IPRangeRequest {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestTenant> getTenant_JsonNullable() {
+  public ASNRangeRequestTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<ASNRangeRequestTenant> tenant) {
-    this.tenant = tenant;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTenant(@javax.annotation.Nullable ASNRangeRequestTenant tenant) {
-    this.tenant = JsonNullable.<ASNRangeRequestTenant>of(tenant);
+    this.tenant = tenant;
   }
 
   public IPRangeRequest status(@javax.annotation.Nullable StatusEnum status) {
@@ -291,8 +271,8 @@ public class IPRangeRequest {
   }
 
   public IPRangeRequest role(@javax.annotation.Nullable IPRangeRequestRole role) {
-    this.role = JsonNullable.<IPRangeRequestRole>of(role);
     
+    this.role = role;
     return this;
   }
 
@@ -301,26 +281,18 @@ public class IPRangeRequest {
    * @return role
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public IPRangeRequestRole getRole() {
-        return role.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<IPRangeRequestRole> getRole_JsonNullable() {
+  public IPRangeRequestRole getRole() {
     return role;
   }
-  
-  @JsonProperty(JSON_PROPERTY_ROLE)
-  public void setRole_JsonNullable(JsonNullable<IPRangeRequestRole> role) {
-    this.role = role;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRole(@javax.annotation.Nullable IPRangeRequestRole role) {
-    this.role = JsonNullable.<IPRangeRequestRole>of(role);
+    this.role = role;
   }
 
   public IPRangeRequest description(@javax.annotation.Nullable String description) {
@@ -349,8 +321,8 @@ public class IPRangeRequest {
   }
 
   public IPRangeRequest owner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -359,26 +331,18 @@ public class IPRangeRequest {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public ASNRangeRequestOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<ASNRangeRequestOwner> getOwner_JsonNullable() {
+  public ASNRangeRequestOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<ASNRangeRequestOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable ASNRangeRequestOwner owner) {
-    this.owner = JsonNullable.<ASNRangeRequestOwner>of(owner);
+    this.owner = owner;
   }
 
   public IPRangeRequest comments(@javax.annotation.Nullable String comments) {
@@ -534,12 +498,12 @@ public class IPRangeRequest {
     IPRangeRequest ipRangeRequest = (IPRangeRequest) o;
     return Objects.equals(this.startAddress, ipRangeRequest.startAddress) &&
         Objects.equals(this.endAddress, ipRangeRequest.endAddress) &&
-        equalsNullable(this.vrf, ipRangeRequest.vrf) &&
-        equalsNullable(this.tenant, ipRangeRequest.tenant) &&
+        Objects.equals(this.vrf, ipRangeRequest.vrf) &&
+        Objects.equals(this.tenant, ipRangeRequest.tenant) &&
         Objects.equals(this.status, ipRangeRequest.status) &&
-        equalsNullable(this.role, ipRangeRequest.role) &&
+        Objects.equals(this.role, ipRangeRequest.role) &&
         Objects.equals(this.description, ipRangeRequest.description) &&
-        equalsNullable(this.owner, ipRangeRequest.owner) &&
+        Objects.equals(this.owner, ipRangeRequest.owner) &&
         Objects.equals(this.comments, ipRangeRequest.comments) &&
         Objects.equals(this.tags, ipRangeRequest.tags) &&
         Objects.equals(this.customFields, ipRangeRequest.customFields) &&
@@ -547,20 +511,9 @@ public class IPRangeRequest {
         Objects.equals(this.markUtilized, ipRangeRequest.markUtilized);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(startAddress, endAddress, hashCodeNullable(vrf), hashCodeNullable(tenant), status, hashCodeNullable(role), description, hashCodeNullable(owner), comments, tags, customFields, markPopulated, markUtilized);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(startAddress, endAddress, vrf, tenant, status, role, description, owner, comments, tags, customFields, markPopulated, markUtilized);
   }
 
   @Override

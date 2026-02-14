@@ -33,10 +33,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -64,7 +60,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   L2VPN.JSON_PROPERTY_CREATED,
   L2VPN.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T09:38:16.451149892Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-14T11:30:00.097107667Z[Etc/UTC]", comments = "Generator version: 7.20.0-SNAPSHOT")
 public class L2VPN {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -84,7 +80,7 @@ public class L2VPN {
 
   public static final String JSON_PROPERTY_IDENTIFIER = "identifier";
   @javax.annotation.Nullable
-  private JsonNullable<Long> identifier = JsonNullable.<Long>undefined();
+  private Long identifier;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -116,7 +112,7 @@ public class L2VPN {
 
   public static final String JSON_PROPERTY_OWNER = "owner";
   @javax.annotation.Nullable
-  private JsonNullable<BriefOwner> owner = JsonNullable.<BriefOwner>undefined();
+  private BriefOwner owner;
 
   public static final String JSON_PROPERTY_COMMENTS = "comments";
   @javax.annotation.Nullable
@@ -124,7 +120,7 @@ public class L2VPN {
 
   public static final String JSON_PROPERTY_TENANT = "tenant";
   @javax.annotation.Nullable
-  private JsonNullable<BriefTenant> tenant = JsonNullable.<BriefTenant>undefined();
+  private BriefTenant tenant;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @javax.annotation.Nullable
@@ -222,8 +218,8 @@ public class L2VPN {
 
 
   public L2VPN identifier(@javax.annotation.Nullable Long identifier) {
-    this.identifier = JsonNullable.<Long>of(identifier);
     
+    this.identifier = identifier;
     return this;
   }
 
@@ -234,26 +230,18 @@ public class L2VPN {
    * @return identifier
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public Long getIdentifier() {
-        return identifier.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_IDENTIFIER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<Long> getIdentifier_JsonNullable() {
+  public Long getIdentifier() {
     return identifier;
   }
-  
-  @JsonProperty(JSON_PROPERTY_IDENTIFIER)
-  public void setIdentifier_JsonNullable(JsonNullable<Long> identifier) {
-    this.identifier = identifier;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_IDENTIFIER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIdentifier(@javax.annotation.Nullable Long identifier) {
-    this.identifier = JsonNullable.<Long>of(identifier);
+    this.identifier = identifier;
   }
 
   public L2VPN name(@javax.annotation.Nonnull String name) {
@@ -448,8 +436,8 @@ public class L2VPN {
   }
 
   public L2VPN owner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
     
+    this.owner = owner;
     return this;
   }
 
@@ -458,26 +446,18 @@ public class L2VPN {
    * @return owner
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefOwner getOwner() {
-        return owner.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefOwner> getOwner_JsonNullable() {
+  public BriefOwner getOwner() {
     return owner;
   }
-  
-  @JsonProperty(JSON_PROPERTY_OWNER)
-  public void setOwner_JsonNullable(JsonNullable<BriefOwner> owner) {
-    this.owner = owner;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_OWNER, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOwner(@javax.annotation.Nullable BriefOwner owner) {
-    this.owner = JsonNullable.<BriefOwner>of(owner);
+    this.owner = owner;
   }
 
   public L2VPN comments(@javax.annotation.Nullable String comments) {
@@ -506,8 +486,8 @@ public class L2VPN {
   }
 
   public L2VPN tenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
     
+    this.tenant = tenant;
     return this;
   }
 
@@ -516,26 +496,18 @@ public class L2VPN {
    * @return tenant
    */
   @javax.annotation.Nullable
-  @JsonIgnore
-
-  public BriefTenant getTenant() {
-        return tenant.orElse(null);
-  }
-
   @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<BriefTenant> getTenant_JsonNullable() {
+  public BriefTenant getTenant() {
     return tenant;
   }
-  
-  @JsonProperty(JSON_PROPERTY_TENANT)
-  public void setTenant_JsonNullable(JsonNullable<BriefTenant> tenant) {
-    this.tenant = tenant;
-  }
 
+
+  @JsonProperty(value = JSON_PROPERTY_TENANT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTenant(@javax.annotation.Nullable BriefTenant tenant) {
-    this.tenant = JsonNullable.<BriefTenant>of(tenant);
+    this.tenant = tenant;
   }
 
   public L2VPN tags(@javax.annotation.Nullable List<NestedTag> tags) {
@@ -646,7 +618,7 @@ public class L2VPN {
         Objects.equals(this.url, L2VPN.url) &&
         Objects.equals(this.displayUrl, L2VPN.displayUrl) &&
         Objects.equals(this.display, L2VPN.display) &&
-        equalsNullable(this.identifier, L2VPN.identifier) &&
+        Objects.equals(this.identifier, L2VPN.identifier) &&
         Objects.equals(this.name, L2VPN.name) &&
         Objects.equals(this.slug, L2VPN.slug) &&
         Objects.equals(this.type, L2VPN.type) &&
@@ -654,29 +626,18 @@ public class L2VPN {
         Objects.equals(this.importTargets, L2VPN.importTargets) &&
         Objects.equals(this.exportTargets, L2VPN.exportTargets) &&
         Objects.equals(this.description, L2VPN.description) &&
-        equalsNullable(this.owner, L2VPN.owner) &&
+        Objects.equals(this.owner, L2VPN.owner) &&
         Objects.equals(this.comments, L2VPN.comments) &&
-        equalsNullable(this.tenant, L2VPN.tenant) &&
+        Objects.equals(this.tenant, L2VPN.tenant) &&
         Objects.equals(this.tags, L2VPN.tags) &&
         Objects.equals(this.customFields, L2VPN.customFields) &&
         Objects.equals(this.created, L2VPN.created) &&
         Objects.equals(this.lastUpdated, L2VPN.lastUpdated);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, displayUrl, display, hashCodeNullable(identifier), name, slug, type, status, importTargets, exportTargets, description, hashCodeNullable(owner), comments, hashCodeNullable(tenant), tags, customFields, created, lastUpdated);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(id, url, displayUrl, display, identifier, name, slug, type, status, importTargets, exportTargets, description, owner, comments, tenant, tags, customFields, created, lastUpdated);
   }
 
   @Override
