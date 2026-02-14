@@ -7,7 +7,7 @@ import dev.icelabs.netbox.endpoints.Endpoint;
 
 public class IpamEndpoint extends Endpoint {
 
-    protected IpamEndpoint(RestClient client, Endpoint caller) {
+    public IpamEndpoint(RestClient client, Endpoint caller) {
         super(client, ApiStrings.IPAM, caller);
     }
 

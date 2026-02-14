@@ -3,7 +3,7 @@ package dev.icelabs.netbox.lib;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 
-import dev.icelabs.netbox.model.response.PagedResponse;
+import dev.icelabs.netbox.model.common.PagedResponse;
 
 public abstract class ResponseUtils {
 

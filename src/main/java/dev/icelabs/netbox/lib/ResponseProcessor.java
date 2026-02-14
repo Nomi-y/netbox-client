@@ -5,8 +5,6 @@ import java.util.Objects;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestClient.ResponseSpec;
 
-import dev.icelabs.netbox.model.response.PagedResponse;
-
 public class ResponseProcessor {
 
     private final ResponseSpec spec;
