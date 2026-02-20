@@ -1,0 +1,20 @@
+
+
+# PaginatedInterfaceList
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**count** | **Integer** |  |  |
+|**next** | **URI** |  |  [optional] |
+|**previous** | **URI** |  |  [optional] |
+|**results** | [**List&lt;ModelInterface&gt;**](ModelInterface.md) |  |  |
+
+
+## Implemented Interfaces
+
+* Serializable
+
+

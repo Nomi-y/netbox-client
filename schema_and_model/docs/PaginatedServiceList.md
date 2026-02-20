@@ -1,0 +1,20 @@
+
+
+# PaginatedServiceList
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**count** | **Integer** |  |  |
+|**next** | **URI** |  |  [optional] |
+|**previous** | **URI** |  |  [optional] |
+|**results** | [**List&lt;Service&gt;**](Service.md) |  |  |
+
+
+## Implemented Interfaces
+
+* Serializable
+
+

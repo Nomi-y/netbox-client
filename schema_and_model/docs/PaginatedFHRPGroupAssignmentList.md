@@ -1,0 +1,20 @@
+
+
+# PaginatedFHRPGroupAssignmentList
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**count** | **Integer** |  |  |
+|**next** | **URI** |  |  [optional] |
+|**previous** | **URI** |  |  [optional] |
+|**results** | [**List&lt;FHRPGroupAssignment&gt;**](FHRPGroupAssignment.md) |  |  |
+
+
+## Implemented Interfaces
+
+* Serializable
+
+
