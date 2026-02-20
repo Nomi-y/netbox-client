@@ -1,0 +1,20 @@
+
+
+# PaginatedPowerOutletList
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**count** | **Integer** |  |  |
+|**next** | **URI** |  |  [optional] |
+|**previous** | **URI** |  |  [optional] |
+|**results** | [**List&lt;PowerOutlet&gt;**](PowerOutlet.md) |  |  |
+
+
+## Implemented Interfaces
+
+* Serializable
+
+
