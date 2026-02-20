@@ -63,11 +63,11 @@ class NetboxClientTest {
     @Test
     void device_id_1_should_have_specific_name() {
         try {
-            var dev = client.dcim() // /dcim
-                    .devices() // /dcim/devices
-                    .get(1)// GET /dcim/device/{id}/
+            var dev = client.dcim() // api/dcim/
+                    .devices() // api/dcim/devices/
+                    .get(1)// GET api/dcim/device/{id}/
                     .execute() // execute method sychronous
-                    .body(); // response body
+                    .body(); // response body only
             assertEquals("dmi01-akron-rtr01", dev.getName());
         } catch (IOException e) {
             fail(e);
